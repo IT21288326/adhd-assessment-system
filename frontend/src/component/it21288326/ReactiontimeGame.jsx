@@ -545,7 +545,7 @@ const it21288326ReactiontimeGame = () => {
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(1);
   const [missedStars, setMissedStars] = useState(2);
-  const [timeLeft, setTimeLeft] = useState(60); // 1 minute in seconds
+  const [timeLeft, setTimeLeft] = useState(180); // 1 minute in seconds
   let speedDown = 100;
   let starAppearTime;
   const reactionTimes = useRef([]);
@@ -604,16 +604,16 @@ const it21288326ReactiontimeGame = () => {
   let gameTimerActive = false;
 
   function preload() {
-    this.load.image('sky', '/assets/it21288326sky.png');
-    this.load.image('star', '/assets/it21288326star.png');
-    this.load.image('pointer', '/assets/it21288326pointer.png');
-    this.load.audio('clickSound', '/assets/it21288326clickSound.mp3');
-    this.load.audio('backgroundMusic', '/assets/it21288326backgroundMusic.mp3');
-    this.load.spritesheet('meteor', '/assets/it21288326meteor.gif', {
+    this.load.image('sky', '/assets/it21288326/sky.png');
+    this.load.image('star', '/assets/it21288326/star.png');
+    this.load.image('pointer', '/assets/it21288326/pointer.png');
+    this.load.audio('clickSound', '/assets/it21288326/clickSound.mp3');
+    this.load.audio('backgroundMusic', '/assets/it21288326/backgroundMusic.mp3');
+    this.load.spritesheet('meteor', '/assets/it21288326/meteor.gif', {
       frameWidth: 128,
       frameHeight: 128,
     });
-    this.load.spritesheet('fireball', '/assets/it21288326fireball.gif', {
+    this.load.spritesheet('fireball', '/assets/it21288326/fireball.gif', {
       frameWidth: 1024,
       frameHeight: 1024,
     });
@@ -628,7 +628,7 @@ const it21288326ReactiontimeGame = () => {
     star.setInteractive();
     this.input.on('gameobjectdown', handleStarClick, this);
 
-    this.input.setDefaultCursor('url(/assets/it21288326pointer.png), pointer');
+    this.input.setDefaultCursor('url(/assets/it21288326/pointer.png), pointer');
 
     specialStar = this.physics.add.image(-100, -100, 'star');
     specialStar.setScale(0.1);
@@ -808,6 +808,18 @@ const it21288326ReactiontimeGame = () => {
     try {
       await axios.post('http://localhost:8800/api/metrics/create', gameData);
       console.log('Game data sent to backend:', gameData);
+
+          // Send metrics to the AI model for ADHD type prediction
+    const predictionResponse = await axios.post('http://localhost:5001/predict', {
+      averageReactionTime: gameData.averageReactionTime,
+      correctStreak: gameData.correctStreak,
+      prematureClicks: gameData.prematureClicks,
+      missedStars: gameData.missedStars,
+      score: gameData.score,
+    });
+
+    console.log('Predicted ADHD Type:', predictionResponse.data.ADHD_Type);
+    alert(`Predicted ADHD Type: ${predictionResponse.data.ADHD_Type}`);
     } catch (error) {
       console.error('Error sending game data to backend:', error);
     }
