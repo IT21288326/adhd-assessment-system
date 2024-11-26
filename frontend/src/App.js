@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import ReactionTimeGame from './component/it21288326ReactiontimeGame';
+import ReactionTimeGame from './component/it21288326/ReactiontimeGame';
 
 function App() {
   return (
