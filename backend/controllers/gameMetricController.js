@@ -3,11 +3,12 @@ import GameMetric from '../models/GameMetric.js';
 
 export const createGameMetric = async (req, res) => {
   try {
-    const { reactionTimes, averageReactionTime, correctStreak, prematureClicks, missedStars, score } = req.body;
+    const { reactionTimes, averageReactionTime, correctStreak, prematureClicks, missedStars, score, childId } = req.body;
 
     // Validate required fields
     if (!reactionTimes || typeof averageReactionTime !== 'number' || typeof correctStreak !== 'number' ||
-      typeof prematureClicks !== 'number' || typeof missedStars !== 'number' || typeof score !== 'number') {
+        typeof prematureClicks !== 'number' || typeof missedStars !== 'number' || typeof score !== 'number' ||
+        !childId) {
       return res.status(400).json({ error: 'Invalid input data' });
     }
 
@@ -17,7 +18,8 @@ export const createGameMetric = async (req, res) => {
       correctStreak,
       prematureClicks,
       missedStars,
-      score
+      score,
+      childId,
     });
 
     const savedMetric = await gameMetric.save();
@@ -26,6 +28,7 @@ export const createGameMetric = async (req, res) => {
     res.status(500).json({ error: 'Server error', details: error.message });
   }
 };
+
 
 export const getAllGameMetrics = async (req, res) => {
   try {
