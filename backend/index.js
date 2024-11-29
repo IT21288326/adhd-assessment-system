@@ -2,17 +2,43 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import bodyParser from 'body-parser';
+import session from 'express-session';
 import gameMetricRoutes from './routes/gameMetricRoutes.js'; // Ensure you have this route file
+import questionnaireRoutes from './routes/questionnaireRoutes.js.js'
+import childRoutes from './routes/childRoutes.js'
 
 // Configure dotenv to load environment variables
 dotenv.config();
 
 // Initialize the express app
 const app = express();
-app.use(cors());
+
 // Middleware to parse incoming JSON requests
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+app.use(  cors({
+  origin: 'http://localhost:3000', // Allow only your frontend's origin
+
+  credentials: true, // Allow credentials (cookies, session)
+})
+);
+//
+
+app.use(bodyParser.json());
+app.use(
+  session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      secure: false,
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
+    },
+  })
+);
 // Connect to MongoDB
 const connect = async () => {
   try {
@@ -34,8 +60,13 @@ mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB!');
 });
 
-// Add your routes
+// it21288326====routes
 app.use('/api/metrics', gameMetricRoutes);
+app.use('/api/questionnaire', questionnaireRoutes);
+app.use('/api/child', childRoutes);
+
+
+
 
 // Basic error-handling middleware
 app.use((err, req, res, next) => {
