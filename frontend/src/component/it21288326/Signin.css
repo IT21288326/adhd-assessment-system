@@ -1,0 +1,11 @@
+.signin-page {
+    background-image: url('./img/signinback.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
