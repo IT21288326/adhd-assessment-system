@@ -1,0 +1,15 @@
+.ques {
+    background-image: url('./img/back3.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Scroll only content, not the background */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Center content */
+    justify-content: center;
+    align-items: center;
+  }
+  
