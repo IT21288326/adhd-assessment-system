@@ -1,0 +1,27 @@
+.profile{
+    background-image: url('./img/back\ 1.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh; /* Use viewport height to prevent scrolling */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  overflow: hidden; /* Prevent any overflow */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  }
+
+  /* styles.css */
+.link-style {
+    color: black; /* Default color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Optional: Keep bold font */
+  }
+  
+  .link-style:hover {
+    color: rgb(6, 154, 180); /* Change color to blue on hover */
+    text-decoration: none;  
+}
+  
