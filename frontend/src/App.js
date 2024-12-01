@@ -5,6 +5,7 @@ import QuestionnaireForm from './component/it21288326/QuestionnaireForm';
 import SignIn from './component/it21288326/SignIn';
 import SignUp from './component/it21288326/SignUp';
 import Profile from './component/it21288326/Profile';
+import Home from './component/Home';
 
 function App() {
   return (
@@ -24,9 +25,10 @@ function App() {
         <Routes>
           <Route path="/reaction-time-game" element={<ReactionTimeGame />} />
           <Route path="/questionnaire-form" element={<QuestionnaireForm />} />
-          <Route path="/sign-in" element={<SignIn/>} />
+          <Route path="/" element={<SignIn/>} />
           <Route path="/sign-up" element={<SignUp/>} />
           <Route path="/profile" element={<Profile/>} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
     </Router>
