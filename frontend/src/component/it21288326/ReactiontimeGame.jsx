@@ -32,7 +32,7 @@ const GameOverScreen = ({ stats, comment, onRestart }) => (
   </div>
 );
 
-const it21288326ReactiontimeGame = () => {
+const ReactiontimeGame = () => {
   const gameRef = useRef(null);
   const [gameOver, setGameOver] = useState(false);
   const [stats, setStats] = useState({});
@@ -333,5 +333,5 @@ const it21288326ReactiontimeGame = () => {
   );
 };
 
-export default it21288326ReactiontimeGame;
+export default ReactiontimeGame;
 
