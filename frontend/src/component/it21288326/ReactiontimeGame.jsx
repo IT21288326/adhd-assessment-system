@@ -22,8 +22,8 @@ const GameOverScreen = ({ stats, comment, onRestart }) => (
     <h1>Game Over</h1>
     <p><strong>Score:</strong> {stats.score}</p>
     <p><strong>Missed Stars:</strong> {stats.missedStars}</p>
-    <p><strong>Average Reaction Time:</strong> {stats.averageReactionTime.toFixed(2)} ms</p>
-    <p><strong>Premature Clicks:</strong> {stats.prematureClicks}</p>
+    {/* <p><strong>Average Reaction Time:</strong> {stats.averageReactionTime.toFixed(2)} ms</p>
+    <p><strong>Premature Clicks:</strong> {stats.prematureClicks}</p> */}
     <p><strong>Correct Streak:</strong> {stats.correctStreak}</p>
     <p><strong>Performance Comment:</strong> {comment}</p>
     <button style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px' }} onClick={onRestart}>
