@@ -4,6 +4,16 @@
 
 **PulseMind** is a cutting-edge web application designed to assist children aged 5-10 with ADHD by leveraging AI, gamification, and adaptive learning to address their unique challenges. The platform aims to identify ADHD types and deliver tailored interventions that improve focus, impulsivity, and hyperactivity management, creating a supportive and engaging learning experience.
 
+## 👥 Team  Members
+
+### Group Leader: IT21288326 - Dharmasena U.D.S.V. - it21288326@my.sliit.lk
+
+### Member 1: IT21290992 - Manamperi R.S. - it21290992@my.sliit.lk
+
+### Member 2: IT21379574 - Dilshani H.T.D.P. - it21379574@my.sliit.lk
+
+### Member 3: IT21380532 - Halliyadda H.U.M.S. - it21380532@my.sliit.lk
+
 ## ⚠️ Problem Statement
 
 Children aged 5-10 with ADHD face difficulties in maintaining focus, managing impulsivity, and controlling hyperactivity. Existing methods for diagnosis and intervention often lack personalization and adaptability, leaving many children underserved. A comprehensive system is needed to combine interactive technologies with AI-driven insights for better diagnosis and intervention.
@@ -52,7 +62,7 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 
 ### **Frontend** 🌐
 - **Framework**: React.js ⚛️
-- **Styling**: Tailwind CSS
+- **Styling**: bootstrap CSS
 - **Libraries**:axios,phaser,react,react-dom,react-router-dom,react-scripts,web-vitals
 
 ### **Backend** 🔧
