@@ -4,7 +4,7 @@ import numpy as np
 from flask_cors import CORS
 
 # Load the trained model
-model = joblib.load("adhd_classifier.pkl")
+model = joblib.load("svm_model.pkl")
 
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:3000"])  # Allow requests from React app
