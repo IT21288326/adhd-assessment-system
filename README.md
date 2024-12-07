@@ -30,31 +30,30 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 ## 🎮 Key Features
 
 ### 🔍 ADHD Type Identification
-- **Interactive Activities**: Gamified tasks designed to evaluate attention span, impulse control, and hyperactivity levels.
-- **Adaptive Questionnaires**: Real-time adjustment of questions based on behavioral performance, following DSM-5 criteria.
-- **Machine Learning Analysis**: Integration of behavioral and questionnaire data to accurately classify ADHD symptoms using models like SVM and Random Forests.
+-  Gamified tasks designed to evaluate attention span, impulse control, and hyperactivity levels.
+-  Real-time adjustment of questions based on behavioral performance, following DSM-5 criteria.
+-  Integration of behavioral and questionnaire data to accurately classify ADHD symptoms using models like SVM and Random Forests.
 
-### 🎨 Personalized Interventions
 
-#### For Inattention 🧰:
+### 🧰 Personalized Interventions For Inattention 
 - Create tools and activities to enhance focus, organizational skills, and attention span using adaptive learning.
 - Incorporate gamified elements into learning methodologies to improve motivation and engagement.
 - Analyze emotional and behavioral responses to provide tailored interventions aligned with the child’s emotional state.
 
-#### For Hyperactivity-Impulsivity 🏃🏆:
+### 🏃🏆 Personalized Interventions For Hyperactivity-Impulsivity 
 - Develop a personalized app offering structured activities like physical exercises and mindfulness techniques.
 - Include five pre-designed schedules with activities tailored to different impulsive behaviors.
 - Allow customization of timetables by teachers/caregivers to ensure relevance and engagement.
 
 ### ⚙️ AI-Driven Adaptive Learning
-- **Real-Time Monitoring**: Continuously track user interactions to provide tailored interventions.
-- **Personalized Feedback**: Generate actionable insights and progress reports for children and caregivers.
-- **Predictive Analysis**: Use AI to forecast potential challenges and dynamically adjust strategies.
+- Continuously track user interactions to provide tailored interventions.
+- Generate actionable insights and progress reports for children and caregivers.
+- Use AI to forecast potential challenges and dynamically adjust strategies.
 
 ---
 
 ## 💡 System Overview Diagram
-![System Diagram](PulseMind_SystemDiagram.png)
+![System Diagram](frontend/public/PulseMind_SystemDiagram.png)
 
 ---
 
