@@ -62,7 +62,7 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 
 ### **Frontend** 🌐
 - **Framework**: React.js ⚛️
-- **Styling**: Tailwind CSS
+- **Styling**: bootstrap CSS
 - **Libraries**:axios,phaser,react,react-dom,react-router-dom,react-scripts,web-vitals
 
 ### **Backend** 🔧
