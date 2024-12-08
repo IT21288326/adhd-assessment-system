@@ -53,7 +53,7 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 ---
 
 ## 💡 System Overview Diagram
-![System Diagram](frontend/public/PulseMind_SystemDiagram.png)
+![System Diagram](frontend/public/PulseMind_SystemDiagram.jpeg)
 
 ---
 
