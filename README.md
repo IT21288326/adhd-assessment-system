@@ -95,4 +95,5 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 ---
 
 This comprehensive AI-powered solution aims to improve diagnostic accuracy and enable effective ADHD management, ensuring better outcomes for children.
+## Github repository link - https://github.com/IT21288326/adhd-assessment-system
 
