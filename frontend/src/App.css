@@ -1,38 +1,15 @@
-.App {
-  text-align: center;
+:root {
+  --bs-primary: #8DAFC7; /* Replace default Bootstrap primary color */
+  --bs-primary-rgb: 141, 175, 199; /* RGB equivalent */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+  color: white !important; /* Optional: ensure contrast */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-primary:hover {
+  background-color: #7c9db7 !important; /* Slightly darker shade for hover */
+  border-color: #7c9db7 !important;
 }
