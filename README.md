@@ -29,7 +29,6 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 
 ## 🎮 Key Features
 
-### 🔍 ADHD Type Identification - IT21288326 - Dharmasena U.D.S.V.
 ### 🔍 ADHD Type Identification
 -  Gamified tasks designed to evaluate attention span, impulse control, and hyperactivity levels.
 -  Real-time adjustment of questions based on behavioral performance, following DSM-5 criteria.
@@ -46,7 +45,6 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 - Include five pre-designed schedules with activities tailored to different impulsive behaviors.
 - Allow customization of timetables by teachers/caregivers to ensure relevance and engagement.
 
-### ⚙️ AI-Driven Adaptive Learning - IT21380532 - Halliyadda H.U.M.S.
 ### ⚙️ AI-Driven Adaptive Learning
 - Continuously track user interactions to provide tailored interventions.
 - Generate actionable insights and progress reports for children and caregivers.
