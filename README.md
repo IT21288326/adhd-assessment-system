@@ -30,17 +30,18 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 ## 🎮 Key Features
 
 ### 🔍 ADHD Type Identification - IT21288326 - Dharmasena U.D.S.V.
+### 🔍 ADHD Type Identification
 -  Gamified tasks designed to evaluate attention span, impulse control, and hyperactivity levels.
 -  Real-time adjustment of questions based on behavioral performance, following DSM-5 criteria.
 -  Integration of behavioral and questionnaire data to accurately classify ADHD symptoms using models like SVM and Random Forests.
 
 
-### 🧰 Personalized Interventions For Inattention - IT21290992 - Manamperi R.S.
+### 🧰 Personalized Interventions For Inattention 
 - Create tools and activities to enhance focus, organizational skills, and attention span using adaptive learning.
 - Incorporate gamified elements into learning methodologies to improve motivation and engagement.
 - Analyze emotional and behavioral responses to provide tailored interventions aligned with the child’s emotional state.
 
-### 🏃🏆 Personalized Interventions For Hyperactivity-Impulsivity - IT21379574 - Dilshani H.T.D.P.
+### 🏃🏆 Personalized Interventions For Hyperactivity-Impulsivity 
 - Develop a personalized app offering structured activities like physical exercises and mindfulness techniques.
 - Include five pre-designed schedules with activities tailored to different impulsive behaviors.
 - Allow customization of timetables by teachers/caregivers to ensure relevance and engagement.
