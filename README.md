@@ -47,6 +47,7 @@ Children aged 5-10 with ADHD face difficulties in maintaining focus, managing im
 - Allow customization of timetables by teachers/caregivers to ensure relevance and engagement.
 
 ### ⚙️ AI-Driven Adaptive Learning - IT21380532 - Halliyadda H.U.M.S.
+### ⚙️ AI-Driven Adaptive Learning
 - Continuously track user interactions to provide tailored interventions.
 - Generate actionable insights and progress reports for children and caregivers.
 - Use AI to forecast potential challenges and dynamically adjust strategies.
