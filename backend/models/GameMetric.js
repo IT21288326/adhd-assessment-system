@@ -55,8 +55,19 @@ const gameMetricSchema = new mongoose.Schema({
       message: 'Missed streaks must be positive'
     } 
   }, 
+  // clickTimestamps: { 
+  //   type: [{ timestamp: Number, type: String }], 
+  //   default: [], 
+  //   validate: {
+  //     validator: (arr) => arr.every(obj => obj.timestamp >= 0 && ['valid', 'premature'].includes(obj.type)),
+  //     message: 'Invalid click event data'
+  //   } 
+  // },
   clickTimestamps: { 
-    type: [{ timestamp: Number, type: String }], 
+    type: [{
+      timestamp: { type: Number, required: true },
+      type: { type: String, enum: ['valid', 'premature'], required: true }
+    }], 
     default: [], 
     validate: {
       validator: (arr) => arr.every(obj => obj.timestamp >= 0 && ['valid', 'premature'].includes(obj.type)),
