@@ -1368,35 +1368,144 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Phaser from 'phaser';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
 
-const GameOverScreen = ({ stats, comment, onRestart }) => (
+
+// const GameOverScreen = ({ stats, comment, onRestart }) => (
+//   <div style={{
+//     position: 'absolute',
+//     top: 0,
+//     left: 0,
+//     width: '100%',
+//     height: '100%',
+//     backgroundColor: 'rgba(0, 0, 0, 0.8)',
+//     color: '#fff',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     zIndex: 10,
+//   }}>
+//     <h1>Game Over</h1>
+//     <p><strong>Score:</strong> {stats.score}</p>
+//     <p><strong>Missed Stars:</strong> {stats.missedStars}</p>
+//     <p><strong>Correct Streak:</strong> {stats.correctStreak}</p>
+//     <p><strong>Performance Comment:</strong> {comment}</p>
+//     <button style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px' }} onClick={onRestart}>
+//       Restart Game
+//     </button>
+//   </div>
+// );
+
+const GameOverScreen = ({ stats, comment, onRestart, onViewAnalytics }) => (
   <div style={{
     position: 'absolute',
     top: 0,
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundImage: 'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
     color: '#fff',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 10,
+    fontFamily: 'Arial, sans-serif'
   }}>
-    <h1>Game Over</h1>
-    <p><strong>Score:</strong> {stats.score}</p>
-    <p><strong>Missed Stars:</strong> {stats.missedStars}</p>
-    <p><strong>Correct Streak:</strong> {stats.correctStreak}</p>
-    <p><strong>Performance Comment:</strong> {comment}</p>
-    <button style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px' }} onClick={onRestart}>
-      Restart Game
-    </button>
+    <h1 style={{ 
+      fontSize: '3rem', 
+      margin: '0 0 20px 0',
+      textShadow: '0 0 10px #FFD700, 0 0 20px #FFD700'
+    }}>
+      Game Over!
+    </h1>
+    
+    <div style={{
+      background: 'rgba(255, 255, 255, 0.2)',
+      borderRadius: '15px',
+      padding: '20px',
+      margin: '10px',
+      maxWidth: '500px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+        <span style={{ fontSize: '24px', marginRight: '10px' }}>🌟</span>
+        <p style={{ fontSize: '18px', margin: 0 }}><strong>Score:</strong> {stats.score}</p>
+      </div>
+      
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+        <span style={{ fontSize: '24px', marginRight: '10px' }}>❌</span>
+        <p style={{ fontSize: '18px', margin: 0 }}><strong>Missed Stars:</strong> {stats.missedStars}</p>
+      </div>
+      
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+        <span style={{ fontSize: '24px', marginRight: '10px' }}>🔥</span>
+        <p style={{ fontSize: '18px', margin: 0 }}><strong>Best Streak:</strong> {stats.correctStreak}</p>
+      </div>
+      
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ fontSize: '24px', marginRight: '10px' }}>⏱️</span>
+        <p style={{ fontSize: '18px', margin: 0 }}><strong>Average Reaction:</strong> {stats.averageReactionTime.toFixed(2)} ms</p>
+      </div>
+    </div>
+    
+    <div style={{
+      background: 'rgba(255, 215, 0, 0.3)',
+      borderRadius: '15px',
+      padding: '15px',
+      margin: '20px 0',
+      maxWidth: '500px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      textAlign: 'center'
+    }}>
+      <p style={{ fontSize: '20px', margin: 0 }}>{comment}</p>
+    </div>
+    
+    <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
+      <button 
+        style={{ 
+          padding: '12px 25px', 
+          fontSize: '18px',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '25px',
+          cursor: 'pointer',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+          transition: 'all 0.3s ease'
+        }} 
+        onClick={onRestart}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        Play Again! 🚀
+      </button>
+      
+      <button 
+        style={{ 
+          padding: '12px 25px', 
+          fontSize: '18px',
+          backgroundColor: '#2196F3',
+          color: 'white',
+          border: 'none',
+          borderRadius: '25px',
+          cursor: 'pointer',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+          transition: 'all 0.3s ease'
+        }} 
+        onClick={onViewAnalytics}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        View Analytics 📊
+      </button>
+    </div>
   </div>
 );
 
 const ReactiontimeGame = () => {
+  const navigate = useNavigate();
   const gameRef = useRef(null);
   const [gameOver, setGameOver] = useState(false);
   const [stats, setStats] = useState({
@@ -1411,6 +1520,7 @@ const ReactiontimeGame = () => {
   const [timeLeft, setTimeLeft] = useState(180); // 3 minutes in seconds
   const location = useLocation();
   const [childId, setChildId] = useState(location.state?.childId || null);
+  const [gameId, setGameId] = useState(null); // Add gameId state
   
   // Refs for tracking game metrics
   const missedStarsRef = useRef([]);
@@ -1780,7 +1890,9 @@ const ReactiontimeGame = () => {
       missedStars: missedStarsRef.current.length,
       score: scoreRef.current,
       clickTimestamps: formattedClickTimestamps,
-      missedStarStreaks: missedStarStreaks
+      missedStarStreaks: missedStarStreaks,
+      reactionTimeVariability, // Include this calculated value
+      sessionDuration: (Date.now() - gameStartTimeRef.current) / 1000 // 
     };
     console.log('Payload being sent to backend:', JSON.stringify(gameData, null, 2));
   
@@ -1804,8 +1916,14 @@ const ReactiontimeGame = () => {
   
     try {
       // Send data to the new endpoint
-      await axios.post('http://localhost:8800/api/metrics/create', gameData);
+      const response = await axios.post('http://localhost:8800/api/metrics/create', gameData);
       console.log('Game metrics saved successfully');
+    
+      // Store the returned gameId
+      if (response.data && response.data._id) {
+        setGameId(response.data._id);
+      }
+          
     } catch (error) {
       console.error('Error saving game metrics:', error);
     }
@@ -1846,9 +1964,23 @@ const ReactiontimeGame = () => {
     }
   };
 
+  const handleViewAnalytics = () => {
+    if (childId && gameId) {
+      navigate(`/analytics/${childId}/${gameId}`);
+    } else {
+      console.error('Missing childId or gameId for navigation');
+      // Fallback navigation if specific IDs aren't available
+      if (childId) {
+        navigate(`/analytics/${childId}`);
+      } else {
+        navigate('/analytics');
+      }
+    }
+  };
+
   return (
     <div id="phaser-container">
-      {gameOver && <GameOverScreen stats={stats} comment={comment} onRestart={restartGame} />}
+      {gameOver && <GameOverScreen stats={stats} comment={comment} onRestart={restartGame} onViewAnalytics={handleViewAnalytics} />}
     </div>
   );
 };
