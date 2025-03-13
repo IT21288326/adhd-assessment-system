@@ -14,7 +14,7 @@ const GameAnalyticsContainer = () => {
       try {
         setLoading(true);
         // You can adjust the endpoint based on your API structure
-        const response = await axios.get(`http://localhost:8800/api/gamematrix/${childId}/${gameId}`);
+        const response = await axios.get(`http://localhost:8800/api/matrics/${childId}/${gameId}`);
         setGameData(response.data);
         setLoading(false);
       } catch (err) {
