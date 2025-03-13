@@ -279,3 +279,33 @@ export const createGameMetric = async (req, res) => {
     res.status(500).json({ error: 'Server error', details: error.message });
   }
 };
+
+export const getGameMetric = async (req, res) => {
+  try {
+    const { childId, gameId } = req.params;
+    
+    // Find the specific game record
+    const gameData = await GameMetric.findOne({
+      _id: gameId,
+      childId: childId
+    });
+    
+    if (!gameData) {
+      return res.status(404).json({
+        success: false,
+        error: 'Game data not found'
+      });
+    }
+    
+    res.status(200).json({
+      success: true,
+      data: gameData
+    });
+  } catch (error) {
+    console.error('Error fetching game data:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+};
