@@ -48,6 +48,7 @@ import SignUp from './component/it21288326/SignUp';
 import Profile from './component/it21288326/Profile';
 import Home from './component/Home';
 import ProtectedRoute from './component/it21288326/ProtectedRoute'; // Import the ProtectedRoute component
+import GameAnalyticsContainer from './component/it21288326/GameAnalyticsContainer';
 
 function App() {
   return (
@@ -88,6 +89,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <QuestionnaireForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/analytics/:childId/:gameId"
+            element={
+              <ProtectedRoute>
+                <GameAnalyticsContainer />
               </ProtectedRoute>
             }
           />
