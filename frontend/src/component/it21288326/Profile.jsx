@@ -28,34 +28,7 @@ const Profile = () => {
   }
 
   return (
-//     <div>
-//       <div className="profile">
-//       <h1 style={{fontSize:'80px', fontWeight:'bold', marginTop:'30px'}}> Welcome {child.name} !!</h1>
-     
 
-
-//       <div class="row" style={{height:'60%', marginTop:'100px'}}>
-//   <div class="col-sm-6">
-//     <div class="card" style={{boxShadow:'10px 14px 18px rgba(0, 0, 0, 0.2)', opacity:'0.8',width:'60%',height:'100%', borderRadius:'60px'}}>
-//       <div class="card-body" style={{fontSize:'60px', fontWeight:'bold'}}>
-//       <Link to="/reaction-time-game" state={{ childId: child._id }} className="link-style">
-//               Play Game
-//             </Link>
-//          </div>
-//     </div>
-//   </div>
-//   <div class="col-sm-6">
-//     <div class="card" style={{boxShadow:'10px 14px 18px rgba(0, 0, 0, 0.2)', opacity:'0.8',width:'60%',height:'100%', borderRadius:'60px'}}>
-//       <div class="card-body" style={{fontSize:'60px', fontWeight:'bold'}}>
-//           <Link to="/questionnaire-form" state={{ childId: child._id }} className="link-style">
-//               Parental Quiz
-//             </Link>        
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
-//     </div></div>
 
 <div >
   <div className="profile" style={{ textAlign: 'center' }}>
