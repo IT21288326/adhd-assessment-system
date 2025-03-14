@@ -1550,6 +1550,7 @@ const ReactiontimeGame = () => {
   const specialStarActiveRef = useRef(false);
   const gameTimerRef = useRef(null);
   const gameTimerActiveRef = useRef(false);
+  const starVisibleRef = useRef(false);
 
   useEffect(() => {
     const id = location.state?.childId;
@@ -1607,6 +1608,16 @@ const ReactiontimeGame = () => {
 
   function create() {
     this.add.image(0, 0, 'sky').setOrigin(0, 0).setDisplaySize(window.innerWidth, window.innerHeight);
+
+    const backgroundZone = this.add.zone(0, 0, window.innerWidth, window.innerHeight)
+    .setOrigin(0, 0)
+    .setInteractive();
+  
+  backgroundZone.on('pointerdown', (pointer) => {
+    const clickTimestamp = Date.now();
+    prematureClickTimes.current.push(clickTimestamp);
+    prematureClicksRef.current++;
+  });
 
     // Create star
     starRef.current = this.physics.add.image(
@@ -1678,7 +1689,7 @@ const ReactiontimeGame = () => {
       loop: true,
     });
 
-    this.input.on('pointerdown', handlePrematureClick, this);
+    // this.input.on('pointerdown', handlePrematureClick, this);
 
     // Start game timer
     gameTimerActiveRef.current = true;
@@ -1692,13 +1703,32 @@ const ReactiontimeGame = () => {
         return prev - 1;
       });
     }, 1000);
+    this.input.on('pointerdown', (pointer) => {
+      const clickTimestamp = Date.now();
+      
+      // Check if this is a star click
+      if (starRef.current && starRef.current.getBounds().contains(pointer.x, pointer.y)) {
+        // Valid click on star - handled by handleStarClick
+        return;
+      }
+      
+      // If no star is visible, this is actually a premature click
+      if (!starVisibleRef.current) {
+        prematureClickTimes.current.push(clickTimestamp);
+        prematureClicksRef.current++;
+      } else {
+        // If star is visible but click missed it, this could be tracked as a "miss" instead
+        // missedClickTimes.current.push(clickTimestamp); // If you want to track missed clicks
+      }
+    });
   }
 
   function update() {
     if (!gameTimerActiveRef.current) return;
 
     if (starRef.current && starRef.current.y > window.innerHeight) {
-      missedStarsRef.current.push(Date.now()); // Store timestamp when a star is missed
+      missedStarsRef.current.push(Date.now());
+      starVisibleRef.current = false; // Star is no longer visible
       resetStar();
     }
 
@@ -1757,6 +1787,7 @@ const ReactiontimeGame = () => {
     starRef.current.x = Phaser.Math.Between(50, window.innerWidth - 50);
     starRef.current.setVelocityY(speedDownRef.current);
     starAppearTimeRef.current = Date.now();
+    starVisibleRef.current = true; // Star is now visible
   }
 
   function showSpecialStar() {
