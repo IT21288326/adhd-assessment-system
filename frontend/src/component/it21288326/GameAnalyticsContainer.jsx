@@ -165,7 +165,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useLocation } from 'react-router-dom';
 import GameAnalytics from './GameAnalytics';
-import './GameAnalyticsContainer.css'; // Create this file for isolated styles
+//import './GameAnalyticsContainer.css'; // Create this file for isolated styles
 
 const GameAnalyticsContainer = () => {
   const [gameData, setGameData] = useState(null);
