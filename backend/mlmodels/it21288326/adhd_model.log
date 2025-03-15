@@ -74,3 +74,235 @@
 2025-03-14 23:31:06,206 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
 2025-03-14 23:31:06,206 - __main__ - INFO - Successfully processed prediction for game data
 2025-03-14 23:31:06,216 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 23:31:06] "POST /predict HTTP/1.1" 200 -
+2025-03-14 23:49:23,019 - __main__ - INFO - MongoDB connection established successfully
+2025-03-14 23:49:23,076 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-14 23:49:23,076 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-14 23:49:23,076 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-03-14 23:49:23,092 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-14 23:49:23,141 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-03-14 23:49:23,141 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 11:07:13,282 - __main__ - INFO - MongoDB connection established successfully
+2025-03-15 11:07:13,329 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:07:13,329 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:07:13,333 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-03-15 11:07:13,334 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-15 11:07:13,367 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.28.4.50:5000
+2025-03-15 11:07:13,368 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 11:19:03,232 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 11:19:03] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 11:19:03,232 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 11:19:03] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 11:19:03,365 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:19:03,365 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:19:03,365 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 11:19:03,381 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 11:19:03,397 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 11:19:03] "POST /predict HTTP/1.1" 200 -
+2025-03-15 11:19:03,547 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:19:03,547 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:19:03,547 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 11:19:03,547 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 11:19:03,547 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 11:19:03] "POST /predict HTTP/1.1" 200 -
+2025-03-15 11:19:04,084 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:19:04,084 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:19:04,084 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 11:19:04,084 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 11:19:04,084 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 11:19:04] "POST /predict HTTP/1.1" 200 -
+2025-03-15 11:42:04,003 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 11:42:04] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 11:42:04,246 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:42:04,247 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 11:42:04,248 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 11:42:04,249 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 11:42:04,251 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 11:42:04] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:38:39,841 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:38:39] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:38:39,846 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:38:39] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:38:39,855 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:38:39] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:38:39,898 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:38:39,898 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:38:39,905 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:38:39,933 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:38:39,933 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:38:39] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:38:40,181 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:38:40,181 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:38:40,181 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:38:40,181 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:38:40,181 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:38:40,181 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:38:40,192 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:38:40,192 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:38:40,195 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:38:40] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:38:40,197 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:38:40] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:53:13,113 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:53:13] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:53:13,254 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:53:13,254 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:53:13,254 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:53:13,261 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:53:13,262 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:53:13] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:56:17,564 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:56:17] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:56:17,572 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:56:17] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:56:17,823 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:56:17,824 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:56:17,825 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:56:17,826 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:56:17,827 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:56:17] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:56:17,886 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:56:17,887 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:56:17,888 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:56:17,889 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:56:17,890 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:56:17] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:56:19,410 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:56:19,410 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:56:19,410 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:56:19,410 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:56:19,410 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:56:19] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:57:39,964 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:57:39] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:57:40,218 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:57:40,219 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:57:40,219 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:57:40,220 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:57:40,221 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:57:40] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:58:38,969 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:58:38] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 12:58:39,238 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:58:39,238 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:58:39,239 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:58:39,240 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:58:39,241 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:58:39] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:58:39,647 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:58:39,647 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:58:39,649 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:58:39,649 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:58:39,651 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:58:39] "POST /predict HTTP/1.1" 200 -
+2025-03-15 12:58:41,939 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:58:41,939 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 12:58:41,939 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 12:58:41,939 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 12:58:41,939 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 12:58:41] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:02:15,711 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:15] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:02:15,720 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:15] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:02:15,866 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:15] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:02:15,963 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:15,964 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:15,965 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:02:15,966 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:02:15,968 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:15] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:02:16,048 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:16,049 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:16,050 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:02:16,054 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:02:16,054 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:16,055 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:16] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:02:16,056 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:16,057 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:02:16,059 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:02:16,063 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:16] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:02:57,889 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:57] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:02:57,901 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:57] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:02:57,974 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:57] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:02:58,153 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:58,153 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:58,153 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:02:58,153 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:02:58,153 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:58] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:02:58,207 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:58,209 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:58,210 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:02:58,210 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:02:58,212 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:58] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:02:58,218 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:58,219 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:02:58,221 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:02:58,222 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:02:58,223 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:02:58] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:03:01,069 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:03:01,069 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:03:01,069 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:03:01,069 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:03:01,069 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:03:01] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:03:01,069 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:03:01,069 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:03:01,069 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:03:01,069 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:03:01,069 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:03:01] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:03:01,323 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:03:01,323 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:03:01,323 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:03:01,323 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:03:01,323 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:03:01] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:05:46,254 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:46] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:05:46,257 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:46] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:05:46,300 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:46] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:05:46,413 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:46,413 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:46,413 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:05:46,426 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:05:46,426 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:46] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:05:46,567 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:46,567 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:46,567 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:05:46,567 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:05:46,567 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:46,567 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:46] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:05:46,567 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:46,578 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:05:46,580 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:05:46,580 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:46] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:05:56,696 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:56] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:05:56,697 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:56] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:05:56,942 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:56,942 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:56,944 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:05:56,944 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:05:56,946 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:56] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:05:57,012 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:57,012 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:57,012 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:57,012 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:05:57,012 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:05:57,012 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:05:57,012 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:05:57,012 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:05:57,012 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:57] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:05:57,012 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:05:57] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:06:01,972 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:06:01] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:06:02,281 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:06:02] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:06:02,286 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:06:02,290 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:06:02,292 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:06:02,294 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:06:02,295 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:06:02] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:06:02,596 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:06:02,596 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:06:02,596 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:06:02,596 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:06:02,601 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:06:02] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:06:02,610 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:06:02,611 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:06:02,611 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:06:02,612 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:06:02,613 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:06:02] "POST /predict HTTP/1.1" 200 -
+2025-03-15 13:25:10,043 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:25:10] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 13:25:10,259 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:25:10,259 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 13:25:10,263 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 13:25:10,263 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 13:25:10,263 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 13:25:10] "POST /predict HTTP/1.1" 200 -
+2025-03-15 15:28:55,819 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 15:28:55] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 15:28:55,824 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 15:28:55] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-15 15:28:56,059 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 15:28:56,062 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 15:28:56,063 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 15:28:56,064 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 15:28:56,064 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 15:28:56] "POST /predict HTTP/1.1" 200 -
+2025-03-15 15:28:56,131 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 15:28:56,131 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 15:28:56,133 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 15:28:56,133 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 15:28:56,134 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 15:28:56] "POST /predict HTTP/1.1" 200 -
+2025-03-15 15:28:56,503 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 15:28:56,504 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-15 15:28:56,506 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-03-15 15:28:56,506 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-15 15:28:56,506 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 15:28:56] "POST /predict HTTP/1.1" 200 -

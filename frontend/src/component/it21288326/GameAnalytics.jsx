@@ -2426,6 +2426,836 @@
 
 // // export default GameAnalytics;
            
+// import React, { useState, useEffect } from 'react';
+// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+// import { Progress } from './ui/progress';
+// import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, ChevronDown, ChevronUp, Info, Award, TrendingUp } from 'lucide-react';
+// import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
+// import axios from 'axios';
+// //import { Award } from 'lucide-react';
+
+// const API_ENDPOINT = 'http://localhost:5000/predict';
+
+
+
+
+// // Move these variable definitions from ADHDAssessmentCard to the GameAnalytics component
+// // Add these at the beginning of the GameAnalytics component function
+// const GameAnalytics = ({ gameData }) => {
+//   const [analysisResults, setAnalysisResults] = useState({
+//     inattention: { score: 0, level: '', insights: [] },
+//     impulsivity: { score: 0, level: '', insights: [] },
+//     combined: { score: 0, level: '', insights: [] }
+//   });
+//   const [expandedInsight, setExpandedInsight] = useState(null);
+//   const [showTips, setShowTips] = useState(false);
+//   const [showMetricInfo, setShowMetricInfo] = useState(null);
+//   const [historicalData, setHistoricalData] = useState([]);
+//   const [adhdType, setADHDType] = useState(null);
+//   const [modelConfidence, setModelConfidence] = useState(null);
+//   const [modelInsights, setModelInsights] = useState(null);
+//   const [scoreLevels, setScoreLevels] = useState({
+//     inattention: '',
+//     impulsivity: ''
+//   });
+
+//   // Add these missing variable definitions - moved from ADHDAssessmentCard
+//   // Emoji mapping for various elements
+//   const typeEmojis = {
+//     'Primarily Inattentive': '🔍',
+//     'Primarily Hyperactive-Impulsive': '⚡',
+//     'Combined Type': '🔄',
+//     'Minimal Symptoms': '✅'
+//   };
+
+//   // Default emoji if type not found
+//   const defaultEmoji = '🧩';
+  
+//   // Level indicators with emojis
+//   const getLevelEmoji = (level) => {
+//     switch(level) {
+//       case 'High': return '🔴';
+//       case 'Above Average': return '🟠';
+//       case 'Average': return '🟡';
+//       case 'Below Average': return '🟢';
+//       case 'Low': return '🔵';
+//       default: return '⚪';
+//     }
+//   };
+  
+//   // Progress bar colors
+//   const getProgressColors = (level) => {
+//     switch(level) {
+//       case 'High': return 'bg-red-500';
+//       case 'Above Average': return 'bg-orange-400';
+//       case 'Average': return 'bg-yellow-400';
+//       case 'Below Average': return 'bg-green-400';
+//       case 'Low': return 'bg-blue-400';
+//       default: return 'bg-gray-300';
+//     }
+//   };
+
+//   // Get progress width based on level
+//   const getProgressWidth = (level) => {
+//     switch(level) {
+//       case 'High': return 'w-full';
+//       case 'Above Average': return 'w-4/5';
+//       case 'Average': return 'w-3/5';
+//       case 'Below Average': return 'w-2/5';
+//       case 'Low': return 'w-1/5';
+//       default: return 'w-0';
+//     }
+//   };
+
+
+//   // Rest of your component code...
+//   // Enhanced function to fetch predictions from the ML model
+// const fetchPredictionFromModel = async (gameData) => {
+//   try {
+//     // Format the data according to what your backend expects
+//     const modelInput = {
+//       reactionTimes: gameData.reactionTimes || [],
+//       correctStreak: gameData.correctStreak || 0,
+//       prematureClicks: gameData.prematureClicks || 0,
+//       missedStars: gameData.missedStars || 0,
+//       score: gameData.score || 0,
+//       // Include maxMissedStreak if available
+//       maxMissedStreak: gameData.maxMissedStreak || 0,
+//       // Include missedStarStreaks if available for more accurate predictions
+//       missedStarStreaks: gameData.missedStarStreaks || []
+//     };
+    
+//     console.log('Sending data to ML model:', modelInput);
+//     const response = await axios.post(API_ENDPOINT, modelInput);
+//     console.log('Received prediction from ML model:', response.data);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Error fetching prediction from ML model:', error);
+//     return null;
+//   }
+// };
+
+//   // useEffect(() => {
+//   //   if (gameData) {
+//   //     if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
+//   //       const mean = gameData.averageReactionTime;
+//   //       const variance = gameData.reactionTimes.reduce((sum, time) => 
+//   //         sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
+//   //       gameData.reactionTimeVariability = Math.sqrt(variance);
+//   //     }
+//   //     const results = analyzeGameData(gameData);
+//   //     setAnalysisResults(results);
+      
+//   //     // Generate fake historical data for demonstration
+//   //     generateHistoricalData();
+//   //   }
+//   // }, [gameData]);
+//   // Enhanced useEffect for your GameAnalytics component
+// useEffect(() => {
+//   if (gameData) {
+//     // Calculate derived metrics that the ML model expects
+//     const processedData = { ...gameData };
+    
+//     // Calculate variability if not already calculated
+//     if (processedData.reactionTimes && processedData.reactionTimes.length > 0) {
+//       const mean = processedData.averageReactionTime || 
+//         processedData.reactionTimes.reduce((sum, time) => sum + time, 0) / processedData.reactionTimes.length;
+//       processedData.averageReactionTime = mean;
+      
+//       const variance = processedData.reactionTimes.reduce((sum, time) => 
+//         sum + Math.pow(time - mean, 2), 0) / processedData.reactionTimes.length;
+//       processedData.reactionTimeVariability = Math.sqrt(variance);
+//     }
+    
+//     // Try to get prediction from ML model
+//     fetchPredictionFromModel(processedData)
+//       .then(prediction => {
+//         if (prediction && !prediction.error) {
+//           // Set ADHD type and confidence from the model response
+//           setADHDType(prediction.adhd_type);
+          
+//           // Find the highest probability for confidence
+//           const highestProbability = Math.max(...Object.values(prediction.probabilities));
+//           setModelConfidence(highestProbability);
+          
+//           // Store insights from the model for display
+//           setModelInsights(prediction.insights);
+          
+//           // Use detailed scores from the model response
+//           setAnalysisResults({
+//             inattention: {
+//               score: prediction.scores.inattention.score,
+//               level: prediction.scores.inattention.level,
+//               insights: prediction.insights.inattention || []
+//             },
+//             impulsivity: {
+//               score: prediction.scores.impulsivity.score,
+//               level: prediction.scores.impulsivity.level,
+//               insights: prediction.insights.impulsivity || []
+//             },
+//             combined: {
+//               score: (prediction.scores.inattention.score + prediction.scores.impulsivity.score) / 2,
+//               level: getScoreLevel((prediction.scores.inattention.score + prediction.scores.impulsivity.score) / 2),
+//               insights: prediction.insights.combined || []
+//             }
+//           });
+          
+//           // Store score levels for display
+//           setScoreLevels({
+//             inattention: prediction.scores.inattention.level,
+//             impulsivity: prediction.scores.impulsivity.level
+//           });
+//         } else {
+//           console.warn('ML model prediction failed or returned an error, falling back to rule-based analysis');
+//           // Fall back to rule-based analysis if ML prediction fails
+//           const results = analyzeGameData(processedData);
+//           setAnalysisResults(results);
+          
+//           // Clear model-specific data
+//           setADHDType(null);
+//           setModelConfidence(null);
+//           setModelInsights(null);
+//         }
+        
+//         // Generate fake historical data for demonstration (if needed)
+//         generateHistoricalData();
+//       });
+//   }
+// }, [gameData]);
+
+
+//   const generateHistoricalData = () => {
+//     // Mock historical data for the visualization
+//     const fakeHistory = [];
+//     const today = new Date();
+//     for (let i = 6; i >= 0; i--) {
+//       const date = new Date();
+//       date.setDate(today.getDate() - i);
+//       fakeHistory.push({
+//         date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+//         attentionScore: Math.floor(Math.random() * 40) + 30,
+//         impulsivityScore: Math.floor(Math.random() * 40) + 30,
+//         score: Math.floor(Math.random() * 150) + 150
+//       });
+//     }
+//     // Add current data point
+//     fakeHistory.push({
+//       date: 'Today',
+//       attentionScore: analysisResults.inattention.score,
+//       impulsivityScore: analysisResults.impulsivity.score,
+//       score: gameData.score
+//     });
+//     setHistoricalData(fakeHistory);
+//   };
+
+//   // Analyze game data to calculate metrics
+//   const analyzeGameData = (data) => {
+//     // 1. Inattention Analysis
+//     const inattentionScore = calculateInattentionScore(data);
+//     const inattentionLevel = getScoreLevel(inattentionScore);
+//     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
+
+//     // 2. Impulsivity Analysis
+//     const impulsivityScore = calculateImpulsivityScore(data);
+//     const impulsivityLevel = getScoreLevel(impulsivityScore);
+//     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
+
+//     // 3. Combined Analysis
+//     const combinedScore = (inattentionScore + impulsivityScore) / 2;
+//     const combinedLevel = getScoreLevel(combinedScore);
+//     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
+
+//     // Enhanced Card UI with more comprehensive details from the ML model
+
+//     return {
+//       inattention: {
+//         score: inattentionScore,
+//         level: inattentionLevel,
+//         insights: inattentionInsights
+//       },
+//       impulsivity: {
+//         score: impulsivityScore,
+//         level: impulsivityLevel,
+//         insights: impulsivityInsights
+//       },
+//       combined: {
+//         score: combinedScore,
+//         level: combinedLevel,
+//         insights: combinedInsights
+//       }
+//     };
+//   };
+
+//   // Calculate inattention score from 0-100 (higher = more inattentive)
+//   const calculateInattentionScore = (data) => {
+//     // Factors indicating inattention:
+//     // 1. Missed stars
+//     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
+    
+//     // 2. Long reaction times
+//     const avgReactionTime = data.averageReactionTime;
+//     let reactionTimeFactor = 0;
+//     if (avgReactionTime > 1000) reactionTimeFactor = 30;
+//     else if (avgReactionTime > 800) reactionTimeFactor = 20;
+//     else if (avgReactionTime > 600) reactionTimeFactor = 10;
+    
+//     // 3. Missed star streaks (consecutive misses)
+//     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
+//     const streakFactor = maxMissedStreak * 10;
+    
+//     // Calculate final score (cap at 100)
+//     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
+//   };
+
+//   // Calculate impulsivity score from 0-100 (higher = more impulsive)
+//   const calculateImpulsivityScore = (data) => {
+//     // Factors indicating impulsivity:
+//     // 1. Premature clicks
+//     const prematureClicksRatio = data.prematureClicks / 
+//       (data.reactionTimes.length + data.prematureClicks) * 100;
+//     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
+    
+//     // 2. Very fast reaction times (potentially impulsive responses)
+//     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+//     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
+//     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
+    
+//     // 3. Variability in reaction times (inconsistent behavior)
+//     // Calculate standard deviation if we have it
+//     let variabilityFactor = 0;
+//     if (data.reactionTimeVariability) {
+//       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
+//       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
+//     }
+    
+//     // Calculate final score (cap at 100)
+//     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
+//   };
+
+//   // Generate score level based on numerical score
+//   const getScoreLevel = (score) => {
+//     if (score < 20) return 'Low';
+//     if (score < 40) return 'Below Average';
+//     if (score < 60) return 'Average';
+//     if (score < 80) return 'Above Average';
+//     return 'High';
+//   };
+
+//   // Generate insights for inattention
+//   const generateInattentionInsights = (data, score) => {
+//     const insights = [];
+    
+//     if (data.missedStars > 5) {
+//       insights.push("Missed several stars, suggesting potential attention lapses.");
+//     }
+    
+//     if (data.averageReactionTime > 1000) {
+//       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
+//     }
+    
+//     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
+//       insights.push("Consecutive missed stars suggest periods of significant inattention.");
+//     }
+    
+//     if (score < 30) {
+//       insights.push("Overall attention levels appear strong.");
+//     }
+    
+//     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
+//   };
+
+//   // Generate insights for impulsivity
+//   const generateImpulsivityInsights = (data, score) => {
+//     const insights = [];
+    
+//     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
+//       insights.push("High number of premature clicks suggests impulsive responding.");
+//     }
+    
+//     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+//     if (fastResponses > data.reactionTimes.length * 0.2) {
+//       insights.push("Many unusually fast responses may indicate impulsive decision making.");
+//     }
+    
+//     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
+//       insights.push("High variability in response times suggests inconsistent attention control.");
+//     }
+    
+//     if (score < 30) {
+//       insights.push("Shows good impulse control overall.");
+//     }
+    
+//     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
+//   };
+
+//   // Generate combined insights
+//   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
+//     const insights = [];
+    
+//     if (inattentionScore > 60 && impulsivityScore > 60) {
+//       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
+//     } else if (inattentionScore > 60) {
+//       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
+//     } else if (impulsivityScore > 60) {
+//       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
+//     }
+    
+//     if (data.score > 200) {
+//       insights.push("Despite challenges, achieved a good game score, showing persistence.");
+//     }
+    
+//     if (data.correctStreak > 15) {
+//       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
+//     }
+    
+//     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
+//   };
+
+//   // Get color based on level
+//   const getLevelColor = (level) => {
+//     switch (level) {
+//       case 'Low': return 'text-green-500';
+//       case 'Below Average': return 'text-blue-500';
+//       case 'Average': return 'text-yellow-500';
+//       case 'Above Average': return 'text-orange-500';
+//       case 'High': return 'text-red-500';
+//       default: return 'text-gray-500';
+//     }
+//   };
+
+//   // Get progress bar color based on score
+//   const getProgressColor = (score) => {
+//     if (score < 30) return 'bg-green-500';
+//     if (score < 50) return 'bg-blue-500';
+//     if (score < 70) return 'bg-yellow-500';
+//     if (score < 85) return 'bg-orange-500';
+//     return 'bg-red-500';
+//   };
+
+//   // Get the color for the trending indicator
+//   const getTrendColor = (current, previous) => {
+//     if (current < previous) return 'text-green-500';
+//     if (current > previous) return 'text-red-500';
+//     return 'text-gray-500';
+//   };
+
+//   // Generate reaction time distribution data for chart
+//   const getReactionTimeDistribution = () => {
+//     if (!gameData || !gameData.reactionTimes || gameData.reactionTimes.length === 0) {
+//       return [];
+//     }
+
+//     // Create bins for reaction times
+//     const bins = [
+//       { name: '<400ms', count: 0 }, 
+//       { name: '400-600ms', count: 0 },
+//       { name: '600-800ms', count: 0 },
+//       { name: '800-1000ms', count: 0 },
+//       { name: '>1000ms', count: 0 }
+//     ];
+
+//     gameData.reactionTimes.forEach(time => {
+//       if (time < 400) bins[0].count++;
+//       else if (time < 600) bins[1].count++;
+//       else if (time < 800) bins[2].count++;
+//       else if (time < 1000) bins[3].count++;
+//       else bins[4].count++;
+//     });
+
+//     return bins;
+//   };
+
+//   // Prepare radar chart data
+//   const getRadarData = () => {
+//     return [
+//       {
+//         subject: 'Attention',
+//         score: 100 - analysisResults.inattention.score,
+//         fullMark: 100
+//       },
+//       {
+//         subject: 'Response Control',
+//         score: 100 - analysisResults.impulsivity.score,
+//         fullMark: 100
+//       },
+//       {
+//         subject: 'Reaction Time',
+//         score: Math.max(0, 100 - (gameData.averageReactionTime / 10)),
+//         fullMark: 100
+//       },
+//       {
+//         subject: 'Consistency',
+//         score: Math.max(0, 100 - (gameData.reactionTimeVariability / 4)),
+//         fullMark: 100
+//       },
+//       {
+//         subject: 'Streak',
+//         score: Math.min(100, gameData.correctStreak * 5),
+//         fullMark: 100
+//       }
+//     ];
+//   };
+
+//   // Get metric descriptions for tooltips
+//   const getMetricInfo = (metric) => {
+//     const info = {
+//       attention: "Measures ability to sustain focus and respond to targets. Lower scores indicate better attention control.",
+//       impulsivity: "Measures ability to wait for appropriate cues. Lower scores indicate better impulse control.",
+//       reactionTime: "Average time taken to respond to targets. Lower is faster.",
+//       variability: "Consistency of response times. Lower values indicate more consistent responses.",
+//       missedStars: "Number of targets not clicked when they should have been.",
+//       prematureClicks: "Number of clicks made when no target was present.",
+//       correctStreak: "Longest sequence of correctly captured targets."
+//     };
+//     return info[metric] || "No additional information available.";
+//   };
+
+  
+
+//   if (!gameData) {
+//     return (
+//       <div className="p-6 bg-gray-50 rounded-lg flex justify-center items-center h-64">
+//         <div className="text-center">
+//           <AlertCircle className="mx-auto text-gray-400 mb-4" size={48} />
+//           <h2 className="text-xl font-semibold text-gray-600">No Game Data Available</h2>
+//           <p className="text-gray-500 mt-2">Complete a game session to view your analytics</p>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="container mx-auto p-4">
+//       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 relative overflow-hidden">
+//         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -mt-12 -mr-12 opacity-50"></div>
+//         <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-200 rounded-full -mb-8 -ml-8 opacity-50"></div>
+//         <h1 className="text-3xl font-bold mb-2 text-gray-800 relative z-10">Game Performance Analytics</h1>
+//         <p className="text-gray-600 relative z-10">Detailed analysis of your cognitive performance patterns</p>
+//         <button 
+//           onClick={() => setShowTips(!showTips)} 
+//           className="absolute top-6 right-6 bg-white p-2 rounded-full shadow-md hover:bg-blue-50 transition-colors z-10"
+//         >
+//           <Info size={20} className="text-blue-500" />
+//         </button>
+        
+//         {showTips && (
+//           <div className="absolute top-16 right-6 bg-white p-4 rounded-lg shadow-lg z-20 w-64 text-sm">
+//             <h3 className="font-bold mb-2">Understanding Scores</h3>
+//             <p className="mb-3">Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
+//             <p className="mb-2">Score ranges:</p>
+//             <div className="space-y-1">
+//               <div className="flex items-center"><div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div> 0-30: Low (Good)</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div> 30-50: Below Average</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div> 50-70: Average</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-orange-500 rounded-full mr-2"></div> 70-85: Above Average</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div> 85-100: High (Challenge)</div>
+//             </div>
+//             <button 
+//               onClick={() => setShowTips(false)}
+//               className="mt-3 text-blue-500 hover:text-blue-700 text-xs font-semibold"
+//             >
+//               Close
+//             </button>
+//           </div>
+          
+//         )}
+        
+//       </div>
+
+      
+
+      
+//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+//           <CardHeader className="pb-2 bg-gradient-to-r from-blue-50 to-blue-100">
+//             <CardTitle className="flex items-center">
+//               <Brain className="mr-2 text-blue-600" size={20} />
+//               <span>Attention Score</span>
+//               <button 
+//                 className="ml-auto"
+//                 onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
+//               >
+//                 <Info size={16} className="text-blue-400 hover:text-blue-600" />
+//               </button>
+//             </CardTitle>
+//             {showMetricInfo === 'attention' && (
+//               <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
+//                 {getMetricInfo('attention')}
+//               </div>
+//             )}
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="flex justify-between items-center mb-2">
+//               <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
+//               <div className="flex items-center">
+//                 <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+//                   {analysisResults.inattention.level}
+//                 </span>
+//                 <TrendingUp 
+//                   size={16} 
+//                   className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
+//                 />
+//               </div>
+//             </div>
+//             <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
+//           </CardContent>
+//         </Card>
+        
+//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+//           <CardHeader className="pb-2 bg-gradient-to-r from-yellow-50 to-yellow-100">
+//             <CardTitle className="flex items-center">
+//               <Zap className="mr-2 text-yellow-600" size={20} />
+//               <span>Impulsivity Score</span>
+//               <button 
+//                 className="ml-auto"
+//                 onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
+//               >
+//                 <Info size={16} className="text-yellow-400 hover:text-yellow-600" />
+//               </button>
+//             </CardTitle>
+//             {showMetricInfo === 'impulsivity' && (
+//               <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
+//                 {getMetricInfo('impulsivity')}
+//               </div>
+//             )}
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="flex justify-between items-center mb-2">
+//               <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
+//               <div className="flex items-center">
+//                 <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+//                   {analysisResults.impulsivity.level}
+//                 </span>
+//                 <TrendingUp 
+//                   size={16} 
+//                   className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
+//                 />
+//               </div>
+//             </div>
+//             <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
+//           </CardContent>
+//         </Card>
+        
+//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+//           <CardHeader className="pb-2 bg-gradient-to-r from-purple-50 to-purple-100">
+//             <CardTitle className="flex items-center">
+//               <Activity className="mr-2 text-purple-600" size={20} />
+//               <span>Combined Score</span>
+//             </CardTitle>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="flex justify-between items-center mb-2">
+//               <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
+//               <div className="flex items-center">
+//                 <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+//                   {analysisResults.combined.level}
+//                 </span>
+//                 <TrendingUp 
+//                   size={16} 
+//                   className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
+//                 />
+//               </div>
+//             </div>
+//             <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
+//           </CardContent>
+//         </Card>
+//       </div>
+      
+//       <div className="mb-8">
+//         <Card className="overflow-hidden shadow-md">
+//           <CardHeader className="pb-2">
+//             <CardTitle>Performance Trend</CardTitle>
+//             <CardDescription>Your cognitive metrics over time</CardDescription>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="h-64">
+//               <ResponsiveContainer width="100%" height="100%">
+//                 <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+//                   <XAxis dataKey="date" />
+//                   <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+//                   <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+//                   <Tooltip />
+//                   <Legend />
+//                   <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
+//                   <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
+//                   <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
+//                 </LineChart>
+//               </ResponsiveContainer>
+//             </div>
+//           </CardContent>
+//         </Card>
+//       </div>
+      
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+//         <Card className="overflow-hidden shadow-md">
+//           <CardHeader className="pb-2">
+//             <CardTitle>Reaction Time Distribution</CardTitle>
+//             <CardDescription>Frequency of response times by category</CardDescription>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="h-64">
+//               <ResponsiveContainer width="100%" height="100%">
+//                 <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+//                   <XAxis dataKey="name" />
+//                   <YAxis />
+//                   <Tooltip />
+//                   <Bar dataKey="count" name="Responses" fill="#8884d8" />
+//                 </BarChart>
+//               </ResponsiveContainer>
+//             </div>
+//           </CardContent>
+//         </Card>
+        
+//         <Card className="overflow-hidden shadow-md">
+//           <CardHeader className="pb-2">
+//             <CardTitle>Cognitive Profile</CardTitle>
+//             <CardDescription>Performance across different cognitive domains</CardDescription>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="h-64">
+//               <ResponsiveContainer width="100%" height="100%">
+//                 <RadarChart outerRadius={90} data={getRadarData()}>
+//                   <PolarGrid />
+//                   <PolarAngleAxis dataKey="subject" />
+//                   <PolarRadiusAxis angle={30} domain={[0, 100]} />
+//                   <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+//                   <Legend />
+//                 </RadarChart>
+//               </ResponsiveContainer>
+//             </div>
+//           </CardContent>
+//         </Card>
+//       </div>
+//       <Card className="overflow-hidden shadow hover:shadow-lg transition-all duration-300 border-2 border-green-200">
+//       <CardHeader className="pb-2 bg-gradient-to-r from-green-100 to-blue-100">
+//         <CardTitle className="flex items-center">
+//           <Award className="mr-2 text-green-600" size={20} />
+//           <span>ADHD Brain Explorer 🧠</span>
+//         </CardTitle>
+//       </CardHeader>
+//       <CardContent className="pt-4">
+//         {adhdType ? (
+//           <>
+//             <div className="text-center mb-4 p-2 bg-green-50 rounded-lg">
+//               <span className="text-2xl mr-2">
+//                 {typeEmojis[adhdType] || defaultEmoji}
+//               </span>
+//               <span className="text-xl font-bold">
+//                 {adhdType}
+//               </span>
+//             </div>
+            
+//             <div className="bg-blue-50 p-3 rounded-lg mb-4">
+//               <div className="flex justify-between items-center">
+//                 <span className="text-sm">Brain-o-meter: 🔬</span>
+//                 <div className="flex items-center">
+//                   <div className="w-32 bg-gray-200 rounded-full h-4 mr-2">
+//                     <div 
+//                       className="bg-blue-500 h-4 rounded-full transition-all duration-500" 
+//                       style={{ width: `${modelConfidence * 100}%` }}
+//                     ></div>
+//                   </div>
+//                   <span className="text-sm font-bold">{(modelConfidence * 100).toFixed(1)}%</span>
+//                 </div>
+//               </div>
+//             </div>
+            
+//             {/* Assessment levels with interactive elements */}
+//             <div className="mt-3 border-t border-dashed border-purple-200 pt-3">
+//               <h4 className="font-medium text-sm mb-3 flex items-center">
+//                 <span className="mr-2">🔎</span> 
+//                 Your Brain Powers:
+//               </h4>
+              
+//               <div className="space-y-3">
+//                 <div className="bg-purple-50 p-2 rounded-lg">
+//                   <div className="flex justify-between items-center mb-1">
+//                     <span className="text-sm">Focus Power: 👁️</span>
+//                     <span className="text-sm font-medium flex items-center">
+//                       {getLevelEmoji(scoreLevels?.inattention)}
+//                       <span className="ml-1">{scoreLevels?.inattention || 'N/A'}</span>
+//                     </span>
+//                   </div>
+//                   <div className="w-full bg-gray-200 rounded-full h-3">
+//                     <div 
+//                       className={`${getProgressColors(scoreLevels?.inattention)} ${getProgressWidth(scoreLevels?.inattention)} h-3 rounded-full transition-all duration-500`}
+//                     ></div>
+//                   </div>
+//                 </div>
+                
+//                 <div className="bg-yellow-50 p-2 rounded-lg">
+//                   <div className="flex justify-between items-center mb-1">
+//                     <span className="text-sm">Action Power: 🚀</span>
+//                     <span className="text-sm font-medium flex items-center">
+//                       {getLevelEmoji(scoreLevels?.impulsivity)}
+//                       <span className="ml-1">{scoreLevels?.impulsivity || 'N/A'}</span>
+//                     </span>
+//                   </div>
+//                   <div className="w-full bg-gray-200 rounded-full h-3">
+//                     <div 
+//                       className={`${getProgressColors(scoreLevels?.impulsivity)} ${getProgressWidth(scoreLevels?.impulsivity)} h-3 rounded-full transition-all duration-500`}
+//                     ></div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+            
+//             {/* AI Insights with emojis */}
+//             {modelInsights && (
+//               <div className="mt-4 border-t border-dashed border-blue-200 pt-3">
+//                 <h4 className="font-medium text-sm mb-2 flex items-center">
+//                   <span className="mr-2">✨</span>
+//                   Brain Discoveries:
+//                 </h4>
+//                 <div className="text-sm text-gray-700 bg-blue-50 p-3 rounded-lg">
+//                   {modelInsights.combined && modelInsights.combined.length > 0 && (
+//                     <p className="mb-2 flex">
+//                       <span className="mr-2">🧠</span>
+//                       <span>{modelInsights.combined[0]}</span>
+//                     </p>
+//                   )}
+//                   {modelInsights.inattention && modelInsights.inattention.length > 0 && (
+//                     <p className="mb-2 flex">
+//                       <span className="mr-2">👁️</span>
+//                       <span>{modelInsights.inattention[0]}</span>
+//                     </p>
+//                   )}
+//                   {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
+//                     <p className="flex">
+//                       <span className="mr-2">🚀</span>
+//                       <span>{modelInsights.impulsivity[0]}</span>
+//                     </p>
+//                   )}
+//                 </div>
+//               </div>
+//             )}
+            
+//             <div className="mt-4 p-2 bg-purple-50 rounded-lg text-xs text-center">
+//               <p>✨ This is just a game-based brain map, not a doctor's diagnosis ✨</p>
+//             </div>
+//           </>
+//         ) : (
+//           <div className="text-center p-6">
+//             <div className="text-4xl mb-3">🔮</div>
+//             <p className="text-gray-500">Your brain map is still loading...</p>
+//             <p className="text-gray-400 text-xs mt-2">Play more games to help us understand your superpowers!</p>
+//           </div>
+//         )}
+//       </CardContent>
+//     </Card>
+
+      
+      
+//       </div>
+    
+//   );
+// };
+
+// export default GameAnalytics;
+    
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
@@ -2925,76 +3755,611 @@ useEffect(() => {
     );
   }
 
-  return (
-    <div className="container mx-auto p-4">
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -mt-12 -mr-12 opacity-50"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-200 rounded-full -mb-8 -ml-8 opacity-50"></div>
-        <h1 className="text-3xl font-bold mb-2 text-gray-800 relative z-10">Game Performance Analytics</h1>
-        <p className="text-gray-600 relative z-10">Detailed analysis of your cognitive performance patterns</p>
-        <button 
-          onClick={() => setShowTips(!showTips)} 
-          className="absolute top-6 right-6 bg-white p-2 rounded-full shadow-md hover:bg-blue-50 transition-colors z-10"
-        >
-          <Info size={20} className="text-blue-500" />
-        </button>
+//   return (
+//     <div className="container mx-auto p-4">
+//       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 relative overflow-hidden">
+//         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -mt-12 -mr-12 opacity-50"></div>
+//         <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-200 rounded-full -mb-8 -ml-8 opacity-50"></div>
+//         <h1 className="text-3xl font-bold mb-2 text-gray-800 relative z-10">Game Performance Analytics</h1>
+//         <p className="text-gray-600 relative z-10">Detailed analysis of your cognitive performance patterns</p>
+//         <button 
+//           onClick={() => setShowTips(!showTips)} 
+//           className="absolute top-6 right-6 bg-white p-2 rounded-full shadow-md hover:bg-blue-50 transition-colors z-10"
+//         >
+//           <Info size={20} className="text-blue-500" />
+//         </button>
         
-        {showTips && (
-          <div className="absolute top-16 right-6 bg-white p-4 rounded-lg shadow-lg z-20 w-64 text-sm">
-            <h3 className="font-bold mb-2">Understanding Scores</h3>
-            <p className="mb-3">Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
-            <p className="mb-2">Score ranges:</p>
-            <div className="space-y-1">
-              <div className="flex items-center"><div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div> 0-30: Low (Good)</div>
-              <div className="flex items-center"><div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div> 30-50: Below Average</div>
-              <div className="flex items-center"><div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div> 50-70: Average</div>
-              <div className="flex items-center"><div className="w-3 h-3 bg-orange-500 rounded-full mr-2"></div> 70-85: Above Average</div>
-              <div className="flex items-center"><div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div> 85-100: High (Challenge)</div>
-            </div>
-            <button 
-              onClick={() => setShowTips(false)}
-              className="mt-3 text-blue-500 hover:text-blue-700 text-xs font-semibold"
-            >
-              Close
-            </button>
-          </div>
+//         {showTips && (
+//           <div className="absolute top-16 right-6 bg-white p-4 rounded-lg shadow-lg z-20 w-64 text-sm">
+//             <h3 className="font-bold mb-2">Understanding Scores</h3>
+//             <p className="mb-3">Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
+//             <p className="mb-2">Score ranges:</p>
+//             <div className="space-y-1">
+//               <div className="flex items-center"><div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div> 0-30: Low (Good)</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div> 30-50: Below Average</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div> 50-70: Average</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-orange-500 rounded-full mr-2"></div> 70-85: Above Average</div>
+//               <div className="flex items-center"><div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div> 85-100: High (Challenge)</div>
+//             </div>
+//             <button 
+//               onClick={() => setShowTips(false)}
+//               className="mt-3 text-blue-500 hover:text-blue-700 text-xs font-semibold"
+//             >
+//               Close
+//             </button>
+//           </div>
           
-        )}
+//         )}
         
+//       </div>
+
+      
+
+      
+//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+//           <CardHeader className="pb-2 bg-gradient-to-r from-blue-50 to-blue-100">
+//             <CardTitle className="flex items-center">
+//               <Brain className="mr-2 text-blue-600" size={20} />
+//               <span>Attention Score</span>
+//               <button 
+//                 className="ml-auto"
+//                 onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
+//               >
+//                 <Info size={16} className="text-blue-400 hover:text-blue-600" />
+//               </button>
+//             </CardTitle>
+//             {showMetricInfo === 'attention' && (
+//               <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
+//                 {getMetricInfo('attention')}
+//               </div>
+//             )}
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="flex justify-between items-center mb-2">
+//               <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
+//               <div className="flex items-center">
+//                 <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+//                   {analysisResults.inattention.level}
+//                 </span>
+//                 <TrendingUp 
+//                   size={16} 
+//                   className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
+//                 />
+//               </div>
+//             </div>
+//             <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
+//           </CardContent>
+//         </Card>
+        
+//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+//           <CardHeader className="pb-2 bg-gradient-to-r from-yellow-50 to-yellow-100">
+//             <CardTitle className="flex items-center">
+//               <Zap className="mr-2 text-yellow-600" size={20} />
+//               <span>Impulsivity Score</span>
+//               <button 
+//                 className="ml-auto"
+//                 onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
+//               >
+//                 <Info size={16} className="text-yellow-400 hover:text-yellow-600" />
+//               </button>
+//             </CardTitle>
+//             {showMetricInfo === 'impulsivity' && (
+//               <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
+//                 {getMetricInfo('impulsivity')}
+//               </div>
+//             )}
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="flex justify-between items-center mb-2">
+//               <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
+//               <div className="flex items-center">
+//                 <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+//                   {analysisResults.impulsivity.level}
+//                 </span>
+//                 <TrendingUp 
+//                   size={16} 
+//                   className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
+//                 />
+//               </div>
+//             </div>
+//             <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
+//           </CardContent>
+//         </Card>
+        
+//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+//           <CardHeader className="pb-2 bg-gradient-to-r from-purple-50 to-purple-100">
+//             <CardTitle className="flex items-center">
+//               <Activity className="mr-2 text-purple-600" size={20} />
+//               <span>Combined Score</span>
+//             </CardTitle>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="flex justify-between items-center mb-2">
+//               <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
+//               <div className="flex items-center">
+//                 <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+//                   {analysisResults.combined.level}
+//                 </span>
+//                 <TrendingUp 
+//                   size={16} 
+//                   className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
+//                 />
+//               </div>
+//             </div>
+//             <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
+//           </CardContent>
+//         </Card>
+//       </div>
+      
+//       <div className="mb-8">
+//         <Card className="overflow-hidden shadow-md">
+//           <CardHeader className="pb-2">
+//             <CardTitle>Performance Trend</CardTitle>
+//             <CardDescription>Your cognitive metrics over time</CardDescription>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="h-64">
+//               <ResponsiveContainer width="100%" height="100%">
+//                 <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+//                   <XAxis dataKey="date" />
+//                   <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+//                   <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+//                   <Tooltip />
+//                   <Legend />
+//                   <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
+//                   <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
+//                   <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
+//                 </LineChart>
+//               </ResponsiveContainer>
+//             </div>
+//           </CardContent>
+//         </Card>
+//       </div>
+      
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+//         <Card className="overflow-hidden shadow-md">
+//           <CardHeader className="pb-2">
+//             <CardTitle>Reaction Time Distribution</CardTitle>
+//             <CardDescription>Frequency of response times by category</CardDescription>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="h-64">
+//               <ResponsiveContainer width="100%" height="100%">
+//                 <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+//                   <XAxis dataKey="name" />
+//                   <YAxis />
+//                   <Tooltip />
+//                   <Bar dataKey="count" name="Responses" fill="#8884d8" />
+//                 </BarChart>
+//               </ResponsiveContainer>
+//             </div>
+//           </CardContent>
+//         </Card>
+        
+//         <Card className="overflow-hidden shadow-md">
+//           <CardHeader className="pb-2">
+//             <CardTitle>Cognitive Profile</CardTitle>
+//             <CardDescription>Performance across different cognitive domains</CardDescription>
+//           </CardHeader>
+//           <CardContent className="pt-4">
+//             <div className="h-64">
+//               <ResponsiveContainer width="100%" height="100%">
+//                 <RadarChart outerRadius={90} data={getRadarData()}>
+//                   <PolarGrid />
+//                   <PolarAngleAxis dataKey="subject" />
+//                   <PolarRadiusAxis angle={30} domain={[0, 100]} />
+//                   <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+//                   <Legend />
+//                 </RadarChart>
+//               </ResponsiveContainer>
+//             </div>
+//           </CardContent>
+//         </Card>
+//       </div>
+//       <Card className="overflow-hidden shadow hover:shadow-lg transition-all duration-300 border-2 border-green-200">
+//       <CardHeader className="pb-2 bg-gradient-to-r from-green-100 to-blue-100">
+//         <CardTitle className="flex items-center">
+//           <Award className="mr-2 text-green-600" size={20} />
+//           <span>ADHD Brain Explorer 🧠</span>
+//         </CardTitle>
+//       </CardHeader>
+//       <CardContent className="pt-4">
+//         {adhdType ? (
+//           <>
+//             <div className="text-center mb-4 p-2 bg-green-50 rounded-lg">
+//               <span className="text-2xl mr-2">
+//                 {typeEmojis[adhdType] || defaultEmoji}
+//               </span>
+//               <span className="text-xl font-bold">
+//                 {adhdType}
+//               </span>
+//             </div>
+            
+//             <div className="bg-blue-50 p-3 rounded-lg mb-4">
+//               <div className="flex justify-between items-center">
+//                 <span className="text-sm">Brain-o-meter: 🔬</span>
+//                 <div className="flex items-center">
+//                   <div className="w-32 bg-gray-200 rounded-full h-4 mr-2">
+//                     <div 
+//                       className="bg-blue-500 h-4 rounded-full transition-all duration-500" 
+//                       style={{ width: `${modelConfidence * 100}%` }}
+//                     ></div>
+//                   </div>
+//                   <span className="text-sm font-bold">{(modelConfidence * 100).toFixed(1)}%</span>
+//                 </div>
+//               </div>
+//             </div>
+            
+//             {/* Assessment levels with interactive elements */}
+//             <div className="mt-3 border-t border-dashed border-purple-200 pt-3">
+//               <h4 className="font-medium text-sm mb-3 flex items-center">
+//                 <span className="mr-2">🔎</span> 
+//                 Your Brain Powers:
+//               </h4>
+              
+//               <div className="space-y-3">
+//                 <div className="bg-purple-50 p-2 rounded-lg">
+//                   <div className="flex justify-between items-center mb-1">
+//                     <span className="text-sm">Focus Power: 👁️</span>
+//                     <span className="text-sm font-medium flex items-center">
+//                       {getLevelEmoji(scoreLevels?.inattention)}
+//                       <span className="ml-1">{scoreLevels?.inattention || 'N/A'}</span>
+//                     </span>
+//                   </div>
+//                   <div className="w-full bg-gray-200 rounded-full h-3">
+//                     <div 
+//                       className={`${getProgressColors(scoreLevels?.inattention)} ${getProgressWidth(scoreLevels?.inattention)} h-3 rounded-full transition-all duration-500`}
+//                     ></div>
+//                   </div>
+//                 </div>
+                
+//                 <div className="bg-yellow-50 p-2 rounded-lg">
+//                   <div className="flex justify-between items-center mb-1">
+//                     <span className="text-sm">Action Power: 🚀</span>
+//                     <span className="text-sm font-medium flex items-center">
+//                       {getLevelEmoji(scoreLevels?.impulsivity)}
+//                       <span className="ml-1">{scoreLevels?.impulsivity || 'N/A'}</span>
+//                     </span>
+//                   </div>
+//                   <div className="w-full bg-gray-200 rounded-full h-3">
+//                     <div 
+//                       className={`${getProgressColors(scoreLevels?.impulsivity)} ${getProgressWidth(scoreLevels?.impulsivity)} h-3 rounded-full transition-all duration-500`}
+//                     ></div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+            
+//             {/* AI Insights with emojis */}
+//             {modelInsights && (
+//               <div className="mt-4 border-t border-dashed border-blue-200 pt-3">
+//                 <h4 className="font-medium text-sm mb-2 flex items-center">
+//                   <span className="mr-2">✨</span>
+//                   Brain Discoveries:
+//                 </h4>
+//                 <div className="text-sm text-gray-700 bg-blue-50 p-3 rounded-lg">
+//                   {modelInsights.combined && modelInsights.combined.length > 0 && (
+//                     <p className="mb-2 flex">
+//                       <span className="mr-2">🧠</span>
+//                       <span>{modelInsights.combined[0]}</span>
+//                     </p>
+//                   )}
+//                   {modelInsights.inattention && modelInsights.inattention.length > 0 && (
+//                     <p className="mb-2 flex">
+//                       <span className="mr-2">👁️</span>
+//                       <span>{modelInsights.inattention[0]}</span>
+//                     </p>
+//                   )}
+//                   {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
+//                     <p className="flex">
+//                       <span className="mr-2">🚀</span>
+//                       <span>{modelInsights.impulsivity[0]}</span>
+//                     </p>
+//                   )}
+//                 </div>
+//               </div>
+//             )}
+            
+//             <div className="mt-4 p-2 bg-purple-50 rounded-lg text-xs text-center">
+//               <p>✨ This is just a game-based brain map, not a doctor's diagnosis ✨</p>
+//             </div>
+//           </>
+//         ) : (
+//           <div className="text-center p-6">
+//             <div className="text-4xl mb-3">🔮</div>
+//             <p className="text-gray-500">Your brain map is still loading...</p>
+//             <p className="text-gray-400 text-xs mt-2">Play more games to help us understand your superpowers!</p>
+//           </div>
+//         )}
+//       </CardContent>
+//     </Card>
+
+      
+      
+//       </div>
+    
+//   );
+// };
+
+// export default GameAnalytics;
+    
+// Inline CSS styles for the Progress component
+const Progress = ({ value, className }) => {
+  return (
+    <div style={{width: '100%', backgroundColor: '#e5e7eb', borderRadius: '9999px', height: '8px'}}>
+      <div 
+        style={{
+          width: `${value}%`, 
+          height: '8px', 
+          borderRadius: '9999px',
+          transition: 'width 0.3s ease',
+          ...className && {[className.split(':')[0]]: className.split(':')[1]}
+        }}
+      ></div>
+    </div>
+  );
+};
+
+// Inline CSS styles for Card components
+const Card = ({ children, className }) => {
+  return (
+    <div style={{
+      backgroundColor: '#ffffff',
+      borderRadius: '0.5rem',
+      overflow: 'hidden',
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      transition: 'box-shadow 0.3s ease',
+      ...className && {border: className.includes('border-green-200') ? '2px solid #bbf7d0' : 'none'}
+    }}>
+      {children}
+    </div>
+  );
+};
+
+const CardHeader = ({ children, className }) => {
+  return (
+    <div style={{
+      padding: '1rem',
+      paddingBottom: '0.5rem',
+      ...className && {
+        backgroundImage: className.includes('from-blue-50 to-blue-100') ? 'linear-gradient(to right, #eff6ff, #dbeafe)' : 
+                        className.includes('from-yellow-50 to-yellow-100') ? 'linear-gradient(to right, #fefce8, #fef9c3)' :
+                        className.includes('from-purple-50 to-purple-100') ? 'linear-gradient(to right, #faf5ff, #f3e8ff)' :
+                        className.includes('from-green-100 to-blue-100') ? 'linear-gradient(to right, #dcfce7, #dbeafe)' : 'none'
+      }
+    }}>
+      {children}
+    </div>
+  );
+};
+
+const CardTitle = ({ children, className }) => {
+  return (
+    <div style={{
+      fontSize: '1.25rem',
+      fontWeight: '600',
+      ...className && {display: 'flex', alignItems: 'center'}
+    }}>
+      {children}
+    </div>
+  );
+};
+
+const CardContent = ({ children, className }) => {
+  return (
+    <div style={{
+      padding: '1rem',
+      paddingTop: className && className.includes('pt-4') ? '1rem' : '1rem'
+    }}>
+      {children}
+    </div>
+  );
+};
+
+const CardDescription = ({ children }) => {
+  return (
+    <div style={{
+      color: '#6b7280',
+      fontSize: '0.875rem'
+    }}>
+      {children}
+    </div>
+  );
+};
+
+if (!analysisResults || !historicalData) {
+  return (
+    <div style={{
+      padding: '1.5rem',
+      backgroundColor: '#f9fafb',
+      borderRadius: '0.5rem',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '16rem'
+    }}>
+      <div style={{textAlign: 'center'}}>
+        <AlertCircle style={{
+          margin: '0 auto',
+          color: '#9ca3af',
+          marginBottom: '1rem'
+        }} size={48} />
+        <h2 style={{
+          fontSize: '1.25rem',
+          fontWeight: '600',
+          color: '#4b5563'
+        }}>No Game Data Available</h2>
+        <p style={{
+          color: '#6b7280',
+          marginTop: '0.5rem'
+        }}>Complete a game session to view your analytics</p>
       </div>
+    </div>
+  );
+}
 
+return (
+  <div style={{maxWidth: '1200px', margin: '0 auto', padding: '1rem'}}>
+    <div style={{
+      background: 'linear-gradient(to right, #eff6ff, #eef2ff)',
+      padding: '1.5rem',
+      borderRadius: '0.75rem',
+      marginBottom: '2rem',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      <div style={{
+        position: 'absolute',
+        top: '0',
+        right: '0',
+        width: '8rem',
+        height: '8rem',
+        backgroundColor: '#bfdbfe',
+        borderRadius: '9999px',
+        marginTop: '-3rem',
+        marginRight: '-3rem',
+        opacity: '0.5'
+      }}></div>
+      <div style={{
+        position: 'absolute',
+        bottom: '0',
+        left: '0',
+        width: '6rem',
+        height: '6rem',
+        backgroundColor: '#c7d2fe',
+        borderRadius: '9999px',
+        marginBottom: '-2rem',
+        marginLeft: '-2rem',
+        opacity: '0.5'
+      }}></div>
+      <h1 style={{
+        fontSize: '1.875rem',
+        fontWeight: '700',
+        marginBottom: '0.5rem',
+        color: '#1f2937',
+        position: 'relative',
+        zIndex: '10'
+      }}>Game Performance Analytics</h1>
+      <p style={{
+        color: '#4b5563',
+        position: 'relative',
+        zIndex: '10'
+      }}>Detailed analysis of your cognitive performance patterns</p>
+      <button 
+        onClick={() => setShowTips(!showTips)} 
+        style={{
+          position: 'absolute',
+          top: '1.5rem',
+          right: '1.5rem',
+          backgroundColor: '#ffffff',
+          padding: '0.5rem',
+          borderRadius: '9999px',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          transition: 'background-color 0.3s',
+          zIndex: '10'
+        }}
+      >
+        <Info size={20} style={{color: '#3b82f6'}} />
+      </button>
       
+      {showTips && (
+        <div style={{
+          position: 'absolute',
+          top: '4rem',
+          right: '1.5rem',
+          backgroundColor: '#ffffff',
+          padding: '1rem',
+          borderRadius: '0.5rem',
+          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+          zIndex: '20',
+          width: '16rem',
+          fontSize: '0.875rem'
+        }}>
+          <h3 style={{fontWeight: '700', marginBottom: '0.5rem'}}>Understanding Scores</h3>
+          <p style={{marginBottom: '0.75rem'}}>Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
+          <p style={{marginBottom: '0.5rem'}}>Score ranges:</p>
+          <div style={{marginTop: '0.25rem'}}>
+            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#22c55e', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+              0-30: Low (Good)
+            </div>
+            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#3b82f6', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+              30-50: Below Average
+            </div>
+            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#eab308', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+              50-70: Average
+            </div>
+            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#f97316', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+              70-85: Above Average
+            </div>
+            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#ef4444', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+              85-100: High (Challenge)
+            </div>
+          </div>
+          <button 
+            onClick={() => setShowTips(false)}
+            style={{
+              marginTop: '0.75rem',
+              color: '#3b82f6',
+              fontSize: '0.75rem',
+              fontWeight: '600'
+            }}
+          >
+            Close
+          </button>
+        </div>
+      )}
+    </div>
 
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-          <CardHeader className="pb-2 bg-gradient-to-r from-blue-50 to-blue-100">
-            <CardTitle className="flex items-center">
-              <Brain className="mr-2 text-blue-600" size={20} />
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(1, 1fr)',
+      gap: '1rem',
+      marginBottom: '2rem'
+    }}>
+      <div style={{display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1rem', marginBottom: '2rem'}}>
+        <Card>
+          <CardHeader style={{backgroundImage: 'linear-gradient(to right, #eff6ff, #dbeafe)'}}>
+            <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+              <Brain style={{marginRight: '0.5rem', color: '#2563eb'}} size={20} />
               <span>Attention Score</span>
-              <button 
-                className="ml-auto"
+              <button
+                style={{marginLeft: 'auto'}}
                 onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
               >
-                <Info size={16} className="text-blue-400 hover:text-blue-600" />
+                <Info size={16} style={{color: '#60a5fa'}} />
               </button>
             </CardTitle>
             {showMetricInfo === 'attention' && (
-              <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
+              <div style={{
+                marginTop: '0.5rem',
+                fontSize: '0.875rem',
+                color: '#4b5563',
+                backgroundColor: '#eff6ff',
+                padding: '0.5rem',
+                borderRadius: '0.25rem'
+              }}>
                 {getMetricInfo('attention')}
               </div>
             )}
           </CardHeader>
-          <CardContent className="pt-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
-              <div className="flex items-center">
-                <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+          <CardContent style={{paddingTop: '1rem'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
+              <span style={{fontWeight: '600'}}>{analysisResults.inattention.score.toFixed(1)}</span>
+              <div style={{display: 'flex', alignItems: 'center'}}>
+                <span style={{fontWeight: '700', [getLevelColor(analysisResults.inattention.level).split(':')[0]]: getLevelColor(analysisResults.inattention.level).split(':')[1]}}>
                   {analysisResults.inattention.level}
                 </span>
                 <TrendingUp 
                   size={16} 
-                  className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
+                  style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.inattention.score, 50).split(':')[0]]: getTrendColor(analysisResults.inattention.score, 50).split(':')[1]}}
                 />
               </div>
             </div>
@@ -3002,34 +4367,41 @@ useEffect(() => {
           </CardContent>
         </Card>
         
-        <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-          <CardHeader className="pb-2 bg-gradient-to-r from-yellow-50 to-yellow-100">
-            <CardTitle className="flex items-center">
-              <Zap className="mr-2 text-yellow-600" size={20} />
+        <Card>
+          <CardHeader style={{backgroundImage: 'linear-gradient(to right, #fefce8, #fef9c3)'}}>
+            <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+              <Zap style={{marginRight: '0.5rem', color: '#ca8a04'}} size={20} />
               <span>Impulsivity Score</span>
               <button 
-                className="ml-auto"
+                style={{marginLeft: 'auto'}}
                 onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
               >
-                <Info size={16} className="text-yellow-400 hover:text-yellow-600" />
+                <Info size={16} style={{color: '#facc15'}} />
               </button>
             </CardTitle>
             {showMetricInfo === 'impulsivity' && (
-              <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
+              <div style={{
+                marginTop: '0.5rem',
+                fontSize: '0.875rem',
+                color: '#4b5563',
+                backgroundColor: '#fefce8',
+                padding: '0.5rem',
+                borderRadius: '0.25rem'
+              }}>
                 {getMetricInfo('impulsivity')}
               </div>
             )}
           </CardHeader>
-          <CardContent className="pt-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
-              <div className="flex items-center">
-                <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+          <CardContent style={{paddingTop: '1rem'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
+              <span style={{fontWeight: '600'}}>{analysisResults.impulsivity.score.toFixed(1)}</span>
+              <div style={{display: 'flex', alignItems: 'center'}}>
+                <span style={{fontWeight: '700', [getLevelColor(analysisResults.impulsivity.level).split(':')[0]]: getLevelColor(analysisResults.impulsivity.level).split(':')[1]}}>
                   {analysisResults.impulsivity.level}
                 </span>
                 <TrendingUp 
                   size={16} 
-                  className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
+                  style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.impulsivity.score, 45).split(':')[0]]: getTrendColor(analysisResults.impulsivity.score, 45).split(':')[1]}}
                 />
               </div>
             </div>
@@ -3037,23 +4409,23 @@ useEffect(() => {
           </CardContent>
         </Card>
         
-        <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-          <CardHeader className="pb-2 bg-gradient-to-r from-purple-50 to-purple-100">
-            <CardTitle className="flex items-center">
-              <Activity className="mr-2 text-purple-600" size={20} />
+        <Card>
+          <CardHeader style={{backgroundImage: 'linear-gradient(to right, #faf5ff, #f3e8ff)'}}>
+            <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+              <Activity style={{marginRight: '0.5rem', color: '#9333ea'}} size={20} />
               <span>Combined Score</span>
             </CardTitle>
           </CardHeader>
-          <CardContent className="pt-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
-              <div className="flex items-center">
-                <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+          <CardContent style={{paddingTop: '1rem'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
+              <span style={{fontWeight: '600'}}>{analysisResults.combined.score.toFixed(1)}</span>
+              <div style={{display: 'flex', alignItems: 'center'}}>
+                <span style={{fontWeight: '700', [getLevelColor(analysisResults.combined.level).split(':')[0]]: getLevelColor(analysisResults.combined.level).split(':')[1]}}>
                   {analysisResults.combined.level}
                 </span>
                 <TrendingUp 
                   size={16} 
-                  className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
+                  style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.combined.score, 50).split(':')[0]]: getTrendColor(analysisResults.combined.score, 50).split(':')[1]}}
                 />
               </div>
             </div>
@@ -3061,142 +4433,237 @@ useEffect(() => {
           </CardContent>
         </Card>
       </div>
+    </div>
+    
+    <div style={{marginBottom: '2rem'}}>
+      <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
+        <CardHeader>
+          <CardTitle>Performance Trend</CardTitle>
+          <CardDescription>Your cognitive metrics over time</CardDescription>
+        </CardHeader>
+        <CardContent style={{paddingTop: '1rem'}}>
+          <div style={{height: '16rem'}}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis dataKey="date" />
+                <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+                <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+                <Tooltip />
+                <Legend />
+                <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
+                <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
+                <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+    
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+      gap: '1.5rem',
+      marginBottom: '2rem'
+    }}>
+      <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
+        <CardHeader>
+          <CardTitle>Reaction Time Distribution</CardTitle>
+          <CardDescription>Frequency of response times by category</CardDescription>
+        </CardHeader>
+        <CardContent style={{paddingTop: '1rem'}}>
+          <div style={{height: '16rem'}}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="count" name="Responses" fill="#8884d8" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </CardContent>
+      </Card>
       
-      <div className="mb-8">
-        <Card className="overflow-hidden shadow-md">
-          <CardHeader className="pb-2">
-            <CardTitle>Performance Trend</CardTitle>
-            <CardDescription>Your cognitive metrics over time</CardDescription>
-          </CardHeader>
-          <CardContent className="pt-4">
-            <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="date" />
-                  <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
-                  <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
-                  <Tooltip />
-                  <Legend />
-                  <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
-                  <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
-                  <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <Card className="overflow-hidden shadow-md">
-          <CardHeader className="pb-2">
-            <CardTitle>Reaction Time Distribution</CardTitle>
-            <CardDescription>Frequency of response times by category</CardDescription>
-          </CardHeader>
-          <CardContent className="pt-4">
-            <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="count" name="Responses" fill="#8884d8" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card className="overflow-hidden shadow-md">
-          <CardHeader className="pb-2">
-            <CardTitle>Cognitive Profile</CardTitle>
-            <CardDescription>Performance across different cognitive domains</CardDescription>
-          </CardHeader>
-          <CardContent className="pt-4">
-            <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <RadarChart outerRadius={90} data={getRadarData()}>
-                  <PolarGrid />
-                  <PolarAngleAxis dataKey="subject" />
-                  <PolarRadiusAxis angle={30} domain={[0, 100]} />
-                  <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                  <Legend />
-                </RadarChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      <Card className="overflow-hidden shadow hover:shadow-lg transition-all duration-300 border-2 border-green-200">
-      <CardHeader className="pb-2 bg-gradient-to-r from-green-100 to-blue-100">
-        <CardTitle className="flex items-center">
-          <Award className="mr-2 text-green-600" size={20} />
+      <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
+        <CardHeader>
+          <CardTitle>Cognitive Profile</CardTitle>
+          <CardDescription>Performance across different cognitive domains</CardDescription>
+        </CardHeader>
+        <CardContent style={{paddingTop: '1rem'}}>
+          <div style={{height: '16rem'}}>
+            <ResponsiveContainer width="100%" height="100%">
+              <RadarChart outerRadius={90} data={getRadarData()}>
+                <PolarGrid />
+                <PolarAngleAxis dataKey="subject" />
+                <PolarRadiusAxis angle={30} domain={[0, 100]} />
+                <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                <Legend />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+    
+    <Card style={{
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      overflow: 'hidden',
+      transition: 'all 0.3s ease',
+      border: '2px solid #bbf7d0'
+    }}>
+      <CardHeader style={{backgroundImage: 'linear-gradient(to right, #dcfce7, #dbeafe)'}}>
+        <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+          <Award style={{marginRight: '0.5rem', color: '#16a34a'}} size={20} />
           <span>ADHD Brain Explorer 🧠</span>
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-4">
+      <CardContent style={{paddingTop: '1rem'}}>
         {adhdType ? (
           <>
-            <div className="text-center mb-4 p-2 bg-green-50 rounded-lg">
-              <span className="text-2xl mr-2">
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '1rem',
+              padding: '0.5rem',
+              backgroundColor: '#f0fdf4',
+              borderRadius: '0.5rem'
+            }}>
+              <span style={{fontSize: '1.5rem', marginRight: '0.5rem'}}>
                 {typeEmojis[adhdType] || defaultEmoji}
               </span>
-              <span className="text-xl font-bold">
+              <span style={{fontSize: '1.25rem', fontWeight: '700'}}>
                 {adhdType}
               </span>
             </div>
             
-            <div className="bg-blue-50 p-3 rounded-lg mb-4">
-              <div className="flex justify-between items-center">
-                <span className="text-sm">Brain-o-meter: 🔬</span>
-                <div className="flex items-center">
-                  <div className="w-32 bg-gray-200 rounded-full h-4 mr-2">
+            <div style={{
+              backgroundColor: '#eff6ff',
+              padding: '0.75rem',
+              borderRadius: '0.5rem',
+              marginBottom: '1rem'
+            }}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <span style={{fontSize: '0.875rem'}}>Brain-o-meter: 🔬</span>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                  <div style={{
+                    width: '8rem',
+                    backgroundColor: '#e5e7eb',
+                    borderRadius: '9999px',
+                    height: '1rem',
+                    marginRight: '0.5rem'
+                  }}>
                     <div 
-                      className="bg-blue-500 h-4 rounded-full transition-all duration-500" 
-                      style={{ width: `${modelConfidence * 100}%` }}
+                      style={{
+                        backgroundColor: '#3b82f6',
+                        height: '1rem',
+                        borderRadius: '9999px',
+                        transition: 'all 0.5s ease',
+                        width: `${modelConfidence * 100}%`
+                      }}
                     ></div>
                   </div>
-                  <span className="text-sm font-bold">{(modelConfidence * 100).toFixed(1)}%</span>
+                  <span style={{fontSize: '0.875rem', fontWeight: '700'}}>{(modelConfidence * 100).toFixed(1)}%</span>
                 </div>
               </div>
             </div>
             
-            {/* Assessment levels with interactive elements */}
-            <div className="mt-3 border-t border-dashed border-purple-200 pt-3">
-              <h4 className="font-medium text-sm mb-3 flex items-center">
-                <span className="mr-2">🔎</span> 
+            <div style={{
+              marginTop: '0.75rem',
+              borderTop: '1px dashed #e9d5ff',
+              paddingTop: '0.75rem'
+            }}>
+              <h4 style={{
+                fontWeight: '500',
+                fontSize: '0.875rem',
+                marginBottom: '0.75rem',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{marginRight: '0.5rem'}}>🔎</span> 
                 Your Brain Powers:
               </h4>
               
-              <div className="space-y-3">
-                <div className="bg-purple-50 p-2 rounded-lg">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-sm">Focus Power: 👁️</span>
-                    <span className="text-sm font-medium flex items-center">
+              <div style={{marginTop: '0.75rem'}}>
+                <div style={{
+                  backgroundColor: '#faf5ff',
+                  padding: '0.5rem',
+                  borderRadius: '0.5rem',
+                  marginBottom: '0.75rem'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '0.25rem'
+                  }}>
+                    <span style={{fontSize: '0.875rem'}}>Focus Power: 👁️</span>
+                    <span style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '500',
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
                       {getLevelEmoji(scoreLevels?.inattention)}
-                      <span className="ml-1">{scoreLevels?.inattention || 'N/A'}</span>
+                      <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.inattention || 'N/A'}</span>
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div style={{
+                    width: '100%',
+                    backgroundColor: '#e5e7eb',
+                    borderRadius: '9999px',
+                    height: '0.75rem'
+                  }}>
                     <div 
-                      className={`${getProgressColors(scoreLevels?.inattention)} ${getProgressWidth(scoreLevels?.inattention)} h-3 rounded-full transition-all duration-500`}
+                      style={{
+                        [getProgressColors(scoreLevels?.inattention).split(':')[0]]: getProgressColors(scoreLevels?.inattention).split(':')[1],
+                        [getProgressWidth(scoreLevels?.inattention).split(':')[0]]: getProgressWidth(scoreLevels?.inattention).split(':')[1],
+                        height: '0.75rem',
+                        borderRadius: '9999px',
+                        transition: 'all 0.5s ease'
+                      }}
                     ></div>
                   </div>
                 </div>
                 
-                <div className="bg-yellow-50 p-2 rounded-lg">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-sm">Action Power: 🚀</span>
-                    <span className="text-sm font-medium flex items-center">
+                <div style={{
+                  backgroundColor: '#fefce8',
+                  padding: '0.5rem',
+                  borderRadius: '0.5rem',
+                  marginBottom: '0.75rem'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '0.25rem'
+                  }}>
+                    <span style={{fontSize: '0.875rem'}}>Action Power: 🚀</span>
+                    <span style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '500',
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
                       {getLevelEmoji(scoreLevels?.impulsivity)}
-                      <span className="ml-1">{scoreLevels?.impulsivity || 'N/A'}</span>
+                      <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.impulsivity || 'N/A'}</span>
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div style={{
+                    width: '100%',
+                    backgroundColor: '#e5e7eb',
+                    borderRadius: '9999px',
+                    height: '0.75rem'
+                  }}>
                     <div 
-                      className={`${getProgressColors(scoreLevels?.impulsivity)} ${getProgressWidth(scoreLevels?.impulsivity)} h-3 rounded-full transition-all duration-500`}
+                      style={{
+                        [getProgressColors(scoreLevels?.impulsivity).split(':')[0]]: getProgressColors(scoreLevels?.impulsivity).split(':')[1],
+                        [getProgressWidth(scoreLevels?.impulsivity).split(':')[0]]: getProgressWidth(scoreLevels?.impulsivity).split(':')[1],
+                        height: '0.75rem',
+                        borderRadius: '9999px',
+                        transition: 'all 0.5s ease'
+                      }}
                     ></div>
                   </div>
                 </div>
@@ -3205,27 +4672,51 @@ useEffect(() => {
             
             {/* AI Insights with emojis */}
             {modelInsights && (
-              <div className="mt-4 border-t border-dashed border-blue-200 pt-3">
-                <h4 className="font-medium text-sm mb-2 flex items-center">
-                  <span className="mr-2">✨</span>
+              <div style={{
+                marginTop: '1rem',
+                borderTop: '1px dashed #bfdbfe',
+                paddingTop: '0.75rem'
+              }}>
+                <h4 style={{
+                  fontWeight: '500',
+                  fontSize: '0.875rem',
+                  marginBottom: '0.5rem',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  <span style={{marginRight: '0.5rem'}}>✨</span>
                   Brain Discoveries:
                 </h4>
-                <div className="text-sm text-gray-700 bg-blue-50 p-3 rounded-lg">
+                <div style={{
+                  fontSize: '0.875rem',
+                  color: '#374151',
+                  backgroundColor: '#eff6ff',
+                  padding: '0.75rem',
+                  borderRadius: '0.5rem'
+                }}>
                   {modelInsights.combined && modelInsights.combined.length > 0 && (
-                    <p className="mb-2 flex">
-                      <span className="mr-2">🧠</span>
+                    <p style={{
+                      marginBottom: '0.5rem',
+                      display: 'flex'
+                    }}>
+                      <span style={{marginRight: '0.5rem'}}>🧠</span>
                       <span>{modelInsights.combined[0]}</span>
                     </p>
                   )}
                   {modelInsights.inattention && modelInsights.inattention.length > 0 && (
-                    <p className="mb-2 flex">
-                      <span className="mr-2">👁️</span>
+                    <p style={{
+                      marginBottom: '0.5rem',
+                      display: 'flex'
+                    }}>
+                      <span style={{marginRight: '0.5rem'}}>👁️</span>
                       <span>{modelInsights.inattention[0]}</span>
                     </p>
                   )}
                   {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
-                    <p className="flex">
-                      <span className="mr-2">🚀</span>
+                    <p style={{
+                      display: 'flex'
+                    }}>
+                      <span style={{marginRight: '0.5rem'}}>🚀</span>
                       <span>{modelInsights.impulsivity[0]}</span>
                     </p>
                   )}
@@ -3233,27 +4724,31 @@ useEffect(() => {
               </div>
             )}
             
-            <div className="mt-4 p-2 bg-purple-50 rounded-lg text-xs text-center">
+            <div style={{
+              marginTop: '1rem',
+              padding: '0.5rem',
+              backgroundColor: '#faf5ff',
+              borderRadius: '0.5rem',
+              fontSize: '0.75rem',
+              textAlign: 'center'
+            }}>
               <p>✨ This is just a game-based brain map, not a doctor's diagnosis ✨</p>
             </div>
           </>
         ) : (
-          <div className="text-center p-6">
-            <div className="text-4xl mb-3">🔮</div>
-            <p className="text-gray-500">Your brain map is still loading...</p>
-            <p className="text-gray-400 text-xs mt-2">Play more games to help us understand your superpowers!</p>
+          <div style={{
+            textAlign: 'center',
+            padding: '1.5rem'
+          }}>
+            <div style={{fontSize: '2.25rem', marginBottom: '0.75rem'}}>🔮</div>
+            <p style={{color: '#6b7280'}}>Your brain map is still loading...</p>
+            <p style={{color: '#9ca3af', fontSize: '0.75rem', marginTop: '0.5rem'}}>Play more games to help us understand your superpowers!</p>
           </div>
         )}
       </CardContent>
     </Card>
-
-      
-      
-      </div>
-    
-  );
+  </div>
+);
 };
 
 export default GameAnalytics;
-    
-            
