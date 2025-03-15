@@ -74,3 +74,13 @@
 2025-03-14 23:31:06,206 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
 2025-03-14 23:31:06,206 - __main__ - INFO - Successfully processed prediction for game data
 2025-03-14 23:31:06,216 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 23:31:06] "POST /predict HTTP/1.1" 200 -
+2025-03-14 23:49:23,019 - __main__ - INFO - MongoDB connection established successfully
+2025-03-14 23:49:23,076 - __main__ - ERROR - Error loading model from / adhd_model.keras: File not found: filepath=/ adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-14 23:49:23,076 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-14 23:49:23,076 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-03-14 23:49:23,092 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-14 23:49:23,141 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-03-14 23:49:23,141 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
