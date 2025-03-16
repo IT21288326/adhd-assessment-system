@@ -1582,7 +1582,7 @@ def predict_adhd_type(reaction_times, correct_streak, premature_clicks, missed_s
             missed_stars, 
             max_missed_streak,
             score, 
-            premature_clicks_ratio
+            # premature_clicks_ratio
         ]])
         
         # Scale features
