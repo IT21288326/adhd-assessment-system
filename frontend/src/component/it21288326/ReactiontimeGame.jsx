@@ -1371,32 +1371,6 @@ import axios from 'axios';
 import { useLocation,useNavigate } from 'react-router-dom';
 
 
-// const GameOverScreen = ({ stats, comment, onRestart }) => (
-//   <div style={{
-//     position: 'absolute',
-//     top: 0,
-//     left: 0,
-//     width: '100%',
-//     height: '100%',
-//     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-//     color: '#fff',
-//     display: 'flex',
-//     flexDirection: 'column',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     zIndex: 10,
-//   }}>
-//     <h1>Game Over</h1>
-//     <p><strong>Score:</strong> {stats.score}</p>
-//     <p><strong>Missed Stars:</strong> {stats.missedStars}</p>
-//     <p><strong>Correct Streak:</strong> {stats.correctStreak}</p>
-//     <p><strong>Performance Comment:</strong> {comment}</p>
-//     <button style={{ marginTop: '20px', padding: '10px 20px', fontSize: '16px' }} onClick={onRestart}>
-//       Restart Game
-//     </button>
-//   </div>
-// );
-
 const GameOverScreen = ({ stats, comment, onRestart, onViewAnalytics }) => (
   <div style={{
     position: 'absolute',
