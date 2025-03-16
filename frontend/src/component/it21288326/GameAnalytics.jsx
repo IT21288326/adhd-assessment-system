@@ -3257,12 +3257,15 @@
 // export default GameAnalytics;
     
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Progress } from './ui/progress';
 import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, ChevronDown, ChevronUp, Info, Award, TrendingUp } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 //import { Award } from 'lucide-react';
 
 const API_ENDPOINT = 'http://localhost:5000/predict';
@@ -3285,10 +3288,15 @@ const GameAnalytics = ({ gameData }) => {
   const [adhdType, setADHDType] = useState(null);
   const [modelConfidence, setModelConfidence] = useState(null);
   const [modelInsights, setModelInsights] = useState(null);
+  const location = useLocation();
+  const { childId, gameId } = useParams();
   const [scoreLevels, setScoreLevels] = useState({
     inattention: '',
     impulsivity: ''
   });
+  const navigate = useNavigate();
+
+
 
   // Add these missing variable definitions - moved from ADHDAssessmentCard
   // Emoji mapping for various elements
@@ -3338,7 +3346,30 @@ const GameAnalytics = ({ gameData }) => {
     }
   };
 
+  // useEffect(() => {
+  //   const fetchProfile = async () => {
+  //     try {
+  //       const { data } = await axios.get("http://localhost:8800/api/child/profile", {
+  //         withCredentials: true,
+  //       });
+  //       setChildId(data._id); // Store the child ID in state
+  //     } catch (error) {
+  //       console.error("Error fetching profile:", error);
+        
+  //     }
+  //   };
+    
+  //   fetchProfile();
+  // }, [navigate]);
 
+  const navigateToQuestionnaire = () => {
+    if (childId) {
+      navigate('/questionnaire-form', { state: { childId: childId } });
+    } else {
+      console.error('No childId available for questionnaire');
+      // You could show an error message to the user here
+    }
+  };
   // Rest of your component code...
   // Enhanced function to fetch predictions from the ML model
 const fetchPredictionFromModel = async (gameData) => {
@@ -3382,7 +3413,16 @@ const fetchPredictionFromModel = async (gameData) => {
   //   }
   // }, [gameData]);
   // Enhanced useEffect for your GameAnalytics component
+    // useEffect(() => {
+    //   const id = location.state?.childId;
+    //   if (!id) {
+    //     alert("Child ID is missing. Please log in again.");
+    //   } else {
+    //     setChildId(id);
+    //   }
+    // }, [location.state]);
 useEffect(() => {
+
   if (gameData) {
     // Calculate derived metrics that the ML model expects
     const processedData = { ...gameData };
@@ -3400,6 +3440,7 @@ useEffect(() => {
     
     // Try to get prediction from ML model
     fetchPredictionFromModel(processedData)
+    
       .then(prediction => {
         if (prediction && !prediction.error) {
           // Set ADHD type and confidence from the model response
@@ -3755,337 +3796,7 @@ useEffect(() => {
     );
   }
 
-//   return (
-//     <div className="container mx-auto p-4">
-//       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 relative overflow-hidden">
-//         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -mt-12 -mr-12 opacity-50"></div>
-//         <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-200 rounded-full -mb-8 -ml-8 opacity-50"></div>
-//         <h1 className="text-3xl font-bold mb-2 text-gray-800 relative z-10">Game Performance Analytics</h1>
-//         <p className="text-gray-600 relative z-10">Detailed analysis of your cognitive performance patterns</p>
-//         <button 
-//           onClick={() => setShowTips(!showTips)} 
-//           className="absolute top-6 right-6 bg-white p-2 rounded-full shadow-md hover:bg-blue-50 transition-colors z-10"
-//         >
-//           <Info size={20} className="text-blue-500" />
-//         </button>
-        
-//         {showTips && (
-//           <div className="absolute top-16 right-6 bg-white p-4 rounded-lg shadow-lg z-20 w-64 text-sm">
-//             <h3 className="font-bold mb-2">Understanding Scores</h3>
-//             <p className="mb-3">Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
-//             <p className="mb-2">Score ranges:</p>
-//             <div className="space-y-1">
-//               <div className="flex items-center"><div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div> 0-30: Low (Good)</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div> 30-50: Below Average</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div> 50-70: Average</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-orange-500 rounded-full mr-2"></div> 70-85: Above Average</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div> 85-100: High (Challenge)</div>
-//             </div>
-//             <button 
-//               onClick={() => setShowTips(false)}
-//               className="mt-3 text-blue-500 hover:text-blue-700 text-xs font-semibold"
-//             >
-//               Close
-//             </button>
-//           </div>
-          
-//         )}
-        
-//       </div>
 
-      
-
-      
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-//           <CardHeader className="pb-2 bg-gradient-to-r from-blue-50 to-blue-100">
-//             <CardTitle className="flex items-center">
-//               <Brain className="mr-2 text-blue-600" size={20} />
-//               <span>Attention Score</span>
-//               <button 
-//                 className="ml-auto"
-//                 onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
-//               >
-//                 <Info size={16} className="text-blue-400 hover:text-blue-600" />
-//               </button>
-//             </CardTitle>
-//             {showMetricInfo === 'attention' && (
-//               <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
-//                 {getMetricInfo('attention')}
-//               </div>
-//             )}
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="flex justify-between items-center mb-2">
-//               <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
-//               <div className="flex items-center">
-//                 <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
-//                   {analysisResults.inattention.level}
-//                 </span>
-//                 <TrendingUp 
-//                   size={16} 
-//                   className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
-//                 />
-//               </div>
-//             </div>
-//             <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
-//           </CardContent>
-//         </Card>
-        
-//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-//           <CardHeader className="pb-2 bg-gradient-to-r from-yellow-50 to-yellow-100">
-//             <CardTitle className="flex items-center">
-//               <Zap className="mr-2 text-yellow-600" size={20} />
-//               <span>Impulsivity Score</span>
-//               <button 
-//                 className="ml-auto"
-//                 onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
-//               >
-//                 <Info size={16} className="text-yellow-400 hover:text-yellow-600" />
-//               </button>
-//             </CardTitle>
-//             {showMetricInfo === 'impulsivity' && (
-//               <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
-//                 {getMetricInfo('impulsivity')}
-//               </div>
-//             )}
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="flex justify-between items-center mb-2">
-//               <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
-//               <div className="flex items-center">
-//                 <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
-//                   {analysisResults.impulsivity.level}
-//                 </span>
-//                 <TrendingUp 
-//                   size={16} 
-//                   className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
-//                 />
-//               </div>
-//             </div>
-//             <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
-//           </CardContent>
-//         </Card>
-        
-//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-//           <CardHeader className="pb-2 bg-gradient-to-r from-purple-50 to-purple-100">
-//             <CardTitle className="flex items-center">
-//               <Activity className="mr-2 text-purple-600" size={20} />
-//               <span>Combined Score</span>
-//             </CardTitle>
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="flex justify-between items-center mb-2">
-//               <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
-//               <div className="flex items-center">
-//                 <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
-//                   {analysisResults.combined.level}
-//                 </span>
-//                 <TrendingUp 
-//                   size={16} 
-//                   className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
-//                 />
-//               </div>
-//             </div>
-//             <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
-//           </CardContent>
-//         </Card>
-//       </div>
-      
-//       <div className="mb-8">
-//         <Card className="overflow-hidden shadow-md">
-//           <CardHeader className="pb-2">
-//             <CardTitle>Performance Trend</CardTitle>
-//             <CardDescription>Your cognitive metrics over time</CardDescription>
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="h-64">
-//               <ResponsiveContainer width="100%" height="100%">
-//                 <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-//                   <XAxis dataKey="date" />
-//                   <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
-//                   <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
-//                   <Tooltip />
-//                   <Legend />
-//                   <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
-//                   <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
-//                   <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
-//                 </LineChart>
-//               </ResponsiveContainer>
-//             </div>
-//           </CardContent>
-//         </Card>
-//       </div>
-      
-//       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-//         <Card className="overflow-hidden shadow-md">
-//           <CardHeader className="pb-2">
-//             <CardTitle>Reaction Time Distribution</CardTitle>
-//             <CardDescription>Frequency of response times by category</CardDescription>
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="h-64">
-//               <ResponsiveContainer width="100%" height="100%">
-//                 <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-//                   <XAxis dataKey="name" />
-//                   <YAxis />
-//                   <Tooltip />
-//                   <Bar dataKey="count" name="Responses" fill="#8884d8" />
-//                 </BarChart>
-//               </ResponsiveContainer>
-//             </div>
-//           </CardContent>
-//         </Card>
-        
-//         <Card className="overflow-hidden shadow-md">
-//           <CardHeader className="pb-2">
-//             <CardTitle>Cognitive Profile</CardTitle>
-//             <CardDescription>Performance across different cognitive domains</CardDescription>
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="h-64">
-//               <ResponsiveContainer width="100%" height="100%">
-//                 <RadarChart outerRadius={90} data={getRadarData()}>
-//                   <PolarGrid />
-//                   <PolarAngleAxis dataKey="subject" />
-//                   <PolarRadiusAxis angle={30} domain={[0, 100]} />
-//                   <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-//                   <Legend />
-//                 </RadarChart>
-//               </ResponsiveContainer>
-//             </div>
-//           </CardContent>
-//         </Card>
-//       </div>
-//       <Card className="overflow-hidden shadow hover:shadow-lg transition-all duration-300 border-2 border-green-200">
-//       <CardHeader className="pb-2 bg-gradient-to-r from-green-100 to-blue-100">
-//         <CardTitle className="flex items-center">
-//           <Award className="mr-2 text-green-600" size={20} />
-//           <span>ADHD Brain Explorer 🧠</span>
-//         </CardTitle>
-//       </CardHeader>
-//       <CardContent className="pt-4">
-//         {adhdType ? (
-//           <>
-//             <div className="text-center mb-4 p-2 bg-green-50 rounded-lg">
-//               <span className="text-2xl mr-2">
-//                 {typeEmojis[adhdType] || defaultEmoji}
-//               </span>
-//               <span className="text-xl font-bold">
-//                 {adhdType}
-//               </span>
-//             </div>
-            
-//             <div className="bg-blue-50 p-3 rounded-lg mb-4">
-//               <div className="flex justify-between items-center">
-//                 <span className="text-sm">Brain-o-meter: 🔬</span>
-//                 <div className="flex items-center">
-//                   <div className="w-32 bg-gray-200 rounded-full h-4 mr-2">
-//                     <div 
-//                       className="bg-blue-500 h-4 rounded-full transition-all duration-500" 
-//                       style={{ width: `${modelConfidence * 100}%` }}
-//                     ></div>
-//                   </div>
-//                   <span className="text-sm font-bold">{(modelConfidence * 100).toFixed(1)}%</span>
-//                 </div>
-//               </div>
-//             </div>
-            
-//             {/* Assessment levels with interactive elements */}
-//             <div className="mt-3 border-t border-dashed border-purple-200 pt-3">
-//               <h4 className="font-medium text-sm mb-3 flex items-center">
-//                 <span className="mr-2">🔎</span> 
-//                 Your Brain Powers:
-//               </h4>
-              
-//               <div className="space-y-3">
-//                 <div className="bg-purple-50 p-2 rounded-lg">
-//                   <div className="flex justify-between items-center mb-1">
-//                     <span className="text-sm">Focus Power: 👁️</span>
-//                     <span className="text-sm font-medium flex items-center">
-//                       {getLevelEmoji(scoreLevels?.inattention)}
-//                       <span className="ml-1">{scoreLevels?.inattention || 'N/A'}</span>
-//                     </span>
-//                   </div>
-//                   <div className="w-full bg-gray-200 rounded-full h-3">
-//                     <div 
-//                       className={`${getProgressColors(scoreLevels?.inattention)} ${getProgressWidth(scoreLevels?.inattention)} h-3 rounded-full transition-all duration-500`}
-//                     ></div>
-//                   </div>
-//                 </div>
-                
-//                 <div className="bg-yellow-50 p-2 rounded-lg">
-//                   <div className="flex justify-between items-center mb-1">
-//                     <span className="text-sm">Action Power: 🚀</span>
-//                     <span className="text-sm font-medium flex items-center">
-//                       {getLevelEmoji(scoreLevels?.impulsivity)}
-//                       <span className="ml-1">{scoreLevels?.impulsivity || 'N/A'}</span>
-//                     </span>
-//                   </div>
-//                   <div className="w-full bg-gray-200 rounded-full h-3">
-//                     <div 
-//                       className={`${getProgressColors(scoreLevels?.impulsivity)} ${getProgressWidth(scoreLevels?.impulsivity)} h-3 rounded-full transition-all duration-500`}
-//                     ></div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-            
-//             {/* AI Insights with emojis */}
-//             {modelInsights && (
-//               <div className="mt-4 border-t border-dashed border-blue-200 pt-3">
-//                 <h4 className="font-medium text-sm mb-2 flex items-center">
-//                   <span className="mr-2">✨</span>
-//                   Brain Discoveries:
-//                 </h4>
-//                 <div className="text-sm text-gray-700 bg-blue-50 p-3 rounded-lg">
-//                   {modelInsights.combined && modelInsights.combined.length > 0 && (
-//                     <p className="mb-2 flex">
-//                       <span className="mr-2">🧠</span>
-//                       <span>{modelInsights.combined[0]}</span>
-//                     </p>
-//                   )}
-//                   {modelInsights.inattention && modelInsights.inattention.length > 0 && (
-//                     <p className="mb-2 flex">
-//                       <span className="mr-2">👁️</span>
-//                       <span>{modelInsights.inattention[0]}</span>
-//                     </p>
-//                   )}
-//                   {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
-//                     <p className="flex">
-//                       <span className="mr-2">🚀</span>
-//                       <span>{modelInsights.impulsivity[0]}</span>
-//                     </p>
-//                   )}
-//                 </div>
-//               </div>
-//             )}
-            
-//             <div className="mt-4 p-2 bg-purple-50 rounded-lg text-xs text-center">
-//               <p>✨ This is just a game-based brain map, not a doctor's diagnosis ✨</p>
-//             </div>
-//           </>
-//         ) : (
-//           <div className="text-center p-6">
-//             <div className="text-4xl mb-3">🔮</div>
-//             <p className="text-gray-500">Your brain map is still loading...</p>
-//             <p className="text-gray-400 text-xs mt-2">Play more games to help us understand your superpowers!</p>
-//           </div>
-//         )}
-//       </CardContent>
-//     </Card>
-
-      
-      
-//       </div>
-    
-//   );
-// };
-
-// export default GameAnalytics;
-    
 // Inline CSS styles for the Progress component
 const Progress = ({ value, className }) => {
   return (
@@ -4487,266 +4198,1133 @@ return (
         </CardContent>
       </Card>
       
-      <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
-        <CardHeader>
-          <CardTitle>Cognitive Profile</CardTitle>
-          <CardDescription>Performance across different cognitive domains</CardDescription>
-        </CardHeader>
-        <CardContent style={{paddingTop: '1rem'}}>
-          <div style={{height: '16rem'}}>
-            <ResponsiveContainer width="100%" height="100%">
-              <RadarChart outerRadius={90} data={getRadarData()}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="subject" />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} />
-                <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                <Legend />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
+      <Card style={{
+  boxShadow: '0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1)',
+  borderRadius: '0.75rem',
+  overflow: 'hidden',
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+  border: '1px solid #e5e7eb',
+  background: 'linear-gradient(to bottom, #ffffff, #f9fafb)'
+}} 
+onMouseOver={(e) => {
+  e.currentTarget.style.transform = 'translateY(-5px)';
+  e.currentTarget.style.boxShadow = '0 12px 24px -4px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1)';
+}}
+onMouseOut={(e) => {
+  e.currentTarget.style.transform = 'translateY(0)';
+  e.currentTarget.style.boxShadow = '0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1)';
+}}>
+  <CardHeader style={{
+    backgroundImage: 'linear-gradient(to right, #f3f4f6, #eff6ff)',
+    borderBottom: '1px solid #e5e7eb',
+    position: 'relative',
+    padding: '1.25rem 1.5rem'
+  }}>
+    <div style={{
+      position: 'absolute',
+      top: '1rem',
+      right: '1rem',
+      display: 'flex',
+      gap: '0.5rem'
+    }}>
+      <button style={{
+        backgroundColor: '#f9fafb',
+        color: '#6b7280',
+        border: '1px solid #e5e7eb',
+        borderRadius: '0.5rem',
+        width: '2rem',
+        height: '2rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        transition: 'all 0.2s ease'
+      }}
+      onClick={() => alert('View historical cognitive data')}
+      onMouseOver={(e) => {
+        e.currentTarget.style.backgroundColor = '#f3f4f6';
+        e.currentTarget.style.color = '#4b5563';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.backgroundColor = '#f9fafb';
+        e.currentTarget.style.color = '#6b7280';
+      }}>
+        📊
+      </button>
+      <button style={{
+        backgroundColor: '#f9fafb',
+        color: '#6b7280',
+        border: '1px solid #e5e7eb',
+        borderRadius: '0.5rem',
+        width: '2rem',
+        height: '2rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        transition: 'all 0.2s ease'
+      }}
+      onClick={() => alert('Learn more about cognitive domains')}
+      onMouseOver={(e) => {
+        e.currentTarget.style.backgroundColor = '#f3f4f6';
+        e.currentTarget.style.color = '#4b5563';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.backgroundColor = '#f9fafb';
+        e.currentTarget.style.color = '#6b7280';
+      }}>
+        ℹ️
+      </button>
+    </div>
+    
+    <CardTitle style={{
+      fontSize: '1.5rem',
+      fontWeight: '600',
+      color: '#111827',
+      display: 'flex',
+      alignItems: 'center'
+    }}>
+      <span style={{
+        marginRight: '0.5rem',
+        fontSize: '1.25rem',
+        animation: 'pulse 2s infinite'
+      }}>🧠</span>
+      Cognitive Profile
+    </CardTitle>
+    <CardDescription style={{
+      fontSize: '0.95rem',
+      color: '#6b7280',
+      marginTop: '0.25rem'
+    }}>Performance across different cognitive domains</CardDescription>
+  </CardHeader>
+  
+  <CardContent style={{
+    paddingTop: '1.5rem',
+    position: 'relative'
+  }}>
+    <div style={{
+      position: 'absolute',
+      top: '0.75rem',
+      left: '1.5rem',
+      right: '1.5rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      zIndex: '10'
+    }}>
+      <div style={{
+        display: 'flex',
+        gap: '0.5rem'
+      }}>
+        <button style={{
+          backgroundColor: '#f3f4f6',
+          color: '#4b5563',
+          border: '1px solid #e5e7eb',
+          borderRadius: '0.5rem',
+          padding: '0.35rem 0.75rem',
+          fontSize: '0.75rem',
+          fontWeight: '500',
+          display: 'flex',
+          alignItems: 'center',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease'
+        }}
+        onClick={() => alert('Compare with average')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#e5e7eb';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#f3f4f6';
+        }}>
+          <span style={{marginRight: '0.25rem'}}>👥</span>
+          Compare
+        </button>
+        <div style={{
+          backgroundColor: '#f3f4f6',
+          border: '1px solid #e5e7eb',
+          borderRadius: '0.5rem',
+          padding: '0.35rem 0.75rem',
+          fontSize: '0.75rem',
+          fontWeight: '500',
+          display: 'flex',
+          alignItems: 'center',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease'
+        }}
+        onClick={() => alert('Filter domains')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#e5e7eb';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#f3f4f6';
+        }}>
+          <span style={{marginRight: '0.25rem'}}>🔍</span>
+          Filter
+        </div>
+      </div>
+      
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.5rem'
+      }}>
+        <span style={{
+          fontSize: '0.75rem',
+          color: '#6b7280',
+          fontWeight: '500'
+        }}>View:</span>
+        <button style={{
+          backgroundColor: '#eff6ff',
+          color: '#3b82f6',
+          border: '1px solid #bfdbfe',
+          borderRadius: '0.5rem',
+          padding: '0.35rem 0.75rem',
+          fontSize: '0.75rem',
+          fontWeight: '500',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease'
+        }}
+        onClick={() => alert('Radar View Active')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#dbeafe';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#eff6ff';
+        }}>
+          Radar
+        </button>
+        <button style={{
+          backgroundColor: '#f9fafb',
+          color: '#6b7280',
+          border: '1px solid #e5e7eb',
+          borderRadius: '0.5rem',
+          padding: '0.35rem 0.75rem',
+          fontSize: '0.75rem',
+          fontWeight: '500',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease'
+        }}
+        onClick={() => alert('Switch to Bar Chart View')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#f3f4f6';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#f9fafb';
+        }}>
+          Bar
+        </button>
+      </div>
+    </div>
+    
+    <div style={{
+      height: '16rem',
+      marginTop: '2rem'
+    }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RadarChart outerRadius={90} data={getRadarData()}>
+          <PolarGrid strokeDasharray="3 3" stroke="#d1d5db" />
+          <PolarAngleAxis 
+            dataKey="subject" 
+            tick={{ fill: '#4b5563', fontSize: 12, fontWeight: 500 }}
+            stroke="#9ca3af"
+            tickLine={false}
+          />
+          <PolarRadiusAxis 
+            angle={30} 
+            domain={[0, 100]} 
+            tick={{ fill: '#6b7280' }}
+            stroke="#d1d5db"
+            axisLine={false}
+          />
+          <Tooltip 
+            cursor={false}
+            contentStyle={{
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              border: '1px solid #e5e7eb',
+              borderRadius: '0.5rem',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+              padding: '0.5rem 0.75rem'
+            }}
+            labelStyle={{ fontWeight: 600, color: '#111827' }}
+            itemStyle={{ color: '#8884d8' }}
+          />
+          <Radar 
+            name="Performance" 
+            dataKey="score" 
+            stroke="#8884d8" 
+            fill="#8884d8" 
+            fillOpacity={0.6} 
+            dot={{ 
+              r: 4, 
+              fill: '#8884d8', 
+              stroke: '#fff', 
+              strokeWidth: 2 
+            }}
+            activeDot={{ 
+              r: 8, 
+              fill: '#8884d8', 
+              stroke: '#fff', 
+              strokeWidth: 2,
+              animation: 'pulse 2s infinite'
+            }}
+          />
+          <Legend 
+            iconSize={10}
+            iconType="circle"
+            wrapperStyle={{ bottom: -10 }}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
+    
+    <div style={{
+      marginTop: '1rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      borderTop: '1px solid #e5e7eb',
+      paddingTop: '1rem'
+    }}>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.5rem'
+      }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.25rem',
+          backgroundColor: '#f0f9ff',
+          borderRadius: '0.5rem',
+          padding: '0.35rem 0.75rem',
+          cursor: 'pointer',
+          transition: 'background-color 0.2s'
+        }}
+        onClick={() => alert('View strengths analysis')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#e0f2fe';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#f0f9ff';
+        }}>
+          <span style={{color: '#0284c7', fontSize: '0.75rem'}}>💪</span>
+          <span style={{color: '#0284c7', fontSize: '0.75rem', fontWeight: '500'}}>
+            Strengths
+          </span>
+        </div>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.25rem',
+          backgroundColor: '#fff1f2',
+          borderRadius: '0.5rem',
+          padding: '0.35rem 0.75rem',
+          cursor: 'pointer',
+          transition: 'background-color 0.2s'
+        }}
+        onClick={() => alert('View areas for improvement')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#fee2e2';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#fff1f2';
+        }}>
+          <span style={{color: '#e11d48', fontSize: '0.75rem'}}>⚡</span>
+          <span style={{color: '#e11d48', fontSize: '0.75rem', fontWeight: '500'}}>
+            Growth Areas
+          </span>
+        </div>
+      </div>
+      
+      <button style={{
+        backgroundColor: '#8884d8',
+        backgroundImage: 'linear-gradient(45deg, #8884d8, #a78bfa)',
+        color: 'white',
+        border: 'none',
+        borderRadius: '0.5rem',
+        padding: '0.5rem 1rem',
+        fontSize: '0.75rem',
+        fontWeight: '500',
+        display: 'flex',
+        alignItems: 'center',
+        cursor: 'pointer',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+        transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)'
+      }}
+      onClick={() => alert('Get personalized training recommendations based on your cognitive profile')}
+      onMouseOver={(e) => {
+        e.currentTarget.style.transform = 'translateY(-2px)';
+        e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12)';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)';
+      }}>
+        <span style={{marginRight: '0.5rem'}}>🎯</span>
+        Get Recommendations
+      </button>
+    </div>
+    
+    <style>{`
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+      
+      @keyframes bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-3px); }
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `}</style>
+  </CardContent>
+</Card>
     </div>
     
     <Card style={{
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      overflow: 'hidden',
-      transition: 'all 0.3s ease',
-      border: '2px solid #bbf7d0'
-    }}>
-      <CardHeader style={{backgroundImage: 'linear-gradient(to right, #dcfce7, #dbeafe)'}}>
-        <CardTitle style={{display: 'flex', alignItems: 'center'}}>
-          <Award style={{marginRight: '0.5rem', color: '#16a34a'}} size={20} />
-          <span>ADHD Brain Explorer 🧠</span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent style={{paddingTop: '1rem'}}>
-        {adhdType ? (
-          <>
-            <div style={{
-              textAlign: 'center',
-              marginBottom: '1rem',
-              padding: '0.5rem',
-              backgroundColor: '#f0fdf4',
-              borderRadius: '0.5rem'
+  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+  overflow: 'hidden',
+  transition: 'all 0.3s ease',
+  border: '2px solid #bbf7d0',
+  borderRadius: '0.75rem'
+}}>
+  <CardHeader style={{
+    backgroundImage: 'linear-gradient(to right, #dcfce7, #dbeafe)', 
+    padding: '1rem',
+    position: 'relative'
+  }}>
+    <div style={{
+      position: 'absolute',
+      top: '0.5rem',
+      right: '0.5rem',
+      backgroundColor: '#f0fdf4',
+      borderRadius: '50%',
+      width: '2rem',
+      height: '2rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.12)',
+      transition: 'transform 0.2s ease'
+    }} 
+    onClick={() => alert('Info about ADHD Brain Explorer')}
+    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+    >
+      <span>ℹ️</span>
+    </div>
+    <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+      <Award style={{marginRight: '0.5rem', color: '#16a34a'}} size={20} />
+      <span style={{
+        background: 'linear-gradient(45deg, #16a34a, #3b82f6)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        fontWeight: '700'
+      }}>ADHD Brain Explorer 🧠</span>
+    </CardTitle>
+  </CardHeader>
+  <CardContent style={{paddingTop: '1rem'}}>
+    {adhdType ? (
+      <>
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '1rem',
+          padding: '0.75rem',
+          backgroundColor: '#f0fdf4',
+          borderRadius: '0.75rem',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+          transform: 'translateY(0)',
+          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+          cursor: 'pointer'
+        }} 
+        onMouseOver={(e) => {
+          e.currentTarget.style.transform = 'translateY(-3px)';
+          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+        }}
+        onClick={() => alert(`Learn more about ${adhdType} type`)}>
+          <span style={{fontSize: '2rem', marginRight: '0.5rem', display: 'inline-block', animation: 'pulse 2s infinite'}}>
+            {typeEmojis[adhdType] || defaultEmoji}
+          </span>
+          <span style={{
+            fontSize: '1.25rem', 
+            fontWeight: '700',
+            background: 'linear-gradient(45deg, #4338ca, #3b82f6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
+            {adhdType}
+          </span>
+        </div>
+        
+        <div style={{
+          backgroundColor: '#eff6ff',
+          padding: '0.75rem',
+          borderRadius: '0.75rem',
+          marginBottom: '1rem',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+        }}>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <span style={{
+              fontSize: '0.875rem', 
+              display: 'flex', 
+              alignItems: 'center'
             }}>
-              <span style={{fontSize: '1.5rem', marginRight: '0.5rem'}}>
-                {typeEmojis[adhdType] || defaultEmoji}
-              </span>
-              <span style={{fontSize: '1.25rem', fontWeight: '700'}}>
-                {adhdType}
-              </span>
-            </div>
-            
-            <div style={{
-              backgroundColor: '#eff6ff',
-              padding: '0.75rem',
-              borderRadius: '0.5rem',
-              marginBottom: '1rem'
-            }}>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                <span style={{fontSize: '0.875rem'}}>Brain-o-meter: 🔬</span>
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                  <div style={{
-                    width: '8rem',
-                    backgroundColor: '#e5e7eb',
-                    borderRadius: '9999px',
-                    height: '1rem',
-                    marginRight: '0.5rem'
-                  }}>
-                    <div 
-                      style={{
-                        backgroundColor: '#3b82f6',
-                        height: '1rem',
-                        borderRadius: '9999px',
-                        transition: 'all 0.5s ease',
-                        width: `${modelConfidence * 100}%`
-                      }}
-                    ></div>
-                  </div>
-                  <span style={{fontSize: '0.875rem', fontWeight: '700'}}>{(modelConfidence * 100).toFixed(1)}%</span>
-                </div>
-              </div>
-            </div>
-            
-            <div style={{
-              marginTop: '0.75rem',
-              borderTop: '1px dashed #e9d5ff',
-              paddingTop: '0.75rem'
-            }}>
-              <h4 style={{
-                fontWeight: '500',
-                fontSize: '0.875rem',
-                marginBottom: '0.75rem',
-                display: 'flex',
-                alignItems: 'center'
-              }}>
-                <span style={{marginRight: '0.5rem'}}>🔎</span> 
-                Your Brain Powers:
-              </h4>
-              
-              <div style={{marginTop: '0.75rem'}}>
-                <div style={{
-                  backgroundColor: '#faf5ff',
-                  padding: '0.5rem',
-                  borderRadius: '0.5rem',
-                  marginBottom: '0.75rem'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginBottom: '0.25rem'
-                  }}>
-                    <span style={{fontSize: '0.875rem'}}>Focus Power: 👁️</span>
-                    <span style={{
-                      fontSize: '0.875rem',
-                      fontWeight: '500',
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      {getLevelEmoji(scoreLevels?.inattention)}
-                      <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.inattention || 'N/A'}</span>
-                    </span>
-                  </div>
-                  <div style={{
-                    width: '100%',
-                    backgroundColor: '#e5e7eb',
-                    borderRadius: '9999px',
-                    height: '0.75rem'
-                  }}>
-                    <div 
-                      style={{
-                        [getProgressColors(scoreLevels?.inattention).split(':')[0]]: getProgressColors(scoreLevels?.inattention).split(':')[1],
-                        [getProgressWidth(scoreLevels?.inattention).split(':')[0]]: getProgressWidth(scoreLevels?.inattention).split(':')[1],
-                        height: '0.75rem',
-                        borderRadius: '9999px',
-                        transition: 'all 0.5s ease'
-                      }}
-                    ></div>
-                  </div>
-                </div>
-                
-                <div style={{
-                  backgroundColor: '#fefce8',
-                  padding: '0.5rem',
-                  borderRadius: '0.5rem',
-                  marginBottom: '0.75rem'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginBottom: '0.25rem'
-                  }}>
-                    <span style={{fontSize: '0.875rem'}}>Action Power: 🚀</span>
-                    <span style={{
-                      fontSize: '0.875rem',
-                      fontWeight: '500',
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      {getLevelEmoji(scoreLevels?.impulsivity)}
-                      <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.impulsivity || 'N/A'}</span>
-                    </span>
-                  </div>
-                  <div style={{
-                    width: '100%',
-                    backgroundColor: '#e5e7eb',
-                    borderRadius: '9999px',
-                    height: '0.75rem'
-                  }}>
-                    <div 
-                      style={{
-                        [getProgressColors(scoreLevels?.impulsivity).split(':')[0]]: getProgressColors(scoreLevels?.impulsivity).split(':')[1],
-                        [getProgressWidth(scoreLevels?.impulsivity).split(':')[0]]: getProgressWidth(scoreLevels?.impulsivity).split(':')[1],
-                        height: '0.75rem',
-                        borderRadius: '9999px',
-                        transition: 'all 0.5s ease'
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* AI Insights with emojis */}
-            {modelInsights && (
+              <span style={{
+                fontSize: '1rem', 
+                marginRight: '0.5rem',
+                animation: 'spin 3s linear infinite'
+              }}>🔬</span>
+              Brain-o-meter:
+            </span>
+            <div style={{display: 'flex', alignItems: 'center'}}>
               <div style={{
-                marginTop: '1rem',
-                borderTop: '1px dashed #bfdbfe',
-                paddingTop: '0.75rem'
+                width: '8rem',
+                backgroundColor: '#e5e7eb',
+                borderRadius: '9999px',
+                height: '1rem',
+                marginRight: '0.5rem',
+                overflow: 'hidden'
               }}>
-                <h4 style={{
-                  fontWeight: '500',
+                <div 
+                  style={{
+                    backgroundColor: '#3b82f6',
+                    height: '1rem',
+                    borderRadius: '9999px',
+                    transition: 'all 0.5s ease',
+                    width: `${modelConfidence * 100}%`,
+                    backgroundImage: 'linear-gradient(45deg, rgba(59,130,246,1) 0%, rgba(37,99,235,1) 100%)',
+                    animation: 'pulse 2s infinite'
+                  }}
+                ></div>
+              </div>
+              <span style={{
+                fontSize: '0.875rem', 
+                fontWeight: '700',
+                color: '#3b82f6'
+              }}>{(modelConfidence * 100).toFixed(1)}%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div style={{
+          marginTop: '0.75rem',
+          borderTop: '1px dashed #e9d5ff',
+          paddingTop: '0.75rem'
+        }}>
+          <h4 style={{
+            fontWeight: '600',
+            fontSize: '0.95rem',
+            marginBottom: '0.75rem',
+            display: 'flex',
+            alignItems: 'center',
+            color: '#4b5563'
+          }}>
+            <span style={{
+              marginRight: '0.5rem',
+              animation: 'bounce 1s ease infinite alternate'
+            }}>🔎</span> 
+            Your Brain Powers:
+          </h4>
+          
+          <div style={{marginTop: '0.75rem'}}>
+            <div style={{
+              backgroundColor: '#faf5ff',
+              padding: '0.75rem',
+              borderRadius: '0.75rem',
+              marginBottom: '0.75rem',
+              cursor: 'pointer',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+            }}
+            onClick={() => alert('Tips for improving focus!')}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateX(3px)';
+              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateX(0)';
+              e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
+            }}>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '0.25rem'
+              }}>
+                <span style={{
                   fontSize: '0.875rem',
-                  marginBottom: '0.5rem',
                   display: 'flex',
                   alignItems: 'center'
                 }}>
-                  <span style={{marginRight: '0.5rem'}}>✨</span>
-                  Brain Discoveries:
-                </h4>
-                <div style={{
+                  <span style={{
+                    marginRight: '0.5rem',
+                    fontSize: '1.1rem',
+                    animation: 'pulse 2s infinite'
+                  }}>👁️</span>
+                  Focus Power:
+                </span>
+                <span style={{
                   fontSize: '0.875rem',
-                  color: '#374151',
-                  backgroundColor: '#eff6ff',
-                  padding: '0.75rem',
+                  fontWeight: '600',
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6366f1',
+                  background: 'rgba(224, 231, 255, 0.6)',
+                  padding: '0.15rem 0.5rem',
                   borderRadius: '0.5rem'
                 }}>
-                  {modelInsights.combined && modelInsights.combined.length > 0 && (
-                    <p style={{
-                      marginBottom: '0.5rem',
-                      display: 'flex'
-                    }}>
-                      <span style={{marginRight: '0.5rem'}}>🧠</span>
-                      <span>{modelInsights.combined[0]}</span>
-                    </p>
-                  )}
-                  {modelInsights.inattention && modelInsights.inattention.length > 0 && (
-                    <p style={{
-                      marginBottom: '0.5rem',
-                      display: 'flex'
-                    }}>
-                      <span style={{marginRight: '0.5rem'}}>👁️</span>
-                      <span>{modelInsights.inattention[0]}</span>
-                    </p>
-                  )}
-                  {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
-                    <p style={{
-                      display: 'flex'
-                    }}>
-                      <span style={{marginRight: '0.5rem'}}>🚀</span>
-                      <span>{modelInsights.impulsivity[0]}</span>
-                    </p>
-                  )}
-                </div>
+                  {getLevelEmoji(scoreLevels?.inattention)}
+                  <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.inattention || 'N/A'}</span>
+                </span>
               </div>
-            )}
+              <div style={{
+                width: '100%',
+                backgroundColor: '#e5e7eb',
+                borderRadius: '9999px',
+                height: '0.75rem',
+                overflow: 'hidden'
+              }}>
+                <div 
+                  style={{
+                    [getProgressColors(scoreLevels?.inattention).split(':')[0]]: getProgressColors(scoreLevels?.inattention).split(':')[1],
+                    [getProgressWidth(scoreLevels?.inattention).split(':')[0]]: getProgressWidth(scoreLevels?.inattention).split(':')[1],
+                    height: '0.75rem',
+                    borderRadius: '9999px',
+                    transition: 'all 0.5s ease',
+                    backgroundImage: 'linear-gradient(45deg, rgba(147,197,253,1) 0%, rgba(59,130,246,1) 100%)'
+                  }}
+                ></div>
+              </div>
+            </div>
             
             <div style={{
-              marginTop: '1rem',
-              padding: '0.5rem',
-              backgroundColor: '#faf5ff',
-              borderRadius: '0.5rem',
-              fontSize: '0.75rem',
-              textAlign: 'center'
+              backgroundColor: '#fefce8',
+              padding: '0.75rem',
+              borderRadius: '0.75rem',
+              marginBottom: '0.75rem',
+              cursor: 'pointer',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+            }}
+            onClick={() => alert('Tips for managing impulsivity!')}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateX(3px)';
+              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateX(0)';
+              e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
             }}>
-              <p>✨ This is just a game-based brain map, not a doctor's diagnosis ✨</p>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '0.25rem'
+              }}>
+                <span style={{
+                  fontSize: '0.875rem',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  <span style={{
+                    marginRight: '0.5rem',
+                    fontSize: '1.1rem',
+                    animation: 'pulse 2s infinite'
+                  }}>🚀</span>
+                  Action Power:
+                </span>
+                <span style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#d97706',
+                  background: 'rgba(254, 243, 199, 0.6)',
+                  padding: '0.15rem 0.5rem',
+                  borderRadius: '0.5rem'
+                }}>
+                  {getLevelEmoji(scoreLevels?.impulsivity)}
+                  <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.impulsivity || 'N/A'}</span>
+                </span>
+              </div>
+              <div style={{
+                width: '100%',
+                backgroundColor: '#e5e7eb',
+                borderRadius: '9999px',
+                height: '0.75rem',
+                overflow: 'hidden'
+              }}>
+                <div 
+                  style={{
+                    [getProgressColors(scoreLevels?.impulsivity).split(':')[0]]: getProgressColors(scoreLevels?.impulsivity).split(':')[1],
+                    [getProgressWidth(scoreLevels?.impulsivity).split(':')[0]]: getProgressWidth(scoreLevels?.impulsivity).split(':')[1],
+                    height: '0.75rem',
+                    borderRadius: '9999px',
+                    transition: 'all 0.5s ease',
+                    backgroundImage: 'linear-gradient(45deg, rgba(252,211,77,1) 0%, rgba(245,158,11,1) 100%)'
+                  }}
+                ></div>
+              </div>
             </div>
-          </>
-        ) : (
+          </div>
+        </div>
+        
+        {/* AI Insights with emojis */}
+        {modelInsights && (
           <div style={{
-            textAlign: 'center',
-            padding: '1.5rem'
+            marginTop: '1rem',
+            borderTop: '1px dashed #bfdbfe',
+            paddingTop: '0.75rem'
           }}>
-            <div style={{fontSize: '2.25rem', marginBottom: '0.75rem'}}>🔮</div>
-            <p style={{color: '#6b7280'}}>Your brain map is still loading...</p>
-            <p style={{color: '#9ca3af', fontSize: '0.75rem', marginTop: '0.5rem'}}>Play more games to help us understand your superpowers!</p>
+            <h4 style={{
+              fontWeight: '600',
+              fontSize: '0.95rem',
+              marginBottom: '0.75rem',
+              display: 'flex',
+              alignItems: 'center',
+              color: '#4b5563'
+            }}>
+              <span style={{
+                marginRight: '0.5rem',
+                animation: 'spin 3s linear infinite'
+              }}>✨</span>
+              Brain Discoveries:
+            </h4>
+            <div style={{
+              fontSize: '0.875rem',
+              color: '#374151',
+              backgroundColor: '#eff6ff',
+              padding: '0.75rem',
+              borderRadius: '0.75rem',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = '#dbeafe';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = '#eff6ff';
+            }}>
+              {modelInsights.combined && modelInsights.combined.length > 0 && (
+                <p style={{
+                  marginBottom: '0.75rem',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  padding: '0.5rem',
+                  borderRadius: '0.5rem',
+                  backgroundColor: 'rgba(219, 234, 254, 0.5)',
+                  transition: 'transform 0.2s ease',
+                  cursor: 'pointer'
+                }}
+                onClick={() => alert('More about your brain patterns')}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateX(3px)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateX(0)';
+                }}>
+                  <span style={{
+                    marginRight: '0.5rem',
+                    fontSize: '1.1rem',
+                    animation: 'pulse 2s infinite'
+}}>🧠</span>
+                  <span>{modelInsights.combined[0]}</span>
+                </p>
+              )}
+              {modelInsights.inattention && modelInsights.inattention.length > 0 && (
+                <p style={{
+                  marginBottom: '0.75rem',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  padding: '0.5rem',
+                  borderRadius: '0.5rem',
+                  backgroundColor: 'rgba(237, 233, 254, 0.5)',
+                  transition: 'transform 0.2s ease',
+                  cursor: 'pointer'
+                }}
+                onClick={() => alert('Focus improvement tips')}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateX(3px)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateX(0)';
+                }}>
+                  <span style={{
+                    marginRight: '0.5rem',
+                    fontSize: '1.1rem'
+                  }}>👁️</span>
+                  <span>{modelInsights.inattention[0]}</span>
+                </p>
+              )}
+              {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
+                <p style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  padding: '0.5rem',
+                  borderRadius: '0.5rem',
+                  backgroundColor: 'rgba(254, 240, 138, 0.5)',
+                  transition: 'transform 0.2s ease',
+                  cursor: 'pointer'
+                }}
+                onClick={() => alert('Impulsivity management strategies')}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateX(3px)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateX(0)';
+                }}>
+                  <span style={{
+                    marginRight: '0.5rem',
+                    fontSize: '1.1rem'
+                  }}>🚀</span>
+                  <span>{modelInsights.impulsivity[0]}</span>
+                </p>
+              )}
+            </div>
+            
+            {/* Questionnaire Navigation Button with animation */}
+            <div style={{
+              marginTop: '1.25rem',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <button 
+                onClick={navigateToQuestionnaire}
+                style={{
+                  backgroundColor: '#4083A8',
+                  backgroundImage: 'linear-gradient(45deg, #4083A8 0%, #3b82f6 100%)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '0.75rem',
+                  padding: '0.75rem 1.25rem',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  display: 'flex',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.2)',
+                  transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.2)';
+                }}
+              >
+                <span style={{
+                  marginRight: '0.5rem',
+                  fontSize: '1.1rem',
+                  animation: 'bounce 1s infinite alternate'
+                }}>📋</span>
+                Take ADHD Questionnaire
+                <span style={{
+                  position: 'absolute',
+                  right: '0.5rem',
+                  opacity: '0.7',
+                  transition: 'transform 0.3s ease',
+                  transform: 'translateX(0)'
+                }}>→</span>
+              </button>
+            </div>
           </div>
         )}
-      </CardContent>
-    </Card>
+        
+        {/* Tips & Resources Section (new) */}
+        <div style={{
+          marginTop: '1.25rem',
+          borderTop: '1px dashed #bfdbfe',
+          paddingTop: '0.75rem',
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '0.5rem'
+        }}>
+          <button style={{
+            backgroundColor: '#f0fdf4',
+            color: '#16a34a',
+            border: '1px solid #dcfce7',
+            borderRadius: '0.5rem',
+            padding: '0.4rem 0.8rem',
+            fontSize: '0.75rem',
+            fontWeight: '500',
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+          onClick={() => alert('ADHD Tips & Tricks')}
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = '#dcfce7';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = '#f0fdf4';
+          }}>
+            <span style={{marginRight: '0.25rem'}}>💡</span>
+            Tips
+          </button>
+          
+          <button style={{
+            backgroundColor: '#eff6ff',
+            color: '#3b82f6',
+            border: '1px solid #dbeafe',
+            borderRadius: '0.5rem',
+            padding: '0.4rem 0.8rem',
+            fontSize: '0.75rem',
+            fontWeight: '500',
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+          onClick={() => alert('ADHD Support Resources')}
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = '#dbeafe';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = '#eff6ff';
+          }}>
+            <span style={{marginRight: '0.25rem'}}>🔍</span>
+            Resources
+          </button>
+          
+          <button style={{
+            backgroundColor: '#faf5ff',
+            color: '#8b5cf6',
+            border: '1px solid #f3e8ff',
+            borderRadius: '0.5rem',
+            padding: '0.4rem 0.8rem',
+            fontSize: '0.75rem',
+            fontWeight: '500',
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+          onClick={() => alert('Track your progress over time')}
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = '#f3e8ff';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = '#faf5ff';
+          }}>
+            <span style={{marginRight: '0.25rem'}}>📊</span>
+            Progress
+          </button>
+        </div>
+        
+        {/* Interactive disclaimer with tooltip */}
+        <div style={{
+          marginTop: '1rem',
+          padding: '0.75rem',
+          backgroundColor: '#faf5ff',
+          borderRadius: '0.75rem',
+          fontSize: '0.75rem',
+          textAlign: 'center',
+          position: 'relative',
+          cursor: 'pointer'
+        }}
+        onClick={() => alert('Important: This tool is for educational purposes only and should not replace professional medical advice.')}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = '#f3e8ff';
+          e.currentTarget.querySelector('.tooltip').style.opacity = '1';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = '#faf5ff';
+          e.currentTarget.querySelector('.tooltip').style.opacity = '0';
+        }}>
+          <div className="tooltip" style={{
+            position: 'absolute',
+            bottom: '100%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: 'rgba(79, 70, 229, 0.9)',
+            color: 'white',
+            padding: '0.5rem',
+            borderRadius: '0.5rem',
+            fontSize: '0.75rem',
+            width: 'max-content',
+            maxWidth: '90%',
+            boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+            opacity: '0',
+            transition: 'opacity 0.3s ease',
+            pointerEvents: 'none',
+            marginBottom: '0.5rem'
+          }}>
+            Click for important information about this tool
+          </div>
+          <p style={{
+            fontWeight: '500',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <span style={{
+              marginRight: '0.5rem',
+              animation: 'pulse 2s infinite'
+            }}>✨</span>
+            This is just a game-based brain map, not a doctor's diagnosis
+            <span style={{
+              marginLeft: '0.5rem',
+              animation: 'pulse 2s infinite'
+            }}>✨</span>
+          </p>
+        </div>
+      </>
+    ) : (
+      <div style={{
+        textAlign: 'center',
+        padding: '1.5rem',
+        animation: 'fadeIn 1s ease'
+      }}>
+        <div style={{
+          fontSize: '3rem', 
+          marginBottom: '1rem',
+          animation: 'float 3s ease-in-out infinite'
+        }}>🔮</div>
+        <p style={{
+          color: '#6b7280',
+          fontSize: '1.1rem',
+          fontWeight: '500'
+        }}>Your brain map is still loading...</p>
+        <div style={{
+          marginTop: '1rem',
+          backgroundColor: '#f5f3ff',
+          borderRadius: '0.75rem',
+          padding: '1rem',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+        }}>
+          <p style={{
+            color: '#9ca3af', 
+            fontSize: '0.875rem', 
+            marginBottom: '1rem'
+          }}>Play more games to help us understand your superpowers!</p>
+          <button style={{
+            backgroundColor: '#8b5cf6',
+            color: 'white',
+            border: 'none',
+            borderRadius: '0.5rem',
+            padding: '0.5rem 1rem',
+            fontSize: '0.875rem',
+            fontWeight: '500',
+            display: 'flex',
+            alignItems: 'center',
+            margin: '0 auto',
+            cursor: 'pointer',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+            transition: 'all 0.2s ease'
+          }}
+          onClick={() => alert('Let\'s play some brain games!')}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+          }}>
+            <span style={{marginRight: '0.5rem'}}>🎮</span>
+            Play Brain Games
+          </button>
+        </div>
+        
+        <div style={{
+          marginTop: '1.5rem',
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '0.75rem'
+        }}>
+          <div style={{
+            backgroundColor: '#f0fdf4',
+            borderRadius: '50%',
+            width: '2.5rem',
+            height: '2.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+            cursor: 'pointer',
+            animation: 'pulse 2s infinite'
+          }}
+          onClick={() => alert('About ADHD Brain Explorer')}>
+            <span style={{fontSize: '1.25rem'}}>ℹ️</span>
+          </div>
+          <div style={{
+            backgroundColor: '#eff6ff',
+            borderRadius: '50%',
+            width: '2.5rem',
+            height: '2.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+            cursor: 'pointer',
+            animation: 'pulse 3s infinite'
+          }}
+          onClick={() => alert('Learn about ADHD')}>
+            <span style={{fontSize: '1.25rem'}}>📚</span>
+          </div>
+          <div style={{
+            backgroundColor: '#faf5ff',
+            borderRadius: '50%',
+            width: '2.5rem',
+            height: '2.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+            cursor: 'pointer',
+            animation: 'pulse 4s infinite'
+          }}
+          onClick={() => alert('Need help? Contact us')}>
+            <span style={{fontSize: '1.25rem'}}>💬</span>
+          </div>
+        </div>
+      </div>
+    )}
+    
+    {/* Animation keyframes - add to your CSS */}
+    <style>{`
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+      
+      @keyframes bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-3px); }
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    `}</style>
+  </CardContent>
+</Card>
   </div>
 );
 };
