@@ -816,3 +816,170 @@
 2025-03-16 18:12:50,862 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:12:50] "GET /health HTTP/1.1" 200 -
 2025-03-16 18:14:07,754 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:14:07] "GET /health HTTP/1.1" 200 -
 2025-03-16 18:14:08,080 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:14:08] "GET /health HTTP/1.1" 200 -
+2025-03-16 18:19:08,706 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:19:08] "GET /health HTTP/1.1" 200 -
+2025-03-16 18:29:40,657 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:29:40] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 18:29:40,657 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:29:40] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 18:29:40,678 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:29:40] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 18:29:41,646 - __main__ - INFO - Model loaded successfully
+2025-03-16 18:29:41,651 - __main__ - INFO - Model loaded successfully
+2025-03-16 18:29:41,651 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 18:29:41,667 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 18:29:41,668 - __main__ - INFO - Model loaded successfully
+2025-03-16 18:29:41,672 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 18:29:41,672 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 18:29:41,684 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 18:29:41,733 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 18:29:41,933 - __main__ - ERROR - Error in predict_adhd_type: X has 8 features, but StandardScaler is expecting 7 features as input.
+Traceback (most recent call last):
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1585, in predict_adhd_type
+    premature_clicks_ratio
+                  ^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1062, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2965, in validate_data
+    _check_n_features(_estimator, X, reset=reset)
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2829, in _check_n_features
+    raise ValueError(
+ValueError: X has 8 features, but StandardScaler is expecting 7 features as input.
+
+2025-03-16 18:29:41,935 - __main__ - ERROR - Error in predict_adhd_type: X has 8 features, but StandardScaler is expecting 7 features as input.
+Traceback (most recent call last):
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1585, in predict_adhd_type
+    premature_clicks_ratio
+                  ^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1062, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2965, in validate_data
+    _check_n_features(_estimator, X, reset=reset)
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2829, in _check_n_features
+    raise ValueError(
+ValueError: X has 8 features, but StandardScaler is expecting 7 features as input.
+
+2025-03-16 18:29:41,935 - __main__ - ERROR - Error in predict_adhd_type: X has 8 features, but StandardScaler is expecting 7 features as input.
+Traceback (most recent call last):
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1585, in predict_adhd_type
+    premature_clicks_ratio
+                  ^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1062, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2965, in validate_data
+    _check_n_features(_estimator, X, reset=reset)
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2829, in _check_n_features
+    raise ValueError(
+ValueError: X has 8 features, but StandardScaler is expecting 7 features as input.
+
+2025-03-16 18:29:41,935 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 18:29:41,940 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 18:29:41,940 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 18:29:41,940 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:29:41] "POST /predict HTTP/1.1" 200 -
+2025-03-16 18:29:41,940 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:29:41] "POST /predict HTTP/1.1" 200 -
+2025-03-16 18:29:41,945 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 18:29:41] "POST /predict HTTP/1.1" 200 -
+2025-03-16 19:05:11,458 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:05:11] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 19:05:11,474 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:05:11] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 19:05:11,482 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:05:11] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 19:05:12,421 - __main__ - INFO - Model loaded successfully
+2025-03-16 19:05:12,439 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 19:05:12,461 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 19:05:12,625 - __main__ - INFO - Model loaded successfully
+2025-03-16 19:05:12,630 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 19:05:12,631 - __main__ - INFO - Model loaded successfully
+2025-03-16 19:05:12,632 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 19:05:12,637 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 19:05:12,640 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 19:05:12,717 - __main__ - ERROR - Error in predict_adhd_type: X has 8 features, but StandardScaler is expecting 7 features as input.
+Traceback (most recent call last):
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1585, in predict_adhd_type
+    # premature_clicks_ratio
+                  ^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1062, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2965, in validate_data
+    _check_n_features(_estimator, X, reset=reset)
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2829, in _check_n_features
+    raise ValueError(
+ValueError: X has 8 features, but StandardScaler is expecting 7 features as input.
+
+2025-03-16 19:05:12,717 - __main__ - ERROR - Error in predict_adhd_type: X has 8 features, but StandardScaler is expecting 7 features as input.
+Traceback (most recent call last):
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1585, in predict_adhd_type
+    # premature_clicks_ratio
+                  ^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1062, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2965, in validate_data
+    _check_n_features(_estimator, X, reset=reset)
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2829, in _check_n_features
+    raise ValueError(
+ValueError: X has 8 features, but StandardScaler is expecting 7 features as input.
+
+2025-03-16 19:05:12,717 - __main__ - ERROR - Error in predict_adhd_type: X has 8 features, but StandardScaler is expecting 7 features as input.
+Traceback (most recent call last):
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1585, in predict_adhd_type
+    # premature_clicks_ratio
+                  ^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1062, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2965, in validate_data
+    _check_n_features(_estimator, X, reset=reset)
+  File "D:\research\adhd-assessment-system\backend\mlmodels\it21288326\venv\Lib\site-packages\sklearn\utils\validation.py", line 2829, in _check_n_features
+    raise ValueError(
+ValueError: X has 8 features, but StandardScaler is expecting 7 features as input.
+
+2025-03-16 19:05:12,717 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 19:05:12,717 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 19:05:12,717 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 19:05:12,717 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:05:12] "POST /predict HTTP/1.1" 200 -
+2025-03-16 19:05:12,717 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:05:12] "POST /predict HTTP/1.1" 200 -
+2025-03-16 19:05:12,717 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:05:12] "POST /predict HTTP/1.1" 200 -
+2025-03-16 19:06:42,303 - __main__ - INFO - MongoDB connection established successfully
+2025-03-16 19:06:42,616 - __main__ - INFO - Model loaded successfully
+2025-03-16 19:06:42,620 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 19:06:42,622 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 19:06:42,622 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-16 19:06:42,639 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.28.21.168:5000
+2025-03-16 19:06:42,639 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 19:08:25,373 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:08:25] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 19:08:25,377 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:08:25] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 19:08:25,522 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:08:25] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-16 19:08:25,693 - __main__ - INFO - Model loaded successfully
+2025-03-16 19:08:25,696 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 19:08:25,700 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 19:08:25,883 - __main__ - INFO - Model loaded successfully
+2025-03-16 19:08:25,883 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 19:08:25,899 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 19:08:25,919 - __main__ - INFO - Model loaded successfully
+2025-03-16 19:08:25,924 - __main__ - INFO - Scaler loaded successfully
+2025-03-16 19:08:25,924 - __main__ - INFO - Label encoder loaded successfully
+2025-03-16 19:08:26,154 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 19:08:26,154 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:08:26] "POST /predict HTTP/1.1" 200 -
+2025-03-16 19:08:26,159 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 19:08:26,161 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:08:26] "POST /predict HTTP/1.1" 200 -
+2025-03-16 19:08:26,171 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-16 19:08:26,173 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 19:08:26] "POST /predict HTTP/1.1" 200 -
