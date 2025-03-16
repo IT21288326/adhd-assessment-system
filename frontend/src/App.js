@@ -49,6 +49,8 @@ import Profile from './component/it21288326/Profile';
 import Home from './component/Home';
 import ProtectedRoute from './component/it21288326/ProtectedRoute'; // Import the ProtectedRoute component
 import GameAnalyticsContainer from './component/it21288326/GameAnalyticsContainer';
+import ReportPage from './component/it21288326/ReportPage';
+import AdminDashboard from './component/it21288326/AdminDashboard';
 
 function App() {
   return (
@@ -58,7 +60,7 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
-
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
           {/* Protected Routes */}
           <Route
             path="/profile"
@@ -97,6 +99,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <GameAnalyticsContainer />
+              </ProtectedRoute>
+            }
+          />
+                    <Route
+            path="/questionnaire-form/report"
+            element={
+              <ProtectedRoute>
+                <ReportPage />
               </ProtectedRoute>
             }
           />
