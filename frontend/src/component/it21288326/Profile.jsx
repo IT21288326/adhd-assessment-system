@@ -175,7 +175,7 @@ const Profile = () => {
         margin: '0 auto',
         padding: '20px'
       }}>
-        <div className="welcome-banner" style={{ 
+        {/* <div className="welcome-banner" style={{ 
           backgroundColor: 'rgba(255, 255, 255, 0.85)',
           borderRadius: '25px',
           padding: '15px',
@@ -208,7 +208,7 @@ const Profile = () => {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div className="menu-container" style={{ 
           display: 'flex',

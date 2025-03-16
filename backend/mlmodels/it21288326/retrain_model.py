@@ -1019,6 +1019,10 @@ import traceback
 from flask_cors import CORS
 from pymongo import MongoClient
 import pickle
+# Add this to your health_check function
+import time
+start_time = time.time()
+
 
 
 # Set up logging
@@ -1034,7 +1038,7 @@ logger = logging.getLogger(__name__)
 
 # Constants
 CSV_FILE_PATH = "D:\ research\ adhd-assessment-system\ backend\mlmodels\it21288326\ adhd_dataset .csv"  # Initial data source
-MODEL_PATH = '/ adhd_model.keras'
+MODEL_PATH = 'D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras'
 ADHD_SUBTYPES = ['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']
 DATA_THRESHOLD = 40  # Minimum records needed for training
 
@@ -1710,14 +1714,23 @@ if __name__ == "__main__":
                 
                 model_status = "loaded" if loaded_model is not None else "not loaded"
                 scaler_status = "loaded" if loaded_scaler is not None else "not loaded"
-                
+
+                    # Calculate uptime
+                uptime_seconds = int(time.time() - start_time)
+                days, remainder = divmod(uptime_seconds, 86400)
+                hours, remainder = divmod(remainder, 3600)
+                minutes, seconds = divmod(remainder, 60)
+                uptime_str = f"{days} days, {hours} hours, {minutes} minutes"
+
                 return jsonify({
                     "status": "ok" if loaded_model and loaded_scaler else "degraded",
                     "model_loaded": model_status,
                     "scaler_loaded": scaler_status,
                     "database": db_status,
-                    "version": "1.0.0"
+                    "version": "1.0.0",
+                    "uptime": uptime_str
                 })
+            
 
             @app.route('/retrain', methods=['POST'])
             def retrain_model():
