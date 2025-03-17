@@ -4036,7 +4036,7 @@ return (
       marginBottom: '2rem'
     }}>
       <div style={{display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1rem', marginBottom: '2rem'}}>
-        <Card>
+        {/* <Card>
           <CardHeader style={{backgroundImage: 'linear-gradient(to right, #eff6ff, #dbeafe)'}}>
             <CardTitle style={{display: 'flex', alignItems: 'center'}}>
               <Brain style={{marginRight: '0.5rem', color: '#2563eb'}} size={20} />
@@ -4142,11 +4142,105 @@ return (
             </div>
             <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
           </CardContent>
-        </Card>
+        </Card> */}
+ {/* <div className="space-y-4 w-full max-w-3xl mx-auto"> */}
+      <Card className="w-full">
+        <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100">
+          <CardTitle className="flex items-center">
+            <Brain className="mr-2 text-blue-600" size={20} />
+            <span>Attention Score</span>
+            <button
+              className="ml-auto"
+              onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
+            >
+              <Info size={16} className="text-blue-400" />
+            </button>
+          </CardTitle>
+          {showMetricInfo === 'attention' && (
+            <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
+              {getMetricInfo('attention')}
+            </div>
+          )}
+        </CardHeader>
+        <CardContent className="pt-4">
+          <div className="flex justify-between items-center mb-2">
+            <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
+            <div className="flex items-center">
+              <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+                {analysisResults.inattention.level}
+              </span>
+              <TrendingUp 
+                size={16} 
+                className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
+              />
+            </div>
+          </div>
+          <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
+        </CardContent>
+      </Card>
+      
+      <Card className="w-full">
+        <CardHeader className="bg-gradient-to-r from-yellow-50 to-yellow-100">
+          <CardTitle className="flex items-center">
+            <Zap className="mr-2 text-yellow-600" size={20} />
+            <span>Impulsivity Score</span>
+            <button 
+              className="ml-auto"
+              onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
+            >
+              <Info size={16} className="text-yellow-400" />
+            </button>
+          </CardTitle>
+          {showMetricInfo === 'impulsivity' && (
+            <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
+              {getMetricInfo('impulsivity')}
+            </div>
+          )}
+        </CardHeader>
+        <CardContent className="pt-4">
+          <div className="flex justify-between items-center mb-2">
+            <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
+            <div className="flex items-center">
+              <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+                {analysisResults.impulsivity.level}
+              </span>
+              <TrendingUp 
+                size={16} 
+                className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
+              />
+            </div>
+          </div>
+          <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
+        </CardContent>
+      </Card>
+      
+      <Card className="w-full">
+        <CardHeader className="bg-gradient-to-r from-purple-50 to-purple-100">
+          <CardTitle className="flex items-center">
+            <Activity className="mr-2 text-purple-600" size={20} />
+            <span>Combined Score</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="pt-4">
+          <div className="flex justify-between items-center mb-2">
+            <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
+            <div className="flex items-center">
+              <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+                {analysisResults.combined.level}
+              </span>
+              <TrendingUp 
+                size={16} 
+                className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
+              />
+            </div>
+          </div>
+          <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
+        </CardContent>
+      </Card>
       </div>
     </div>
     
-    <div style={{marginBottom: '2rem'}}>
+    {/* <div style={{marginBottom: '2rem'}}>
       <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
         <CardHeader>
           <CardTitle>Performance Trend</CardTitle>
@@ -4170,7 +4264,7 @@ return (
           </div>
         </CardContent>
       </Card>
-    </div>
+    </div> */}
     
     <div style={{
       display: 'grid',
@@ -4198,7 +4292,7 @@ return (
         </CardContent>
       </Card>
       
-      <Card style={{
+      {/* <Card style={{
   boxShadow: '0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1)',
   borderRadius: '0.75rem',
   overflow: 'hidden',
@@ -4581,8 +4675,8 @@ onMouseOut={(e) => {
       }
     `}</style>
   </CardContent>
-</Card>
-    </div>
+</Card>*/}
+    </div> 
     
     <Card style={{
   boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',

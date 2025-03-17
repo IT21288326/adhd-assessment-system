@@ -1477,6 +1477,167 @@ const GameOverScreen = ({ stats, comment, onRestart, onViewAnalytics }) => (
     </div>
   </div>
 );
+const GameStartScreen = ({ onStartGame }) => (
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundImage: 'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
+    color: '#fff',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 10,
+    fontFamily: 'Arial, sans-serif'
+  }}>
+    <h1 style={{ 
+      fontSize: '3.5rem', 
+      margin: '0 0 20px 0',
+      textShadow: '0 0 10px #FFD700, 0 0 20px #FFD700'
+    }}>
+      Star Catcher
+    </h1>
+    
+    <div style={{
+      background: 'rgba(255, 255, 255, 0.2)',
+      borderRadius: '15px',
+      padding: '20px',
+      margin: '20px',
+      maxWidth: '600px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      textAlign: 'center'
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <span style={{ fontSize: '24px', marginRight: '15px' }}>⭐</span>
+        <p style={{ fontSize: '18px', margin: 0, textAlign: 'left' }}>Click the falling stars as quickly as you can!</p>
+      </div>
+      
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <span style={{ fontSize: '24px', marginRight: '15px' }}>🌟</span>
+        <p style={{ fontSize: '18px', margin: 0, textAlign: 'left' }}>Golden stars are worth 5 points!</p>
+      </div>
+      
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <span style={{ fontSize: '24px', marginRight: '15px' }}>⏱️</span>
+        <p style={{ fontSize: '18px', margin: 0, textAlign: 'left' }}>You have 3 minutes to get the highest score!</p>
+      </div>
+      
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ fontSize: '24px', marginRight: '15px' }}>⚠️</span>
+        <p style={{ fontSize: '18px', margin: 0, textAlign: 'left' }}>Avoid clicking when no stars are present!</p>
+      </div>
+    </div>
+    
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      margin: '20px 0'
+    }}>
+      <div style={{
+        background: 'rgba(255, 215, 0, 0.3)',
+        borderRadius: '15px',
+        padding: '15px',
+        maxWidth: '500px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+        textAlign: 'center',
+        marginBottom: '30px'
+      }}>
+        <p style={{ fontSize: '20px', margin: 0 }}>Are you ready to test your reaction time?</p>
+      </div>
+      
+      <button 
+        style={{ 
+          padding: '15px 40px', 
+          fontSize: '24px',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '25px',
+          cursor: 'pointer',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+          transition: 'all 0.3s ease'
+        }} 
+        onClick={onStartGame}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        Start Game! 🚀
+      </button>
+    </div>
+  </div>
+);
+const GameHUD = ({ timeLeft, score, comment }) => {
+  // Convert seconds to minutes:seconds format
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+
+  return (
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      padding: '10px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      zIndex: 5,
+      pointerEvents: 'none' // Allow clicks to pass through to the game
+    }}>
+      {/* Time and Score */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        background: 'rgba(0, 0, 0, 0.6)',
+        borderRadius: '0 0 10px 0',
+        padding: '10px 20px',
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)'
+      }}>
+        <div style={{ marginRight: '20px', display: 'flex', alignItems: 'center' }}>
+          <span style={{ fontSize: '20px', color: '#fff', marginRight: '8px' }}>⏱️</span>
+          <span style={{ fontSize: '20px', color: timeLeft < 30 ? '#ff5555' : '#fff', fontWeight: 'bold' }}>
+            {formatTime(timeLeft)}
+          </span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <span style={{ fontSize: '20px', color: '#fff', marginRight: '8px' }}>🌟</span>
+          <span style={{ fontSize: '20px', color: '#fff', fontWeight: 'bold' }}>{score}</span>
+        </div>
+      </div>
+
+      {/* Comment Display */}
+      {comment && (
+        <div style={{
+          background: 'rgba(255, 215, 0, 0.8)',
+          borderRadius: '0 0 0 10px',
+          padding: '10px 20px',
+          boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)',
+          animation: 'fadeIn 0.5s ease-in-out',
+          color: '#000',
+          fontWeight: 'bold',
+          fontSize: '18px',
+          maxWidth: '50%',
+          textAlign: 'right'
+        }}>
+          {comment}
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+    </div>
+  );
+};
 
 const ReactiontimeGame = () => {
   const navigate = useNavigate();
@@ -1490,11 +1651,13 @@ const ReactiontimeGame = () => {
     averageReactionTime: 0
   });
   const [comment, setComment] = useState('');
+  const [inGameComment, setInGameComment] = useState(''); // New state for in-game comments
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(180); // 3 minutes in seconds
   const location = useLocation();
   const [childId, setChildId] = useState(location.state?.childId || null);
   const [gameId, setGameId] = useState(null); // Add gameId state
+  const [gameStarted, setGameStarted] = useState(false); // Add state for game started
   
   // Refs for tracking game metrics
   const missedStarsRef = useRef([]);
@@ -1526,6 +1689,8 @@ const ReactiontimeGame = () => {
   const gameTimerActiveRef = useRef(false);
   const starVisibleRef = useRef(false);
 
+  const commentTimeoutRef = useRef(null);
+
   useEffect(() => {
     const id = location.state?.childId;
     if (!id) {
@@ -1536,7 +1701,7 @@ const ReactiontimeGame = () => {
   }, [location.state]);
 
   useEffect(() => {
-    if (!childId) return; // Wait until childId is available
+    if (!childId || !gameStarted ) return; // Wait until childId is available
 
     gameStartTimeRef.current = Date.now();
 
@@ -1561,8 +1726,11 @@ const ReactiontimeGame = () => {
       if (gameTimerRef.current) {
         clearInterval(gameTimerRef.current);
       }
+      if (commentTimeoutRef.current) {
+        clearTimeout(commentTimeoutRef.current);
+      }
     };
-  }, [childId]);
+  }, [childId,gameStarted]);
 
   function preload() {
     this.load.image('sky', '/assets/it21288326/sky.png');
@@ -1591,6 +1759,8 @@ const ReactiontimeGame = () => {
     const clickTimestamp = Date.now();
     prematureClickTimes.current.push(clickTimestamp);
     prematureClicksRef.current++;
+
+    displayInGameComment("Careful! Wait for the star to appear!");
   });
 
     // Create star
@@ -1671,12 +1841,24 @@ const ReactiontimeGame = () => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(gameTimerRef.current);
+        }if (prev === 60) {
+            displayInGameComment("One minute left!");
+          } else if (prev === 30) {
+            displayInGameComment("30 seconds remaining!");
+          } else if (prev === 10) {
+            displayInGameComment("Hurry! 10 seconds left!");
+          }
+          
+          if (prev <= 1) {
+            clearInterval(gameTimerRef.current);
+            endGame();
           endGame();
           return 0;
         }
         return prev - 1;
       });
     }, 1000);
+
     this.input.on('pointerdown', (pointer) => {
       const clickTimestamp = Date.now();
       
@@ -1703,6 +1885,11 @@ const ReactiontimeGame = () => {
     if (starRef.current && starRef.current.y > window.innerHeight) {
       missedStarsRef.current.push(Date.now());
       starVisibleRef.current = false; // Star is no longer visible
+      if (missedStarsRef.current.length % 3 === 0) {
+        displayInGameComment("You've missed several stars. Try to focus!");
+      } else {
+        displayInGameComment("Missed one! Keep your eyes on the screen!");
+      }
       resetStar();
     }
 
@@ -1727,6 +1914,24 @@ const ReactiontimeGame = () => {
     });
     
     correctStreakRef.current++;
+
+    if (correctStreakRef.current === 5) {
+      displayInGameComment("Nice! 5 in a row!");
+    } else if (correctStreakRef.current === 10) {
+      displayInGameComment("Great job! 10 streak!");
+    } else if (correctStreakRef.current === 15) {
+      displayInGameComment("Amazing! 15 streak!");
+    } else if (correctStreakRef.current % 20 === 0) {
+      displayInGameComment(`Incredible! ${correctStreakRef.current} streak!`);
+    }
+
+        // Add reaction time comments
+        if (reactionTime < 300) {
+          displayInGameComment("Lightning fast!");
+        } else if (reactionTime < 500) {
+          displayInGameComment("Great reflexes!");
+        }
+
     if (correctStreakRef.current % 5 === 0) {
       speedDownRef.current += speedDownIncrement;
     }
@@ -1749,10 +1954,27 @@ const ReactiontimeGame = () => {
     scoreRef.current += 5; // Bonus points for clicking the special star
     setScore(scoreRef.current);
 
+    // Add special star comment
+    displayInGameComment("Bonus star! +5 points!");
+
     clickSoundRef.current.play();
     specialStarRef.current.setVisible(false);
     specialStarActiveRef.current = false;
   }
+
+   // Function to display in-game comments with automatic timeout
+   const displayInGameComment = (message) => {
+    setInGameComment(message);
+    
+    // Clear any existing timeout
+    if (commentTimeoutRef.current) {
+      clearTimeout(commentTimeoutRef.current);
+    }
+
+    commentTimeoutRef.current = setTimeout(() => {
+      setInGameComment('');
+    }, 2000);
+  };
 
   function resetStar() {
     if (!starRef.current) return;
@@ -1940,7 +2162,10 @@ const ReactiontimeGame = () => {
     if (prematureClicks > 5) return 'You seem impulsive. Try to pace yourself.';
     return 'Good effort! Keep practicing to improve!';
   };
-
+  const startGame = () => {
+    setGameStarted(true);
+    displayInGameComment("Go! Catch the stars!");
+  };
   const restartGame = () => {
     setGameOver(false);
     reactionTimes.current = [];
@@ -1985,6 +2210,8 @@ const ReactiontimeGame = () => {
 
   return (
     <div id="phaser-container">
+      {!gameStarted && <GameStartScreen onStartGame={startGame} />}
+      {gameStarted && !gameOver && <GameHUD timeLeft={timeLeft} score={score} comment={inGameComment} />}
       {gameOver && <GameOverScreen stats={stats} comment={comment} onRestart={restartGame} onViewAnalytics={handleViewAnalytics} />}
     </div>
   );
