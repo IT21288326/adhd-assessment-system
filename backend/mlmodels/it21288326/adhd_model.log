@@ -561,3 +561,93 @@ AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
 2025-03-17 15:19:20,289 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 15:19:20] "GET /health HTTP/1.1" 200 -
 2025-03-17 15:24:22,171 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 15:24:22] "GET /health HTTP/1.1" 200 -
 2025-03-17 15:29:51,535 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 15:29:51] "GET /health HTTP/1.1" 200 -
+2025-03-17 15:42:00,232 - __main__ - INFO - MongoDB connection established successfully
+2025-03-17 15:42:00,545 - __main__ - INFO - Model loaded successfully
+2025-03-17 15:42:00,576 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 15:42:00,599 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 15:42:00,603 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-17 15:42:00,648 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.28.4.140:5000
+2025-03-17 15:42:00,648 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 16:32:22,003 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:32:22] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:32:22,019 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:32:21] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:32:22,022 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:32:22] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:32:23,499 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:32:23,499 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:32:23,515 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:32:23,515 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:32:23,515 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:32:23,524 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:32:23,531 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:32:23,531 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:32:23,547 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:32:25,360 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:32:25,360 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:32:25] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:32:25,360 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:32:25,376 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:32:25] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:32:25,376 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:32:25,376 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:32:25] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:34:02,313 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:02] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:34:02,726 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:34:02,730 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:34:02,732 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:34:02,948 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:34:02,948 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:02] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:34:20,885 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:20] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:34:21,201 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:21] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:34:21,283 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:34:21,283 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:34:21,283 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:34:21,435 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000020A114DA700> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-03-17 16:34:21,485 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:34:21,485 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:21] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:34:21,594 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:34:21,594 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:34:21,594 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:34:21,696 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000020A114A3BA0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-03-17 16:34:21,735 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:34:21,735 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:21] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:34:28,223 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:28] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:34:28,232 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:28] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:34:28,609 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:34:28,623 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:34:28,638 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:34:28,732 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:34:28,732 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:34:28,732 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:34:28,856 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:34:28,856 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:28] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:34:28,935 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:34:28,944 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:34:28] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:35:07,882 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:35:07] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:35:08,374 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:35:08,374 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:35:08,382 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:35:08,543 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:35:08,543 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:35:08] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:35:27,892 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:35:27] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:35:28,292 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:35:28,293 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:35:28,294 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:35:28,425 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:35:28,425 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:35:28] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:36:46,659 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:46] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:36:46,659 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:46] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:36:46,899 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:46] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 16:36:47,597 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:36:47,613 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:36:47,629 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:36:47,808 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:36:47,820 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:36:47,837 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:36:47,869 - __main__ - INFO - Model loaded successfully
+2025-03-17 16:36:47,885 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 16:36:47,885 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 16:36:48,267 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:36:48,283 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:48] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:36:48,444 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:36:48,444 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:48] "POST /predict HTTP/1.1" 200 -
+2025-03-17 16:36:48,496 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 16:36:48,498 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:48] "POST /predict HTTP/1.1" 200 -
