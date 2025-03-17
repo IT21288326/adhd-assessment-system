@@ -179,6 +179,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import './QuestionnaireForm.css';
+import NavigationBar from "./NavigationBar";
 
 const QuestionnaireForm = () => {
   const location = useLocation();
@@ -193,6 +194,7 @@ const QuestionnaireForm = () => {
   const [progress, setProgress] = useState(0);
   const [result, setResult] = useState(null);
 
+  const child = location.state?.childData || null;
   const handleDecline = () => {
     navigate(-1);
   };
@@ -287,7 +289,8 @@ const QuestionnaireForm = () => {
   const renderResult = () => {
     if (!result) return null;
     
-    return (
+    return (<>
+      <NavigationBar child={child} />
       <div className="result-panel">
         <div className="result-content">
           <h2>Questionnaire Results</h2>
@@ -300,10 +303,13 @@ const QuestionnaireForm = () => {
           </button>
         </div>
       </div>
+      </>
     );
   };
 
   return (
+    <>
+    <NavigationBar child={child} /> 
     <div className="questionnaire-container">
       {result ? (
         renderResult()
@@ -413,6 +419,7 @@ const QuestionnaireForm = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
