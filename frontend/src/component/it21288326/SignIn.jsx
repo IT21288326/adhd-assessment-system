@@ -49,7 +49,7 @@ const handleSubmit = async (e) => {
         <div className="card shadow">
           <div className="text-center bg-white">
             <img
-              src="/assets/it21288326/pulsemindlogo.jpg" // Replace with your image path
+              src="/assets/it21288326/pulsemindlogo.jpg" 
               alt="Sign In Illustration"
               className="img-fluid"
                />

@@ -93,6 +93,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import NavigationBar from "./NavigationBar"; // Updated import
 
 const Profile = () => {
   const [child, setChild] = useState(null);
@@ -167,49 +168,18 @@ const Profile = () => {
       backgroundImage: 'url("/assets/it21288326/clouds-bg.jpg")',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
-      backgroundPosition: 'center',
-      padding: '20px'
+      backgroundPosition: 'center'
     }}>
+      {/* Added ResponsiveNavigationBar at the top */}
+      <NavigationBar child={child} />
+      
       <div className="profile-container" style={{ 
         maxWidth: '1200px', 
         margin: '0 auto',
         padding: '20px'
       }}>
-        {/* <div className="welcome-banner" style={{ 
-          backgroundColor: 'rgba(255, 255, 255, 0.85)',
-          borderRadius: '25px',
-          padding: '15px',
-          marginBottom: '30px',
-          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-          border: '5px solid #66ccff',
-          textAlign: 'center'
-        }}>
-          <h1 style={{ 
-            fontSize: 'clamp(40px, 6vw, 80px)', 
-            fontWeight: 'bold', 
-            color: '#0088cc',
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
-            margin: '10px 0'
-          }}>
-            Welcome {child.name}!
-          </h1>
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            marginTop: '10px'
-          }}>
-            {[...Array(5)].map((_, i) => (
-              <span key={i} style={{ 
-                fontSize: '28px', 
-                margin: '0 5px',
-                color: '#ffcc00'
-              }}>
-                ★
-              </span>
-            ))}
-          </div>
-        </div> */}
-
+        {/* Removed previous NavigationBar since we've added the responsive one above */}
+        
         <div className="menu-container" style={{ 
           display: 'flex',
           flexDirection: 'row',
@@ -331,14 +301,14 @@ const Profile = () => {
           </div>
         </div>
         
-        <div className="footer" style={{
+        {/* <div className="footer" style={{
           textAlign: 'center',
           margin: '40px 0 20px',
           color: '#0088cc',
           fontSize: '16px'
         }}>
           <p>Have fun exploring!</p>
-        </div>
+        </div> */}
       </div>
       
       <style>{`
@@ -348,8 +318,8 @@ const Profile = () => {
         }
         
         @media (max-width: 768px) {
-          .welcome-banner {
-            padding: 10px;
+          .profile-container {
+            padding: 15px;
           }
           .menu-container {
             gap: 20px;
