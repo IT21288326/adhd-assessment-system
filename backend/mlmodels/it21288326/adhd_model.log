@@ -651,3 +651,552 @@ AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
 2025-03-17 16:36:48,444 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:48] "POST /predict HTTP/1.1" 200 -
 2025-03-17 16:36:48,496 - __main__ - INFO - Successfully processed prediction for game data
 2025-03-17 16:36:48,498 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:48] "POST /predict HTTP/1.1" 200 -
+2025-03-17 19:53:12,324 - __main__ - INFO - MongoDB connection established successfully
+2025-03-17 19:53:13,075 - __main__ - INFO - Model loaded successfully
+2025-03-17 19:53:13,088 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 19:53:13,094 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 19:53:13,105 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-17 19:53:13,184 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.28.4.140:5000
+2025-03-17 19:53:13,184 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 19:56:19,502 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:56:19] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 19:56:19,502 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:56:19] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 19:56:19,616 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:56:19] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 19:56:20,006 - __main__ - INFO - Model loaded successfully
+2025-03-17 19:56:20,022 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 19:56:20,033 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 19:56:20,150 - __main__ - INFO - Model loaded successfully
+2025-03-17 19:56:20,179 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 19:56:20,184 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 19:56:20,214 - __main__ - INFO - Model loaded successfully
+2025-03-17 19:56:20,219 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 19:56:20,232 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 19:56:20,618 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 19:56:20,618 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 19:56:20,618 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 19:56:20,618 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:56:20] "POST /predict HTTP/1.1" 200 -
+2025-03-17 19:56:20,618 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:56:20] "POST /predict HTTP/1.1" 200 -
+2025-03-17 19:56:20,618 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:56:20] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:06:48,349 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:06:48] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:06:48,836 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:06:48,836 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:06:48,836 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:06:49,398 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:06:49,402 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:06:49] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:07:12,815 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:12] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:07:13,211 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:07:13,219 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:07:13,223 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:07:13,409 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001D74D92E340> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-03-17 20:07:13,498 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:07:13,500 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:13] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:07:17,339 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:07:17,351 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:07:17,351 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:07:17,498 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001D74D900EA0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-03-17 20:07:17,546 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:07:17,550 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:17] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:07:28,362 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:28] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:07:28,362 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:28] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:07:28,514 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:28] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:07:28,984 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:07:28,984 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:07:28,984 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:07:29,076 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:07:29,076 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:07:29,076 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:07:29,076 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:07:29,093 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:07:29,093 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:07:29,341 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:07:29,349 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:29] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:07:29,600 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:07:29,600 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:07:29,603 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:29] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:07:29,606 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:29] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:07:40,314 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:40] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:07:40,681 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:07:40,681 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:07:40,681 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:07:40,850 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:07:40,850 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:07:40] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:08:46,438 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:08:46] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:08:46,820 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:08:46,820 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:08:46,820 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:08:47,042 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:08:47,042 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:08:47] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:09:20,793 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:09:20] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:09:21,387 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:09:21,389 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:09:21,392 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:09:21,716 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:09:21,716 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:09:21] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:09:58,081 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:09:58] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:09:58,531 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:09:58,531 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:09:58,531 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:09:58,803 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:09:58,803 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:09:58] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:10:04,136 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:10:04] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:10:04,525 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:10:04] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:10:04,776 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:10:04,779 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:10:04,791 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:10:04,847 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:10:04,850 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:10:04,850 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:10:05,151 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:10:05,151 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:10:05] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:10:05,254 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:10:05,256 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:10:05,274 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:10:05,373 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:10:05,382 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:10:05] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:10:05,567 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:10:05,567 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:10:05] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:10:26,092 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:10:26] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:10:26,465 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:10:26,468 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:10:26,470 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:10:26,652 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:10:26,667 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:10:26] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:13:03,226 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:13:03] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:13:05,827 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:13:05,829 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:13:05,831 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:13:06,058 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:13:06,060 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:13:06,062 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:13:06,080 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:13:06,082 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:13:06] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:13:06,330 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:13:06,339 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:13:06,341 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:13:06,480 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:13:06,492 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:13:06] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:13:06,647 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:13:06,647 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:13:06] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:13:19,106 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:13:19] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:13:19,517 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:13:19,517 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:13:19,521 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:13:19,921 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:13:19,929 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:13:19] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:17:05,672 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:05] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:17:05,681 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:05] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:17:05,917 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:05] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:17:06,712 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:17:06,712 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:17:06,726 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:17:06,849 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:17:06,863 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:17:06,867 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:17:06,914 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:17:06,922 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:17:06,930 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:17:07,329 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:17:07,336 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:07] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:17:07,436 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:17:07,438 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:07] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:17:07,504 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:17:07,504 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:07] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:17:17,121 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:17] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:17:17,602 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:17:17,602 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:17:17,602 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:17:18,005 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:17:18,007 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:18] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:17:48,887 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:48] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:17:49,289 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:17:49,289 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:17:49,289 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:17:49,750 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:17:49,750 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:17:49] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:18:00,011 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:18:00] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:18:00,480 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:18:00,484 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:18:00,484 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:18:00,944 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:18:00,944 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:18:00,944 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:18:01,073 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:18:01,079 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:18:01] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:18:01,457 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:18:01,461 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:18:01] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:19:38,107 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:19:38] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:19:38,579 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:19:38,589 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:19:38,589 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:19:38,917 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:19:38,925 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:19:38] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:19:42,079 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:19:42,081 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:19:42,083 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:19:43,810 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:19:43,820 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:19:43,832 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:19:43,938 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:19:43,957 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:19:43,962 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:19:44,072 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:19:44,086 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:19:44] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:19:44,273 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:19:44,277 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:19:44] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:19:44,375 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:19:44,375 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:19:44] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:20:00,931 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:00] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:20:01,289 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:20:01,289 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:20:01,289 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:20:01,505 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:20:01,505 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:01] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:20:07,362 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:07] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:20:07,677 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:07] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:20:07,944 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:20:07,944 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:20:07,944 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:20:08,298 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:20:08,312 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:20:08,319 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:20:08,387 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:20:08,397 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:08] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:20:08,504 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:20:08,518 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:20:08,518 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:20:08,756 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:20:08,756 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:08] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:20:08,831 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:20:08,836 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:08] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:20:58,779 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:58] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:20:59,136 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:20:59,136 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:20:59,136 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:20:59,464 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:20:59,468 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:20:59] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:21:06,982 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:06] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:21:06,991 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:06] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:21:07,294 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:07] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:21:07,935 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:21:07,940 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:21:07,940 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:21:07,989 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:21:08,008 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:21:08,033 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:21:08,038 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:21:08,042 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:21:08,042 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:21:08,519 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:21:08,521 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:08] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:21:08,608 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:21:08,608 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:08] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:21:08,608 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:21:08,612 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:08] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:21:51,863 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:51] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:21:51,873 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:51] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:21:52,115 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:52] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:21:52,426 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:21:52,458 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:21:52,475 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:21:52,874 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:21:52,878 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:21:52,884 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:21:52,926 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:21:52,940 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:21:52,951 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:21:52,954 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:21:52,957 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:52] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:21:53,237 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:21:53,237 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:53] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:21:53,294 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:21:53,298 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:21:53] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:25:53,400 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:25:53] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:25:53,906 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:25:53,906 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:25:53,912 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:25:54,411 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:25:54,424 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:25:54] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:25:56,927 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:25:56,927 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:25:56,927 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:25:57,529 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:25:57,543 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:25:57,545 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:25:57,548 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:25:57] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:25:57,553 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:25:57,893 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:25:57,903 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:25:57,905 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:25:58,138 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:25:58,140 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:25:58] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:25:58,213 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:25:58,221 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:25:58] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:26:15,676 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:15] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:26:16,324 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:26:16,332 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:26:16,334 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:26:16,968 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:26:16,973 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:16] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:26:20,643 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:26:20,653 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:26:20,659 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:26:21,222 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:26:21,227 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:21] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:26:38,005 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:38] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:26:38,014 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:38] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:26:38,208 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:38] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:26:38,841 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:26:38,864 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:26:38,872 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:26:39,320 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:26:39,326 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:26:39,336 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:26:39,362 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:26:39,377 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:26:39,377 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:26:39,685 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:26:39,685 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:39] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:26:39,920 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:26:39,925 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:39] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:26:39,953 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:26:39,955 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:39] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:26:56,435 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:56] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:26:56,852 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:26:56,854 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:26:56,854 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:26:57,267 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:26:57,269 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:57] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:26:58,970 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:26:58,978 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:26:58,983 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:26:59,420 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:26:59,422 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:26:59] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:31:49,257 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:31:49] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:31:49,576 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:31:49,584 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:31:49,584 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:31:49,774 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:31:49,782 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:31:49] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:01,390 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:01] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:32:01,426 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:01] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:32:01,560 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:01] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:32:02,024 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:02,031 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:02,043 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:02,292 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:02,310 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:02,325 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:02,381 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:02,406 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:02,418 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:02,586 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:02,588 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:02] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:02,774 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:02,779 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:02] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:02,917 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:02,922 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:02] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:10,585 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:10] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:32:10,585 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:10] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:32:10,794 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:10] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:32:11,468 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:11,468 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:11,477 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:11,593 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:11,611 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:11,620 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:11,637 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:11,642 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:11,675 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:12,019 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:12,019 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:12] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:12,137 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:12,140 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:12] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:12,187 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:12,190 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:12] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:50,264 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:50] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:32:50,673 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:50,673 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:50,680 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:50,962 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:50,964 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:50] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:32:53,285 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:32:53,287 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:32:53,287 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:32:53,418 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:32:53,418 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:32:53] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:33:21,033 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:33:21] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:33:21,037 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:33:21] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:33:21,324 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:33:21] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:33:22,071 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:33:22,071 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:33:22,071 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:33:22,071 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:33:22,071 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:33:22,071 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:33:22,071 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:33:22,071 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:33:22,083 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:33:22,493 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:33:22,503 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:33:22] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:33:22,504 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:33:22,505 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:33:22] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:33:22,523 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:33:22,523 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:33:22] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:34:30,228 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:30] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:34:30,605 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:34:30,605 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:34:30,605 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:34:30,772 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:34:30,772 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:30] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:34:43,142 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:43] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:34:43,461 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:43] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:34:43,560 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:34:43,560 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:34:43,564 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:34:45,605 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:34:45,605 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:45] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:34:45,722 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:34:45,722 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:34:45,735 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:34:46,047 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:34:46,049 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:34:46,049 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:34:46,079 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:34:46,084 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:46] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:34:46,371 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:34:46,373 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:46] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:34:58,221 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:58] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:34:58,579 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:34:58,579 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:34:58,579 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:34:58,896 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:34:58,896 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:34:58] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:36:11,231 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:11] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:36:11,591 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:36:11,593 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:36:11,596 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:36:11,767 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:36:11,771 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:11] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:36:24,675 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:24] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:36:24,679 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:24] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:36:24,845 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:24] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:36:25,603 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:36:25,613 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:36:25,628 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:36:25,834 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:36:25,840 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:36:25,844 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:36:25,896 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:36:25,898 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:36:25,923 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:36:26,133 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:36:26,137 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:26] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:36:26,347 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:36:26,351 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:26] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:36:26,381 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:36:26,385 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:36:26] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:37:04,670 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:37:04] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:37:05,005 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:37:05,005 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:37:05,005 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:37:05,167 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:37:05,167 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:37:05] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:37:20,062 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:37:20] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:37:20,404 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:37:20,405 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:37:20,407 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:37:20,560 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:37:20,560 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:37:20] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:39:27,778 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:39:27] "GET /health HTTP/1.1" 200 -
+2025-03-17 20:39:27,845 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:39:27] "GET /health HTTP/1.1" 200 -
+2025-03-17 20:41:25,181 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:41:25] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:41:25,189 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:41:25] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:41:25,684 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:41:25,700 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:41:25,700 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:41:25,700 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:41:25,700 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:41:25,700 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:41:26,017 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:41:26,017 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:41:26] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:41:26,022 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:41:26,022 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:41:26] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:42:44,527 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:44] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:42:44,533 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:44] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:42:44,640 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:44] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:42:45,044 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:42:45,051 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:42:45,054 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:42:45,135 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:42:45,135 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:42:45,140 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:42:45,140 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:42:45,140 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:42:45,142 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:42:45,274 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:42:45,275 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:45] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:42:45,395 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:42:45,398 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:45] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:42:45,418 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:42:45,420 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:45] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:42:59,266 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:59] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:42:59,660 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:42:59,660 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:42:59,660 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:42:59,926 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:42:59,941 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:42:59] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:44:47,701 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:44:47] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:44:47,880 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:44:47] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:44:48,268 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:44:48,286 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:44:48,290 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:44:48,430 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:44:48,430 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:44:48,447 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:44:48,466 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:44:48,485 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:44:48,493 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:44:48,734 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:44:48,737 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:44:48] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:44:48,879 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:44:48,879 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:44:48] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:44:48,891 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:44:48,893 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:44:48] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:46:51,360 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:46:51] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:46:51,368 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:46:51] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:46:51,510 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:46:51] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-17 20:46:52,109 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:46:52,125 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:46:52,141 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:46:52,461 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:46:52,461 - __main__ - INFO - Model loaded successfully
+2025-03-17 20:46:52,461 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:46:52,461 - __main__ - INFO - Scaler loaded successfully
+2025-03-17 20:46:52,461 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:46:52,477 - __main__ - INFO - Label encoder loaded successfully
+2025-03-17 20:46:52,843 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:46:52,859 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:46:52] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:46:53,130 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:46:53,130 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:46:53] "POST /predict HTTP/1.1" 200 -
+2025-03-17 20:46:53,165 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-17 20:46:53,165 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 20:46:53] "POST /predict HTTP/1.1" 200 -
+2025-03-18 01:00:36,772 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:36] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-18 01:00:36,772 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:36] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-18 01:00:36,897 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:36] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-18 01:00:38,235 - __main__ - INFO - Model loaded successfully
+2025-03-18 01:00:38,241 - __main__ - INFO - Model loaded successfully
+2025-03-18 01:00:38,267 - __main__ - INFO - Scaler loaded successfully
+2025-03-18 01:00:38,267 - __main__ - INFO - Scaler loaded successfully
+2025-03-18 01:00:38,283 - __main__ - INFO - Model loaded successfully
+2025-03-18 01:00:38,285 - __main__ - INFO - Scaler loaded successfully
+2025-03-18 01:00:38,303 - __main__ - INFO - Label encoder loaded successfully
+2025-03-18 01:00:38,303 - __main__ - INFO - Label encoder loaded successfully
+2025-03-18 01:00:38,303 - __main__ - INFO - Label encoder loaded successfully
+2025-03-18 01:00:39,607 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-18 01:00:39,623 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:39] "POST /predict HTTP/1.1" 200 -
+2025-03-18 01:00:39,632 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-18 01:00:39,634 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:39] "POST /predict HTTP/1.1" 200 -
+2025-03-18 01:00:39,734 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-18 01:00:39,734 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:39] "POST /predict HTTP/1.1" 200 -

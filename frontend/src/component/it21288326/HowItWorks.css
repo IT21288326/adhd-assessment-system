@@ -1,0 +1,64 @@
+ components/HowItWorks.css
+.how-it-works {
+  padding: 80px 0;
+  background-color: var(--light);
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 40px;
+}
+
+.steps-container::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary);
+  z-index: 1;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 22%;
+}
+
+.step-number {
+  background-color: var(--primary);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.step h4 {
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .steps-container::before {
+    display: none;
+  }
+  
+  .step {
+    width: 100%;
+  }
+}

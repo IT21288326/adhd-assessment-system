@@ -1,0 +1,39 @@
+.testimonials {
+    padding: 80px 0;
+    background-color: white;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .testimonial-card {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  .testimonial-content {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+  }
+  
+  .author-info h4 {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--secondary);
+  }
+  
+  .author-info p {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+    

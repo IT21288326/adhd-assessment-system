@@ -51,7 +51,7 @@ import ProtectedRoute from './component/it21288326/ProtectedRoute'; // Import th
 import GameAnalyticsContainer from './component/it21288326/GameAnalyticsContainer';
 import ReportPage from './component/it21288326/ReportPage';
 import AdminDashboard from './component/it21288326/AdminDashboard';
-
+import Main from './component/it21288326/Main';
 function App() {
   return (
     <Router>
@@ -61,6 +61,7 @@ function App() {
           <Route path="/" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/main" element={<Main />} />
           {/* Protected Routes */}
           <Route
             path="/profile"
