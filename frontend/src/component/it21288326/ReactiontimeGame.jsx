@@ -1385,7 +1385,7 @@ const GameOverScreen = ({ stats, comment, onRestart, onViewAnalytics }) => (
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 10,
-    fontFamily: 'Arial, sans-serif'
+     fontFamily: "'Sour Gummy', sans-serif"
   }}>
     <h1 style={{ 
       fontSize: '3rem', 
@@ -1491,7 +1491,7 @@ const GameStartScreen = ({ onStartGame }) => (
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 10,
-    fontFamily: 'Arial, sans-serif'
+     fontFamily: "'Sour Gummy', sans-serif"
   }}>
     <h1 style={{ 
       fontSize: '3.5rem', 

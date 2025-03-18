@@ -103,7 +103,7 @@ const NavigationBar = ({ child }) => {
       position: "sticky",
       top: 0,
       zIndex: 1000,
-      fontFamily: "'Comic Sans MS', 'Marker Felt', sans-serif"
+      fontFamily: "'Sour Gummy', sans-serif"
     }}>
       <div style={{
         display: "flex",
