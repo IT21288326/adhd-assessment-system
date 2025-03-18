@@ -1200,3 +1200,34 @@ AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
 2025-03-18 01:00:39,634 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:39] "POST /predict HTTP/1.1" 200 -
 2025-03-18 01:00:39,734 - __main__ - INFO - Successfully processed prediction for game data
 2025-03-18 01:00:39,734 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 01:00:39] "POST /predict HTTP/1.1" 200 -
+2025-03-18 02:36:01,957 - __main__ - INFO - MongoDB connection established successfully
+2025-03-18 02:36:02,673 - __main__ - INFO - Model loaded successfully
+2025-03-18 02:36:02,703 - __main__ - INFO - Scaler loaded successfully
+2025-03-18 02:36:02,706 - __main__ - INFO - Label encoder loaded successfully
+2025-03-18 02:36:02,714 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-18 02:36:02,833 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.16:5000
+2025-03-18 02:36:02,836 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-18 02:36:18,624 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:36:18] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-18 02:36:18,624 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:36:18] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-18 02:36:18,797 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:36:18] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-18 02:36:19,432 - __main__ - INFO - Model loaded successfully
+2025-03-18 02:36:19,449 - __main__ - INFO - Scaler loaded successfully
+2025-03-18 02:36:19,465 - __main__ - INFO - Label encoder loaded successfully
+2025-03-18 02:36:19,640 - __main__ - INFO - Model loaded successfully
+2025-03-18 02:36:19,656 - __main__ - INFO - Scaler loaded successfully
+2025-03-18 02:36:19,672 - __main__ - INFO - Label encoder loaded successfully
+2025-03-18 02:36:19,688 - __main__ - INFO - Model loaded successfully
+2025-03-18 02:36:19,704 - __main__ - INFO - Scaler loaded successfully
+2025-03-18 02:36:19,720 - __main__ - INFO - Label encoder loaded successfully
+2025-03-18 02:36:20,486 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-18 02:36:20,486 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:36:20] "POST /predict HTTP/1.1" 200 -
+2025-03-18 02:36:20,486 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-18 02:36:20,502 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:36:20] "POST /predict HTTP/1.1" 200 -
+2025-03-18 02:36:20,508 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-18 02:36:20,508 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:36:20] "POST /predict HTTP/1.1" 200 -
+2025-03-18 02:37:59,304 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:37:59] "GET /health HTTP/1.1" 200 -
+2025-03-18 02:37:59,606 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:37:59] "GET /health HTTP/1.1" 200 -
+2025-03-18 02:42:59,344 - werkzeug - INFO - 127.0.0.1 - - [18/Mar/2025 02:42:59] "GET /health HTTP/1.1" 200 -
