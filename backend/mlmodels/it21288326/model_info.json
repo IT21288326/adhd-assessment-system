@@ -1,0 +1,1 @@
+{"feature_columns": ["averageReactionTime", "reactionTimeVariability", "correctStreak", "prematureClicks", "missedStars", "score", "prematureClicksRatio"], "label_mapping": {"Combined": 0, "Hyperactive-Impulsive": 1, "Inattentive": 2, "No ADHD": 3}}
