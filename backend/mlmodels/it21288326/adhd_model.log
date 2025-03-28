@@ -651,3 +651,454 @@ AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
 2025-03-17 16:36:48,444 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:48] "POST /predict HTTP/1.1" 200 -
 2025-03-17 16:36:48,496 - __main__ - INFO - Successfully processed prediction for game data
 2025-03-17 16:36:48,498 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 16:36:48] "POST /predict HTTP/1.1" 200 -
+2025-03-28 09:19:20,550 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 09:19:20,672 - __main__ - ERROR - Error loading model from D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras: File not found: filepath=D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-28 09:19:20,672 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-28 09:19:20,672 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-03-28 09:19:20,684 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 09:19:20,709 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 09:19:20,709 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 09:19:32,627 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:19:32] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:19:33,042 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:19:33] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:24:33,485 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:24:33] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:29:33,522 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:29:33] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:34:33,546 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:34:33] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:39:33,421 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:39:33] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:44:19,886 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:44:19] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:44:32,194 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:44:32] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:50:01,935 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:50:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 09:55:01,356 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 09:55:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:00:01,575 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:00:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:11:50,694 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:11:50] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:15:02,148 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:15:02] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:20:01,324 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:20:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:25:01,421 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:25:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:30:01,433 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:30:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:35:01,460 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:35:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:40:01,494 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:40:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:45:01,347 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:45:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:46:31,653 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 10:46:33,286 - __main__ - ERROR - Error loading model from D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras: File not found: filepath=D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-28 10:46:33,323 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-28 10:46:33,324 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-03-28 10:46:33,328 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 10:46:33,413 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 10:46:33,416 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 10:48:42,740 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 10:48:42,768 - __main__ - ERROR - Error loading model from D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras: File not found: filepath=D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-28 10:48:42,772 - __main__ - ERROR - Error loading model from fallback location: File not found: filepath=adhd_model_fallback.keras. Please ensure the file is an accessible `.keras` zip file.
+2025-03-28 10:48:42,776 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-03-28 10:48:42,779 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 10:48:42,788 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 10:48:42,791 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 10:52:34,050 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 10:52:36,045 - __main__ - INFO - Model loaded successfully
+2025-03-28 10:52:36,124 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 10:52:36,158 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 10:52:36,176 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 10:52:36,187 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 10:52:36,189 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 10:53:00,778 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:53:00] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:53:01,490 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:53:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 10:55:54,490 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 10:55:54,688 - __main__ - INFO - Model loaded successfully
+2025-03-28 10:55:54,691 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 10:55:54,691 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 10:55:54,691 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 10:55:54,707 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 10:55:54,709 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 10:58:01,328 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 10:58:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 11:03:01,330 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 11:03:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 11:08:01,515 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 11:08:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 11:13:01,325 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 11:13:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 11:18:01,331 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 11:18:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 11:23:01,387 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 11:23:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 11:28:12,668 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 11:28:12] "GET /health HTTP/1.1" 200 -
+2025-03-28 11:33:02,902 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 11:33:02] "GET /health HTTP/1.1" 200 -
+2025-03-28 12:45:50,624 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 12:45:50] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-28 12:45:50,624 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 12:45:50] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-28 12:45:50,624 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 12:45:50] "OPTIONS /predict HTTP/1.1" 200 -
+2025-03-28 12:46:03,492 - __main__ - INFO - Model loaded successfully
+2025-03-28 12:46:03,503 - __main__ - INFO - Model loaded successfully
+2025-03-28 12:46:03,470 - __main__ - INFO - Model loaded successfully
+2025-03-28 12:46:03,665 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 12:46:03,665 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 12:46:03,665 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 12:46:03,709 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 12:46:03,709 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 12:46:03,709 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 12:46:23,377 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-28 12:46:23,378 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-28 12:46:23,378 - __main__ - INFO - Successfully processed prediction for game data
+2025-03-28 12:46:23,413 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 12:46:23] "POST /predict HTTP/1.1" 200 -
+2025-03-28 12:46:23,415 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 12:46:23] "POST /predict HTTP/1.1" 200 -
+2025-03-28 12:46:23,416 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 12:46:23] "POST /predict HTTP/1.1" 200 -
+2025-03-28 13:57:25,913 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 13:57:25] "GET /health HTTP/1.1" 200 -
+2025-03-28 13:57:26,049 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 13:57:26] "GET /health HTTP/1.1" 200 -
+2025-03-28 13:57:49,537 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 13:57:49] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 13:57:49,917 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 13:57:49] "[31m[1mPOST /retrain HTTP/1.1[0m" 401 -
+2025-03-28 13:58:49,129 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 13:58:49] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:00:21,422 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:00:21] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:00:24,206 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:00:24] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 14:00:30,748 - __main__ - INFO - Loaded 200 records from CSV.
+2025-03-28 14:01:03,888 - __main__ - INFO - Total dataset size: 200 records
+2025-03-28 14:01:05,167 - __main__ - ERROR - Error in prepare_features: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:01:05,177 - __main__ - ERROR - Error in train_model: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1219, in train_model
+    X_scaled, scaler, feature_columns = prepare_features(data)
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1207, in prepare_features
+    raise DataError(f"Feature preparation failed: {str(e)}")
+DataError: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:01:05,196 - __main__ - ERROR - Error retraining model: Model training failed: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1219, in train_model
+    X_scaled, scaler, feature_columns = prepare_features(data)
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1207, in prepare_features
+    raise DataError(f"Feature preparation failed: {str(e)}")
+DataError: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1753, in retrain_model
+    model, scaler, feature_columns, label_mapping = train_model(data)
+                                                    ^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1289, in train_model
+    raise ModelError(f"Model training failed: {str(e)}")
+ModelError: Model training failed: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:01:05,216 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:01:05] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-03-28 14:05:22,538 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:05:22] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:14:28,159 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 14:14:31,600 - __main__ - INFO - Model loaded successfully
+2025-03-28 14:14:31,600 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 14:14:31,600 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 14:14:31,600 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 14:14:31,734 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 14:14:31,774 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 14:14:31,907 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:14:31] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:14:36,122 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:14:36] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 14:14:37,438 - __main__ - INFO - Loaded 200 records from CSV.
+2025-03-28 14:15:08,171 - __main__ - INFO - Total dataset size: 200 records
+2025-03-28 14:15:08,399 - __main__ - ERROR - Error in prepare_features: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:15:08,401 - __main__ - ERROR - Error in train_model: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1219, in train_model
+    X_scaled, scaler, feature_columns = prepare_features(data)
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1207, in prepare_features
+    raise DataError(f"Feature preparation failed: {str(e)}")
+DataError: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:15:08,410 - __main__ - ERROR - Error retraining model: Model training failed: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1219, in train_model
+    X_scaled, scaler, feature_columns = prepare_features(data)
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1207, in prepare_features
+    raise DataError(f"Feature preparation failed: {str(e)}")
+DataError: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1755, in retrain_model
+    model, scaler, feature_columns, label_mapping = train_model(data)
+                                                    ^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1289, in train_model
+    raise ModelError(f"Model training failed: {str(e)}")
+ModelError: Model training failed: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:15:08,418 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:15:08] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-03-28 14:15:22,317 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:15:22] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:17:40,850 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 14:17:41,130 - __main__ - INFO - Model loaded successfully
+2025-03-28 14:17:41,130 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 14:17:41,130 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 14:17:41,130 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 14:17:41,148 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 14:17:41,149 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 14:18:40,063 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:18:40] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 14:18:40,331 - __main__ - INFO - Loaded 200 records from CSV.
+2025-03-28 14:19:14,704 - __main__ - INFO - Total dataset size: 200 records
+2025-03-28 14:19:14,710 - __main__ - ERROR - Error in prepare_features: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:19:14,713 - __main__ - ERROR - Error in train_model: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1219, in train_model
+    X_scaled, scaler, feature_columns = prepare_features(data)
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1207, in prepare_features
+    raise DataError(f"Feature preparation failed: {str(e)}")
+DataError: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:19:14,719 - __main__ - ERROR - Error retraining model: Model training failed: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1192, in prepare_features
+    raise DataError(f"Missing features in data: {missing_features}")
+DataError: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1219, in train_model
+    X_scaled, scaler, feature_columns = prepare_features(data)
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1207, in prepare_features
+    raise DataError(f"Feature preparation failed: {str(e)}")
+DataError: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1758, in retrain_model
+    model, scaler, feature_columns, label_mapping = train_model(data)
+                                                    ^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1289, in train_model
+    raise ModelError(f"Model training failed: {str(e)}")
+ModelError: Model training failed: Feature preparation failed: Missing features in data: ['maxMissedStreak']
+
+2025-03-28 14:19:14,729 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:19:14] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-03-28 14:22:49,162 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 14:22:50,198 - __main__ - INFO - Model loaded successfully
+2025-03-28 14:22:50,211 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 14:22:50,213 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 14:22:50,215 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 14:22:50,224 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 14:22:50,225 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 14:25:56,420 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:25:56] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:25:56,696 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:25:56] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:26:02,369 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:26:02] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 14:26:02,865 - __main__ - INFO - Loaded 200 records from CSV.
+2025-03-28 14:26:42,525 - __main__ - INFO - Total dataset size: 200 records
+2025-03-28 14:27:07,877 - __main__ - INFO - Test accuracy: 1.0000
+2025-03-28 14:27:10,375 - __main__ - ERROR - Error in train_model: Object of type int64 is not JSON serializable
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1286, in train_model
+    json.dump({
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+
+2025-03-28 14:27:10,383 - __main__ - ERROR - Error retraining model: Model training failed: Object of type int64 is not JSON serializable
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1286, in train_model
+    json.dump({
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1764, in retrain_model
+    model, scaler, feature_columns, label_mapping = train_model(data)
+                                                    ^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1295, in train_model
+    raise ModelError(f"Model training failed: {str(e)}")
+ModelError: Model training failed: Object of type int64 is not JSON serializable
+
+2025-03-28 14:27:10,409 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:27:10] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-03-28 14:34:10,472 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:34:10] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:34:18,305 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:34:18] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:34:19,914 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:34:19] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:34:24,596 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:34:24] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:34:29,554 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:34:29] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:34:40,761 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:34:40] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 14:34:41,071 - __main__ - INFO - Loaded 200 records from CSV.
+2025-03-28 14:35:14,437 - __main__ - INFO - Total dataset size: 200 records
+2025-03-28 14:35:21,911 - __main__ - INFO - Test accuracy: 1.0000
+2025-03-28 14:35:21,939 - __main__ - ERROR - Error in train_model: Object of type int64 is not JSON serializable
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1286, in train_model
+    json.dump({
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+
+2025-03-28 14:35:21,947 - __main__ - ERROR - Error retraining model: Model training failed: Object of type int64 is not JSON serializable
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1286, in train_model
+    json.dump({
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1764, in retrain_model
+    model, scaler, feature_columns, label_mapping = train_model(data)
+                                                    ^^^^^^^^^^^^^^^^^
+  File "E:\New folder (2)\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 1295, in train_model
+    raise ModelError(f"Model training failed: {str(e)}")
+ModelError: Model training failed: Object of type int64 is not JSON serializable
+
+2025-03-28 14:35:22,171 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:35:22] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-03-28 14:35:59,185 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:35:59] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:40:57,319 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:40:57] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:45:20,963 - __main__ - INFO - MongoDB connection established successfully
+2025-03-28 14:45:22,050 - __main__ - INFO - Model loaded successfully
+2025-03-28 14:45:22,066 - __main__ - INFO - Scaler loaded successfully
+2025-03-28 14:45:22,066 - __main__ - INFO - Label encoder loaded successfully
+2025-03-28 14:45:22,066 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-03-28 14:45:22,089 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.137:5000
+2025-03-28 14:45:22,089 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-28 14:45:35,374 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:45:35] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 14:45:35,719 - __main__ - INFO - Loaded 200 records from CSV.
+2025-03-28 14:45:58,411 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:45:58] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:46:59,798 - __main__ - ERROR - Error fetching data from MongoDB: cluster0-shard-00-01.a1s53.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2025-03-28 14:47:07,971 - __main__ - INFO - Test accuracy: 1.0000
+2025-03-28 14:47:08,007 - __main__ - INFO - Model retrained and saved with preprocessing information.
+2025-03-28 14:47:08,009 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:47:08] "POST /retrain HTTP/1.1" 200 -
+2025-03-28 14:47:55,216 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:47:55] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-03-28 14:47:55,485 - __main__ - INFO - Loaded 200 records from CSV.
+2025-03-28 14:48:19,549 - __main__ - ERROR - Error fetching data from MongoDB: cluster0-shard-00-01.a1s53.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2025-03-28 14:48:30,564 - __main__ - INFO - Test accuracy: 1.0000
+2025-03-28 14:48:30,601 - __main__ - INFO - Model retrained and saved with preprocessing information.
+2025-03-28 14:48:30,601 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:48:30] "POST /retrain HTTP/1.1" 200 -
+2025-03-28 14:50:58,940 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:50:58] "GET /health HTTP/1.1" 200 -
+2025-03-28 14:56:01,336 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 14:56:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 15:01:01,342 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 15:01:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 15:06:01,347 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 15:06:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 15:11:01,311 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 15:11:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 15:16:01,313 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 15:16:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 15:21:01,292 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 15:21:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 15:26:01,300 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 15:26:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:04:23,257 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:04:23] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:06:02,005 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:06:02] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:11:01,274 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:11:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:16:01,283 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:16:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:21:02,640 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:21:02] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:26:02,134 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:26:02] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:31:01,288 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:31:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:36:01,312 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:36:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:41:01,304 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:41:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:46:01,296 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:46:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:51:01,299 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:51:01] "GET /health HTTP/1.1" 200 -
+2025-03-28 16:56:03,853 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:56:03] "GET /health HTTP/1.1" 200 -
+2025-03-28 19:12:33,115 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 19:12:33] "GET /health HTTP/1.1" 200 -
