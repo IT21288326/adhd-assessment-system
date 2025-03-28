@@ -1624,20 +1624,50 @@ const AdminDashboard = () => {
     }
   };
 
+  // const handleRetrainModel = async () => {
+  //   try {
+  //     setRetrainingStatus('loading');
+  //     // Simulate API call with timeout
+  //     setTimeout(() => {
+  //       setRetrainingStatus('success');
+  //       setTimeout(() => setRetrainingStatus('idle'), 2000);
+  //     }, 3000);
+  //   } catch (error) {
+  //     setRetrainingStatus('error');
+  //     alert(`Error initiating retraining: ${error.message}`);
+  //     setTimeout(() => setRetrainingStatus('idle'), 2000);
+  //   }
+  // };
+
   const handleRetrainModel = async () => {
     try {
       setRetrainingStatus('loading');
-      // Simulate API call with timeout
-      setTimeout(() => {
+  
+      const response = await fetch('http://localhost:5000//retrain', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': 'default_training_key' // Replace with your actual API key
+        }
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
         setRetrainingStatus('success');
         setTimeout(() => setRetrainingStatus('idle'), 2000);
-      }, 3000);
+      } else {
+        setRetrainingStatus('error');
+        alert(`Error: ${data.message || 'Retraining failed'}`);
+        setTimeout(() => setRetrainingStatus('idle'), 2000);
+      }
     } catch (error) {
       setRetrainingStatus('error');
       alert(`Error initiating retraining: ${error.message}`);
       setTimeout(() => setRetrainingStatus('idle'), 2000);
     }
   };
+  
 
   // Load data when component mounts
   useEffect(() => {
