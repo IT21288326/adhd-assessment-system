@@ -1102,3 +1102,310 @@ ModelError: Model training failed: Object of type int64 is not JSON serializable
 2025-03-28 16:51:01,299 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:51:01] "GET /health HTTP/1.1" 200 -
 2025-03-28 16:56:03,853 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 16:56:03] "GET /health HTTP/1.1" 200 -
 2025-03-28 19:12:33,115 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 19:12:33] "GET /health HTTP/1.1" 200 -
+2025-04-07 18:06:41,526 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:06:41,591 - __main__ - ERROR - Error loading model from E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:06:41,592 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:06:41,592 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:06:41,593 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:06:41,614 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:06:41,615 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:15:05,931 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:05] "OPTIONS /predict HTTP/1.1" 200 -
+2025-04-07 18:15:05,931 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:05] "OPTIONS /predict HTTP/1.1" 200 -
+2025-04-07 18:15:06,047 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:06] "OPTIONS /predict HTTP/1.1" 200 -
+2025-04-07 18:15:06,147 - __main__ - ERROR - Error loading model from E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:15:06,147 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:15:06,147 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-04-07 18:15:06,163 - __main__ - INFO - Successfully processed prediction for game data
+2025-04-07 18:15:06,163 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:06] "POST /predict HTTP/1.1" 200 -
+2025-04-07 18:15:06,266 - __main__ - ERROR - Error loading model from E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:15:06,268 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:15:06,268 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-04-07 18:15:06,270 - __main__ - INFO - Successfully processed prediction for game data
+2025-04-07 18:15:06,270 - __main__ - ERROR - Error loading model from E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:15:06,270 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:06] "POST /predict HTTP/1.1" 200 -
+2025-04-07 18:15:06,270 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:15:06,270 - __main__ - ERROR - Model error in predict_adhd_type: Failed to load model
+2025-04-07 18:15:06,277 - __main__ - INFO - Successfully processed prediction for game data
+2025-04-07 18:15:06,279 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:06] "POST /predict HTTP/1.1" 200 -
+2025-04-07 18:20:22,009 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:20:22] "GET /health HTTP/1.1" 200 -
+2025-04-07 18:20:22,222 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:20:22] "GET /health HTTP/1.1" 200 -
+2025-04-07 18:22:56,565 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:22:56,631 - __main__ - ERROR - Error loading model from E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:22:56,631 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:22:56,631 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:22:56,632 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:22:56,647 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:22:56,648 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:24:58,035 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:24:58,075 - __main__ - ERROR - Error loading model from E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:24:58,087 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:24:58,087 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:24:58,088 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:24:58,092 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:24:58,092 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:25:23,360 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:25:23,474 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 18:25:23,474 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:25:23,474 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:25:23,474 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:25:23,493 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:25:23,493 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:25:23,762 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:25:23] "GET /health HTTP/1.1" 200 -
+2025-04-07 18:26:59,213 - __main__ - ERROR - MongoDB connection error: The resolution lifetime expired after 21.621 seconds: Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.
+2025-04-07 18:26:59,298 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 18:26:59,298 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:26:59,298 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:26:59,298 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:26:59,319 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:26:59,319 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:32:02,900 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:32:02,976 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 18:32:02,978 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:32:02,978 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:32:02,979 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:32:02,986 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:32:02,987 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:33:43,928 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:33:43] "GET /health HTTP/1.1" 200 -
+2025-04-07 18:35:22,654 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 18:35:22] "GET /health HTTP/1.1" 200 -
+2025-04-07 18:36:24,350 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:36:24,520 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 18:36:24,520 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:36:24,520 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:36:24,525 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:36:24,537 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:36:24,537 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:38:59,252 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:38:59,288 - __main__ - ERROR - Error loading model from backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:38:59,288 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:38:59,288 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:38:59,288 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:38:59,309 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:38:59,309 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:41:06,043 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:41:06,141 - __main__ - ERROR - Error loading model from backend/mlmodels/it21288326/adhd_model.keras: No file or directory found at backend/mlmodels/it21288326/adhd_model.keras
+2025-04-07 18:41:06,142 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:41:06,142 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:41:06,142 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:41:06,175 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:41:06,176 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 18:44:48,584 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 18:44:48,718 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 18:44:48,719 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 18:44:48,719 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 18:44:48,719 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 18:44:48,744 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 18:44:48,745 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 21:14:17,970 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 21:14:18,087 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 21:14:18,087 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 21:14:18,087 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 21:14:18,087 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 21:14:18,123 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 21:14:18,123 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 21:18:06,799 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 21:18:06,875 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 21:18:06,875 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 21:18:06,875 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 21:18:06,878 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 21:18:06,885 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 21:18:06,885 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 22:49:24,531 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 22:49:24,620 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 22:49:24,620 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 22:49:24,620 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 22:49:24,620 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 22:49:24,639 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 22:49:24,639 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 23:32:09,720 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 23:32:09,811 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 23:32:09,824 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 23:32:09,825 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 23:32:09,825 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 23:32:09,864 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 23:32:09,864 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 23:40:45,786 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 23:40:45,872 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 23:40:45,874 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 23:40:45,875 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 23:40:45,875 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 23:40:45,894 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 23:40:45,894 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 23:41:53,354 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 23:41:53,425 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 23:41:53,426 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 23:41:53,426 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 23:41:53,427 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 23:41:53,438 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 23:41:53,439 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 23:44:38,133 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 23:44:38,276 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 23:44:38,277 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 23:44:38,277 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 23:44:38,278 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 23:44:38,318 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 23:44:38,318 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 23:49:16,817 - __main__ - INFO - MongoDB connection established successfully
+2025-04-07 23:49:16,903 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-07 23:49:16,904 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-07 23:49:16,904 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-07 23:49:16,904 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-07 23:49:16,918 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-07 23:49:16,918 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 23:55:21,330 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 23:55:21] "GET /health HTTP/1.1" 200 -
+2025-04-07 23:55:21,691 - werkzeug - INFO - 127.0.0.1 - - [07/Apr/2025 23:55:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:00:21,509 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:00:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:05:21,350 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:05:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:10:21,403 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:10:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:15:21,346 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:15:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:20:21,452 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:20:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:25:21,353 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:25:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:30:21,318 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:30:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:35:21,343 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:35:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:40:21,311 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:40:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:45:21,398 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:45:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:50:21,437 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:50:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 00:55:21,471 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 00:55:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:00:21,521 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:00:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:05:21,321 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:05:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:10:21,364 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:10:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:15:21,323 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:15:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:20:21,425 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:20:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:25:21,456 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:25:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:30:21,295 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:30:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:35:21,322 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:35:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:40:21,724 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:40:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:45:21,382 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:45:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:50:21,405 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:50:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 01:55:21,397 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 01:55:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:00:21,488 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:00:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:05:21,503 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:05:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:10:21,347 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:10:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:15:21,556 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:15:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:20:21,399 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:20:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:25:21,458 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:25:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:30:21,387 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:30:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:35:21,498 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:35:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 02:40:21,330 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 02:40:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 06:55:11,049 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 06:55:11] "GET /health HTTP/1.1" 200 -
+2025-04-08 06:55:24,502 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 06:55:24] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:00:21,649 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:00:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:05:21,495 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:05:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:26:34,753 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:26:34] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:30:21,661 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:30:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:35:21,600 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:35:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:40:21,610 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:40:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:45:21,521 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:45:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:50:21,422 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:50:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 07:55:21,444 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 07:55:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 08:00:21,496 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 08:00:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 08:05:21,425 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 08:05:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 08:10:21,472 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 08:10:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:01:53,589 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:01:53] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:02:03,452 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:02:03] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:05:23,259 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:05:23] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:10:21,500 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:10:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:15:21,328 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:15:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:20:21,333 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:20:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:25:21,393 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:25:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:30:21,429 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:30:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:35:21,459 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:35:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:46:20,853 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:46:20] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:50:21,361 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:50:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 10:55:21,351 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 10:55:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 11:00:21,373 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 11:00:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 11:05:21,609 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 11:05:21] "GET /health HTTP/1.1" 200 -
+2025-04-08 11:28:02,584 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 11:28:02] "GET /health HTTP/1.1" 200 -
+2025-04-10 20:34:14,223 - __main__ - INFO - MongoDB connection established successfully
+2025-04-10 20:34:14,899 - __main__ - ERROR - Error loading model from C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 7], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-04-10 20:34:14,905 - __main__ - ERROR - Error loading model from fallback location: No file or directory found at adhd_model_fallback.keras
+2025-04-10 20:34:14,905 - __main__ - ERROR - Error: Could not load model. Please train the model first.
+2025-04-10 20:34:14,909 - __main__ - INFO - Starting prediction service on http://localhost:5000
+2025-04-10 20:34:14,994 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-04-10 20:34:14,995 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-10 20:35:13,605 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 20:35:13] "GET /health HTTP/1.1" 200 -
+2025-04-10 20:35:13,864 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 20:35:13] "GET /health HTTP/1.1" 200 -
