@@ -1037,8 +1037,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-CSV_FILE_PATH = "E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv"  # Initial data source
-MODEL_PATH = 'E:/New folder (2)/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras'
+CSV_FILE_PATH = "C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv"  # Initial data source
+MODEL_PATH = 'C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras'
 ADHD_SUBTYPES = ['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']
 DATA_THRESHOLD = 0  # Minimum records needed for training
 
