@@ -1037,10 +1037,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-CSV_FILE_PATH = "D:\ research\ adhd-assessment-system\ backend\mlmodels\it21288326\ adhd_dataset .csv"  # Initial data source
-MODEL_PATH = 'D:/research/adhd-assessment-system/backend/mlmodels/it21288326/venv/adhd_model.keras'
+CSV_FILE_PATH = "C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv"  # Initial data source
+MODEL_PATH = 'C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras'
 ADHD_SUBTYPES = ['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']
-DATA_THRESHOLD = 40  # Minimum records needed for training
+DATA_THRESHOLD = 0  # Minimum records needed for training
 
 # MongoDB setup
 try:
@@ -1182,9 +1182,15 @@ def prepare_features(data):
         data['prematureClicksRatio'] = data['prematureClicks'] / (data['prematureClicks'] + 10)  # Avoid division by zero
         
         # Normalize features for better model performance
+        # scaler = StandardScaler()
+        # feature_columns = ['averageReactionTime', 'reactionTimeVariability', 'correctStreak', 
+        #                    'prematureClicks', 'missedStars', 'maxMissedStreak', 'score', 'prematureClicksRatio']
+
         scaler = StandardScaler()
         feature_columns = ['averageReactionTime', 'reactionTimeVariability', 'correctStreak', 
-                           'prematureClicks', 'missedStars', 'maxMissedStreak', 'score', 'prematureClicksRatio']
+                           'prematureClicks', 'missedStars', 'score', 'prematureClicksRatio']
+
+
         
         # Ensure all features are available
         missing_features = [col for col in feature_columns if col not in data.columns]
@@ -1276,11 +1282,18 @@ def train_model(data):
             pickle.dump(scaler, f)
         
         # Save feature columns and label mapping
+        # with open(os.path.dirname(MODEL_PATH) + '/model_info.json', 'w') as f:
+        #     json.dump({
+        #         'feature_columns': feature_columns,
+        #         'label_mapping': label_mapping
+        #     }, f)
+
         with open(os.path.dirname(MODEL_PATH) + '/model_info.json', 'w') as f:
-            json.dump({
-                'feature_columns': feature_columns,
-                'label_mapping': label_mapping
-            }, f)
+                json.dump({
+                    'feature_columns': feature_columns,
+                    'label_mapping': {key: int(value) for key, value in label_mapping.items()}  # Convert int64 to int
+               }, f)
+
 
         logger.info("Model retrained and saved with preprocessing information.")
         return model, scaler, feature_columns, label_mapping
@@ -1356,8 +1369,11 @@ def load_model():
         return model, scaler, None, None
     
     # Define feature columns
+    # feature_columns = ['averageReactionTime', 'reactionTimeVariability', 'correctStreak', 
+    #                  'prematureClicks', 'missedStars', 'maxMissedStreak', 'score', 'prematureClicksRatio']
+
     feature_columns = ['averageReactionTime', 'reactionTimeVariability', 'correctStreak', 
-                     'prematureClicks', 'missedStars', 'maxMissedStreak', 'score', 'prematureClicksRatio']
+                     'prematureClicks', 'missedStars', 'score', 'prematureClicksRatio']
     
     return model, scaler, feature_columns, label_mapping
 
@@ -1580,7 +1596,9 @@ def predict_adhd_type(reaction_times, correct_streak, premature_clicks, missed_s
             correct_streak, 
             premature_clicks, 
             missed_stars, 
-            max_missed_streak,
+
+            # max_missed_streak,
+
             score, 
             # premature_clicks_ratio
         ]])
