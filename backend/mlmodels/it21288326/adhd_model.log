@@ -1409,3 +1409,1248 @@ Exception encountered: Unrecognized keyword arguments: ['batch_shape']
 2025-04-10 20:34:14,995 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
 2025-04-10 20:35:13,605 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 20:35:13] "GET /health HTTP/1.1" 200 -
 2025-04-10 20:35:13,864 - werkzeug - INFO - 127.0.0.1 - - [10/Apr/2025 20:35:13] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:21:01,591 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:21:39,834 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:22:48,590 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:24:16,870 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:25:41,443 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:32:04,851 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:32:04,857 - __main__ - ERROR - One or more model files are missing. Please train the model first.
+2025-05-25 00:32:04,871 - __main__ - INFO - Starting Flask API service on http://localhost:5000
+2025-05-25 00:32:04,919 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 00:32:04,919 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 00:32:36,587 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:32:36] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:32:37,029 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:32:37,200 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:32:37,200 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:32:37] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 00:32:51,406 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:32:51] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 00:32:51,666 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 00:32:51,666 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:33:01,958 - __main__ - INFO - Added 4 new unique child records from MongoDB to CSV.
+2025-05-25 00:33:01,974 - __main__ - INFO - Saved combined dataset to CSV. Total records: 204
+2025-05-25 00:33:01,974 - __main__ - INFO - Final dataset size for processing: 204 records
+2025-05-25 00:33:02,038 - __main__ - ERROR - Error in train_model: [WinError 183] Cannot create a file when that file already exists: 'C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras'
+Traceback (most recent call last):
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 2208, in train_model
+    os.makedirs(MODEL_BASE_PATH, exist_ok=True)
+  File "C:\Users\shash\AppData\Local\Programs\Python\Python310\lib\os.py", line 225, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras'
+
+2025-05-25 00:33:02,038 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:33:02] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-05-25 00:34:58,305 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:34:58,305 - __main__ - ERROR - One or more model files are missing. Please train the model first.
+2025-05-25 00:34:58,315 - __main__ - INFO - Starting Flask API service on http://localhost:5000
+2025-05-25 00:34:58,336 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 00:34:58,337 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 00:35:15,923 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:35:15] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:35:16,141 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:35:16,319 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:35:16,319 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:35:16] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 00:39:07,518 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:39:07,518 - __main__ - ERROR - One or more model files are missing. Please train the model first.
+2025-05-25 00:39:07,518 - __main__ - INFO - Starting Flask API service on http://localhost:5000
+2025-05-25 00:39:07,531 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 00:39:07,531 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 00:40:15,748 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:40:15] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:40:16,165 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:40:16,364 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:40:16,364 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:40:16] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 00:45:16,398 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:45:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:45:16,603 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:45:16,816 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:45:16,818 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:45:16] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 00:48:39,084 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:48:39,084 - __main__ - INFO - Starting model training process...
+2025-05-25 00:48:39,102 - __main__ - INFO - Loaded 200 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:48:41,840 - __main__ - INFO - Added 4 new unique child records from MongoDB to CSV.
+2025-05-25 00:48:41,845 - __main__ - INFO - Saved combined dataset to CSV. Total records: 204
+2025-05-25 00:48:41,845 - __main__ - INFO - Final dataset size for processing: 204 records
+2025-05-25 00:48:41,853 - __main__ - INFO - Training model with 204 records...
+2025-05-25 00:48:41,865 - __main__ - ERROR - Error in train_model: [WinError 183] Cannot create a file when that file already exists: 'C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras'
+Traceback (most recent call last):
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 2208, in train_model
+    os.makedirs(MODEL_BASE_PATH, exist_ok=True)
+  File "C:\Users\shash\AppData\Local\Programs\Python\Python310\lib\os.py", line 225, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_model.keras'
+
+2025-05-25 00:48:41,865 - __main__ - INFO - Model training process completed.
+2025-05-25 00:49:03,119 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 00:49:03,124 - __main__ - ERROR - One or more model files are missing. Please train the model first.
+2025-05-25 00:49:03,124 - __main__ - INFO - Starting Flask API service on http://localhost:5000
+2025-05-25 00:49:03,147 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 00:49:03,147 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 00:49:14,373 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:49:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:49:14,578 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:49:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:49:14,879 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:49:15,193 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:49:15,193 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:49:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 00:49:15,803 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:49:16,015 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:49:16,015 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:49:16] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 00:54:15,020 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:54:15] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:54:15,226 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:54:15,370 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:54:15,377 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:54:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 00:59:14,642 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:59:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 00:59:15,056 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:59:15,260 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 00:59:15,261 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 00:59:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:04:15,288 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:04:15] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:04:15,497 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:04:15,703 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:04:15,704 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:04:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:09:14,708 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:09:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:09:15,127 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:09:15,325 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:09:15,331 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:09:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:14:14,786 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:14:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:14:15,158 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:14:15,356 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:14:15,358 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:14:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:19:14,769 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:19:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:19:14,949 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:19:15,133 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:19:15,133 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:19:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:20:58,393 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:20:58] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:20:58,666 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:20:58] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:20:58,799 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:20:58,916 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:20:58,916 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:20:58] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:20:59,028 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:20:59,134 - __main__ - INFO - Loaded 204 records from CSV: C:/Users/shash/Documents/GitHub/adhd-assessment-system/backend/mlmodels/it21288326/adhd_dataset.csv
+2025-05-25 01:20:59,134 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:20:59] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:21:27,322 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 01:21:27,324 - __main__ - INFO - Starting model training process via command line...
+2025-05-25 01:21:27,334 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:21:35,971 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV.
+2025-05-25 01:21:35,987 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 204
+2025-05-25 01:21:35,987 - __main__ - INFO - Final dataset size for processing: 204 records
+2025-05-25 01:21:35,994 - __main__ - INFO - Training model with 204 records...
+2025-05-25 01:21:36,169 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 01:21:44,968 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 01:21:45,015 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 01:21:45,016 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 01:21:45,016 - __main__ - INFO - Model training process completed.
+2025-05-25 01:22:14,587 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 01:22:14,793 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:22:14,796 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:22:14,818 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 01:22:14,819 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 01:22:28,321 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:22:28] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:22:28,518 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:22:28] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:22:28,815 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:22:28,978 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:22:28] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:22:29,398 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:22:29,508 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:22:29] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:24:05,697 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 01:24:05,895 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:24:05,895 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:24:05,908 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 01:24:05,909 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 01:24:17,730 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:17] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:24:18,156 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:18] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:24:19,308 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:24:19,524 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:19] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:24:19,727 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:24:19,925 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:19] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:24:51,700 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:51] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:24:51,940 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:51] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:24:52,123 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:24:52,234 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:52] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:24:52,345 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:24:52,438 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:24:52] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:26:06,222 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:26:06] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:26:06,422 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:26:06,621 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:26:06] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:26:29,661 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:26:29] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 01:26:29,928 - __main__ - WARNING - Unauthorized retrain attempt. Provided key: default_training_key
+2025-05-25 01:26:29,928 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:26:29] "[31m[1mPOST /retrain HTTP/1.1[0m" 401 -
+2025-05-25 01:29:18,731 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:29:18] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:29:18,931 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:29:19,049 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:29:19] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:29:52,511 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:29:52] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:29:53,124 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:29:53,339 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:29:53] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:34:18,802 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:34:18] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:34:18,973 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:34:19,168 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:34:19] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:34:52,648 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:34:52] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:34:52,924 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:34:53,037 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:34:53] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:40:38,675 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 01:40:38,675 - __main__ - INFO - Starting model training process via command line...
+2025-05-25 01:40:38,693 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:40:40,292 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV.
+2025-05-25 01:40:40,309 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 204
+2025-05-25 01:40:40,310 - __main__ - INFO - Final dataset size for processing: 204 records
+2025-05-25 01:40:40,316 - __main__ - INFO - Training model with 204 records...
+2025-05-25 01:40:40,409 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 01:40:48,808 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 01:40:48,843 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 01:40:48,844 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 01:40:48,844 - __main__ - INFO - Model training process completed.
+2025-05-25 01:41:05,496 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 01:41:05,633 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:41:05,633 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:41:05,656 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 01:41:05,657 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 01:41:17,385 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:41:17] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:41:17,622 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:41:17] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:41:18,012 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:41:18,136 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:41:18] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:41:18,256 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:41:18,374 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:41:18] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:41:30,552 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:41:30] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 01:41:30,811 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 01:41:30,811 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:41:33,566 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV.
+2025-05-25 01:41:33,582 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 204
+2025-05-25 01:41:33,582 - __main__ - INFO - Final dataset size for processing: 204 records
+2025-05-25 01:41:33,598 - __main__ - INFO - Starting retraining with 204 records.
+2025-05-25 01:41:33,710 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 01:42:03,342 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 01:42:03,441 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 01:42:03,442 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 01:42:03,649 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:42:03,653 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 01:42:03,653 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:42:03] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 01:42:06,136 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:42:06] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:42:06,385 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:42:06,518 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:42:06] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:46:17,819 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:46:17] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:46:18,026 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:46:18,226 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:46:18] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:47:20,871 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:47:20] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 01:47:20,871 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:47:20] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 01:47:21,053 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:47:21] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 01:47:21,299 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:47:21,495 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:47:21,495 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:47:21,714 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:47:21] "POST /predict HTTP/1.1" 200 -
+2025-05-25 01:47:21,783 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001CD74782320> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 01:47:21,810 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:47:21] "POST /predict HTTP/1.1" 200 -
+2025-05-25 01:47:21,842 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:47:21] "POST /predict HTTP/1.1" 200 -
+2025-05-25 01:48:33,602 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:48:33] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:48:33,800 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:48:33] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:48:34,036 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:48:34,147 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:48:34] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:48:34,570 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:48:34,688 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:48:34] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:48:53,593 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:48:53] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 01:48:53,919 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 01:48:53,925 - __main__ - INFO - Loaded 204 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:48:57,792 - __main__ - INFO - Added 1 new unique child records from MongoDB to CSV.
+2025-05-25 01:48:57,808 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 205
+2025-05-25 01:48:57,812 - __main__ - INFO - Final dataset size for processing: 205 records
+2025-05-25 01:48:57,839 - __main__ - INFO - Starting retraining with 205 records.
+2025-05-25 01:48:58,047 - __main__ - ERROR - Error in train_model: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Traceback (most recent call last):
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 3660, in train_model
+    X_train_unscaled, X_test_unscaled, y_train, y_test = train_test_split(
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\model_selection\_split.py", line 2872, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\model_selection\_split.py", line 1909, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\model_selection\_split.py", line 2318, in _iter_indices
+    raise ValueError(
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+
+2025-05-25 01:48:58,047 - __main__ - ERROR - Model training failed during retrain process.
+2025-05-25 01:48:58,063 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:48:58] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-05-25 01:49:05,447 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:05] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 01:49:05,755 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 01:49:05,808 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:49:09,225 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV.
+2025-05-25 01:49:09,230 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 205
+2025-05-25 01:49:09,231 - __main__ - INFO - Final dataset size for processing: 205 records
+2025-05-25 01:49:09,238 - __main__ - INFO - Starting retraining with 205 records.
+2025-05-25 01:49:09,333 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 01:49:09,407 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 01:49:09,431 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:49:11,728 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV.
+2025-05-25 01:49:11,738 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 205
+2025-05-25 01:49:11,738 - __main__ - INFO - Final dataset size for processing: 205 records
+2025-05-25 01:49:11,748 - __main__ - INFO - Starting retraining with 205 records.
+2025-05-25 01:49:11,844 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 01:49:35,899 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001CD78945240> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 01:49:36,031 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 01:49:36,120 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 01:49:36,120 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 01:49:36,364 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:49:36,364 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 01:49:36,364 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:36] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 01:49:38,769 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 01:49:38,864 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 01:49:38,868 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 01:49:38,969 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:38] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:49:39,116 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:49:39,117 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 01:49:39,117 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:39] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 01:49:39,555 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:49:39,748 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:39] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:49:41,554 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:41] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:49:41,871 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:49:42,023 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:42] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:49:48,870 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:49:48] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 01:49:49,180 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 01:49:49,180 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:49:52,220 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV.
+2025-05-25 01:49:52,220 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 205
+2025-05-25 01:49:52,220 - __main__ - INFO - Final dataset size for processing: 205 records
+2025-05-25 01:49:52,235 - __main__ - INFO - Starting retraining with 205 records.
+2025-05-25 01:49:52,331 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 01:50:19,082 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 01:50:19,111 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 01:50:19,111 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 01:50:19,208 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 01:50:19,208 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 01:50:19,208 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:50:19] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 01:50:21,357 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:50:21] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:50:21,814 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:50:21,927 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:50:21] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:53:33,841 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:53:33] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:53:34,043 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:53:34,240 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:53:34] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:53:45,321 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:53:45] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:53:45,506 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:53:45] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:53:45,932 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:53:46,117 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:53:46] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:53:46,734 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:53:46,934 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:53:46] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 01:58:42,673 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:58:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 01:58:42,935 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 01:58:43,053 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 01:58:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:03:42,669 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:03:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:03:43,118 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:03:43,356 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:03:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:04:20,358 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 02:04:20,497 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:04:20,497 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:04:20,518 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 02:04:20,518 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 02:04:27,560 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:27] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:04:27,754 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:27] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:04:28,181 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:04:28,380 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:28] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:04:28,497 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:04:28,615 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:28] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:04:33,725 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:33] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 02:04:33,987 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 02:04:33,987 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:04:37,899 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV.
+2025-05-25 02:04:37,910 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 205
+2025-05-25 02:04:37,912 - __main__ - INFO - Final dataset size for processing: 205 records
+2025-05-25 02:04:37,915 - __main__ - INFO - Starting retraining with 205 records.
+2025-05-25 02:04:38,032 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 02:04:55,426 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 02:04:55,466 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 02:04:55,467 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 02:04:55,575 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:04:55,575 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 02:04:55,575 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:55] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 02:04:58,504 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:58] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:04:58,965 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:04:59,096 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:04:59] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:08:40,689 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:08:40] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:08:40,896 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:08:40] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:08:41,311 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:08:41,511 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:08:41] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:08:41,934 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:08:42,055 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:08:42] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:10:22,210 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 02:10:22,326 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:10:22,327 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:10:22,338 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 02:10:22,338 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 02:10:29,059 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:10:29] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:10:29,233 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:10:29] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:10:29,730 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:10:30,074 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:10:30] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:10:30,666 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:10:30,889 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:10:30] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:10:34,671 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:10:34] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 02:10:34,975 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 02:10:34,975 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:10:37,535 - __main__ - INFO - Fetched 200 game metrics and 48 questionnaires from MongoDB.
+2025-05-25 02:10:37,535 - __main__ - INFO - Processed questionnaires. Found 7 unique child questionnaires with subtypes.
+2025-05-25 02:10:37,535 - __main__ - INFO - Constructed 5 unique child records from MongoDB data.
+2025-05-25 02:10:37,535 - __main__ - INFO - Added 0 new unique child records from MongoDB to CSV data.
+2025-05-25 02:10:37,566 - __main__ - INFO - Saved combined dataset to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv. Total records: 205
+2025-05-25 02:10:37,566 - __main__ - INFO - Final dataset size for processing: 205 records
+2025-05-25 02:10:37,582 - __main__ - INFO - Starting retraining with 205 records.
+2025-05-25 02:10:37,682 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 02:11:01,997 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 02:11:02,067 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 02:11:02,071 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 02:11:02,171 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:11:02,171 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 02:11:02,171 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:11:02] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 02:11:04,396 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:11:04] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:11:04,891 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:11:05,081 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:11:05] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:15:29,882 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:15:29] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:15:30,093 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:15:30,275 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:15:30] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:16:43,611 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 02:16:43,715 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:16:43,715 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:16:43,742 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 02:16:43,743 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 02:16:49,966 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:16:49] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:16:50,243 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:16:50] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:16:50,410 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:16:50,540 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:16:50] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:16:50,664 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:16:50,819 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:16:50] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:16:55,402 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:16:55] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 02:16:55,667 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 02:16:55,672 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:16:59,721 - __main__ - INFO - Fetched 200 game metrics and 48 questionnaires from MongoDB.
+2025-05-25 02:16:59,724 - __main__ - INFO - Processed questionnaires. Found 7 unique child questionnaires with subtypes.
+2025-05-25 02:16:59,726 - __main__ - INFO - Constructed DataFrame with 5 unique child records from MongoDB data.
+2025-05-25 02:16:59,728 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 02:16:59,750 - __main__ - INFO - Saved updated combined dataset (205 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:16:59,750 - __main__ - INFO - Final dataset for retraining has 205 records.
+2025-05-25 02:16:59,783 - __main__ - INFO - Starting retraining with 205 records.
+2025-05-25 02:16:59,918 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 02:17:28,356 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 02:17:28,394 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 02:17:28,397 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 02:17:28,498 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 02:17:28,498 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 02:17:28,498 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:17:28] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 02:17:31,549 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:17:31] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:17:32,206 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:17:32,375 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:17:32] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:17:42,187 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:17:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:17:42,786 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:17:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:17:44,034 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:17:44,185 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:17:44] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:17:44,325 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:17:44,452 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:17:44] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:22:42,842 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:22:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:22:43,038 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:22:43,245 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:22:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:27:42,864 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:27:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:27:43,083 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:27:43,256 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:27:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:32:42,692 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:32:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:32:42,923 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:32:43,154 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:32:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:37:42,742 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:37:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:37:43,082 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:37:43,292 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:37:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:42:42,756 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:42:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:42:42,968 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:42:43,170 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:42:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:47:42,790 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:47:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:47:42,998 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:47:43,191 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:47:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:52:42,825 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:52:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:52:43,031 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:52:43,231 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:52:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 02:57:42,764 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:57:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 02:57:43,539 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 02:57:43,919 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 02:57:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:02:42,896 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:02:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:02:43,101 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:02:43,300 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:02:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:03:06,734 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:03:06] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 03:03:06,995 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:03:06] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 03:03:07,804 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:03:07,836 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:03:08,772 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:03:08] "POST /predict HTTP/1.1" 200 -
+2025-05-25 03:03:08,772 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:03:08] "POST /predict HTTP/1.1" 200 -
+2025-05-25 03:05:47,365 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:05:47] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 03:05:47,620 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 03:05:47,620 - __main__ - INFO - Loaded 205 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:05:51,037 - __main__ - INFO - Fetched 204 game metrics and 49 questionnaires from MongoDB.
+2025-05-25 03:05:51,037 - __main__ - INFO - Processed questionnaires. Found 8 unique child questionnaires with subtypes.
+2025-05-25 03:05:51,044 - __main__ - INFO - Constructed DataFrame with 6 unique child records from MongoDB data.
+2025-05-25 03:05:51,044 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 03:05:51,093 - __main__ - INFO - Saved updated combined dataset (206 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:05:51,093 - __main__ - INFO - Final dataset for retraining has 206 records.
+2025-05-25 03:05:51,116 - __main__ - INFO - Starting retraining with 206 records.
+2025-05-25 03:05:51,157 - __main__ - ERROR - Error in train_model: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Traceback (most recent call last):
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\retrain_model.py", line 4046, in train_model
+    X_train_unscaled, X_test_unscaled, y_train, y_test = train_test_split(
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\model_selection\_split.py", line 2872, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\model_selection\_split.py", line 1909, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\venv\lib\site-packages\sklearn\model_selection\_split.py", line 2318, in _iter_indices
+    raise ValueError(
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+
+2025-05-25 03:05:51,160 - __main__ - ERROR - Model training failed during retrain process.
+2025-05-25 03:05:51,162 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:05:51] "[35m[1mPOST /retrain HTTP/1.1[0m" 500 -
+2025-05-25 03:06:02,950 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:02] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:06:03,373 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:03] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:06:03,421 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:06:03,533 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:03] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:06:03,651 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:06:03,752 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:03] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:06:07,011 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:07] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 03:06:07,270 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 03:06:07,270 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:06:10,339 - __main__ - INFO - Fetched 204 game metrics and 49 questionnaires from MongoDB.
+2025-05-25 03:06:10,345 - __main__ - INFO - Processed questionnaires. Found 8 unique child questionnaires with subtypes.
+2025-05-25 03:06:10,346 - __main__ - INFO - Constructed DataFrame with 6 unique child records from MongoDB data.
+2025-05-25 03:06:10,350 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 03:06:10,357 - __main__ - INFO - Saved updated combined dataset (206 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:06:10,357 - __main__ - INFO - Final dataset for retraining has 206 records.
+2025-05-25 03:06:10,373 - __main__ - INFO - Starting retraining with 206 records.
+2025-05-25 03:06:10,454 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 03:06:38,267 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000258463A2050> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 03:06:38,329 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000258463A2050> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 03:06:38,424 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 03:06:38,523 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 03:06:38,527 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 03:06:38,862 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:06:38,862 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 03:06:38,862 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:38] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 03:06:41,700 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:41] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:06:41,942 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:06:42,061 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:06:42] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:11:03,676 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:11:03] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:11:03,931 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:11:04,047 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:11:04] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:16:03,675 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:16:03] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:16:04,086 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:16:04,475 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:16:04] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:21:03,652 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:21:03] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:21:03,924 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:21:04,046 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:21:04] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:25:03,510 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 03:25:03,659 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:25:03,659 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:25:03,691 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 03:25:03,692 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 03:25:11,297 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:11] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:25:11,495 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:11] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:25:11,909 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:25:12,115 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:12] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:25:12,531 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:25:12,643 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:12] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:25:17,865 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:17] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 03:25:18,130 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 03:25:18,135 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:25:25,591 - __main__ - INFO - Fetched 204 game metrics and 49 questionnaires from MongoDB.
+2025-05-25 03:25:25,591 - __main__ - INFO - Processed questionnaires. Found 8 unique child questionnaires with subtypes.
+2025-05-25 03:25:25,596 - __main__ - INFO - Constructed DataFrame with 6 unique child records from MongoDB data.
+2025-05-25 03:25:25,607 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 03:25:25,639 - __main__ - INFO - Saved updated combined dataset (206 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:25:25,639 - __main__ - INFO - Final dataset for retraining has 206 records.
+2025-05-25 03:25:25,655 - __main__ - INFO - Starting retraining with 206 records.
+2025-05-25 03:25:25,774 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 03:25:37,103 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 03:25:37,147 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 03:25:37,151 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 03:25:37,277 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:25:37,277 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 03:25:37,277 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:37] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 03:25:40,688 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:40] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:25:40,948 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:25:41,064 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:41] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:25:48,772 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:48] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:25:48,995 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:48] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:25:49,205 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:25:49,316 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:49] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:25:49,435 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:25:49,555 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:25:49] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:26:32,842 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:26:32] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 03:26:33,108 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 03:26:33,108 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:26:40,074 - __main__ - INFO - Fetched 204 game metrics and 49 questionnaires from MongoDB.
+2025-05-25 03:26:40,076 - __main__ - INFO - Processed questionnaires. Found 8 unique child questionnaires with subtypes.
+2025-05-25 03:26:40,076 - __main__ - INFO - Constructed DataFrame with 6 unique child records from MongoDB data.
+2025-05-25 03:26:40,076 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 03:26:40,106 - __main__ - INFO - Saved updated combined dataset (206 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:26:40,106 - __main__ - INFO - Final dataset for retraining has 206 records.
+2025-05-25 03:26:40,122 - __main__ - INFO - Starting retraining with 206 records.
+2025-05-25 03:26:40,202 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 03:27:02,509 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 03:27:02,597 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 03:27:02,603 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 03:27:02,812 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:27:02,812 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 03:27:02,812 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:27:02] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 03:27:05,382 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:27:05] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:27:05,637 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:27:05,781 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:27:05] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:30:49,920 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:30:49] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:30:50,287 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:30:50,581 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:30:50] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:35:49,658 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:35:49] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:35:50,070 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:35:50,240 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:35:50] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:40:49,658 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:40:49] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:40:50,107 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:40:50,304 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:40:50] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:45:49,738 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:45:49] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:45:50,063 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:45:50,267 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:45:50] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:47:33,758 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 03:47:33,878 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:47:33,879 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:47:33,897 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 03:47:33,898 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 03:48:16,356 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:48:16,497 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:48:16,790 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:48:16,910 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:16] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:48:17,341 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:48:17,456 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:17] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:48:21,965 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:21] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 03:48:22,278 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 03:48:22,278 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:48:25,696 - __main__ - INFO - Fetched 204 game metrics and 49 questionnaires from MongoDB.
+2025-05-25 03:48:25,696 - __main__ - INFO - Processed questionnaires. Found 8 unique child questionnaires with subtypes.
+2025-05-25 03:48:25,699 - __main__ - INFO - Constructed DataFrame with 6 unique child records from MongoDB data.
+2025-05-25 03:48:25,703 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 03:48:25,717 - __main__ - INFO - Saved updated combined dataset (206 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:48:25,720 - __main__ - INFO - Final dataset for retraining has 206 records.
+2025-05-25 03:48:25,736 - __main__ - INFO - Starting retraining with 206 records.
+2025-05-25 03:48:25,829 - __main__ - INFO - Starting model training with 161 training samples and 41 validation samples.
+2025-05-25 03:48:48,080 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 03:48:48,105 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 03:48:48,105 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 03:48:48,229 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 03:48:48,229 - __main__ - INFO - Model retrained and reloaded successfully via API.
+2025-05-25 03:48:48,229 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:48] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 03:48:51,663 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:51] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:48:51,916 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:48:52,044 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:48:52] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:53:16,813 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:53:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:53:16,996 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:53:17,228 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:53:17] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 03:58:16,834 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:58:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 03:58:17,042 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 03:58:17,251 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 03:58:17] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 04:03:16,868 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 04:03:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 04:03:17,072 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 04:03:17,481 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 04:03:17] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:39:41,481 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:39:41] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:39:41,590 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:39:41,697 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:39:41] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:43:16,988 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:43:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:43:17,100 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:43:17,409 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:43:17] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:48:01,120 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 07:48:01,291 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 07:48:01,291 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 07:48:01,324 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 07:48:01,327 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 07:48:09,340 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:48:09,665 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:48:12,215 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:48:12,857 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:12] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:48:13,433 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:48:14,048 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:48:18,044 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:18] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 07:48:18,352 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 07:48:18,352 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:48:27,396 - __main__ - INFO - Fetched 204 game metrics and 49 questionnaires from MongoDB.
+2025-05-25 07:48:27,412 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 07:48:27,428 - __main__ - INFO - Standardizing 'ADHD_Type'. Initial unique values in combined_df: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined' nan]
+2025-05-25 07:48:27,444 - __main__ - INFO - ADHD_Type counts after standardization: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 42
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 07:48:27,460 - __main__ - INFO - Saved updated combined dataset (206 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:48:27,460 - __main__ - INFO - Final dataset for retraining has 206 records.
+2025-05-25 07:48:27,476 - __main__ - INFO - Starting retraining with 206 records.
+2025-05-25 07:48:27,492 - __main__ - INFO - train_model received data with 206 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 07:48:27,492 - __main__ - INFO - Value counts of ADHD_Types at start of train_model: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 42
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 07:48:27,492 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 206
+2025-05-25 07:48:27,508 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 07:48:27,508 - __main__ - INFO - Final data size for splitting (data_train_final): 206
+2025-05-25 07:48:27,588 - __main__ - INFO - Starting model training with 164 training samples and 42 validation samples.
+2025-05-25 07:48:45,365 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 07:48:45,408 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 07:48:45,408 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 07:48:45,600 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 07:48:45,600 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:45] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 07:48:48,664 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:48] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:48:49,083 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:48:49,220 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:48:49] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:51:12,468 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:51:12] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:51:12,803 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:51:12] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:51:13,455 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:51:14,070 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:51:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:51:14,684 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:51:15,007 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:51:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:53:09,988 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:53:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:53:10,429 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:53:10,591 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:53:10] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:56:12,432 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:56:12] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 07:56:12,804 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 07:56:13,025 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:56:13] "POST /predict HTTP/1.1" 200 -
+2025-05-25 07:56:14,034 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 07:56:14,218 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:56:14] "POST /predict HTTP/1.1" 200 -
+2025-05-25 07:57:56,338 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:57:56] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 07:57:56,601 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 07:57:56,601 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:58:08,708 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:58:08] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:58:09,168 - __main__ - INFO - Loaded 206 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:58:09,329 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:58:09] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 07:58:14,141 - __main__ - INFO - Fetched 208 game metrics and 50 questionnaires from MongoDB.
+2025-05-25 07:58:14,141 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 07:58:14,157 - __main__ - INFO - Standardizing 'ADHD_Type'. Initial unique values in combined_df: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 07:58:14,173 - __main__ - INFO - ADHD_Type counts after standardization: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 43
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 07:58:14,173 - __main__ - INFO - Saved updated combined dataset (207 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:58:14,173 - __main__ - INFO - Final dataset for retraining has 207 records.
+2025-05-25 07:58:14,189 - __main__ - INFO - Starting retraining with 207 records.
+2025-05-25 07:58:14,189 - __main__ - INFO - train_model received data with 207 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 07:58:14,189 - __main__ - INFO - Value counts of ADHD_Types at start of train_model: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 43
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 07:58:14,189 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 207
+2025-05-25 07:58:14,205 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 07:58:14,205 - __main__ - INFO - Final data size for splitting (data_train_final): 207
+2025-05-25 07:58:14,253 - __main__ - INFO - Starting model training with 165 training samples and 42 validation samples.
+2025-05-25 07:58:47,249 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001EAC67BC0D0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 07:58:47,281 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001EAC67BC0D0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 07:58:47,386 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 07:58:47,440 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 07:58:47,446 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 07:58:47,680 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 07:58:47,697 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:58:47] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 07:58:50,323 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:58:50] "GET /health HTTP/1.1" 200 -
+2025-05-25 07:58:50,721 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 07:58:50,987 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 07:58:50] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 08:03:10,116 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:03:10] "GET /health HTTP/1.1" 200 -
+2025-05-25 08:03:10,464 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 08:03:10,604 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:03:10] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 08:08:09,673 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:08:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 08:08:10,283 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 08:08:10,873 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:08:10] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 08:13:10,118 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:13:10] "GET /health HTTP/1.1" 200 -
+2025-05-25 08:13:10,731 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 08:13:11,161 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:13:11] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 08:18:09,949 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:18:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 08:18:10,247 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 08:18:10,555 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:18:10] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 08:23:09,282 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:23:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 08:23:09,564 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 08:23:09,844 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 08:23:09] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:03:15,714 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 09:03:15,942 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:03:15,944 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:03:16,003 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 09:03:16,003 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 09:03:34,601 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:03:34] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:03:34,931 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:03:34] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:03:36,067 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:03:36,228 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:03:36] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:03:36,676 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:03:36,779 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:03:36] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:03:40,918 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:03:40] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 09:03:41,186 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 09:03:41,186 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:03:45,034 - __main__ - INFO - Fetched 208 game metrics and 50 questionnaires from MongoDB.
+2025-05-25 09:03:45,046 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 09:03:45,050 - __main__ - INFO - Standardizing 'ADHD_Type'. Initial unique values in combined_df: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 09:03:45,055 - __main__ - INFO - ADHD_Type counts after standardization: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 43
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 09:03:45,081 - __main__ - INFO - Saved updated combined dataset (207 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:03:45,081 - __main__ - INFO - Final dataset for retraining has 207 records.
+2025-05-25 09:03:45,097 - __main__ - INFO - Starting retraining with 207 records.
+2025-05-25 09:03:45,097 - __main__ - INFO - train_model received data with 207 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 09:03:45,113 - __main__ - INFO - Value counts of ADHD_Types at start of train_model: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 43
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 09:03:45,113 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 207
+2025-05-25 09:03:45,113 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 09:03:45,113 - __main__ - INFO - Final data size for splitting (data_train_final): 207
+2025-05-25 09:03:45,196 - __main__ - INFO - Starting model training with 165 training samples and 42 validation samples.
+2025-05-25 09:04:17,886 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 09:04:17,961 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 09:04:17,965 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 09:04:18,177 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:04:18,177 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:04:18] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 09:04:20,532 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:04:20] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:04:21,109 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:04:21,276 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:04:21] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:08:35,058 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:08:35] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:08:35,668 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:08:36,176 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:08:36] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:27:04,180 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 09:27:04,304 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:27:04,305 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:27:04,319 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 09:27:04,320 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 09:27:13,071 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:27:13] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:27:13,400 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:27:13] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:27:14,187 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:27:14,300 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:27:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:27:14,782 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:27:14,931 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:27:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:27:21,252 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:27:21] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 09:27:21,560 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 09:27:21,560 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:27:25,080 - __main__ - INFO - Fetched 208 game metrics and 50 questionnaires from MongoDB.
+2025-05-25 09:27:25,094 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 09:27:25,094 - __main__ - INFO - Standardizing 'ADHD_Type'. Initial unique values in combined_df: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 09:27:25,110 - __main__ - INFO - ADHD_Type counts after standardization: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 43
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 09:27:25,143 - __main__ - INFO - Saved updated combined dataset (207 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:27:25,145 - __main__ - INFO - Final dataset for retraining has 207 records.
+2025-05-25 09:27:25,157 - __main__ - INFO - Starting retraining with 207 records.
+2025-05-25 09:27:25,157 - __main__ - INFO - train_model received data with 207 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 09:27:25,157 - __main__ - INFO - Value counts of ADHD_Types at start of train_model: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 43
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 09:27:25,157 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 207
+2025-05-25 09:27:25,173 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 09:27:25,173 - __main__ - INFO - Final data size for splitting (data_train_final): 207
+2025-05-25 09:27:25,258 - __main__ - INFO - Starting model training with 165 training samples and 42 validation samples.
+2025-05-25 09:27:59,360 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 09:27:59,448 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 09:27:59,452 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 09:27:59,679 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:27:59,679 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:27:59] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 09:28:02,096 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:28:02] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:28:02,813 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:28:03,027 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:28:03] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:32:14,154 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:32:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:32:14,581 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:32:14,731 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:32:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:32:22,269 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:32:22] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 09:32:22,736 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:32:22,747 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:32:23,041 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:32:23] "POST /predict HTTP/1.1" 200 -
+2025-05-25 09:32:23,126 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:32:23] "POST /predict HTTP/1.1" 200 -
+2025-05-25 09:33:27,696 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:33:27] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:33:27,960 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:33:28,638 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:33:28] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:33:32,302 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:33:32] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 09:33:32,560 - __main__ - INFO - Retraining request received and authorized.
+2025-05-25 09:33:32,560 - __main__ - INFO - Loaded 207 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:33:42,340 - __main__ - INFO - Fetched 212 game metrics and 51 questionnaires from MongoDB.
+2025-05-25 09:33:42,344 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 09:33:42,344 - __main__ - INFO - Standardizing 'ADHD_Type'. Initial unique values in combined_df: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 09:33:42,355 - __main__ - INFO - ADHD_Type counts after standardization: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 44
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 09:33:42,371 - __main__ - INFO - Saved updated combined dataset (208 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:33:42,371 - __main__ - INFO - Final dataset for retraining has 208 records.
+2025-05-25 09:33:42,388 - __main__ - INFO - Starting retraining with 208 records.
+2025-05-25 09:33:42,388 - __main__ - INFO - train_model received data with 208 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 09:33:42,404 - __main__ - INFO - Value counts of ADHD_Types at start of train_model: 
+ADHD_Type
+No ADHD                  84
+Inattentive              50
+Combined                 44
+Hyperactive-Impulsive    30
+Name: count, dtype: int64
+2025-05-25 09:33:42,404 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 208
+2025-05-25 09:33:42,404 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 09:33:42,404 - __main__ - INFO - Final data size for splitting (data_train_final): 208
+2025-05-25 09:33:42,580 - __main__ - INFO - Starting model training with 166 training samples and 42 validation samples.
+2025-05-25 09:34:01,999 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001D9147E7D90> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 09:34:02,015 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001D9147E7D90> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 09:34:02,068 - __main__ - INFO - Model training completed. Test accuracy: 0.9762. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 09:34:02,087 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 09:34:02,088 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 09:34:02,230 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 09:34:02,230 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:34:02] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 09:34:05,517 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:34:05] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:34:05,984 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:34:06,107 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:34:06] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:37:13,663 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:37:13] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:37:13,939 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:37:14,073 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:37:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:42:13,972 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:42:13] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:42:14,200 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:42:14,722 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:42:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 09:47:13,807 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:47:13] "GET /health HTTP/1.1" 200 -
+2025-05-25 09:47:14,358 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 09:47:14,897 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 09:47:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:05:49,240 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 10:05:49,243 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 10:05:49,424 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 10:05:49,424 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 10:05:49,424 - __main__ - INFO - Auto-retrain job started.
+2025-05-25 10:05:49,424 - __main__ - INFO - Automatic retraining thread initiated.
+2025-05-25 10:05:49,424 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 10:05:49,459 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 10:05:49,460 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 10:06:09,203 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:06:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:06:09,416 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:06:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:06:09,904 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:06:10,039 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:06:10] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:06:10,521 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:06:10,669 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:06:10] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:11:09,689 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:11:09] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:11:10,060 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:11:10,496 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:11:10] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:13:23,027 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:13:23] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 10:13:23,182 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:13:23] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 10:13:23,848 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:13:23] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:13:23,850 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:13:23] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:14:20,162 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:14:20] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:14:20,921 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:14:21,143 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:14:21] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:14:22,981 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:14:22] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:14:23,597 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:14:23,838 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:14:23] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:15:12,339 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:15:12] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:15:12,954 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:15:13,183 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:15:13] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:15:16,200 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:15:16] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 10:15:16,459 - __main__ - INFO - Manual retraining request received and authorized.
+2025-05-25 10:15:16,459 - __main__ - INFO - Loaded 208 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:15:32,016 - __main__ - INFO - Fetched 216 game metrics and 52 questionnaires from MongoDB.
+2025-05-25 10:15:32,031 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 10:15:32,062 - __main__ - INFO - Saved updated combined dataset (209 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:15:32,062 - __main__ - INFO - Final dataset for retraining has 209 records.
+2025-05-25 10:15:32,078 - __main__ - INFO - Starting manual retraining with 209 records.
+2025-05-25 10:15:32,078 - __main__ - INFO - train_model received data with 209 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 10:15:32,078 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 209
+2025-05-25 10:15:32,094 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 10:15:32,094 - __main__ - INFO - Final data size for splitting (data_train_final): 209
+2025-05-25 10:15:32,158 - __main__ - INFO - Starting model training with 167 training samples and 42 validation samples.
+2025-05-25 10:15:48,473 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 10:15:48,522 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 10:15:48,523 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 10:15:48,523 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 10:15:48,666 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 10:15:48,666 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 10:15:48,666 - __main__ - INFO - Manual retrain: Lock released.
+2025-05-25 10:15:48,666 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:15:48] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 10:15:51,395 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:15:51] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:15:51,851 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:15:51,983 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:15:51] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:19:20,810 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:19:20] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:19:21,389 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:19:22,005 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:19:22] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:24:20,788 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:24:20] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:24:21,262 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:24:21,818 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:24:21] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:29:21,250 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:29:21] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:29:21,357 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:29:21,873 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:29:21] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:31:33,631 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:31:33] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:31:33,956 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:31:33] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:31:34,265 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:31:34,769 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:31:34] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:31:35,069 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:31:35,203 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:31:35] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:34:28,128 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:34:28] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 10:34:28,290 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:34:28] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 10:34:28,744 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000024988CEEEF0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 10:34:28,747 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000024988CEEEF0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 10:34:28,808 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:34:28] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:34:28,810 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:34:28] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:35:18,864 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:35:18] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:35:19,439 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:35:19,737 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:35:19] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:35:29,157 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:35:29] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 10:35:29,465 - __main__ - INFO - Manual retraining request received and authorized.
+2025-05-25 10:35:29,465 - __main__ - INFO - Loaded 209 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:35:42,840 - __main__ - INFO - Fetched 220 game metrics and 53 questionnaires from MongoDB.
+2025-05-25 10:35:42,848 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 10:35:42,855 - __main__ - INFO - Saved updated combined dataset (210 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:35:42,857 - __main__ - INFO - Final dataset for retraining has 210 records.
+2025-05-25 10:35:42,872 - __main__ - INFO - Starting manual retraining with 210 records.
+2025-05-25 10:35:42,874 - __main__ - INFO - train_model received data with 210 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 10:35:42,874 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 210
+2025-05-25 10:35:42,874 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 10:35:42,886 - __main__ - INFO - Final data size for splitting (data_train_final): 210
+2025-05-25 10:35:42,950 - __main__ - INFO - Starting model training with 168 training samples and 42 validation samples.
+2025-05-25 10:36:17,218 - __main__ - INFO - Model training completed. Test accuracy: 1.0000. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 10:36:17,282 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 10:36:17,282 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 10:36:17,282 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 10:36:17,539 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 10:36:17,539 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 10:36:17,539 - __main__ - INFO - Manual retrain: Lock released.
+2025-05-25 10:36:17,539 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:36:17] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 10:36:20,045 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:36:20] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:36:20,707 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:36:20,924 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:36:20] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:36:33,576 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:36:33] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:36:34,135 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:36:34,621 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:36:34] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:41:33,788 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:41:33] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:41:34,005 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:41:34,576 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:41:34] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:46:34,238 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:46:34] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:46:34,454 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:46:34,823 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:46:34] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:48:01,669 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:01] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 10:48:01,863 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:01] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 10:48:02,343 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:02] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:48:02,344 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:02] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:48:52,235 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:52] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:48:52,565 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:52] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:48:52,943 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:48:53,115 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:53] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:48:53,544 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:48:53,677 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:48:53] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:50:34,513 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:50:34] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:50:34,851 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:50:34] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:50:35,099 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:50:35,722 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:50:35] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:50:36,245 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:50:36,495 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:50:36] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:50:41,064 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:50:41] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 10:50:41,325 - __main__ - INFO - Manual retraining request received and authorized.
+2025-05-25 10:50:41,325 - __main__ - INFO - Loaded 210 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:50:45,761 - __main__ - INFO - Fetched 224 game metrics and 54 questionnaires from MongoDB.
+2025-05-25 10:50:45,776 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 10:50:45,809 - __main__ - INFO - Saved updated combined dataset (211 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:50:45,809 - __main__ - INFO - Final dataset for retraining has 211 records.
+2025-05-25 10:50:45,825 - __main__ - INFO - Starting manual retraining with 211 records.
+2025-05-25 10:50:45,841 - __main__ - INFO - train_model received data with 211 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 10:50:45,841 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 211
+2025-05-25 10:50:45,841 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 10:50:45,856 - __main__ - INFO - Final data size for splitting (data_train_final): 211
+2025-05-25 10:50:45,952 - __main__ - INFO - Starting model training with 168 training samples and 43 validation samples.
+2025-05-25 10:50:59,967 - __main__ - INFO - Model training completed. Test accuracy: 0.9535. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 10:51:00,031 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 10:51:00,031 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 10:51:00,047 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 10:51:00,353 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 10:51:00,353 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 10:51:00,353 - __main__ - INFO - Manual retrain: Lock released.
+2025-05-25 10:51:00,353 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:51:00] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 10:51:03,618 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:51:03] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:51:04,087 - __main__ - INFO - Loaded 211 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:51:04,245 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:51:04] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:53:53,088 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:53:53] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:53:53,708 - __main__ - INFO - Loaded 211 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:53:54,418 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:53:54] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:56:24,836 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:56:24] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 10:56:25,321 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:56:25] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:56:25,385 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:56:25] "POST /predict HTTP/1.1" 200 -
+2025-05-25 10:57:11,602 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:11] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:57:11,938 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:11] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:57:12,213 - __main__ - INFO - Loaded 211 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:57:12,822 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:12] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:57:13,435 - __main__ - INFO - Loaded 211 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:57:14,062 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:14] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 10:57:23,468 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:23] "OPTIONS /retrain HTTP/1.1" 200 -
+2025-05-25 10:57:23,775 - __main__ - INFO - Manual retraining request received and authorized.
+2025-05-25 10:57:23,775 - __main__ - INFO - Loaded 211 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:57:28,601 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 10:57:28,605 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 10:57:28,629 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:57:28,629 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 10:57:28,645 - __main__ - INFO - Starting manual retraining with 212 records.
+2025-05-25 10:57:28,645 - __main__ - INFO - train_model received data with 212 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 10:57:28,661 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 212
+2025-05-25 10:57:28,661 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 10:57:28,661 - __main__ - INFO - Final data size for splitting (data_train_final): 212
+2025-05-25 10:57:28,741 - __main__ - INFO - Starting model training with 169 training samples and 43 validation samples.
+2025-05-25 10:57:41,788 - __main__ - INFO - Model training completed. Test accuracy: 0.9070. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 10:57:41,854 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 10:57:41,854 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 10:57:41,861 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 10:57:42,109 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 10:57:42,109 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 10:57:42,109 - __main__ - INFO - Manual retrain: Lock released.
+2025-05-25 10:57:42,118 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:42] "POST /retrain HTTP/1.1" 200 -
+2025-05-25 10:57:44,505 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:44] "GET /health HTTP/1.1" 200 -
+2025-05-25 10:57:45,050 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 10:57:45,199 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 10:57:45] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:02:11,842 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:02:11] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:02:12,224 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:02:12,458 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:02:12] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:05:03,914 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 11:05:03,914 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 11:05:04,054 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:05:04,054 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 11:05:04,055 - __main__ - INFO - Auto-retrain job started.
+2025-05-25 11:05:04,055 - __main__ - INFO - Automatic retraining thread initiated.
+2025-05-25 11:05:04,057 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:05:04,074 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 11:05:04,074 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 11:05:09,057 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:05:09,065 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:14,941 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:05:14,947 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:05:14,963 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:14,963 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:05:14,972 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:05:14,972 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:05:19,991 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:05:20,033 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:27,145 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:05:27,153 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:05:27,161 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:27,161 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:05:27,172 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:05:27,173 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:05:32,177 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:05:32,192 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:37,388 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:05:37,391 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:05:37,397 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:37,397 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:05:37,406 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:05:37,407 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:05:40,289 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:05:40] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:05:40,728 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:40,896 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:05:40] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:05:42,409 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:05:42,414 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:45,158 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:05:45] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:05:45,613 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:45,881 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:05:45] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:05:45,988 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:05:45,993 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:05:45,999 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:46,000 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:05:46,011 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:05:46,011 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:05:51,024 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:05:51,061 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:55,903 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:05:55,907 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:05:55,920 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:05:55,921 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:05:55,927 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:05:55,928 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:06:00,939 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:06:00,975 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:04,108 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:06:04,123 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:06:04,130 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:04,131 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:06:04,134 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:06:04,134 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:06:09,138 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:06:09,225 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:13,749 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:06:13,751 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:06:13,755 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:13,755 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:06:13,764 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:06:13,765 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:06:18,779 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:06:18,817 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:22,871 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:06:22,878 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:06:22,888 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:22,889 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:06:22,895 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:06:22,895 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:06:27,899 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:06:27,936 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:34,113 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:06:34,131 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:06:34,135 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:34,140 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:06:34,145 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:06:34,145 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:06:39,156 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:06:39,178 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:44,779 - __main__ - INFO - Fetched 228 game metrics and 55 questionnaires from MongoDB.
+2025-05-25 11:06:44,793 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 11:06:44,803 - __main__ - INFO - Saved updated combined dataset (212 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:06:44,804 - __main__ - INFO - Final dataset for retraining has 212 records.
+2025-05-25 11:06:44,810 - __main__ - INFO - Auto-retrain: Current dataset size: 212, Last trained size: 212
+2025-05-25 11:06:44,810 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 11:06:49,827 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 11:06:49,854 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv

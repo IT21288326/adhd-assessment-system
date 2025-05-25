@@ -1,661 +1,1575 @@
-// import React, { useState, useEffect } from 'react';
-// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-// import { Progress } from './ui/progress';
-// import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, Award, Star, TrendingUp } from 'lucide-react';
-// import Confetti from 'react-confetti';
-// import tw, {styled} from 'twin.macro';
+// // import React, { useState, useEffect } from 'react';
+// // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+// // import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+// // import { Progress } from './ui/progress';
+// // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, Award, Star, TrendingUp } from 'lucide-react';
+// // import Confetti from 'react-confetti';
+// // import tw, {styled} from 'twin.macro';
 
-// // Create styled components with Tailwind classes
-// const Container = styled.div`
-//   ${tw`container mx-auto p-4 bg-gradient-to-b from-blue-50 to-purple-50 rounded-xl`}
-// `;
+// // // Create styled components with Tailwind classes
+// // const Container = styled.div`
+// //   ${tw`container mx-auto p-4 bg-gradient-to-b from-blue-50 to-purple-50 rounded-xl`}
+// // `;
 
-// const StyledCard = styled(Card)`
-//   ${tw`bg-white border-2 border-blue-200 hover:shadow-md transition-shadow`}
-// `;
+// // const StyledCard = styled(Card)`
+// //   ${tw`bg-white border-2 border-blue-200 hover:shadow-md transition-shadow`}
+// // `;
 
-// const GameAnalytics = ({ gameData }) => {
-//   const [analysisResults, setAnalysisResults] = useState({
-//     inattention: { score: 0, level: '', insights: [] },
-//     impulsivity: { score: 0, level: '', insights: [] },
-//     combined: { score: 0, level: '', insights: [] }
-//   });
-//   const [showConfetti, setShowConfetti] = useState(false);
-//   const [achievements, setAchievements] = useState([]);
-//   const [selectedTab, setSelectedTab] = useState('metrics');
-//   const [showPositiveMessage, setShowPositiveMessage] = useState(false);
+// // const GameAnalytics = ({ gameData }) => {
+// //   const [analysisResults, setAnalysisResults] = useState({
+// //     inattention: { score: 0, level: '', insights: [] },
+// //     impulsivity: { score: 0, level: '', insights: [] },
+// //     combined: { score: 0, level: '', insights: [] }
+// //   });
+// //   const [showConfetti, setShowConfetti] = useState(false);
+// //   const [achievements, setAchievements] = useState([]);
+// //   const [selectedTab, setSelectedTab] = useState('metrics');
+// //   const [showPositiveMessage, setShowPositiveMessage] = useState(false);
 
-//   useEffect(() => {
+// //   useEffect(() => {
     
-//     if (gameData) {
-//       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
-//         const mean = gameData.averageReactionTime;
-//         const variance = gameData.reactionTimes.reduce((sum, time) => 
-//           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
-//         gameData.reactionTimeVariability = Math.sqrt(variance);
-//       }
-//       const results = analyzeGameData(gameData);
-//       setAnalysisResults(results);
+// //     if (gameData) {
+// //       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
+// //         const mean = gameData.averageReactionTime;
+// //         const variance = gameData.reactionTimes.reduce((sum, time) => 
+// //           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
+// //         gameData.reactionTimeVariability = Math.sqrt(variance);
+// //       }
+// //       const results = analyzeGameData(gameData);
+// //       setAnalysisResults(results);
     
-//           // Generate achievements
-//           const userAchievements = generateAchievements(gameData);
-//           setAchievements(userAchievements);
+// //           // Generate achievements
+// //           const userAchievements = generateAchievements(gameData);
+// //           setAchievements(userAchievements);
           
-//           // Show confetti if there are achievements or good scores
-//           if (userAchievements.length > 0 || gameData.score > 150) {
-//             setShowConfetti(true);
-//             setTimeout(() => setShowConfetti(false), 5000);
-//           }
+// //           // Show confetti if there are achievements or good scores
+// //           if (userAchievements.length > 0 || gameData.score > 150) {
+// //             setShowConfetti(true);
+// //             setTimeout(() => setShowConfetti(false), 5000);
+// //           }
           
-//           // Show positive message
-//           setShowPositiveMessage(true);
-//           setTimeout(() => setShowPositiveMessage(false), 8000);
-//         }
-//   }, [gameData]);
+// //           // Show positive message
+// //           setShowPositiveMessage(true);
+// //           setTimeout(() => setShowPositiveMessage(false), 8000);
+// //         }
+// //   }, [gameData]);
 
-//   // Generate achievements based on gameplay
-//   const generateAchievements = (data) => {
-//     const achievements = [];
+// //   // Generate achievements based on gameplay
+// //   const generateAchievements = (data) => {
+// //     const achievements = [];
     
-//     if (data.correctStreak >= 10) {
-//       achievements.push({
-//         title: "Focus Master",
-//         description: "Caught 10 stars in a row!",
-//         icon: <Target className="text-indigo-500" />
-//       });
-//     }
+// //     if (data.correctStreak >= 10) {
+// //       achievements.push({
+// //         title: "Focus Master",
+// //         description: "Caught 10 stars in a row!",
+// //         icon: <Target className="text-indigo-500" />
+// //       });
+// //     }
     
-//     if (data.score > 200) {
-//       achievements.push({
-//         title: "Star Collector",
-//         description: "Scored over 200 points!",
-//         icon: <Star className="text-yellow-500" />
-//       });
-//     }
+// //     if (data.score > 200) {
+// //       achievements.push({
+// //         title: "Star Collector",
+// //         description: "Scored over 200 points!",
+// //         icon: <Star className="text-yellow-500" />
+// //       });
+// //     }
     
-//     if (data.averageReactionTime < 600 && data.reactionTimes.length > 10) {
-//       achievements.push({
-//         title: "Lightning Fast",
-//         description: "Super quick reaction time!",
-//         icon: <Zap className="text-blue-500" />
-//       });
-//     }
+// //     if (data.averageReactionTime < 600 && data.reactionTimes.length > 10) {
+// //       achievements.push({
+// //         title: "Lightning Fast",
+// //         description: "Super quick reaction time!",
+// //         icon: <Zap className="text-blue-500" />
+// //       });
+// //     }
     
-//     if (data.missedStars < 3 && data.reactionTimes.length > 10) {
-//       achievements.push({
-//         title: "Eagle Eye",
-//         description: "Almost nothing escapes you!",
-//         icon: <Activity className="text-green-500" />
-//       });
-//     }
+// //     if (data.missedStars < 3 && data.reactionTimes.length > 10) {
+// //       achievements.push({
+// //         title: "Eagle Eye",
+// //         description: "Almost nothing escapes you!",
+// //         icon: <Activity className="text-green-500" />
+// //       });
+// //     }
     
-//     return achievements;
-//   };
+// //     return achievements;
+// //   };
 
-//   // Analyze game data to calculate metrics
-//   const analyzeGameData = (data) => {
-//     // 1. Inattention Analysis
-//     const inattentionScore = calculateInattentionScore(data);
-//     const inattentionLevel = getScoreLevel(inattentionScore);
-//     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
+// //   // Analyze game data to calculate metrics
+// //   const analyzeGameData = (data) => {
+// //     // 1. Inattention Analysis
+// //     const inattentionScore = calculateInattentionScore(data);
+// //     const inattentionLevel = getScoreLevel(inattentionScore);
+// //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
 
-//     // 2. Impulsivity Analysis
-//     const impulsivityScore = calculateImpulsivityScore(data);
-//     const impulsivityLevel = getScoreLevel(impulsivityScore);
-//     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
+// //     // 2. Impulsivity Analysis
+// //     const impulsivityScore = calculateImpulsivityScore(data);
+// //     const impulsivityLevel = getScoreLevel(impulsivityScore);
+// //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
 
-//     // 3. Combined Analysis
-//     const combinedScore = (inattentionScore + impulsivityScore) / 2;
-//     const combinedLevel = getScoreLevel(combinedScore);
-//     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
+// //     // 3. Combined Analysis
+// //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
+// //     const combinedLevel = getScoreLevel(combinedScore);
+// //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
 
-//     return {
-//       inattention: {
-//         score: inattentionScore,
-//         level: inattentionLevel,
-//         insights: inattentionInsights
-//       },
-//       impulsivity: {
-//         score: impulsivityScore,
-//         level: impulsivityLevel,
-//         insights: impulsivityInsights
-//       },
-//       combined: {
-//         score: combinedScore,
-//         level: combinedLevel,
-//         insights: combinedInsights
-//       }
-//     };
-//   };
+// //     return {
+// //       inattention: {
+// //         score: inattentionScore,
+// //         level: inattentionLevel,
+// //         insights: inattentionInsights
+// //       },
+// //       impulsivity: {
+// //         score: impulsivityScore,
+// //         level: impulsivityLevel,
+// //         insights: impulsivityInsights
+// //       },
+// //       combined: {
+// //         score: combinedScore,
+// //         level: combinedLevel,
+// //         insights: combinedInsights
+// //       }
+// //     };
+// //   };
 
-//   // Calculate inattention score from 0-100 (higher = more inattentive)
-//   const calculateInattentionScore = (data) => {
-//     // Factors indicating inattention:
-//     // 1. Missed stars
-//     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
+// //   // Calculate inattention score from 0-100 (higher = more inattentive)
+// //   const calculateInattentionScore = (data) => {
+// //     // Factors indicating inattention:
+// //     // 1. Missed stars
+// //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
     
-//     // 2. Long reaction times
-//     const avgReactionTime = data.averageReactionTime;
-//     let reactionTimeFactor = 0;
-//     if (avgReactionTime > 1000) reactionTimeFactor = 30;
-//     else if (avgReactionTime > 800) reactionTimeFactor = 20;
-//     else if (avgReactionTime > 600) reactionTimeFactor = 10;
+// //     // 2. Long reaction times
+// //     const avgReactionTime = data.averageReactionTime;
+// //     let reactionTimeFactor = 0;
+// //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
+// //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
+// //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
     
-//     // 3. Missed star streaks (consecutive misses)
-//     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
-//     const streakFactor = maxMissedStreak * 10;
+// //     // 3. Missed star streaks (consecutive misses)
+// //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
+// //     const streakFactor = maxMissedStreak * 10;
     
-//     // Calculate final score (cap at 100)
-//     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
-//   };
+// //     // Calculate final score (cap at 100)
+// //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
+// //   };
 
-//   // Calculate impulsivity score from 0-100 (higher = more impulsive)
-//   const calculateImpulsivityScore = (data) => {
-//     // Factors indicating impulsivity:
-//     // 1. Premature clicks
-//     const prematureClicksRatio = data.prematureClicks / 
-//       (data.reactionTimes.length + data.prematureClicks) * 100;
-//     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
+// //   // Calculate impulsivity score from 0-100 (higher = more impulsive)
+// //   const calculateImpulsivityScore = (data) => {
+// //     // Factors indicating impulsivity:
+// //     // 1. Premature clicks
+// //     const prematureClicksRatio = data.prematureClicks / 
+// //       (data.reactionTimes.length + data.prematureClicks) * 100;
+// //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
     
-//     // 2. Very fast reaction times (potentially impulsive responses)
-//     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-//     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
-//     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
+// //     // 2. Very fast reaction times (potentially impulsive responses)
+// //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
+// //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
     
-//     // 3. Variability in reaction times (inconsistent behavior)
-//     // Calculate standard deviation if we have it
-//     let variabilityFactor = 0;
-//     if (data.reactionTimeVariability) {
-//       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
-//       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
-//     }
+// //     // 3. Variability in reaction times (inconsistent behavior)
+// //     // Calculate standard deviation if we have it
+// //     let variabilityFactor = 0;
+// //     if (data.reactionTimeVariability) {
+// //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
+// //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
+// //     }
     
-//     // Calculate final score (cap at 100)
-//     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
-//   };
+// //     // Calculate final score (cap at 100)
+// //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
+// //   };
 
-//   // Generate score level based on numerical score
-//   const getScoreLevel = (score) => {
-//     if (score < 20) return 'Low';
-//     if (score < 40) return 'Below Average';
-//     if (score < 60) return 'Average';
-//     if (score < 80) return 'Above Average';
-//     return 'High';
-//   };
+// //   // Generate score level based on numerical score
+// //   const getScoreLevel = (score) => {
+// //     if (score < 20) return 'Low';
+// //     if (score < 40) return 'Below Average';
+// //     if (score < 60) return 'Average';
+// //     if (score < 80) return 'Above Average';
+// //     return 'High';
+// //   };
 
-//   // Generate insights for inattention
-//   const generateInattentionInsights = (data, score) => {
-//     const insights = [];
+// //   // Generate insights for inattention
+// //   const generateInattentionInsights = (data, score) => {
+// //     const insights = [];
     
-//     if (data.missedStars > 5) {
-//       insights.push("Missed several stars, suggesting potential attention lapses.");
-//     }
+// //     if (data.missedStars > 5) {
+// //       insights.push("Missed several stars, suggesting potential attention lapses.");
+// //     }
     
-//     if (data.averageReactionTime > 1000) {
-//       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
-//     }
+// //     if (data.averageReactionTime > 1000) {
+// //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
+// //     }
     
-//     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
-//       insights.push("Consecutive missed stars suggest periods of significant inattention.");
-//     }
+// //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
+// //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
+// //     }
     
-//     if (score < 30) {
-//       insights.push("Overall attention levels appear strong.");
-//     }
+// //     if (score < 30) {
+// //       insights.push("Overall attention levels appear strong.");
+// //     }
     
-//     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
-//   };
+// //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
+// //   };
 
-//   // Generate insights for impulsivity
-//   const generateImpulsivityInsights = (data, score) => {
-//     const insights = [];
+// //   // Generate insights for impulsivity
+// //   const generateImpulsivityInsights = (data, score) => {
+// //     const insights = [];
     
-//     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
-//       insights.push("High number of premature clicks suggests impulsive responding.");
-//     }
+// //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
+// //       insights.push("High number of premature clicks suggests impulsive responding.");
+// //     }
     
-//     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-//     if (fastResponses > data.reactionTimes.length * 0.2) {
-//       insights.push("Many unusually fast responses may indicate impulsive decision making.");
-//     }
+// //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// //     if (fastResponses > data.reactionTimes.length * 0.2) {
+// //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
+// //     }
     
-//     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
-//       insights.push("High variability in response times suggests inconsistent attention control.");
-//     }
+// //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
+// //       insights.push("High variability in response times suggests inconsistent attention control.");
+// //     }
     
-//     if (score < 30) {
-//       insights.push("Shows good impulse control overall.");
-//     }
+// //     if (score < 30) {
+// //       insights.push("Shows good impulse control overall.");
+// //     }
     
-//     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
-//   };
+// //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
+// //   };
 
-//   // Generate combined insights
-//   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
-//     const insights = [];
+// //   // Generate combined insights
+// //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
+// //     const insights = [];
     
-//     if (inattentionScore > 60 && impulsivityScore > 60) {
-//       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
-//     } else if (inattentionScore > 60) {
-//       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
-//     } else if (impulsivityScore > 60) {
-//       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
-//     }
+// //     if (inattentionScore > 60 && impulsivityScore > 60) {
+// //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
+// //     } else if (inattentionScore > 60) {
+// //       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
+// //     } else if (impulsivityScore > 60) {
+// //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
+// //     }
     
-//     if (data.score > 200) {
-//       insights.push("Despite challenges, achieved a good game score, showing persistence.");
-//     }
+// //     if (data.score > 200) {
+// //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
+// //     }
     
-//     if (data.correctStreak > 15) {
-//       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
-//     }
+// //     if (data.correctStreak > 15) {
+// //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
+// //     }
     
-//     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
-//   };
+// //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
+// //   };
 
-//     // Get child-friendly score level
-//     const getKidFriendlyLevel = (level) => {
-//       switch (level) {
-//         case 'Low': return 'Great!';
-//         case 'Below Average': return 'Good';
-//         case 'Average': return 'Okay';
-//         case 'Above Average': return 'Needs Practice';
-//         case 'High': return 'Let\'s Work on This';
-//         default: return 'Okay';
-//       }
-//     };
+// //     // Get child-friendly score level
+// //     const getKidFriendlyLevel = (level) => {
+// //       switch (level) {
+// //         case 'Low': return 'Great!';
+// //         case 'Below Average': return 'Good';
+// //         case 'Average': return 'Okay';
+// //         case 'Above Average': return 'Needs Practice';
+// //         case 'High': return 'Let\'s Work on This';
+// //         default: return 'Okay';
+// //       }
+// //     };
   
-//     // Get color based on level for kids UI (less red/harsh colors)
-//     const getLevelColor = (level) => {
-//       switch (level) {
-//         case 'Low': return 'text-emerald-500';
-//         case 'Below Average': return 'text-blue-500';
-//         case 'Average': return 'text-indigo-500';
-//         case 'Above Average': return 'text-purple-500';
-//         case 'High': return 'text-orange-500';
-//         default: return 'text-gray-500';
-//       }
-//     };
+// //     // Get color based on level for kids UI (less red/harsh colors)
+// //     const getLevelColor = (level) => {
+// //       switch (level) {
+// //         case 'Low': return 'text-emerald-500';
+// //         case 'Below Average': return 'text-blue-500';
+// //         case 'Average': return 'text-indigo-500';
+// //         case 'Above Average': return 'text-purple-500';
+// //         case 'High': return 'text-orange-500';
+// //         default: return 'text-gray-500';
+// //       }
+// //     };
   
-//     // Get progress bar color based on score (kid-friendly colors)
-//     const getProgressColor = (score) => {
-//       if (score < 30) return 'bg-emerald-400';
-//       if (score < 50) return 'bg-blue-400';
-//       if (score < 70) return 'bg-indigo-400';
-//       if (score < 85) return 'bg-purple-400';
-//       return 'bg-orange-400';
-//     };
+// //     // Get progress bar color based on score (kid-friendly colors)
+// //     const getProgressColor = (score) => {
+// //       if (score < 30) return 'bg-emerald-400';
+// //       if (score < 50) return 'bg-blue-400';
+// //       if (score < 70) return 'bg-indigo-400';
+// //       if (score < 85) return 'bg-purple-400';
+// //       return 'bg-orange-400';
+// //     };
   
-//     // Convert insights to kid-friendly language
-//     const getKidFriendlyInsights = (insights) => {
-//       const friendlyMap = {
-//         "Missed several stars": "You missed a few stars. That's okay! Let's practice spotting them.",
-//         "Slower reaction times": "You took a little extra time to catch the stars.",
-//         "Consecutive missed stars": "Sometimes you missed stars in a row. Let's work on staying focused!",
-//         "Overall attention levels appear strong": "You're doing great at paying attention!",
-//         "High number of premature clicks": "You clicked a bit early sometimes. Let's practice waiting for the stars!",
-//         "Many unusually fast responses": "You're super quick! Sometimes it's good to take a moment before clicking.",
-//         "High variability in response times": "Your clicking speed changes a lot. Let's try to be more consistent.",
-//         "Shows good impulse control": "You're great at waiting for the right moment!",
-//         "Shows both inattentive and impulsive patterns": "Let's practice both waiting for stars and spotting them all.",
-//         "Primarily shows inattentive patterns": "Let's practice spotting all the stars!",
-//         "Primarily shows impulsive patterns": "Let's practice waiting for the right moment to click!",
-//         "Despite challenges, achieved a good game score": "Great job getting a high score!",
-//         "Achieved significant correct streak": "Wow! You caught many stars in a row!"
-//       };
+// //     // Convert insights to kid-friendly language
+// //     const getKidFriendlyInsights = (insights) => {
+// //       const friendlyMap = {
+// //         "Missed several stars": "You missed a few stars. That's okay! Let's practice spotting them.",
+// //         "Slower reaction times": "You took a little extra time to catch the stars.",
+// //         "Consecutive missed stars": "Sometimes you missed stars in a row. Let's work on staying focused!",
+// //         "Overall attention levels appear strong": "You're doing great at paying attention!",
+// //         "High number of premature clicks": "You clicked a bit early sometimes. Let's practice waiting for the stars!",
+// //         "Many unusually fast responses": "You're super quick! Sometimes it's good to take a moment before clicking.",
+// //         "High variability in response times": "Your clicking speed changes a lot. Let's try to be more consistent.",
+// //         "Shows good impulse control": "You're great at waiting for the right moment!",
+// //         "Shows both inattentive and impulsive patterns": "Let's practice both waiting for stars and spotting them all.",
+// //         "Primarily shows inattentive patterns": "Let's practice spotting all the stars!",
+// //         "Primarily shows impulsive patterns": "Let's practice waiting for the right moment to click!",
+// //         "Despite challenges, achieved a good game score": "Great job getting a high score!",
+// //         "Achieved significant correct streak": "Wow! You caught many stars in a row!"
+// //       };
       
-//       return insights.map(insight => {
-//         for (const [key, value] of Object.entries(friendlyMap)) {
-//           if (insight.includes(key)) return value;
-//         }
-//         return insight;
-//       });
-//     };
+// //       return insights.map(insight => {
+// //         for (const [key, value] of Object.entries(friendlyMap)) {
+// //           if (insight.includes(key)) return value;
+// //         }
+// //         return insight;
+// //       });
+// //     };
   
-//     if (!gameData) {
-//       return <div className="p-4 text-center">Let's play a game and see how you do!</div>;
-//     }
+// //     if (!gameData) {
+// //       return <div className="p-4 text-center">Let's play a game and see how you do!</div>;
+// //     }
   
-//     return (
-//       <Container>
-//         {
-//       <div className="container mx-auto p-4 bg-gradient-to-b from-blue-50 to-purple-50 rounded-xl">
-//         {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
+// //     return (
+// //       <Container>
+// //         {
+// //       <div className="container mx-auto p-4 bg-gradient-to-b from-blue-50 to-purple-50 rounded-xl">
+// //         {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
         
-//         {showPositiveMessage && (
-//           <div className="fixed top-4 right-4 bg-green-100 text-green-800 p-4 rounded-lg shadow-lg animate-bounce">
-//             <h3 className="font-bold text-lg">Great job playing!</h3>
-//             <p>You're doing awesome!</p>
-//           </div>
-//         )}
+// //         {showPositiveMessage && (
+// //           <div className="fixed top-4 right-4 bg-green-100 text-green-800 p-4 rounded-lg shadow-lg animate-bounce">
+// //             <h3 className="font-bold text-lg">Great job playing!</h3>
+// //             <p>You're doing awesome!</p>
+// //           </div>
+// //         )}
         
-//         <h1 className="text-3xl font-bold mb-6 text-center text-indigo-700">Your Space Adventure Results</h1>
+// //         <h1 className="text-3xl font-bold mb-6 text-center text-indigo-700">Your Space Adventure Results</h1>
         
-//         {/* Achievements Section */}
-//         {achievements.length > 0 && (
-//           <div className="mb-8">
-//             <h2 className="text-xl font-bold mb-4 text-center text-indigo-600 flex items-center justify-center">
-//               <Award className="mr-2" size={24} />
-//               Your Achievements
-//             </h2>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-//               {achievements.map((achievement, index) => (
-//                 <Card key={index} className="border-2 border-indigo-200 bg-white hover:bg-indigo-50 transition-colors">
-//                   <CardHeader className="pb-2 text-center">
-//                     <div className="flex justify-center mb-2">
-//                       {achievement.icon}
-//                     </div>
-//                     <CardTitle className="text-lg">{achievement.title}</CardTitle>
-//                   </CardHeader>
-//                   <CardContent className="text-center">
-//                     <p>{achievement.description}</p>
-//                   </CardContent>
-//                 </Card>
-//               ))}
-//             </div>
-//           </div>
-//         )}
+// //         {/* Achievements Section */}
+// //         {achievements.length > 0 && (
+// //           <div className="mb-8">
+// //             <h2 className="text-xl font-bold mb-4 text-center text-indigo-600 flex items-center justify-center">
+// //               <Award className="mr-2" size={24} />
+// //               Your Achievements
+// //             </h2>
+// //             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+// //               {achievements.map((achievement, index) => (
+// //                 <Card key={index} className="border-2 border-indigo-200 bg-white hover:bg-indigo-50 transition-colors">
+// //                   <CardHeader className="pb-2 text-center">
+// //                     <div className="flex justify-center mb-2">
+// //                       {achievement.icon}
+// //                     </div>
+// //                     <CardTitle className="text-lg">{achievement.title}</CardTitle>
+// //                   </CardHeader>
+// //                   <CardContent className="text-center">
+// //                     <p>{achievement.description}</p>
+// //                   </CardContent>
+// //                 </Card>
+// //               ))}
+// //             </div>
+// //           </div>
+// //         )}
         
-//         {/* Progress Chart Section */}
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-//           <Card className="border-2 border-blue-200 hover:shadow-md transition-shadow bg-white">
-//             <CardHeader className="pb-2">
-//               <CardTitle className="flex items-center text-blue-700">
-//                 <Brain className="mr-2" size={20} />
-//                 <span>Focus Power</span>
-//               </CardTitle>
-//             </CardHeader>
-//             <CardContent>
-//               <div className="flex justify-between items-center mb-2">
-//                 <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
-//                 <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
-//                   {getKidFriendlyLevel(analysisResults.inattention.level)}
-//                 </span>
-//               </div>
-//               <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
-//             </CardContent>
-//           </Card>
+// //         {/* Progress Chart Section */}
+// //         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+// //           <Card className="border-2 border-blue-200 hover:shadow-md transition-shadow bg-white">
+// //             <CardHeader className="pb-2">
+// //               <CardTitle className="flex items-center text-blue-700">
+// //                 <Brain className="mr-2" size={20} />
+// //                 <span>Focus Power</span>
+// //               </CardTitle>
+// //             </CardHeader>
+// //             <CardContent>
+// //               <div className="flex justify-between items-center mb-2">
+// //                 <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
+// //                 <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+// //                   {getKidFriendlyLevel(analysisResults.inattention.level)}
+// //                 </span>
+// //               </div>
+// //               <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
+// //             </CardContent>
+// //           </Card>
           
-//           <Card className="border-2 border-purple-200 hover:shadow-md transition-shadow bg-white">
-//             <CardHeader className="pb-2">
-//               <CardTitle className="flex items-center text-purple-700">
-//                 <Zap className="mr-2" size={20} />
-//                 <span>Patience Power</span>
-//               </CardTitle>
-//             </CardHeader>
-//             <CardContent>
-//               <div className="flex justify-between items-center mb-2">
-//                 <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
-//                 <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
-//                   {getKidFriendlyLevel(analysisResults.impulsivity.level)}
-//                 </span>
-//               </div>
-//               <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
-//             </CardContent>
-//           </Card>
+// //           <Card className="border-2 border-purple-200 hover:shadow-md transition-shadow bg-white">
+// //             <CardHeader className="pb-2">
+// //               <CardTitle className="flex items-center text-purple-700">
+// //                 <Zap className="mr-2" size={20} />
+// //                 <span>Patience Power</span>
+// //               </CardTitle>
+// //             </CardHeader>
+// //             <CardContent>
+// //               <div className="flex justify-between items-center mb-2">
+// //                 <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
+// //                 <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+// //                   {getKidFriendlyLevel(analysisResults.impulsivity.level)}
+// //                 </span>
+// //               </div>
+// //               <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
+// //             </CardContent>
+// //           </Card>
           
-//           <Card className="border-2 border-indigo-200 hover:shadow-md transition-shadow bg-white">
-//             <CardHeader className="pb-2">
-//               <CardTitle className="flex items-center text-indigo-700">
-//                 <Activity className="mr-2" size={20} />
-//                 <span>Overall Superhero Power</span>
-//               </CardTitle>
-//             </CardHeader>
-//             <CardContent>
-//               <div className="flex justify-between items-center mb-2">
-//                 <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
-//                 <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
-//                   {getKidFriendlyLevel(analysisResults.combined.level)}
-//                 </span>
-//               </div>
-//               <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
-//             </CardContent>
-//           </Card>
-//         </div>
+// //           <Card className="border-2 border-indigo-200 hover:shadow-md transition-shadow bg-white">
+// //             <CardHeader className="pb-2">
+// //               <CardTitle className="flex items-center text-indigo-700">
+// //                 <Activity className="mr-2" size={20} />
+// //                 <span>Overall Superhero Power</span>
+// //               </CardTitle>
+// //             </CardHeader>
+// //             <CardContent>
+// //               <div className="flex justify-between items-center mb-2">
+// //                 <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
+// //                 <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+// //                   {getKidFriendlyLevel(analysisResults.combined.level)}
+// //                 </span>
+// //               </div>
+// //               <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
+// //             </CardContent>
+// //           </Card>
+// //         </div>
         
-//         {/* Tabs Section */}
-//         <Tabs defaultValue="metrics" value={selectedTab} onValueChange={setSelectedTab}>
-//           <TabsList className="grid w-full grid-cols-3 rounded-full bg-indigo-100">
-//             <TabsTrigger value="metrics" className="rounded-full data-[state=active]:bg-indigo-600 data-[state=active]:text-white">
-//               Your Game Stats
-//             </TabsTrigger>
-//             <TabsTrigger value="insights" className="rounded-full data-[state=active]:bg-indigo-600 data-[state=active]:text-white">
-//               Star Mission Report
-//             </TabsTrigger>
-//             <TabsTrigger value="recommendations" className="rounded-full data-[state=active]:bg-indigo-600 data-[state=active]:text-white">
-//               Power-Up Activities
-//             </TabsTrigger>
-//           </TabsList>
+// //         {/* Tabs Section */}
+// //         <Tabs defaultValue="metrics" value={selectedTab} onValueChange={setSelectedTab}>
+// //           <TabsList className="grid w-full grid-cols-3 rounded-full bg-indigo-100">
+// //             <TabsTrigger value="metrics" className="rounded-full data-[state=active]:bg-indigo-600 data-[state=active]:text-white">
+// //               Your Game Stats
+// //             </TabsTrigger>
+// //             <TabsTrigger value="insights" className="rounded-full data-[state=active]:bg-indigo-600 data-[state=active]:text-white">
+// //               Star Mission Report
+// //             </TabsTrigger>
+// //             <TabsTrigger value="recommendations" className="rounded-full data-[state=active]:bg-indigo-600 data-[state=active]:text-white">
+// //               Power-Up Activities
+// //             </TabsTrigger>
+// //           </TabsList>
           
-//           <TabsContent value="metrics" className="mt-4">
-//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-//               <Card className="bg-white border-2 border-yellow-200 hover:shadow-lg transition-shadow">
-//                 <CardHeader className="pb-2 bg-yellow-50 rounded-t-lg">
-//                   <CardTitle className="text-lg flex items-center text-yellow-700">
-//                     <Star className="mr-2" size={20} />
-//                     <span>Stars Collected</span>
-//                   </CardTitle>
-//                 </CardHeader>
-//                 <CardContent className="pt-4">
-//                   <p className="text-4xl font-bold text-center text-yellow-600">{gameData.score}</p>
-//                   <p className="text-center text-gray-500 mt-2">points</p>
-//                 </CardContent>
-//               </Card>
+// //           <TabsContent value="metrics" className="mt-4">
+// //             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+// //               <Card className="bg-white border-2 border-yellow-200 hover:shadow-lg transition-shadow">
+// //                 <CardHeader className="pb-2 bg-yellow-50 rounded-t-lg">
+// //                   <CardTitle className="text-lg flex items-center text-yellow-700">
+// //                     <Star className="mr-2" size={20} />
+// //                     <span>Stars Collected</span>
+// //                   </CardTitle>
+// //                 </CardHeader>
+// //                 <CardContent className="pt-4">
+// //                   <p className="text-4xl font-bold text-center text-yellow-600">{gameData.score}</p>
+// //                   <p className="text-center text-gray-500 mt-2">points</p>
+// //                 </CardContent>
+// //               </Card>
               
-//               <Card className="bg-white border-2 border-blue-200 hover:shadow-lg transition-shadow">
-//                 <CardHeader className="pb-2 bg-blue-50 rounded-t-lg">
-//                   <CardTitle className="text-lg flex items-center text-blue-700">
-//                     <Clock className="mr-2" size={20} />
-//                     <span>Speed Power</span>
-//                   </CardTitle>
-//                 </CardHeader>
-//                 <CardContent className="pt-4">
-//                   <p className="text-4xl font-bold text-center text-blue-600">{gameData.averageReactionTime.toFixed(0)}</p>
-//                   <p className="text-center text-gray-500 mt-2">milliseconds</p>
-//                 </CardContent>
-//               </Card>
+// //               <Card className="bg-white border-2 border-blue-200 hover:shadow-lg transition-shadow">
+// //                 <CardHeader className="pb-2 bg-blue-50 rounded-t-lg">
+// //                   <CardTitle className="text-lg flex items-center text-blue-700">
+// //                     <Clock className="mr-2" size={20} />
+// //                     <span>Speed Power</span>
+// //                   </CardTitle>
+// //                 </CardHeader>
+// //                 <CardContent className="pt-4">
+// //                   <p className="text-4xl font-bold text-center text-blue-600">{gameData.averageReactionTime.toFixed(0)}</p>
+// //                   <p className="text-center text-gray-500 mt-2">milliseconds</p>
+// //                 </CardContent>
+// //               </Card>
               
-//               <Card className="bg-white border-2 border-green-200 hover:shadow-lg transition-shadow">
-//                 <CardHeader className="pb-2 bg-green-50 rounded-t-lg">
-//                   <CardTitle className="text-lg flex items-center text-green-700">
-//                     <TrendingUp className="mr-2" size={20} />
-//                     <span>Best Streak</span>
-//                   </CardTitle>
-//                 </CardHeader>
-//                 <CardContent className="pt-4">
-//                   <p className="text-4xl font-bold text-center text-green-600">{gameData.correctStreak}</p>
-//                   <p className="text-center text-gray-500 mt-2">stars in a row</p>
-//                 </CardContent>
-//               </Card>
+// //               <Card className="bg-white border-2 border-green-200 hover:shadow-lg transition-shadow">
+// //                 <CardHeader className="pb-2 bg-green-50 rounded-t-lg">
+// //                   <CardTitle className="text-lg flex items-center text-green-700">
+// //                     <TrendingUp className="mr-2" size={20} />
+// //                     <span>Best Streak</span>
+// //                   </CardTitle>
+// //                 </CardHeader>
+// //                 <CardContent className="pt-4">
+// //                   <p className="text-4xl font-bold text-center text-green-600">{gameData.correctStreak}</p>
+// //                   <p className="text-center text-gray-500 mt-2">stars in a row</p>
+// //                 </CardContent>
+// //               </Card>
               
-//               <Card className="bg-white border-2 border-red-200 hover:shadow-lg transition-shadow">
-//                 <CardHeader className="pb-2 bg-red-50 rounded-t-lg">
-//                   <CardTitle className="text-lg flex items-center text-red-700">
-//                     <XCircle className="mr-2" size={20} />
-//                     <span>Missed Stars</span>
-//                   </CardTitle>
-//                 </CardHeader>
-//                 <CardContent className="pt-4">
-//                   <p className="text-4xl font-bold text-center text-red-600">{gameData.missedStars}</p>
-//                   <p className="text-center text-gray-500 mt-2">stars missed</p>
-//                 </CardContent>
-//               </Card>
+// //               <Card className="bg-white border-2 border-red-200 hover:shadow-lg transition-shadow">
+// //                 <CardHeader className="pb-2 bg-red-50 rounded-t-lg">
+// //                   <CardTitle className="text-lg flex items-center text-red-700">
+// //                     <XCircle className="mr-2" size={20} />
+// //                     <span>Missed Stars</span>
+// //                   </CardTitle>
+// //                 </CardHeader>
+// //                 <CardContent className="pt-4">
+// //                   <p className="text-4xl font-bold text-center text-red-600">{gameData.missedStars}</p>
+// //                   <p className="text-center text-gray-500 mt-2">stars missed</p>
+// //                 </CardContent>
+// //               </Card>
               
-//               <Card className="bg-white border-2 border-orange-200 hover:shadow-lg transition-shadow">
-//                 <CardHeader className="pb-2 bg-orange-50 rounded-t-lg">
-//                   <CardTitle className="text-lg flex items-center text-orange-700">
-//                     <AlertCircle className="mr-2" size={20} />
-//                     <span>Early Clicks</span>
-//                   </CardTitle>
-//                 </CardHeader>
-//                 <CardContent className="pt-4">
-//                   <p className="text-4xl font-bold text-center text-orange-600">{gameData.prematureClicks}</p>
-//                   <p className="text-center text-gray-500 mt-2">times</p>
-//                 </CardContent>
-//               </Card>
-//             </div>
-//           </TabsContent>
+// //               <Card className="bg-white border-2 border-orange-200 hover:shadow-lg transition-shadow">
+// //                 <CardHeader className="pb-2 bg-orange-50 rounded-t-lg">
+// //                   <CardTitle className="text-lg flex items-center text-orange-700">
+// //                     <AlertCircle className="mr-2" size={20} />
+// //                     <span>Early Clicks</span>
+// //                   </CardTitle>
+// //                 </CardHeader>
+// //                 <CardContent className="pt-4">
+// //                   <p className="text-4xl font-bold text-center text-orange-600">{gameData.prematureClicks}</p>
+// //                   <p className="text-center text-gray-500 mt-2">times</p>
+// //                 </CardContent>
+// //               </Card>
+// //             </div>
+// //           </TabsContent>
           
-//           <TabsContent value="insights" className="mt-4">
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-//               <Card className="bg-white border-2 border-blue-200 hover:shadow-lg transition-shadow">
-//                 <CardHeader className="bg-blue-50 rounded-t-lg">
-//                   <CardTitle className="flex items-center text-blue-700">
-//                     <Brain className="mr-2" size={20} />
-//                     Focus Mission Report
-//                   </CardTitle>
-//                 </CardHeader>
-//                 <CardContent className="pt-4">
-//                   <ul className="space-y-3">
-//                     {getKidFriendlyInsights(analysisResults.inattention.insights).map((insight, index) => (
-//                       <li key={index} className="flex items-start">
-//                         <div className="bg-blue-100 p-1 rounded-full mr-2 mt-1">
-//                           <Brain size={16} className="text-blue-600" />
-//                         </div>
-//                         <span>{insight}</span>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </CardContent>
-//               </Card>
+// //           <TabsContent value="insights" className="mt-4">
+// //             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+// //               <Card className="bg-white border-2 border-blue-200 hover:shadow-lg transition-shadow">
+// //                 <CardHeader className="bg-blue-50 rounded-t-lg">
+// //                   <CardTitle className="flex items-center text-blue-700">
+// //                     <Brain className="mr-2" size={20} />
+// //                     Focus Mission Report
+// //                   </CardTitle>
+// //                 </CardHeader>
+// //                 <CardContent className="pt-4">
+// //                   <ul className="space-y-3">
+// //                     {getKidFriendlyInsights(analysisResults.inattention.insights).map((insight, index) => (
+// //                       <li key={index} className="flex items-start">
+// //                         <div className="bg-blue-100 p-1 rounded-full mr-2 mt-1">
+// //                           <Brain size={16} className="text-blue-600" />
+// //                         </div>
+// //                         <span>{insight}</span>
+// //                       </li>
+// //                     ))}
+// //                   </ul>
+// //                 </CardContent>
+// //               </Card>
               
-//               <Card className="bg-white border-2 border-purple-200 hover:shadow-lg transition-shadow">
-//                 <CardHeader className="bg-purple-50 rounded-t-lg">
-//                   <CardTitle className="flex items-center text-purple-700">
-//                     <Zap className="mr-2" size={20} />
-//                     Patience Mission Report
-//                   </CardTitle>
-//                 </CardHeader>
-//                 <CardContent className="pt-4">
-//                   <ul className="space-y-3">
-//                     {getKidFriendlyInsights(analysisResults.impulsivity.insights).map((insight, index) => (
-//                       <li key={index} className="flex items-start">
-//                         <div className="bg-purple-100 p-1 rounded-full mr-2 mt-1">
-//                           <Zap size={16} className="text-purple-600" />
-//                         </div>
-//                         <span>{insight}</span>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </CardContent>
-//               </Card>
-//             </div>
-//           </TabsContent>
+// //               <Card className="bg-white border-2 border-purple-200 hover:shadow-lg transition-shadow">
+// //                 <CardHeader className="bg-purple-50 rounded-t-lg">
+// //                   <CardTitle className="flex items-center text-purple-700">
+// //                     <Zap className="mr-2" size={20} />
+// //                     Patience Mission Report
+// //                   </CardTitle>
+// //                 </CardHeader>
+// //                 <CardContent className="pt-4">
+// //                   <ul className="space-y-3">
+// //                     {getKidFriendlyInsights(analysisResults.impulsivity.insights).map((insight, index) => (
+// //                       <li key={index} className="flex items-start">
+// //                         <div className="bg-purple-100 p-1 rounded-full mr-2 mt-1">
+// //                           <Zap size={16} className="text-purple-600" />
+// //                         </div>
+// //                         <span>{insight}</span>
+// //                       </li>
+// //                     ))}
+// //                   </ul>
+// //                 </CardContent>
+// //               </Card>
+// //             </div>
+// //           </TabsContent>
           
-//           <TabsContent value="recommendations" className="mt-4">
-//             <Card className="bg-white border-2 border-indigo-200 hover:shadow-lg transition-shadow">
-//               <CardHeader className="bg-indigo-50 rounded-t-lg">
-//                 <CardTitle className="text-indigo-700">Your Super Power Activities</CardTitle>
-//                 <CardDescription>
-//                   Fun things to try that can help boost your brain powers!
-//                 </CardDescription>
-//               </CardHeader>
-//               <CardContent className="pt-4">
-//                 <div className="space-y-4">
-//                   {analysisResults.inattention.score > 50 && (
-//                     <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-//                       <h3 className="font-bold flex items-center mb-2 text-blue-700">
-//                         <Brain className="mr-2" size={18} />
-//                         Focus Power Activities
-//                       </h3>
-//                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-//                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
-//                           <div className="bg-blue-100 p-2 rounded-full mr-3">
-//                             <Clock size={16} className="text-blue-600" />
-//                           </div>
-//                           <div>
-//                             <p className="font-semibold">Breathing Game</p>
-//                             <p className="text-sm">Take 5 slow breaths, counting to 5 each time</p>
-//                           </div>
-//                         </div>
-//                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
-//                           <div className="bg-blue-100 p-2 rounded-full mr-3">
-//                             <Target size={16} className="text-blue-600" />
-//                           </div>
-//                           <div>
-//                             <p className="font-semibold">I Spy Game</p>
-//                             <p className="text-sm">Find 5 blue things around you</p>
-//                           </div>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   )}
+// //           <TabsContent value="recommendations" className="mt-4">
+// //             <Card className="bg-white border-2 border-indigo-200 hover:shadow-lg transition-shadow">
+// //               <CardHeader className="bg-indigo-50 rounded-t-lg">
+// //                 <CardTitle className="text-indigo-700">Your Super Power Activities</CardTitle>
+// //                 <CardDescription>
+// //                   Fun things to try that can help boost your brain powers!
+// //                 </CardDescription>
+// //               </CardHeader>
+// //               <CardContent className="pt-4">
+// //                 <div className="space-y-4">
+// //                   {analysisResults.inattention.score > 50 && (
+// //                     <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+// //                       <h3 className="font-bold flex items-center mb-2 text-blue-700">
+// //                         <Brain className="mr-2" size={18} />
+// //                         Focus Power Activities
+// //                       </h3>
+// //                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+// //                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
+// //                           <div className="bg-blue-100 p-2 rounded-full mr-3">
+// //                             <Clock size={16} className="text-blue-600" />
+// //                           </div>
+// //                           <div>
+// //                             <p className="font-semibold">Breathing Game</p>
+// //                             <p className="text-sm">Take 5 slow breaths, counting to 5 each time</p>
+// //                           </div>
+// //                         </div>
+// //                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
+// //                           <div className="bg-blue-100 p-2 rounded-full mr-3">
+// //                             <Target size={16} className="text-blue-600" />
+// //                           </div>
+// //                           <div>
+// //                             <p className="font-semibold">I Spy Game</p>
+// //                             <p className="text-sm">Find 5 blue things around you</p>
+// //                           </div>
+// //                         </div>
+// //                       </div>
+// //                     </div>
+// //                   )}
                   
-//                   {analysisResults.impulsivity.score > 50 && (
-//                     <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
-//                       <h3 className="font-bold flex items-center mb-2 text-purple-700">
-//                         <Zap className="mr-2" size={18} />
-//                         Patience Power Activities
-//                       </h3>
-//                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-//                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
-//                           <div className="bg-purple-100 p-2 rounded-full mr-3">
-//                             <Clock size={16} className="text-purple-600" />
-//                           </div>
-//                           <div>
-//                             <p className="font-semibold">Freeze Dance</p>
-//                             <p className="text-sm">Dance when music plays, freeze when it stops!</p>
-//                           </div>
-//                         </div>
-//                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
-//                           <div className="bg-purple-100 p-2 rounded-full mr-3">
-//                             <Activity size={16} className="text-purple-600" />
-//                           </div>
-//                           <div>
-//                             <p className="font-semibold">Red Light, Green Light</p>
-//                             <p className="text-sm">Practice stopping and going with a friend</p>
-//                           </div>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   )}
+// //                   {analysisResults.impulsivity.score > 50 && (
+// //                     <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+// //                       <h3 className="font-bold flex items-center mb-2 text-purple-700">
+// //                         <Zap className="mr-2" size={18} />
+// //                         Patience Power Activities
+// //                       </h3>
+// //                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+// //                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
+// //                           <div className="bg-purple-100 p-2 rounded-full mr-3">
+// //                             <Clock size={16} className="text-purple-600" />
+// //                           </div>
+// //                           <div>
+// //                             <p className="font-semibold">Freeze Dance</p>
+// //                             <p className="text-sm">Dance when music plays, freeze when it stops!</p>
+// //                           </div>
+// //                         </div>
+// //                         <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
+// //                           <div className="bg-purple-100 p-2 rounded-full mr-3">
+// //                             <Activity size={16} className="text-purple-600" />
+// //                           </div>
+// //                           <div>
+// //                             <p className="font-semibold">Red Light, Green Light</p>
+// //                             <p className="text-sm">Practice stopping and going with a friend</p>
+// //                           </div>
+// //                         </div>
+// //                       </div>
+// //                     </div>
+// //                   )}
                   
-//                   <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-//                     <h3 className="font-bold flex items-center mb-2 text-green-700">
-//                       <Activity className="mr-2" size={18} />
-//                       Brain Boost Activities
-//                     </h3>
-//                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-//                       <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
-//                         <div className="bg-green-100 p-2 rounded-full mr-3">
-//                           <Target size={16} className="text-green-600" />
-//                         </div>
-//                         <div>
-//                           <p className="font-semibold">Super Sleep</p>
-//                           <p className="text-sm">Try to go to bed at the same time every night</p>
-//                         </div>
-//                       </div>
-//                       <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
-//                         <div className="bg-green-100 p-2 rounded-full mr-3">
-//                           <Star size={16} className="text-green-600" />
-//                         </div>
-//                         <div>
-//                           <p className="font-semibold">Body Power</p>
-//                           <p className="text-sm">Jump, run, or dance for 15 minutes each day</p>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </CardContent>
-//             </Card>
-//           </TabsContent>
-//         </Tabs>
+// //                   <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+// //                     <h3 className="font-bold flex items-center mb-2 text-green-700">
+// //                       <Activity className="mr-2" size={18} />
+// //                       Brain Boost Activities
+// //                     </h3>
+// //                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+// //                       <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
+// //                         <div className="bg-green-100 p-2 rounded-full mr-3">
+// //                           <Target size={16} className="text-green-600" />
+// //                         </div>
+// //                         <div>
+// //                           <p className="font-semibold">Super Sleep</p>
+// //                           <p className="text-sm">Try to go to bed at the same time every night</p>
+// //                         </div>
+// //                       </div>
+// //                       <div className="bg-white p-3 rounded-lg shadow-sm flex items-start">
+// //                         <div className="bg-green-100 p-2 rounded-full mr-3">
+// //                           <Star size={16} className="text-green-600" />
+// //                         </div>
+// //                         <div>
+// //                           <p className="font-semibold">Body Power</p>
+// //                           <p className="text-sm">Jump, run, or dance for 15 minutes each day</p>
+// //                         </div>
+// //                       </div>
+// //                     </div>
+// //                   </div>
+// //                 </div>
+// //               </CardContent>
+// //             </Card>
+// //           </TabsContent>
+// //         </Tabs>
         
-//         {/* Progress Tracker */}
-//         <div className="mt-8 text-center">
-//           <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform transition hover:scale-105">
-//             Play Again!
-//           </button>
-//           <p className="mt-4 text-indigo-600 font-medium">Keep playing to earn more achievements!</p>
-//         </div>
-//       </div>}
-//       </Container>
-//     );
-//   };
+// //         {/* Progress Tracker */}
+// //         <div className="mt-8 text-center">
+// //           <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform transition hover:scale-105">
+// //             Play Again!
+// //           </button>
+// //           <p className="mt-4 text-indigo-600 font-medium">Keep playing to earn more achievements!</p>
+// //         </div>
+// //       </div>}
+// //       </Container>
+// //     );
+// //   };
   
-//   export default GameAnalytics;
+// //   export default GameAnalytics;
+
+// // // // // import React, { useState, useEffect } from 'react';
+// // // // // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+// // // // // import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+// // // // // import { Progress } from './ui/progress';
+// // // // // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, TrendingUp, Award } from 'lucide-react';
+// // // // // import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
+// // // // const GameAnalytics = ({ gameData }) => {
+// // // //   const [analysisResults, setAnalysisResults] = useState({
+// // // //     inattention: { score: 0, level: '', insights: [] },
+// // // //     impulsivity: { score: 0, level: '', insights: [] },
+// // // //     combined: { score: 0, level: '', insights: [] }
+// // // //   });
+// // // //   const [activeInsight, setActiveInsight] = useState(null);
+// // // //   const [showTrends, setShowTrends] = useState(false);
+
+// // // //   useEffect(() => {
+// // // //     if (gameData) {
+// // // //       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
+// // // //         const mean = gameData.averageReactionTime;
+// // // //         const variance = gameData.reactionTimes.reduce((sum, time) => 
+// // // //           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
+// // // //         gameData.reactionTimeVariability = Math.sqrt(variance);
+// // // //       }
+// // // //       const results = analyzeGameData(gameData);
+// // // //       setAnalysisResults(results);
+// // // //     }
+// // // //   }, [gameData]);
+
+// // // //   // All the analysis functions remain the same
+// // // //   const analyzeGameData = (data) => {
+// // // //     // 1. Inattention Analysis
+// // // //     const inattentionScore = calculateInattentionScore(data);
+// // // //     const inattentionLevel = getScoreLevel(inattentionScore);
+// // // //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
+
+// // // //     // 2. Impulsivity Analysis
+// // // //     const impulsivityScore = calculateImpulsivityScore(data);
+// // // //     const impulsivityLevel = getScoreLevel(impulsivityScore);
+// // // //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
+
+// // // //     // 3. Combined Analysis
+// // // //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
+// // // //     const combinedLevel = getScoreLevel(combinedScore);
+// // // //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
+
+// // // //     return {
+// // // //       inattention: {
+// // // //         score: inattentionScore,
+// // // //         level: inattentionLevel,
+// // // //         insights: inattentionInsights
+// // // //       },
+// // // //       impulsivity: {
+// // // //         score: impulsivityScore,
+// // // //         level: impulsivityLevel,
+// // // //         insights: impulsivityInsights
+// // // //       },
+// // // //       combined: {
+// // // //         score: combinedScore,
+// // // //         level: combinedLevel,
+// // // //         insights: combinedInsights
+// // // //       }
+// // // //     };
+// // // //   };
+
+// // // //   // All calculation functions remain unchanged
+// // // //   const calculateInattentionScore = (data) => {
+// // // //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
+    
+// // // //     const avgReactionTime = data.averageReactionTime;
+// // // //     let reactionTimeFactor = 0;
+// // // //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
+// // // //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
+// // // //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
+    
+// // // //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
+// // // //     const streakFactor = maxMissedStreak * 10;
+    
+// // // //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
+// // // //   };
+
+// // // //   const calculateImpulsivityScore = (data) => {
+// // // //     const prematureClicksRatio = data.prematureClicks / 
+// // // //       (data.reactionTimes.length + data.prematureClicks) * 100;
+// // // //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
+    
+// // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// // // //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
+// // // //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
+    
+// // // //     let variabilityFactor = 0;
+// // // //     if (data.reactionTimeVariability) {
+// // // //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
+// // // //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
+// // // //     }
+    
+// // // //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
+// // // //   };
+
+// // // //   const getScoreLevel = (score) => {
+// // // //     if (score < 20) return 'Low';
+// // // //     if (score < 40) return 'Below Average';
+// // // //     if (score < 60) return 'Average';
+// // // //     if (score < 80) return 'Above Average';
+// // // //     return 'High';
+// // // //   };
+
+// // // //   const generateInattentionInsights = (data, score) => {
+// // // //     const insights = [];
+    
+// // // //     if (data.missedStars > 5) {
+// // // //       insights.push("Missed several stars, suggesting potential attention lapses.");
+// // // //     }
+    
+// // // //     if (data.averageReactionTime > 1000) {
+// // // //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
+// // // //     }
+    
+// // // //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
+// // // //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
+// // // //     }
+    
+// // // //     if (score < 30) {
+// // // //       insights.push("Overall attention levels appear strong.");
+// // // //     }
+    
+// // // //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
+// // // //   };
+
+// // // //   const generateImpulsivityInsights = (data, score) => {
+// // // //     const insights = [];
+    
+// // // //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
+// // // //       insights.push("High number of premature clicks suggests impulsive responding.");
+// // // //     }
+    
+// // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// // // //     if (fastResponses > data.reactionTimes.length * 0.2) {
+// // // //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
+// // // //     }
+    
+// // // //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
+// // // //       insights.push("High variability in response times suggests inconsistent attention control.");
+// // // //     }
+    
+// // // //     if (score < 30) {
+// // // //       insights.push("Shows good impulse control overall.");
+// // // //     }
+    
+// // // //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
+// // // //   };
+
+// // // //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
+// // // //     const insights = [];
+    
+// // // //     if (inattentionScore > 60 && impulsivityScore > 60) {
+// // // //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
+// // // //     } else if (inattentionScore > 60) {
+// // // //       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
+// // // //     } else if (impulsivityScore > 60) {
+// // // //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
+// // // //     }
+    
+// // // //     if (data.score > 200) {
+// // // //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
+// // // //     }
+    
+// // // //     if (data.correctStreak > 15) {
+// // // //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
+// // // //     }
+    
+// // // //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
+// // // //   };
+
+// // // //   // Get color based on level - enhanced with more vibrant colors
+// // // //   const getLevelColor = (level) => {
+// // // //     switch (level) {
+// // // //       case 'Low': return 'text-emerald-500';
+// // // //       case 'Below Average': return 'text-blue-500';
+// // // //       case 'Average': return 'text-amber-500';
+// // // //       case 'Above Average': return 'text-orange-500';
+// // // //       case 'High': return 'text-red-500';
+// // // //       default: return 'text-gray-500';
+// // // //     }
+// // // //   };
+
+// // // //   // Get background color for cards based on level
+// // // //   const getLevelBgColor = (level) => {
+// // // //     switch (level) {
+// // // //       case 'Low': return 'bg-emerald-50 border-emerald-200';
+// // // //       case 'Below Average': return 'bg-blue-50 border-blue-200';
+// // // //       case 'Average': return 'bg-amber-50 border-amber-200';
+// // // //       case 'Above Average': return 'bg-orange-50 border-orange-200';
+// // // //       case 'High': return 'bg-red-50 border-red-200';
+// // // //       default: return 'bg-gray-50 border-gray-200';
+// // // //     }
+// // // //   };
+
+// // // //   // Get progress bar color based on score - enhanced with gradient options
+// // // //   const getProgressColor = (score) => {
+// // // //     if (score < 30) return 'bg-gradient-to-r from-emerald-400 to-emerald-500';
+// // // //     if (score < 50) return 'bg-gradient-to-r from-blue-400 to-blue-500';
+// // // //     if (score < 70) return 'bg-gradient-to-r from-amber-400 to-amber-500';
+// // // //     if (score < 85) return 'bg-gradient-to-r from-orange-400 to-orange-500';
+// // // //     return 'bg-gradient-to-r from-red-400 to-red-500';
+// // // //   };
+
+// // // //   // NEW: Generate reaction time chart data
+// // // //   const getReactionTimeData = () => {
+// // // //     if (!gameData?.reactionTimes || gameData.reactionTimes.length === 0) return [];
+    
+// // // //     return gameData.reactionTimes.map((time, index) => ({
+// // // //       name: `Star ${index + 1}`,
+// // // //       time: time
+// // // //     }));
+// // // //   };
+
+// // // //   // NEW: Function to create gauge-style visualization
+// // // //   const renderRadialGauge = (score, label, color) => {
+// // // //     const rotation = (score / 100) * 180;
+    
+// // // //     return (
+// // // //       <div className="relative h-32 flex flex-col items-center justify-center mb-2">
+// // // //         <div className="w-full flex justify-center">
+// // // //           <div className="relative h-16 w-32">
+// // // //             {/* Background arc */}
+// // // //             <div className="absolute h-16 w-32 rounded-t-full overflow-hidden bg-gray-200"></div>
+// // // //             {/* Colored fill */}
+// // // //             <div 
+// // // //               className={`absolute h-16 w-32 rounded-t-full overflow-hidden ${color}`} 
+// // // //               style={{ 
+// // // //                 clipPath: `polygon(50% 100%, 0 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%)`,
+// // // //                 transform: `rotate(${rotation}deg)`,
+// // // //                 transformOrigin: 'bottom center'
+// // // //               }}>
+// // // //             </div>
+// // // //             {/* Center dot */}
+// // // //             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-gray-400 rounded-full"></div>
+// // // //             {/* Needle */}
+// // // //             <div 
+// // // //               className="absolute bottom-0 left-1/2 h-16 w-1 bg-gray-800 rounded-t-full"
+// // // //               style={{ 
+// // // //                 transform: `translateX(-50%) rotate(${rotation}deg)`,
+// // // //                 transformOrigin: 'bottom center'  
+// // // //               }}
+// // // //             ></div>
+// // // //           </div>
+// // // //         </div>
+// // // //         <div className="mt-2 text-center">
+// // // //           <div className="text-xl font-bold">{score.toFixed(1)}</div>
+// // // //           <div className="text-sm text-gray-600">{label}</div>
+// // // //         </div>
+// // // //       </div>
+// // // //     );
+// // // //   };
+
+// // // //   // NEW: Tooltip component for insights
+// // // //   const InsightTooltip = ({ insight, visible, onClose }) => {
+// // // //     if (!visible) return null;
+    
+// // // //     return (
+// // // //       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={onClose}>
+// // // //         <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg" onClick={e => e.stopPropagation()}>
+// // // //           <h3 className="text-xl font-bold mb-4">Understanding This Insight</h3>
+// // // //           <p className="mb-4">{insight}</p>
+// // // //           <div className="mb-4">
+// // // //             <h4 className="font-semibold mb-2">What This Means:</h4>
+// // // //             <p>This pattern may indicate specific cognitive processing tendencies related to attention and response control.</p>
+// // // //           </div>
+// // // //           <div className="mb-4">
+// // // //             <h4 className="font-semibold mb-2">Potential Actions:</h4>
+// // // //             <ul className="list-disc pl-5">
+// // // //               <li>Consider targeted exercises that strengthen this cognitive domain</li>
+// // // //               <li>Track this metric over time to see improvements</li>
+// // // //               <li>Discuss this pattern with a cognitive specialist if it persists</li>
+// // // //             </ul>
+// // // //           </div>
+// // // //           <button 
+// // // //             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+// // // //             onClick={onClose}
+// // // //           >
+// // // //             Close
+// // // //           </button>
+// // // //         </div>
+// // // //       </div>
+// // // //     );
+// // // //   };
+
+// // // //   // NEW: Mock trend data (in a real app, this would come from historical data)
+// // // //   const trendData = [
+// // // //     { date: 'Week 1', attention: 75, impulsivity: 62 },
+// // // //     { date: 'Week 2', attention: 70, impulsivity: 58 },
+// // // //     { date: 'Week 3', attention: 65, impulsivity: 55 },
+// // // //     { date: 'Week 4', attention: 60, impulsivity: 50 },
+// // // //     { date: 'Week 5', attention: 55, impulsivity: 48 },
+// // // //     { date: 'Current', attention: analysisResults.inattention.score, impulsivity: analysisResults.impulsivity.score },
+// // // //   ];
+
+// // // //   if (!gameData) {
+// // // //     return <div className="p-4">No game data available</div>;
+// // // //   }
+
+// // // //   return (
+// // // //     <div className="container mx-auto p-4">
+// // // //       <div className="flex justify-between items-center mb-6">
+// // // //         <h1 className="text-2xl font-bold">Game Performance Analytics</h1>
+// // // //         <button 
+// // // //           onClick={() => setShowTrends(!showTrends)}
+// // // //           className="flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-all"
+// // // //         >
+// // // //           <TrendingUp className="mr-2" size={18} />
+// // // //           {showTrends ? "Hide Trends" : "Show Trends"}
+// // // //         </button>
+// // // //       </div>
+      
+// // // //       {/* NEW: Trend Chart Section */}
+// // // //       {showTrends && (
+// // // //         <Card className="mb-8 overflow-hidden">
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <TrendingUp className="mr-2" size={20} />
+// // // //               <span>Performance Trends Over Time</span>
+// // // //             </CardTitle>
+// // // //             <CardDescription>
+// // // //               Track your progress across multiple gameplay sessions
+// // // //             </CardDescription>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             <div className="h-64 w-full">
+// // // //               <ResponsiveContainer width="100%" height="100%">
+// // // //                 <LineChart
+// // // //                   data={trendData}
+// // // //                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+// // // //                 >
+// // // //                   <CartesianGrid strokeDasharray="3 3" />
+// // // //                   <XAxis dataKey="date" />
+// // // //                   <YAxis />
+// // // //                   <Tooltip />
+// // // //                   <Line 
+// // // //                     type="monotone" 
+// // // //                     name="Attention Score" 
+// // // //                     dataKey="attention" 
+// // // //                     stroke="#ef4444" 
+// // // //                     activeDot={{ r: 8 }}
+// // // //                     strokeWidth={2}
+// // // //                   />
+// // // //                   <Line 
+// // // //                     type="monotone" 
+// // // //                     name="Impulsivity Score" 
+// // // //                     dataKey="impulsivity" 
+// // // //                     stroke="#3b82f6" 
+// // // //                     strokeWidth={2}
+// // // //                   />
+// // // //                 </LineChart>
+// // // //               </ResponsiveContainer>
+// // // //             </div>
+// // // //           </CardContent>
+// // // //         </Card>
+// // // //       )}
+      
+// // // //       {/* Score Overview Cards - Enhanced with animations and gauges */}
+// // // //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.inattention.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Brain className="mr-2" size={20} />
+// // // //               <span>Attention Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {/* NEW: Radial gauge replaces simple progress bar */}
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.inattention.score, 
+// // // //               analysisResults.inattention.level,
+// // // //               getProgressColor(analysisResults.inattention.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
+        
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.impulsivity.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Zap className="mr-2" size={20} />
+// // // //               <span>Impulsivity Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.impulsivity.score, 
+// // // //               analysisResults.impulsivity.level,
+// // // //               getProgressColor(analysisResults.impulsivity.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
+        
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.combined.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Activity className="mr-2" size={20} />
+// // // //               <span>Combined Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.combined.score, 
+// // // //               analysisResults.combined.level,
+// // // //               getProgressColor(analysisResults.combined.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
+// // // //       </div>
+      
+// // // //       {/* NEW: Achievement Card */}
+// // // //       {gameData.correctStreak > 10 && (
+// // // //         <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
+// // // //           <CardContent className="p-4">
+// // // //             <div className="flex items-center">
+// // // //               <div className="mr-4 bg-amber-400 rounded-full p-3">
+// // // //                 <Award size={24} className="text-white" />
+// // // //               </div>
+// // // //               <div>
+// // // //                 <h3import React, { useState, useEffect } from 'react';
+// // // // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+// // // // import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+// // // // import { Progress } from './ui/progress';
+// // // // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, TrendingUp, Award } from 'lucide-react';
+// // // // import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
+// // // // const GameAnalytics = ({ gameData }) => {
+// // // //   const [analysisResults, setAnalysisResults] = useState({
+// // // //     inattention: { score: 0, level: '', insights: [] },
+// // // //     impulsivity: { score: 0, level: '', insights: [] },
+// // // //     combined: { score: 0, level: '', insights: [] }
+// // // //   });
+// // // //   const [activeInsight, setActiveInsight] = useState(null);
+// // // //   const [showTrends, setShowTrends] = useState(false);
+
+// // // //   useEffect(() => {
+// // // //     if (gameData) {
+// // // //       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
+// // // //         const mean = gameData.averageReactionTime;
+// // // //         const variance = gameData.reactionTimes.reduce((sum, time) => 
+// // // //           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
+// // // //         gameData.reactionTimeVariability = Math.sqrt(variance);
+// // // //       }
+// // // //       const results = analyzeGameData(gameData);
+// // // //       setAnalysisResults(results);
+// // // //     }
+// // // //   }, [gameData]);
+
+// // // //   // All the analysis functions remain the same
+// // // //   const analyzeGameData = (data) => {
+// // // //     // 1. Inattention Analysis
+// // // //     const inattentionScore = calculateInattentionScore(data);
+// // // //     const inattentionLevel = getScoreLevel(inattentionScore);
+// // // //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
+
+// // // //     // 2. Impulsivity Analysis
+// // // //     const impulsivityScore = calculateImpulsivityScore(data);
+// // // //     const impulsivityLevel = getScoreLevel(impulsivityScore);
+// // // //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
+
+// // // //     // 3. Combined Analysis
+// // // //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
+// // // //     const combinedLevel = getScoreLevel(combinedScore);
+// // // //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
+
+// // // //     return {
+// // // //       inattention: {
+// // // //         score: inattentionScore,
+// // // //         level: inattentionLevel,
+// // // //         insights: inattentionInsights
+// // // //       },
+// // // //       impulsivity: {
+// // // //         score: impulsivityScore,
+// // // //         level: impulsivityLevel,
+// // // //         insights: impulsivityInsights
+// // // //       },
+// // // //       combined: {
+// // // //         score: combinedScore,
+// // // //         level: combinedLevel,
+// // // //         insights: combinedInsights
+// // // //       }
+// // // //     };
+// // // //   };
+
+// // // //   // All calculation functions remain unchanged
+// // // //   const calculateInattentionScore = (data) => {
+// // // //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
+    
+// // // //     const avgReactionTime = data.averageReactionTime;
+// // // //     let reactionTimeFactor = 0;
+// // // //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
+// // // //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
+// // // //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
+    
+// // // //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
+// // // //     const streakFactor = maxMissedStreak * 10;
+    
+// // // //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
+// // // //   };
+
+// // // //   const calculateImpulsivityScore = (data) => {
+// // // //     const prematureClicksRatio = data.prematureClicks / 
+// // // //       (data.reactionTimes.length + data.prematureClicks) * 100;
+// // // //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
+    
+// // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// // // //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
+// // // //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
+    
+// // // //     let variabilityFactor = 0;
+// // // //     if (data.reactionTimeVariability) {
+// // // //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
+// // // //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
+// // // //     }
+    
+// // // //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
+// // // //   };
+
+// // // //   const getScoreLevel = (score) => {
+// // // //     if (score < 20) return 'Low';
+// // // //     if (score < 40) return 'Below Average';
+// // // //     if (score < 60) return 'Average';
+// // // //     if (score < 80) return 'Above Average';
+// // // //     return 'High';
+// // // //   };
+
+// // // //   const generateInattentionInsights = (data, score) => {
+// // // //     const insights = [];
+    
+// // // //     if (data.missedStars > 5) {
+// // // //       insights.push("Missed several stars, suggesting potential attention lapses.");
+// // // //     }
+    
+// // // //     if (data.averageReactionTime > 1000) {
+// // // //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
+// // // //     }
+    
+// // // //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
+// // // //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
+// // // //     }
+    
+// // // //     if (score < 30) {
+// // // //       insights.push("Overall attention levels appear strong.");
+// // // //     }
+    
+// // // //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
+// // // //   };
+
+// // // //   const generateImpulsivityInsights = (data, score) => {
+// // // //     const insights = [];
+    
+// // // //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
+// // // //       insights.push("High number of premature clicks suggests impulsive responding.");
+// // // //     }
+    
+// // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// // // //     if (fastResponses > data.reactionTimes.length * 0.2) {
+// // // //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
+// // // //     }
+    
+// // // //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
+// // // //       insights.push("High variability in response times suggests inconsistent attention control.");
+// // // //     }
+    
+// // // //     if (score < 30) {
+// // // //       insights.push("Shows good impulse control overall.");
+// // // //     }
+    
+// // // //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
+// // // //   };
+
+// // // //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
+// // // //     const insights = [];
+    
+// // // //     if (inattentionScore > 60 && impulsivityScore > 60) {
+// // // //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
+// // // //     } else if (inattentionScore > 60) {
+// // // //       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
+// // // //     } else if (impulsivityScore > 60) {
+// // // //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
+// // // //     }
+    
+// // // //     if (data.score > 200) {
+// // // //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
+// // // //     }
+    
+// // // //     if (data.correctStreak > 15) {
+// // // //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
+// // // //     }
+    
+// // // //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
+// // // //   };
+
+// // // //   // Get color based on level - enhanced with more vibrant colors
+// // // //   const getLevelColor = (level) => {
+// // // //     switch (level) {
+// // // //       case 'Low': return 'text-emerald-500';
+// // // //       case 'Below Average': return 'text-blue-500';
+// // // //       case 'Average': return 'text-amber-500';
+// // // //       case 'Above Average': return 'text-orange-500';
+// // // //       case 'High': return 'text-red-500';
+// // // //       default: return 'text-gray-500';
+// // // //     }
+// // // //   };
+
+// // // //   // Get background color for cards based on level
+// // // //   const getLevelBgColor = (level) => {
+// // // //     switch (level) {
+// // // //       case 'Low': return 'bg-emerald-50 border-emerald-200';
+// // // //       case 'Below Average': return 'bg-blue-50 border-blue-200';
+// // // //       case 'Average': return 'bg-amber-50 border-amber-200';
+// // // //       case 'Above Average': return 'bg-orange-50 border-orange-200';
+// // // //       case 'High': return 'bg-red-50 border-red-200';
+// // // //       default: return 'bg-gray-50 border-gray-200';
+// // // //     }
+// // // //   };
+
+// // // //   // Get progress bar color based on score - enhanced with gradient options
+// // // //   const getProgressColor = (score) => {
+// // // //     if (score < 30) return 'bg-gradient-to-r from-emerald-400 to-emerald-500';
+// // // //     if (score < 50) return 'bg-gradient-to-r from-blue-400 to-blue-500';
+// // // //     if (score < 70) return 'bg-gradient-to-r from-amber-400 to-amber-500';
+// // // //     if (score < 85) return 'bg-gradient-to-r from-orange-400 to-orange-500';
+// // // //     return 'bg-gradient-to-r from-red-400 to-red-500';
+// // // //   };
+
+// // // //   // NEW: Generate reaction time chart data
+// // // //   const getReactionTimeData = () => {
+// // // //     if (!gameData?.reactionTimes || gameData.reactionTimes.length === 0) return [];
+    
+// // // //     return gameData.reactionTimes.map((time, index) => ({
+// // // //       name: `Star ${index + 1}`,
+// // // //       time: time
+// // // //     }));
+// // // //   };
+
+// // // //   // NEW: Function to create gauge-style visualization
+// // // //   const renderRadialGauge = (score, label, color) => {
+// // // //     const rotation = (score / 100) * 180;
+    
+// // // //     return (
+// // // //       <div className="relative h-32 flex flex-col items-center justify-center mb-2">
+// // // //         <div className="w-full flex justify-center">
+// // // //           <div className="relative h-16 w-32">
+// // // //             {/* Background arc */}
+// // // //             <div className="absolute h-16 w-32 rounded-t-full overflow-hidden bg-gray-200"></div>
+// // // //             {/* Colored fill */}
+// // // //             <div 
+// // // //               className={`absolute h-16 w-32 rounded-t-full overflow-hidden ${color}`} 
+// // // //               style={{ 
+// // // //                 clipPath: `polygon(50% 100%, 0 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%)`,
+// // // //                 transform: `rotate(${rotation}deg)`,
+// // // //                 transformOrigin: 'bottom center'
+// // // //               }}>
+// // // //             </div>
+// // // //             {/* Center dot */}
+// // // //             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-gray-400 rounded-full"></div>
+// // // //             {/* Needle */}
+// // // //             <div 
+// // // //               className="absolute bottom-0 left-1/2 h-16 w-1 bg-gray-800 rounded-t-full"
+// // // //               style={{ 
+// // // //                 transform: `translateX(-50%) rotate(${rotation}deg)`,
+// // // //                 transformOrigin: 'bottom center'  
+// // // //               }}
+// // // //             ></div>
+// // // //           </div>
+// // // //         </div>
+// // // //         <div className="mt-2 text-center">
+// // // //           <div className="text-xl font-bold">{score.toFixed(1)}</div>
+// // // //           <div className="text-sm text-gray-600">{label}</div>
+// // // //         </div>
+// // // //       </div>
+// // // //     );
+// // // //   };
+
+// // // //   // NEW: Tooltip component for insights
+// // // //   const InsightTooltip = ({ insight, visible, onClose }) => {
+// // // //     if (!visible) return null;
+    
+// // // //     return (
+// // // //       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={onClose}>
+// // // //         <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg" onClick={e => e.stopPropagation()}>
+// // // //           <h3 className="text-xl font-bold mb-4">Understanding This Insight</h3>
+// // // //           <p className="mb-4">{insight}</p>
+// // // //           <div className="mb-4">
+// // // //             <h4 className="font-semibold mb-2">What This Means:</h4>
+// // // //             <p>This pattern may indicate specific cognitive processing tendencies related to attention and response control.</p>
+// // // //           </div>
+// // // //           <div className="mb-4">
+// // // //             <h4 className="font-semibold mb-2">Potential Actions:</h4>
+// // // //             <ul className="list-disc pl-5">
+// // // //               <li>Consider targeted exercises that strengthen this cognitive domain</li>
+// // // //               <li>Track this metric over time to see improvements</li>
+// // // //               <li>Discuss this pattern with a cognitive specialist if it persists</li>
+// // // //             </ul>
+// // // //           </div>
+// // // //           <button 
+// // // //             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+// // // //             onClick={onClose}
+// // // //           >
+// // // //             Close
+// // // //           </button>
+// // // //         </div>
+// // // //       </div>
+// // // //     );
+// // // //   };
+
+// // // //   // NEW: Mock trend data (in a real app, this would come from historical data)
+// // // //   const trendData = [
+// // // //     { date: 'Week 1', attention: 75, impulsivity: 62 },
+// // // //     { date: 'Week 2', attention: 70, impulsivity: 58 },
+// // // //     { date: 'Week 3', attention: 65, impulsivity: 55 },
+// // // //     { date: 'Week 4', attention: 60, impulsivity: 50 },
+// // // //     { date: 'Week 5', attention: 55, impulsivity: 48 },
+// // // //     { date: 'Current', attention: analysisResults.inattention.score, impulsivity: analysisResults.impulsivity.score },
+// // // //   ];
+
+// // // //   if (!gameData) {
+// // // //     return <div className="p-4">No game data available</div>;
+// // // //   }
+
+// // // //   return (
+// // // //     <div className="container mx-auto p-4">
+// // // //       <div className="flex justify-between items-center mb-6">
+// // // //         <h1 className="text-2xl font-bold">Game Performance Analytics</h1>
+// // // //         <button 
+// // // //           onClick={() => setShowTrends(!showTrends)}
+// // // //           className="flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-all"
+// // // //         >
+// // // //           <TrendingUp className="mr-2" size={18} />
+// // // //           {showTrends ? "Hide Trends" : "Show Trends"}
+// // // //         </button>
+// // // //       </div>
+      
+// // // //       {/* NEW: Trend Chart Section */}
+// // // //       {showTrends && (
+// // // //         <Card className="mb-8 overflow-hidden">
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <TrendingUp className="mr-2" size={20} />
+// // // //               <span>Performance Trends Over Time</span>
+// // // //             </CardTitle>
+// // // //             <CardDescription>
+// // // //               Track your progress across multiple gameplay sessions
+// // // //             </CardDescription>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             <div className="h-64 w-full">
+// // // //               <ResponsiveContainer width="100%" height="100%">
+// // // //                 <LineChart
+// // // //                   data={trendData}
+// // // //                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+// // // //                 >
+// // // //                   <CartesianGrid strokeDasharray="3 3" />
+// // // //                   <XAxis dataKey="date" />
+// // // //                   <YAxis />
+// // // //                   <Tooltip />
+// // // //                   <Line 
+// // // //                     type="monotone" 
+// // // //                     name="Attention Score" 
+// // // //                     dataKey="attention" 
+// // // //                     stroke="#ef4444" 
+// // // //                     activeDot={{ r: 8 }}
+// // // //                     strokeWidth={2}
+// // // //                   />
+// // // //                   <Line 
+// // // //                     type="monotone" 
+// // // //                     name="Impulsivity Score" 
+// // // //                     dataKey="impulsivity" 
+// // // //                     stroke="#3b82f6" 
+// // // //                     strokeWidth={2}
+// // // //                   />
+// // // //                 </LineChart>
+// // // //               </ResponsiveContainer>
+// // // //             </div>
+// // // //           </CardContent>
+// // // //         </Card>
+// // // //       )}
+      
+// // // //       {/* Score Overview Cards - Enhanced with animations and gauges */}
+// // // //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.inattention.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Brain className="mr-2" size={20} />
+// // // //               <span>Attention Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {/* NEW: Radial gauge replaces simple progress bar */}
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.inattention.score, 
+// // // //               analysisResults.inattention.level,
+// // // //               getProgressColor(analysisResults.inattention.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
+        
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.impulsivity.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Zap className="mr-2" size={20} />
+// // // //               <span>Impulsivity Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.impulsivity.score, 
+// // // //               analysisResults.impulsivity.level,
+// // // //               getProgressColor(analysisResults.impulsivity.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
+        
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.combined.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Activity className="mr-2" size={20} />
+// // // //               <span>Combined Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.combined.score, 
+// // // //               analysisResults.combined.level,
+// // // //               getProgressColor(analysisResults.combined.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
+// // // //       </div>
+      
+// // // //       {/* NEW: Achievement Card
+// // // //       {gameData.correctStreak > 10 && (
+// // // //       <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
+// // // //       <CardContent className="p-4">
+// // // //       <div className="flex items-center">
+// // // //         <div className="mr-4 bg-amber-400 rounded-full p-3">
+// // // //           <Award size={24} className="text-white" />
+// // // //         </div>
+// // // //         <div>
+// // // //           <h3 className="font-bold flex items-center mb-2">
+// // // //             <Brain className="mr-2" size={18} />
+// // // //             Attention Strengthening Activities
+// // // //           </h3>
+// // // //           <ul className="list-disc pl-5 space-y-1">
+// // // //             <li>Practice mindfulness exercises for 5-10 minutes daily</li>
+// // // //             <li>Try games that require sustained attention, like puzzles or memory games</li>
+// // // //             <li>Break tasks into smaller, manageable chunks with clear completion criteria</li>
+// // // //             <li>Create a distraction-free environment during focus-intensive activities</li>
+// // // //           </ul>
+// // // //         </div>
+// // // //       </div>
+// // // //       </CardContent>
+// // // //       </Card>
+// // // //         )}
+
+                
+// // // //                 {analysisResults.impulsivity.score > 60 && (
+// // // //                   <div className="p-4 bg-yellow-50 rounded-lg">
+// // // //                     <h3 className="font-bold flex items-center mb-2">
+// // // //                       <Zap className="mr-2" size={18} />
+// // // //                       Impulse Control Activities
+// // // //                     </h3>
+// // // //                     <ul className="list-disc pl-5 space-y-1">
+// // // //                       <li>Practice the "stop and think" technique before responding</li>
+// // // //                       <li>Try games that reward patience and planning</li>
+// // // //                       <li>Use timers to practice waiting before responding</li>
+// // // //                       <li>Practice deep breathing when feeling the urge to respond immediately</li>
+// // // //                     </ul>
+// // // //                   </div>
+// // // //                 )}
+                
+// // // //                 {analysisResults.combined.score > 60 && (
+// // // //                   <div className="p-4 bg-green-50 rounded-lg">
+// // // //                     <h3 className="font-bold flex items-center mb-2">
+// // // //                       <Activity className="mr-2" size={18} />
+// // // //                       General Cognitive Strengthening
+// // // //                     </h3>
+// // // //                     <ul className="list-disc pl-5 space-y-1">
+// // // //                       <li>Ensure consistent sleep schedule of 8-10 hours per night</li>
+// // // //                       <li>Regular physical activity helps improve focus and cognitive control</li>
+// // // //                       <li>Limit screen time, particularly before bedtime</li>
+// // // //                       <li>Consider trying different games that target both attention and response control</li>
+// // // //                     </ul>
+// // // //                   </div>
+// // // //                 )}
+                
+// // // //                 {analysisResults.combined.score <= 60 && (
+// // // //                   <div className="p-4 bg-indigo-50 rounded-lg">
+// // // //                     <h3 className="font-bold flex items-center mb-2">
+// // // //                       <Target className="mr-2" size={18} />
+// // // //                       Maintenance Recommendations
+// // // //                     </h3>
+// // // //                     <p>Your performance shows good cognitive control patterns. Continue with:</p>
+// // // //                     <ul className="list-disc pl-5 space-y-1 mt-2">
+// // // //                       <li>Regular cognitive games to maintain skills</li>
+// // // //                       <li>Consistent sleep and physical activity</li>
+// // // //                       <li>Try increasing game difficulty to provide appropriate challenge</li>
+// // // //                     </ul>
+// // // //                   </div>
+// // // //                 )}
+// // // //               </div>
+// // // //             </CardContent>
+// // // //           </Card>
+// // // //         </TabsContent>
+// // // //         </Tabs>*/}
+// // // //     </div> 
+// // // //   );
+
+
+// // // // export default GameAnalytics;
 
 // // // // import React, { useState, useEffect } from 'react';
 // // // // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
@@ -664,421 +1578,381 @@
 // // // // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, TrendingUp, Award } from 'lucide-react';
 // // // // import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-// // // const GameAnalytics = ({ gameData }) => {
-// // //   const [analysisResults, setAnalysisResults] = useState({
-// // //     inattention: { score: 0, level: '', insights: [] },
-// // //     impulsivity: { score: 0, level: '', insights: [] },
-// // //     combined: { score: 0, level: '', insights: [] }
-// // //   });
-// // //   const [activeInsight, setActiveInsight] = useState(null);
-// // //   const [showTrends, setShowTrends] = useState(false);
+// // // // const GameAnalytics = ({ gameData }) => {
+// // // //   const [analysisResults, setAnalysisResults] = useState({
+// // // //     inattention: { score: 0, level: '', insights: [] },
+// // // //     impulsivity: { score: 0, level: '', insights: [] },
+// // // //     combined: { score: 0, level: '', insights: [] }
+// // // //   });
+// // // //   const [activeInsight, setActiveInsight] = useState(null);
+// // // //   const [showTrends, setShowTrends] = useState(false);
 
-// // //   useEffect(() => {
-// // //     if (gameData) {
-// // //       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
-// // //         const mean = gameData.averageReactionTime;
-// // //         const variance = gameData.reactionTimes.reduce((sum, time) => 
-// // //           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
-// // //         gameData.reactionTimeVariability = Math.sqrt(variance);
-// // //       }
-// // //       const results = analyzeGameData(gameData);
-// // //       setAnalysisResults(results);
-// // //     }
-// // //   }, [gameData]);
+// // // //   useEffect(() => {
+// // // //     if (gameData) {
+// // // //       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
+// // // //         const mean = gameData.averageReactionTime;
+// // // //         const variance = gameData.reactionTimes.reduce((sum, time) => 
+// // // //           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
+// // // //         gameData.reactionTimeVariability = Math.sqrt(variance);
+// // // //       }
+// // // //       const results = analyzeGameData(gameData);
+// // // //       setAnalysisResults(results);
+// // // //     }
+// // // //   }, [gameData]);
 
-// // //   // All the analysis functions remain the same
-// // //   const analyzeGameData = (data) => {
-// // //     // 1. Inattention Analysis
-// // //     const inattentionScore = calculateInattentionScore(data);
-// // //     const inattentionLevel = getScoreLevel(inattentionScore);
-// // //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
+// // // //   const analyzeGameData = (data) => {
+// // // //     const inattentionScore = calculateInattentionScore(data);
+// // // //     const inattentionLevel = getScoreLevel(inattentionScore);
+// // // //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
 
-// // //     // 2. Impulsivity Analysis
-// // //     const impulsivityScore = calculateImpulsivityScore(data);
-// // //     const impulsivityLevel = getScoreLevel(impulsivityScore);
-// // //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
+// // // //     const impulsivityScore = calculateImpulsivityScore(data);
+// // // //     const impulsivityLevel = getScoreLevel(impulsivityScore);
+// // // //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
 
-// // //     // 3. Combined Analysis
-// // //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
-// // //     const combinedLevel = getScoreLevel(combinedScore);
-// // //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
+// // // //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
+// // // //     const combinedLevel = getScoreLevel(combinedScore);
+// // // //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
 
-// // //     return {
-// // //       inattention: {
-// // //         score: inattentionScore,
-// // //         level: inattentionLevel,
-// // //         insights: inattentionInsights
-// // //       },
-// // //       impulsivity: {
-// // //         score: impulsivityScore,
-// // //         level: impulsivityLevel,
-// // //         insights: impulsivityInsights
-// // //       },
-// // //       combined: {
-// // //         score: combinedScore,
-// // //         level: combinedLevel,
-// // //         insights: combinedInsights
-// // //       }
-// // //     };
-// // //   };
+// // // //     return {
+// // // //       inattention: {
+// // // //         score: inattentionScore,
+// // // //         level: inattentionLevel,
+// // // //         insights: inattentionInsights
+// // // //       },
+// // // //       impulsivity: {
+// // // //         score: impulsivityScore,
+// // // //         level: impulsivityLevel,
+// // // //         insights: impulsivityInsights
+// // // //       },
+// // // //       combined: {
+// // // //         score: combinedScore,
+// // // //         level: combinedLevel,
+// // // //         insights: combinedInsights
+// // // //       }
+// // // //     };
+// // // //   };
 
-// // //   // All calculation functions remain unchanged
-// // //   const calculateInattentionScore = (data) => {
-// // //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
-    
-// // //     const avgReactionTime = data.averageReactionTime;
-// // //     let reactionTimeFactor = 0;
-// // //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
-// // //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
-// // //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
-    
-// // //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
-// // //     const streakFactor = maxMissedStreak * 10;
-    
-// // //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
-// // //   };
+// // // //   const calculateInattentionScore = (data) => {
+// // // //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
+// // // //     const avgReactionTime = data.averageReactionTime;
+// // // //     let reactionTimeFactor = 0;
+// // // //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
+// // // //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
+// // // //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
+// // // //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
+// // // //     const streakFactor = maxMissedStreak * 10;
+// // // //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
+// // // //   };
 
-// // //   const calculateImpulsivityScore = (data) => {
-// // //     const prematureClicksRatio = data.prematureClicks / 
-// // //       (data.reactionTimes.length + data.prematureClicks) * 100;
-// // //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
-    
-// // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-// // //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
-// // //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
-    
-// // //     let variabilityFactor = 0;
-// // //     if (data.reactionTimeVariability) {
-// // //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
-// // //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
-// // //     }
-    
-// // //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
-// // //   };
+// // // //   const calculateImpulsivityScore = (data) => {
+// // // //     const prematureClicksRatio = data.prematureClicks / 
+// // // //       (data.reactionTimes.length + data.prematureClicks) * 100;
+// // // //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
+// // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// // // //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
+// // // //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
+// // // //     let variabilityFactor = 0;
+// // // //     if (data.reactionTimeVariability) {
+// // // //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
+// // // //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
+// // // //     }
+// // // //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
+// // // //   };
 
-// // //   const getScoreLevel = (score) => {
-// // //     if (score < 20) return 'Low';
-// // //     if (score < 40) return 'Below Average';
-// // //     if (score < 60) return 'Average';
-// // //     if (score < 80) return 'Above Average';
-// // //     return 'High';
-// // //   };
+// // // //   const getScoreLevel = (score) => {
+// // // //     if (score < 20) return 'Low';
+// // // //     if (score < 40) return 'Below Average';
+// // // //     if (score < 60) return 'Average';
+// // // //     if (score < 80) return 'Above Average';
+// // // //     return 'High';
+// // // //   };
 
-// // //   const generateInattentionInsights = (data, score) => {
-// // //     const insights = [];
-    
-// // //     if (data.missedStars > 5) {
-// // //       insights.push("Missed several stars, suggesting potential attention lapses.");
-// // //     }
-    
-// // //     if (data.averageReactionTime > 1000) {
-// // //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
-// // //     }
-    
-// // //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
-// // //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
-// // //     }
-    
-// // //     if (score < 30) {
-// // //       insights.push("Overall attention levels appear strong.");
-// // //     }
-    
-// // //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
-// // //   };
+// // // //   const generateInattentionInsights = (data, score) => {
+// // // //     const insights = [];
+// // // //     if (data.missedStars > 5) {
+// // // //       insights.push("Missed several stars, suggesting potential attention lapses.");
+// // // //     }
+// // // //     if (data.averageReactionTime > 1000) {
+// // // //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
+// // // //     }
+// // // //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
+// // // //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
+// // // //     }
+// // // //     if (score < 30) {
+// // // //       insights.push("Overall attention levels appear strong.");
+// // // //     }
+// // // //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
+// // // //   };
 
-// // //   const generateImpulsivityInsights = (data, score) => {
-// // //     const insights = [];
-    
-// // //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
-// // //       insights.push("High number of premature clicks suggests impulsive responding.");
-// // //     }
-    
-// // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-// // //     if (fastResponses > data.reactionTimes.length * 0.2) {
-// // //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
-// // //     }
-    
-// // //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
-// // //       insights.push("High variability in response times suggests inconsistent attention control.");
-// // //     }
-    
-// // //     if (score < 30) {
-// // //       insights.push("Shows good impulse control overall.");
-// // //     }
-    
-// // //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
-// // //   };
+// // // //   const generateImpulsivityInsights = (data, score) => {
+// // // //     const insights = [];
+// // // //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
+// // // //       insights.push("High number of premature clicks suggests impulsive responding.");
+// // // //     }
+// // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
+// // // //     if (fastResponses > data.reactionTimes.length * 0.2) {
+// // // //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
+// // // //     }
+// // // //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
+// // // //       insights.push("High variability in response times suggests inconsistent attention control.");
+// // // //     }
+// // // //     if (score < 30) {
+// // // //       insights.push("Shows good impulse control overall.");
+// // // //     }
+// // // //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
+// // // //   };
 
-// // //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
-// // //     const insights = [];
-    
-// // //     if (inattentionScore > 60 && impulsivityScore > 60) {
-// // //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
-// // //     } else if (inattentionScore > 60) {
-// // //       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
-// // //     } else if (impulsivityScore > 60) {
-// // //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
-// // //     }
-    
-// // //     if (data.score > 200) {
-// // //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
-// // //     }
-    
-// // //     if (data.correctStreak > 15) {
-// // //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
-// // //     }
-    
-// // //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
-// // //   };
+// // // //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
+// // // //     const insights = [];
+// // // //     if (inattentionScore > 60 && impulsivityScore > 60) {
+// // // //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
+// // // //     } else if (inattentionScore > 60) {
+// // // //       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
+// // // //     } else if (impulsivityScore > 60) {
+// // // //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
+// // // //     }
+// // // //     if (data.score > 200) {
+// // // //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
+// // // //     }
+// // // //     if (data.correctStreak > 15) {
+// // // //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
+// // // //     }
+// // // //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
+// // // //   };
 
-// // //   // Get color based on level - enhanced with more vibrant colors
-// // //   const getLevelColor = (level) => {
-// // //     switch (level) {
-// // //       case 'Low': return 'text-emerald-500';
-// // //       case 'Below Average': return 'text-blue-500';
-// // //       case 'Average': return 'text-amber-500';
-// // //       case 'Above Average': return 'text-orange-500';
-// // //       case 'High': return 'text-red-500';
-// // //       default: return 'text-gray-500';
-// // //     }
-// // //   };
+// // // //   const getLevelColor = (level) => {
+// // // //     switch (level) {
+// // // //       case 'Low': return 'text-emerald-500';
+// // // //       case 'Below Average': return 'text-blue-500';
+// // // //       case 'Average': return 'text-amber-500';
+// // // //       case 'Above Average': return 'text-orange-500';
+// // // //       case 'High': return 'text-red-500';
+// // // //       default: return 'text-gray-500';
+// // // //     }
+// // // //   };
 
-// // //   // Get background color for cards based on level
-// // //   const getLevelBgColor = (level) => {
-// // //     switch (level) {
-// // //       case 'Low': return 'bg-emerald-50 border-emerald-200';
-// // //       case 'Below Average': return 'bg-blue-50 border-blue-200';
-// // //       case 'Average': return 'bg-amber-50 border-amber-200';
-// // //       case 'Above Average': return 'bg-orange-50 border-orange-200';
-// // //       case 'High': return 'bg-red-50 border-red-200';
-// // //       default: return 'bg-gray-50 border-gray-200';
-// // //     }
-// // //   };
+// // // //   const getLevelBgColor = (level) => {
+// // // //     switch (level) {
+// // // //       case 'Low': return 'bg-emerald-50 border-emerald-200';
+// // // //       case 'Below Average': return 'bg-blue-50 border-blue-200';
+// // // //       case 'Average': return 'bg-amber-50 border-amber-200';
+// // // //       case 'Above Average': return 'bg-orange-50 border-orange-200';
+// // // //       case 'High': return 'bg-red-50 border-red-200';
+// // // //       default: return 'bg-gray-50 border-gray-200';
+// // // //     }
+// // // //   };
 
-// // //   // Get progress bar color based on score - enhanced with gradient options
-// // //   const getProgressColor = (score) => {
-// // //     if (score < 30) return 'bg-gradient-to-r from-emerald-400 to-emerald-500';
-// // //     if (score < 50) return 'bg-gradient-to-r from-blue-400 to-blue-500';
-// // //     if (score < 70) return 'bg-gradient-to-r from-amber-400 to-amber-500';
-// // //     if (score < 85) return 'bg-gradient-to-r from-orange-400 to-orange-500';
-// // //     return 'bg-gradient-to-r from-red-400 to-red-500';
-// // //   };
+// // // //   const getProgressColor = (score) => {
+// // // //     if (score < 30) return 'bg-gradient-to-r from-emerald-400 to-emerald-500';
+// // // //     if (score < 50) return 'bg-gradient-to-r from-blue-400 to-blue-500';
+// // // //     if (score < 70) return 'bg-gradient-to-r from-amber-400 to-amber-500';
+// // // //     if (score < 85) return 'bg-gradient-to-r from-orange-400 to-orange-500';
+// // // //     return 'bg-gradient-to-r from-red-400 to-red-500';
+// // // //   };
 
-// // //   // NEW: Generate reaction time chart data
-// // //   const getReactionTimeData = () => {
-// // //     if (!gameData?.reactionTimes || gameData.reactionTimes.length === 0) return [];
-    
-// // //     return gameData.reactionTimes.map((time, index) => ({
-// // //       name: `Star ${index + 1}`,
-// // //       time: time
-// // //     }));
-// // //   };
+// // // //   const getReactionTimeData = () => {
+// // // //     if (!gameData?.reactionTimes || gameData.reactionTimes.length === 0) return [];
+// // // //     return gameData.reactionTimes.map((time, index) => ({
+// // // //       name: `Star ${index + 1}`,
+// // // //       time: time
+// // // //     }));
+// // // //   };
 
-// // //   // NEW: Function to create gauge-style visualization
-// // //   const renderRadialGauge = (score, label, color) => {
-// // //     const rotation = (score / 100) * 180;
-    
-// // //     return (
-// // //       <div className="relative h-32 flex flex-col items-center justify-center mb-2">
-// // //         <div className="w-full flex justify-center">
-// // //           <div className="relative h-16 w-32">
-// // //             {/* Background arc */}
-// // //             <div className="absolute h-16 w-32 rounded-t-full overflow-hidden bg-gray-200"></div>
-// // //             {/* Colored fill */}
-// // //             <div 
-// // //               className={`absolute h-16 w-32 rounded-t-full overflow-hidden ${color}`} 
-// // //               style={{ 
-// // //                 clipPath: `polygon(50% 100%, 0 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%)`,
-// // //                 transform: `rotate(${rotation}deg)`,
-// // //                 transformOrigin: 'bottom center'
-// // //               }}>
-// // //             </div>
-// // //             {/* Center dot */}
-// // //             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-gray-400 rounded-full"></div>
-// // //             {/* Needle */}
-// // //             <div 
-// // //               className="absolute bottom-0 left-1/2 h-16 w-1 bg-gray-800 rounded-t-full"
-// // //               style={{ 
-// // //                 transform: `translateX(-50%) rotate(${rotation}deg)`,
-// // //                 transformOrigin: 'bottom center'  
-// // //               }}
-// // //             ></div>
-// // //           </div>
-// // //         </div>
-// // //         <div className="mt-2 text-center">
-// // //           <div className="text-xl font-bold">{score.toFixed(1)}</div>
-// // //           <div className="text-sm text-gray-600">{label}</div>
-// // //         </div>
-// // //       </div>
-// // //     );
-// // //   };
+// // // //   const renderRadialGauge = (score, label, color) => {
+// // // //     const rotation = (score / 100) * 180;
+// // // //     return (
+// // // //       <div className="relative h-32 flex flex-col items-center justify-center mb-2">
+// // // //         <div className="w-full flex justify-center">
+// // // //           <div className="relative h-16 w-32">
+// // // //             <div className="absolute h-16 w-32 rounded-t-full overflow-hidden bg-gray-200"></div>
+// // // //             <div 
+// // // //               className={`absolute h-16 w-32 rounded-t-full overflow-hidden ${color}`} 
+// // // //               style={{ 
+// // // //                 clipPath: `polygon(50% 100%, 0 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%)`,
+// // // //                 transform: `rotate(${rotation}deg)`,
+// // // //                 transformOrigin: 'bottom center'
+// // // //               }}>
+// // // //             </div>
+// // // //             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-gray-400 rounded-full"></div>
+// // // //             <div 
+// // // //               className="absolute bottom-0 left-1/2 h-16 w-1 bg-gray-800 rounded-t-full"
+// // // //               style={{ 
+// // // //                 transform: `translateX(-50%) rotate(${rotation}deg)`,
+// // // //                 transformOrigin: 'bottom center'  
+// // // //               }}
+// // // //             ></div>
+// // // //           </div>
+// // // //         </div>
+// // // //         <div className="mt-2 text-center">
+// // // //           <div className="text-xl font-bold">{score.toFixed(1)}</div>
+// // // //           <div className="text-sm text-gray-600">{label}</div>
+// // // //         </div>
+// // // //       </div>
+// // // //     );
+// // // //   };
 
-// // //   // NEW: Tooltip component for insights
-// // //   const InsightTooltip = ({ insight, visible, onClose }) => {
-// // //     if (!visible) return null;
-    
-// // //     return (
-// // //       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={onClose}>
-// // //         <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg" onClick={e => e.stopPropagation()}>
-// // //           <h3 className="text-xl font-bold mb-4">Understanding This Insight</h3>
-// // //           <p className="mb-4">{insight}</p>
-// // //           <div className="mb-4">
-// // //             <h4 className="font-semibold mb-2">What This Means:</h4>
-// // //             <p>This pattern may indicate specific cognitive processing tendencies related to attention and response control.</p>
-// // //           </div>
-// // //           <div className="mb-4">
-// // //             <h4 className="font-semibold mb-2">Potential Actions:</h4>
-// // //             <ul className="list-disc pl-5">
-// // //               <li>Consider targeted exercises that strengthen this cognitive domain</li>
-// // //               <li>Track this metric over time to see improvements</li>
-// // //               <li>Discuss this pattern with a cognitive specialist if it persists</li>
-// // //             </ul>
-// // //           </div>
-// // //           <button 
-// // //             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-// // //             onClick={onClose}
-// // //           >
-// // //             Close
-// // //           </button>
-// // //         </div>
-// // //       </div>
-// // //     );
-// // //   };
+// // // //   const InsightTooltip = ({ insight, visible, onClose }) => {
+// // // //     if (!visible) return null;
+// // // //     return (
+// // // //       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={onClose}>
+// // // //         <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg" onClick={e => e.stopPropagation()}>
+// // // //           <h3 className="text-xl font-bold mb-4">Understanding This Insight</h3>
+// // // //           <p className="mb-4">{insight}</p>
+// // // //           <div className="mb-4">
+// // // //             <h4 className="font-semibold mb-2">What This Means:</h4>
+// // // //             <p>This pattern may indicate specific cognitive processing tendencies related to attention and response control.</p>
+// // // //           </div>
+// // // //           <div className="mb-4">
+// // // //             <h4 className="font-semibold mb-2">Potential Actions:</h4>
+// // // //             <ul className="list-disc pl-5">
+// // // //               <li>Consider targeted exercises that strengthen this cognitive domain</li>
+// // // //               <li>Track this metric over time to see improvements</li>
+// // // //               <li>Discuss this pattern with a cognitive specialist if it persists</li>
+// // // //             </ul>
+// // // //           </div>
+// // // //           <button 
+// // // //             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+// // // //             onClick={onClose}
+// // // //           >
+// // // //             Close
+// // // //           </button>
+// // // //         </div>
+// // // //       </div>
+// // // //     );
+// // // //   };
 
-// // //   // NEW: Mock trend data (in a real app, this would come from historical data)
-// // //   const trendData = [
-// // //     { date: 'Week 1', attention: 75, impulsivity: 62 },
-// // //     { date: 'Week 2', attention: 70, impulsivity: 58 },
-// // //     { date: 'Week 3', attention: 65, impulsivity: 55 },
-// // //     { date: 'Week 4', attention: 60, impulsivity: 50 },
-// // //     { date: 'Week 5', attention: 55, impulsivity: 48 },
-// // //     { date: 'Current', attention: analysisResults.inattention.score, impulsivity: analysisResults.impulsivity.score },
-// // //   ];
+// // // //   const trendData = [
+// // // //     { date: 'Week 1', attention: 75, impulsivity: 62 },
+// // // //     { date: 'Week 2', attention: 70, impulsivity: 58 },
+// // // //     { date: 'Week 3', attention: 65, impulsivity: 55 },
+// // // //     { date: 'Week 4', attention: 60, impulsivity: 50 },
+// // // //     { date: 'Week 5', attention: 55, impulsivity: 48 },
+// // // //     { date: 'Current', attention: analysisResults.inattention.score, impulsivity: analysisResults.impulsivity.score },
+// // // //   ];
 
-// // //   if (!gameData) {
-// // //     return <div className="p-4">No game data available</div>;
-// // //   }
+// // // //   if (!gameData) {
+// // // //     return <div className="p-4">No game data available</div>;
+// // // //   }
 
-// // //   return (
-// // //     <div className="container mx-auto p-4">
-// // //       <div className="flex justify-between items-center mb-6">
-// // //         <h1 className="text-2xl font-bold">Game Performance Analytics</h1>
-// // //         <button 
-// // //           onClick={() => setShowTrends(!showTrends)}
-// // //           className="flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-all"
-// // //         >
-// // //           <TrendingUp className="mr-2" size={18} />
-// // //           {showTrends ? "Hide Trends" : "Show Trends"}
-// // //         </button>
-// // //       </div>
+// // // //   return (
+// // // //     <div className="container mx-auto p-4">
+// // // //       <div className="flex justify-between items-center mb-6">
+// // // //         <h1 className="text-2xl font-bold">Game Performance Analytics</h1>
+// // // //         <button 
+// // // //           onClick={() => setShowTrends(!showTrends)}
+// // // //           className="flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-all"
+// // // //         >
+// // // //           <TrendingUp className="mr-2" size={18} />
+// // // //           {showTrends ? "Hide Trends" : "Show Trends"}
+// // // //         </button>
+// // // //       </div>
       
-// // //       {/* NEW: Trend Chart Section */}
-// // //       {showTrends && (
-// // //         <Card className="mb-8 overflow-hidden">
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <TrendingUp className="mr-2" size={20} />
-// // //               <span>Performance Trends Over Time</span>
-// // //             </CardTitle>
-// // //             <CardDescription>
-// // //               Track your progress across multiple gameplay sessions
-// // //             </CardDescription>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             <div className="h-64 w-full">
-// // //               <ResponsiveContainer width="100%" height="100%">
-// // //                 <LineChart
-// // //                   data={trendData}
-// // //                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-// // //                 >
-// // //                   <CartesianGrid strokeDasharray="3 3" />
-// // //                   <XAxis dataKey="date" />
-// // //                   <YAxis />
-// // //                   <Tooltip />
-// // //                   <Line 
-// // //                     type="monotone" 
-// // //                     name="Attention Score" 
-// // //                     dataKey="attention" 
-// // //                     stroke="#ef4444" 
-// // //                     activeDot={{ r: 8 }}
-// // //                     strokeWidth={2}
-// // //                   />
-// // //                   <Line 
-// // //                     type="monotone" 
-// // //                     name="Impulsivity Score" 
-// // //                     dataKey="impulsivity" 
-// // //                     stroke="#3b82f6" 
-// // //                     strokeWidth={2}
-// // //                   />
-// // //                 </LineChart>
-// // //               </ResponsiveContainer>
-// // //             </div>
-// // //           </CardContent>
-// // //         </Card>
-// // //       )}
+// // // //       {showTrends && (
+// // // //         <Card className="mb-8 overflow-hidden">
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <TrendingUp className="mr-2" size={20} />
+// // // //               <span>Performance Trends Over Time</span>
+// // // //             </CardTitle>
+// // // //             <CardDescription>
+// // // //               Track your progress across multiple gameplay sessions
+// // // //             </CardDescription>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             <div className="h-64 w-full">
+// // // //               <ResponsiveContainer width="100%" height="100%">
+// // // //                 <LineChart
+// // // //                   data={trendData}
+// // // //                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+// // // //                 >
+// // // //                   <CartesianGrid strokeDasharray="3 3" />
+// // // //                   <XAxis dataKey="date" />
+// // // //                   <YAxis />
+// // // //                   <Tooltip />
+// // // //                   <Line 
+// // // //                     type="monotone" 
+// // // //                     name="Attention Score" 
+// // // //                     dataKey="attention" 
+// // // //                     stroke="#ef4444" 
+// // // //                     activeDot={{ r: 8 }}
+// // // //                     strokeWidth={2}
+// // // //                   />
+// // // //                   <Line 
+// // // //                     type="monotone" 
+// // // //                     name="Impulsivity Score" 
+// // // //                     dataKey="impulsivity" 
+// // // //                     stroke="#3b82f6" 
+// // // //                     strokeWidth={2}
+// // // //                   />
+// // // //                 </LineChart>
+// // // //               </ResponsiveContainer>
+// // // //             </div>
+// // // //           </CardContent>
+// // // //         </Card>
+// // // //       )}
       
-// // //       {/* Score Overview Cards - Enhanced with animations and gauges */}
-// // //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-// // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.inattention.level)}`}>
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <Brain className="mr-2" size={20} />
-// // //               <span>Attention Score</span>
-// // //             </CardTitle>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             {/* NEW: Radial gauge replaces simple progress bar */}
-// // //             {renderRadialGauge(
-// // //               analysisResults.inattention.score, 
-// // //               analysisResults.inattention.level,
-// // //               getProgressColor(analysisResults.inattention.score)
-// // //             )}
-// // //           </CardContent>
-// // //         </Card>
+// // // //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.inattention.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Brain className="mr-2" size={20} />
+// // // //               <span>Attention Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.inattention.score, 
+// // // //               analysisResults.inattention.level,
+// // // //               getProgressColor(analysisResults.inattention.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
         
-// // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.impulsivity.level)}`}>
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <Zap className="mr-2" size={20} />
-// // //               <span>Impulsivity Score</span>
-// // //             </CardTitle>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             {renderRadialGauge(
-// // //               analysisResults.impulsivity.score, 
-// // //               analysisResults.impulsivity.level,
-// // //               getProgressColor(analysisResults.impulsivity.score)
-// // //             )}
-// // //           </CardContent>
-// // //         </Card>
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.impulsivity.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Zap className="mr-2" size={20} />
+// // // //               <span>Impulsivity Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.impulsivity.score, 
+// // // //               analysisResults.impulsivity.level,
+// // // //               getProgressColor(analysisResults.impulsivity.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
         
-// // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.combined.level)}`}>
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <Activity className="mr-2" size={20} />
-// // //               <span>Combined Score</span>
-// // //             </CardTitle>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             {renderRadialGauge(
-// // //               analysisResults.combined.score, 
-// // //               analysisResults.combined.level,
-// // //               getProgressColor(analysisResults.combined.score)
-// // //             )}
-// // //           </CardContent>
-// // //         </Card>
-// // //       </div>
+// // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.combined.level)}`}>
+// // // //           <CardHeader className="pb-2">
+// // // //             <CardTitle className="flex items-center">
+// // // //               <Activity className="mr-2" size={20} />
+// // // //               <span>Combined Score</span>
+// // // //             </CardTitle>
+// // // //           </CardHeader>
+// // // //           <CardContent>
+// // // //             {renderRadialGauge(
+// // // //               analysisResults.combined.score, 
+// // // //               analysisResults.combined.level,
+// // // //               getProgressColor(analysisResults.combined.score)
+// // // //             )}
+// // // //           </CardContent>
+// // // //         </Card>
+// // // //       </div>
       
-// // //       {/* NEW: Achievement Card */}
-// // //       {gameData.correctStreak > 10 && (
-// // //         <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
-// // //           <CardContent className="p-4">
-// // //             <div className="flex items-center">
-// // //               <div className="mr-4 bg-amber-400 rounded-full p-3">
-// // //                 <Award size={24} className="text-white" />
-// // //               </div>
-// // //               <div>
-// // //                 <h3import React, { useState, useEffect } from 'react';
+// // // //       {gameData.correctStreak > 10 && (
+// // // //         <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
+// // // //           <CardContent className="p-4">
+// // // //             <div className="flex items-center">
+// // // //               <div className="mr-4 bg-amber-400 rounded-full p-3">
+// // // //                 <Award size={24} className="text-white" />
+// // // //               </div>
+// // // //               <div>
+// // // //                 <h3 className="font-bold text-amber-800">Achievement Unlocked!</h3>
+// // // //                 <p className="text-amber-700">You reached a streak of {gameData.correctStreak} correct responses!</p>
+// // // //               </div>
+// // //            import React, { useState, useEffect } from 'react';
 // // // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 // // // import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 // // // import { Progress } from './ui/progress';
@@ -1107,19 +1981,15 @@
 // // //     }
 // // //   }, [gameData]);
 
-// // //   // All the analysis functions remain the same
 // // //   const analyzeGameData = (data) => {
-// // //     // 1. Inattention Analysis
 // // //     const inattentionScore = calculateInattentionScore(data);
 // // //     const inattentionLevel = getScoreLevel(inattentionScore);
 // // //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
 
-// // //     // 2. Impulsivity Analysis
 // // //     const impulsivityScore = calculateImpulsivityScore(data);
 // // //     const impulsivityLevel = getScoreLevel(impulsivityScore);
 // // //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
 
-// // //     // 3. Combined Analysis
 // // //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
 // // //     const combinedLevel = getScoreLevel(combinedScore);
 // // //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
@@ -1143,19 +2013,15 @@
 // // //     };
 // // //   };
 
-// // //   // All calculation functions remain unchanged
 // // //   const calculateInattentionScore = (data) => {
 // // //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
-    
 // // //     const avgReactionTime = data.averageReactionTime;
 // // //     let reactionTimeFactor = 0;
 // // //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
 // // //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
 // // //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
-    
 // // //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
 // // //     const streakFactor = maxMissedStreak * 10;
-    
 // // //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
 // // //   };
 
@@ -1163,17 +2029,14 @@
 // // //     const prematureClicksRatio = data.prematureClicks / 
 // // //       (data.reactionTimes.length + data.prematureClicks) * 100;
 // // //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
-    
 // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
 // // //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
 // // //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
-    
 // // //     let variabilityFactor = 0;
 // // //     if (data.reactionTimeVariability) {
 // // //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
 // // //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
 // // //     }
-    
 // // //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
 // // //   };
 
@@ -1187,52 +2050,41 @@
 
 // // //   const generateInattentionInsights = (data, score) => {
 // // //     const insights = [];
-    
 // // //     if (data.missedStars > 5) {
 // // //       insights.push("Missed several stars, suggesting potential attention lapses.");
 // // //     }
-    
 // // //     if (data.averageReactionTime > 1000) {
 // // //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
 // // //     }
-    
 // // //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
 // // //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
 // // //     }
-    
 // // //     if (score < 30) {
 // // //       insights.push("Overall attention levels appear strong.");
 // // //     }
-    
 // // //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
 // // //   };
 
 // // //   const generateImpulsivityInsights = (data, score) => {
 // // //     const insights = [];
-    
 // // //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
 // // //       insights.push("High number of premature clicks suggests impulsive responding.");
 // // //     }
-    
 // // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
 // // //     if (fastResponses > data.reactionTimes.length * 0.2) {
 // // //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
 // // //     }
-    
 // // //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
 // // //       insights.push("High variability in response times suggests inconsistent attention control.");
 // // //     }
-    
 // // //     if (score < 30) {
 // // //       insights.push("Shows good impulse control overall.");
 // // //     }
-    
 // // //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
 // // //   };
 
 // // //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
 // // //     const insights = [];
-    
 // // //     if (inattentionScore > 60 && impulsivityScore > 60) {
 // // //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
 // // //     } else if (inattentionScore > 60) {
@@ -1240,19 +2092,15 @@
 // // //     } else if (impulsivityScore > 60) {
 // // //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
 // // //     }
-    
 // // //     if (data.score > 200) {
 // // //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
 // // //     }
-    
 // // //     if (data.correctStreak > 15) {
 // // //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
 // // //     }
-    
 // // //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
 // // //   };
 
-// // //   // Get color based on level - enhanced with more vibrant colors
 // // //   const getLevelColor = (level) => {
 // // //     switch (level) {
 // // //       case 'Low': return 'text-emerald-500';
@@ -1264,7 +2112,6 @@
 // // //     }
 // // //   };
 
-// // //   // Get background color for cards based on level
 // // //   const getLevelBgColor = (level) => {
 // // //     switch (level) {
 // // //       case 'Low': return 'bg-emerald-50 border-emerald-200';
@@ -1276,7 +2123,6 @@
 // // //     }
 // // //   };
 
-// // //   // Get progress bar color based on score - enhanced with gradient options
 // // //   const getProgressColor = (score) => {
 // // //     if (score < 30) return 'bg-gradient-to-r from-emerald-400 to-emerald-500';
 // // //     if (score < 50) return 'bg-gradient-to-r from-blue-400 to-blue-500';
@@ -1285,27 +2131,21 @@
 // // //     return 'bg-gradient-to-r from-red-400 to-red-500';
 // // //   };
 
-// // //   // NEW: Generate reaction time chart data
 // // //   const getReactionTimeData = () => {
 // // //     if (!gameData?.reactionTimes || gameData.reactionTimes.length === 0) return [];
-    
 // // //     return gameData.reactionTimes.map((time, index) => ({
 // // //       name: `Star ${index + 1}`,
 // // //       time: time
 // // //     }));
 // // //   };
 
-// // //   // NEW: Function to create gauge-style visualization
 // // //   const renderRadialGauge = (score, label, color) => {
 // // //     const rotation = (score / 100) * 180;
-    
 // // //     return (
 // // //       <div className="relative h-32 flex flex-col items-center justify-center mb-2">
 // // //         <div className="w-full flex justify-center">
 // // //           <div className="relative h-16 w-32">
-// // //             {/* Background arc */}
 // // //             <div className="absolute h-16 w-32 rounded-t-full overflow-hidden bg-gray-200"></div>
-// // //             {/* Colored fill */}
 // // //             <div 
 // // //               className={`absolute h-16 w-32 rounded-t-full overflow-hidden ${color}`} 
 // // //               style={{ 
@@ -1314,9 +2154,7 @@
 // // //                 transformOrigin: 'bottom center'
 // // //               }}>
 // // //             </div>
-// // //             {/* Center dot */}
 // // //             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-gray-400 rounded-full"></div>
-// // //             {/* Needle */}
 // // //             <div 
 // // //               className="absolute bottom-0 left-1/2 h-16 w-1 bg-gray-800 rounded-t-full"
 // // //               style={{ 
@@ -1334,10 +2172,8 @@
 // // //     );
 // // //   };
 
-// // //   // NEW: Tooltip component for insights
 // // //   const InsightTooltip = ({ insight, visible, onClose }) => {
 // // //     if (!visible) return null;
-    
 // // //     return (
 // // //       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={onClose}>
 // // //         <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg" onClick={e => e.stopPropagation()}>
@@ -1366,7 +2202,6 @@
 // // //     );
 // // //   };
 
-// // //   // NEW: Mock trend data (in a real app, this would come from historical data)
 // // //   const trendData = [
 // // //     { date: 'Week 1', attention: 75, impulsivity: 62 },
 // // //     { date: 'Week 2', attention: 70, impulsivity: 58 },
@@ -1393,7 +2228,6 @@
 // // //         </button>
 // // //       </div>
       
-// // //       {/* NEW: Trend Chart Section */}
 // // //       {showTrends && (
 // // //         <Card className="mb-8 overflow-hidden">
 // // //           <CardHeader className="pb-2">
@@ -1438,7 +2272,6 @@
 // // //         </Card>
 // // //       )}
       
-// // //       {/* Score Overview Cards - Enhanced with animations and gauges */}
 // // //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
 // // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.inattention.level)}`}>
 // // //           <CardHeader className="pb-2">
@@ -1448,7 +2281,6 @@
 // // //             </CardTitle>
 // // //           </CardHeader>
 // // //           <CardContent>
-// // //             {/* NEW: Radial gauge replaces simple progress bar */}
 // // //             {renderRadialGauge(
 // // //               analysisResults.inattention.score, 
 // // //               analysisResults.inattention.level,
@@ -1490,10 +2322,33 @@
 // // //         </Card>
 // // //       </div>
       
-// // //       {/* NEW: Achievement Card
-// // //       {gameData.correctStreak > 10 && (
-// // //       <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
-// // //       <CardContent className="p-4">
+// // //       {/* {gameData.correctStreak > 10 && (
+// // //         <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
+// // //           <CardContent className="p-4">
+// // //             <div className="flex items-center">
+// // //               <div className="mr-4 bg-amber-400 rounded-full p-3">
+// // //                 <Award size={24} className="text-white" />
+// // //               </div>
+// // //               <div>
+// // //                 <h3 className="font-bold text-amber-800">Achievement Unlocked!</h3>
+// // //                 <p className="text-amber-700">You reached a streak of {gameData.correctStreak} correct responses!</p>
+// // //               </div>
+// // //               <h3 className="font-bold flex items-center mb-2">
+// // //                       <Brain className="mr-2" size={18} />
+// // //                       Attention Strengthening Activities
+// // //                     </h3>
+// // //                     <ul className="list-disc pl-5 space-y-1">
+// // //                       <li>Practice mindfulness exercises for 5-10 minutes daily</li>
+// // //                       <li>Try games that require sustained attention, like puzzles or memory games</li>
+// // //                       <li>Break tasks into smaller, manageable chunks with clear completion criteria</li>
+// // //                       <li>Create a distraction-free environment during focus-intensive activities</li>
+// // //                     </ul>
+// // //                   </div>
+// // //                 )} */}
+
+// // // {gameData.correctStreak > 10 && (
+// // //   <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
+// // //     <CardContent className="p-4">
 // // //       <div className="flex items-center">
 // // //         <div className="mr-4 bg-amber-400 rounded-full p-3">
 // // //           <Award size={24} className="text-white" />
@@ -1511,10 +2366,9 @@
 // // //           </ul>
 // // //         </div>
 // // //       </div>
-// // //       </CardContent>
-// // //       </Card>
-// // //         )}
-
+// // //     </CardContent>
+// // //   </Card>
+// // // )}
                 
 // // //                 {analysisResults.impulsivity.score > 60 && (
 // // //                   <div className="p-4 bg-yellow-50 rounded-lg">
@@ -1564,435 +2418,255 @@
 // // //             </CardContent>
 // // //           </Card>
 // // //         </TabsContent>
-// // //         </Tabs>*/}
-// // //     </div> 
+// // //       </Tabs>
+// // //     </div>
+    
 // // //   );
-
+// // // };
 
 // // // export default GameAnalytics;
-
-// // // import React, { useState, useEffect } from 'react';
-// // // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-// // // import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-// // // import { Progress } from './ui/progress';
-// // // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, TrendingUp, Award } from 'lucide-react';
-// // // import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-// // // const GameAnalytics = ({ gameData }) => {
-// // //   const [analysisResults, setAnalysisResults] = useState({
-// // //     inattention: { score: 0, level: '', insights: [] },
-// // //     impulsivity: { score: 0, level: '', insights: [] },
-// // //     combined: { score: 0, level: '', insights: [] }
-// // //   });
-// // //   const [activeInsight, setActiveInsight] = useState(null);
-// // //   const [showTrends, setShowTrends] = useState(false);
-
-// // //   useEffect(() => {
-// // //     if (gameData) {
-// // //       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
-// // //         const mean = gameData.averageReactionTime;
-// // //         const variance = gameData.reactionTimes.reduce((sum, time) => 
-// // //           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
-// // //         gameData.reactionTimeVariability = Math.sqrt(variance);
-// // //       }
-// // //       const results = analyzeGameData(gameData);
-// // //       setAnalysisResults(results);
-// // //     }
-// // //   }, [gameData]);
-
-// // //   const analyzeGameData = (data) => {
-// // //     const inattentionScore = calculateInattentionScore(data);
-// // //     const inattentionLevel = getScoreLevel(inattentionScore);
-// // //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
-
-// // //     const impulsivityScore = calculateImpulsivityScore(data);
-// // //     const impulsivityLevel = getScoreLevel(impulsivityScore);
-// // //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
-
-// // //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
-// // //     const combinedLevel = getScoreLevel(combinedScore);
-// // //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
-
-// // //     return {
-// // //       inattention: {
-// // //         score: inattentionScore,
-// // //         level: inattentionLevel,
-// // //         insights: inattentionInsights
-// // //       },
-// // //       impulsivity: {
-// // //         score: impulsivityScore,
-// // //         level: impulsivityLevel,
-// // //         insights: impulsivityInsights
-// // //       },
-// // //       combined: {
-// // //         score: combinedScore,
-// // //         level: combinedLevel,
-// // //         insights: combinedInsights
-// // //       }
-// // //     };
-// // //   };
-
-// // //   const calculateInattentionScore = (data) => {
-// // //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
-// // //     const avgReactionTime = data.averageReactionTime;
-// // //     let reactionTimeFactor = 0;
-// // //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
-// // //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
-// // //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
-// // //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
-// // //     const streakFactor = maxMissedStreak * 10;
-// // //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
-// // //   };
-
-// // //   const calculateImpulsivityScore = (data) => {
-// // //     const prematureClicksRatio = data.prematureClicks / 
-// // //       (data.reactionTimes.length + data.prematureClicks) * 100;
-// // //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
-// // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-// // //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
-// // //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
-// // //     let variabilityFactor = 0;
-// // //     if (data.reactionTimeVariability) {
-// // //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
-// // //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
-// // //     }
-// // //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
-// // //   };
-
-// // //   const getScoreLevel = (score) => {
-// // //     if (score < 20) return 'Low';
-// // //     if (score < 40) return 'Below Average';
-// // //     if (score < 60) return 'Average';
-// // //     if (score < 80) return 'Above Average';
-// // //     return 'High';
-// // //   };
-
-// // //   const generateInattentionInsights = (data, score) => {
-// // //     const insights = [];
-// // //     if (data.missedStars > 5) {
-// // //       insights.push("Missed several stars, suggesting potential attention lapses.");
-// // //     }
-// // //     if (data.averageReactionTime > 1000) {
-// // //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
-// // //     }
-// // //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
-// // //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
-// // //     }
-// // //     if (score < 30) {
-// // //       insights.push("Overall attention levels appear strong.");
-// // //     }
-// // //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
-// // //   };
-
-// // //   const generateImpulsivityInsights = (data, score) => {
-// // //     const insights = [];
-// // //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
-// // //       insights.push("High number of premature clicks suggests impulsive responding.");
-// // //     }
-// // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-// // //     if (fastResponses > data.reactionTimes.length * 0.2) {
-// // //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
-// // //     }
-// // //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
-// // //       insights.push("High variability in response times suggests inconsistent attention control.");
-// // //     }
-// // //     if (score < 30) {
-// // //       insights.push("Shows good impulse control overall.");
-// // //     }
-// // //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
-// // //   };
-
-// // //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
-// // //     const insights = [];
-// // //     if (inattentionScore > 60 && impulsivityScore > 60) {
-// // //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
-// // //     } else if (inattentionScore > 60) {
-// // //       insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
-// // //     } else if (impulsivityScore > 60) {
-// // //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
-// // //     }
-// // //     if (data.score > 200) {
-// // //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
-// // //     }
-// // //     if (data.correctStreak > 15) {
-// // //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
-// // //     }
-// // //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
-// // //   };
-
-// // //   const getLevelColor = (level) => {
-// // //     switch (level) {
-// // //       case 'Low': return 'text-emerald-500';
-// // //       case 'Below Average': return 'text-blue-500';
-// // //       case 'Average': return 'text-amber-500';
-// // //       case 'Above Average': return 'text-orange-500';
-// // //       case 'High': return 'text-red-500';
-// // //       default: return 'text-gray-500';
-// // //     }
-// // //   };
-
-// // //   const getLevelBgColor = (level) => {
-// // //     switch (level) {
-// // //       case 'Low': return 'bg-emerald-50 border-emerald-200';
-// // //       case 'Below Average': return 'bg-blue-50 border-blue-200';
-// // //       case 'Average': return 'bg-amber-50 border-amber-200';
-// // //       case 'Above Average': return 'bg-orange-50 border-orange-200';
-// // //       case 'High': return 'bg-red-50 border-red-200';
-// // //       default: return 'bg-gray-50 border-gray-200';
-// // //     }
-// // //   };
-
-// // //   const getProgressColor = (score) => {
-// // //     if (score < 30) return 'bg-gradient-to-r from-emerald-400 to-emerald-500';
-// // //     if (score < 50) return 'bg-gradient-to-r from-blue-400 to-blue-500';
-// // //     if (score < 70) return 'bg-gradient-to-r from-amber-400 to-amber-500';
-// // //     if (score < 85) return 'bg-gradient-to-r from-orange-400 to-orange-500';
-// // //     return 'bg-gradient-to-r from-red-400 to-red-500';
-// // //   };
-
-// // //   const getReactionTimeData = () => {
-// // //     if (!gameData?.reactionTimes || gameData.reactionTimes.length === 0) return [];
-// // //     return gameData.reactionTimes.map((time, index) => ({
-// // //       name: `Star ${index + 1}`,
-// // //       time: time
-// // //     }));
-// // //   };
-
-// // //   const renderRadialGauge = (score, label, color) => {
-// // //     const rotation = (score / 100) * 180;
-// // //     return (
-// // //       <div className="relative h-32 flex flex-col items-center justify-center mb-2">
-// // //         <div className="w-full flex justify-center">
-// // //           <div className="relative h-16 w-32">
-// // //             <div className="absolute h-16 w-32 rounded-t-full overflow-hidden bg-gray-200"></div>
-// // //             <div 
-// // //               className={`absolute h-16 w-32 rounded-t-full overflow-hidden ${color}`} 
-// // //               style={{ 
-// // //                 clipPath: `polygon(50% 100%, 0 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%)`,
-// // //                 transform: `rotate(${rotation}deg)`,
-// // //                 transformOrigin: 'bottom center'
-// // //               }}>
-// // //             </div>
-// // //             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-gray-400 rounded-full"></div>
-// // //             <div 
-// // //               className="absolute bottom-0 left-1/2 h-16 w-1 bg-gray-800 rounded-t-full"
-// // //               style={{ 
-// // //                 transform: `translateX(-50%) rotate(${rotation}deg)`,
-// // //                 transformOrigin: 'bottom center'  
-// // //               }}
-// // //             ></div>
-// // //           </div>
-// // //         </div>
-// // //         <div className="mt-2 text-center">
-// // //           <div className="text-xl font-bold">{score.toFixed(1)}</div>
-// // //           <div className="text-sm text-gray-600">{label}</div>
-// // //         </div>
-// // //       </div>
-// // //     );
-// // //   };
-
-// // //   const InsightTooltip = ({ insight, visible, onClose }) => {
-// // //     if (!visible) return null;
-// // //     return (
-// // //       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={onClose}>
-// // //         <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg" onClick={e => e.stopPropagation()}>
-// // //           <h3 className="text-xl font-bold mb-4">Understanding This Insight</h3>
-// // //           <p className="mb-4">{insight}</p>
-// // //           <div className="mb-4">
-// // //             <h4 className="font-semibold mb-2">What This Means:</h4>
-// // //             <p>This pattern may indicate specific cognitive processing tendencies related to attention and response control.</p>
-// // //           </div>
-// // //           <div className="mb-4">
-// // //             <h4 className="font-semibold mb-2">Potential Actions:</h4>
-// // //             <ul className="list-disc pl-5">
-// // //               <li>Consider targeted exercises that strengthen this cognitive domain</li>
-// // //               <li>Track this metric over time to see improvements</li>
-// // //               <li>Discuss this pattern with a cognitive specialist if it persists</li>
-// // //             </ul>
-// // //           </div>
-// // //           <button 
-// // //             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-// // //             onClick={onClose}
-// // //           >
-// // //             Close
-// // //           </button>
-// // //         </div>
-// // //       </div>
-// // //     );
-// // //   };
-
-// // //   const trendData = [
-// // //     { date: 'Week 1', attention: 75, impulsivity: 62 },
-// // //     { date: 'Week 2', attention: 70, impulsivity: 58 },
-// // //     { date: 'Week 3', attention: 65, impulsivity: 55 },
-// // //     { date: 'Week 4', attention: 60, impulsivity: 50 },
-// // //     { date: 'Week 5', attention: 55, impulsivity: 48 },
-// // //     { date: 'Current', attention: analysisResults.inattention.score, impulsivity: analysisResults.impulsivity.score },
-// // //   ];
-
-// // //   if (!gameData) {
-// // //     return <div className="p-4">No game data available</div>;
-// // //   }
-
-// // //   return (
-// // //     <div className="container mx-auto p-4">
-// // //       <div className="flex justify-between items-center mb-6">
-// // //         <h1 className="text-2xl font-bold">Game Performance Analytics</h1>
-// // //         <button 
-// // //           onClick={() => setShowTrends(!showTrends)}
-// // //           className="flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-all"
-// // //         >
-// // //           <TrendingUp className="mr-2" size={18} />
-// // //           {showTrends ? "Hide Trends" : "Show Trends"}
-// // //         </button>
-// // //       </div>
-      
-// // //       {showTrends && (
-// // //         <Card className="mb-8 overflow-hidden">
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <TrendingUp className="mr-2" size={20} />
-// // //               <span>Performance Trends Over Time</span>
-// // //             </CardTitle>
-// // //             <CardDescription>
-// // //               Track your progress across multiple gameplay sessions
-// // //             </CardDescription>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             <div className="h-64 w-full">
-// // //               <ResponsiveContainer width="100%" height="100%">
-// // //                 <LineChart
-// // //                   data={trendData}
-// // //                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-// // //                 >
-// // //                   <CartesianGrid strokeDasharray="3 3" />
-// // //                   <XAxis dataKey="date" />
-// // //                   <YAxis />
-// // //                   <Tooltip />
-// // //                   <Line 
-// // //                     type="monotone" 
-// // //                     name="Attention Score" 
-// // //                     dataKey="attention" 
-// // //                     stroke="#ef4444" 
-// // //                     activeDot={{ r: 8 }}
-// // //                     strokeWidth={2}
-// // //                   />
-// // //                   <Line 
-// // //                     type="monotone" 
-// // //                     name="Impulsivity Score" 
-// // //                     dataKey="impulsivity" 
-// // //                     stroke="#3b82f6" 
-// // //                     strokeWidth={2}
-// // //                   />
-// // //                 </LineChart>
-// // //               </ResponsiveContainer>
-// // //             </div>
-// // //           </CardContent>
-// // //         </Card>
-// // //       )}
-      
-// // //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-// // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.inattention.level)}`}>
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <Brain className="mr-2" size={20} />
-// // //               <span>Attention Score</span>
-// // //             </CardTitle>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             {renderRadialGauge(
-// // //               analysisResults.inattention.score, 
-// // //               analysisResults.inattention.level,
-// // //               getProgressColor(analysisResults.inattention.score)
-// // //             )}
-// // //           </CardContent>
-// // //         </Card>
-        
-// // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.impulsivity.level)}`}>
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <Zap className="mr-2" size={20} />
-// // //               <span>Impulsivity Score</span>
-// // //             </CardTitle>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             {renderRadialGauge(
-// // //               analysisResults.impulsivity.score, 
-// // //               analysisResults.impulsivity.level,
-// // //               getProgressColor(analysisResults.impulsivity.score)
-// // //             )}
-// // //           </CardContent>
-// // //         </Card>
-        
-// // //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.combined.level)}`}>
-// // //           <CardHeader className="pb-2">
-// // //             <CardTitle className="flex items-center">
-// // //               <Activity className="mr-2" size={20} />
-// // //               <span>Combined Score</span>
-// // //             </CardTitle>
-// // //           </CardHeader>
-// // //           <CardContent>
-// // //             {renderRadialGauge(
-// // //               analysisResults.combined.score, 
-// // //               analysisResults.combined.level,
-// // //               getProgressColor(analysisResults.combined.score)
-// // //             )}
-// // //           </CardContent>
-// // //         </Card>
-// // //       </div>
-      
-// // //       {gameData.correctStreak > 10 && (
-// // //         <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
-// // //           <CardContent className="p-4">
-// // //             <div className="flex items-center">
-// // //               <div className="mr-4 bg-amber-400 rounded-full p-3">
-// // //                 <Award size={24} className="text-white" />
-// // //               </div>
-// // //               <div>
-// // //                 <h3 className="font-bold text-amber-800">Achievement Unlocked!</h3>
-// // //                 <p className="text-amber-700">You reached a streak of {gameData.correctStreak} correct responses!</p>
-// // //               </div>
-// //            import React, { useState, useEffect } from 'react';
+           
+// // import React, { useState, useEffect } from 'react';
 // // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 // // import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 // // import { Progress } from './ui/progress';
-// // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, TrendingUp, Award } from 'lucide-react';
-// // import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+// // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, ChevronDown, ChevronUp, Info, Award, TrendingUp } from 'lucide-react';
+// // import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
+// // import axios from 'axios';
+// // //import { Award } from 'lucide-react';
 
+// // const API_ENDPOINT = 'http://localhost:5000/predict';
+
+
+
+
+// // // Move these variable definitions from ADHDAssessmentCard to the GameAnalytics component
+// // // Add these at the beginning of the GameAnalytics component function
 // // const GameAnalytics = ({ gameData }) => {
 // //   const [analysisResults, setAnalysisResults] = useState({
 // //     inattention: { score: 0, level: '', insights: [] },
 // //     impulsivity: { score: 0, level: '', insights: [] },
 // //     combined: { score: 0, level: '', insights: [] }
 // //   });
-// //   const [activeInsight, setActiveInsight] = useState(null);
-// //   const [showTrends, setShowTrends] = useState(false);
+// //   const [expandedInsight, setExpandedInsight] = useState(null);
+// //   const [showTips, setShowTips] = useState(false);
+// //   const [showMetricInfo, setShowMetricInfo] = useState(null);
+// //   const [historicalData, setHistoricalData] = useState([]);
+// //   const [adhdType, setADHDType] = useState(null);
+// //   const [modelConfidence, setModelConfidence] = useState(null);
+// //   const [modelInsights, setModelInsights] = useState(null);
+// //   const [scoreLevels, setScoreLevels] = useState({
+// //     inattention: '',
+// //     impulsivity: ''
+// //   });
 
-// //   useEffect(() => {
-// //     if (gameData) {
-// //       if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
-// //         const mean = gameData.averageReactionTime;
-// //         const variance = gameData.reactionTimes.reduce((sum, time) => 
-// //           sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
-// //         gameData.reactionTimeVariability = Math.sqrt(variance);
-// //       }
-// //       const results = analyzeGameData(gameData);
-// //       setAnalysisResults(results);
+// //   // Add these missing variable definitions - moved from ADHDAssessmentCard
+// //   // Emoji mapping for various elements
+// //   const typeEmojis = {
+// //     'Primarily Inattentive': '🔍',
+// //     'Primarily Hyperactive-Impulsive': '⚡',
+// //     'Combined Type': '🔄',
+// //     'Minimal Symptoms': '✅'
+// //   };
+
+// //   // Default emoji if type not found
+// //   const defaultEmoji = '🧩';
+  
+// //   // Level indicators with emojis
+// //   const getLevelEmoji = (level) => {
+// //     switch(level) {
+// //       case 'High': return '🔴';
+// //       case 'Above Average': return '🟠';
+// //       case 'Average': return '🟡';
+// //       case 'Below Average': return '🟢';
+// //       case 'Low': return '🔵';
+// //       default: return '⚪';
 // //     }
-// //   }, [gameData]);
+// //   };
+  
+// //   // Progress bar colors
+// //   const getProgressColors = (level) => {
+// //     switch(level) {
+// //       case 'High': return 'bg-red-500';
+// //       case 'Above Average': return 'bg-orange-400';
+// //       case 'Average': return 'bg-yellow-400';
+// //       case 'Below Average': return 'bg-green-400';
+// //       case 'Low': return 'bg-blue-400';
+// //       default: return 'bg-gray-300';
+// //     }
+// //   };
 
+// //   // Get progress width based on level
+// //   const getProgressWidth = (level) => {
+// //     switch(level) {
+// //       case 'High': return 'w-full';
+// //       case 'Above Average': return 'w-4/5';
+// //       case 'Average': return 'w-3/5';
+// //       case 'Below Average': return 'w-2/5';
+// //       case 'Low': return 'w-1/5';
+// //       default: return 'w-0';
+// //     }
+// //   };
+
+
+// //   // Rest of your component code...
+// //   // Enhanced function to fetch predictions from the ML model
+// // const fetchPredictionFromModel = async (gameData) => {
+// //   try {
+// //     // Format the data according to what your backend expects
+// //     const modelInput = {
+// //       reactionTimes: gameData.reactionTimes || [],
+// //       correctStreak: gameData.correctStreak || 0,
+// //       prematureClicks: gameData.prematureClicks || 0,
+// //       missedStars: gameData.missedStars || 0,
+// //       score: gameData.score || 0,
+// //       // Include maxMissedStreak if available
+// //       maxMissedStreak: gameData.maxMissedStreak || 0,
+// //       // Include missedStarStreaks if available for more accurate predictions
+// //       missedStarStreaks: gameData.missedStarStreaks || []
+// //     };
+    
+// //     console.log('Sending data to ML model:', modelInput);
+// //     const response = await axios.post(API_ENDPOINT, modelInput);
+// //     console.log('Received prediction from ML model:', response.data);
+// //     return response.data;
+// //   } catch (error) {
+// //     console.error('Error fetching prediction from ML model:', error);
+// //     return null;
+// //   }
+// // };
+
+// //   // useEffect(() => {
+// //   //   if (gameData) {
+// //   //     if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
+// //   //       const mean = gameData.averageReactionTime;
+// //   //       const variance = gameData.reactionTimes.reduce((sum, time) => 
+// //   //         sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
+// //   //       gameData.reactionTimeVariability = Math.sqrt(variance);
+// //   //     }
+// //   //     const results = analyzeGameData(gameData);
+// //   //     setAnalysisResults(results);
+      
+// //   //     // Generate fake historical data for demonstration
+// //   //     generateHistoricalData();
+// //   //   }
+// //   // }, [gameData]);
+// //   // Enhanced useEffect for your GameAnalytics component
+// // useEffect(() => {
+// //   if (gameData) {
+// //     // Calculate derived metrics that the ML model expects
+// //     const processedData = { ...gameData };
+    
+// //     // Calculate variability if not already calculated
+// //     if (processedData.reactionTimes && processedData.reactionTimes.length > 0) {
+// //       const mean = processedData.averageReactionTime || 
+// //         processedData.reactionTimes.reduce((sum, time) => sum + time, 0) / processedData.reactionTimes.length;
+// //       processedData.averageReactionTime = mean;
+      
+// //       const variance = processedData.reactionTimes.reduce((sum, time) => 
+// //         sum + Math.pow(time - mean, 2), 0) / processedData.reactionTimes.length;
+// //       processedData.reactionTimeVariability = Math.sqrt(variance);
+// //     }
+    
+// //     // Try to get prediction from ML model
+// //     fetchPredictionFromModel(processedData)
+// //       .then(prediction => {
+// //         if (prediction && !prediction.error) {
+// //           // Set ADHD type and confidence from the model response
+// //           setADHDType(prediction.adhd_type);
+          
+// //           // Find the highest probability for confidence
+// //           const highestProbability = Math.max(...Object.values(prediction.probabilities));
+// //           setModelConfidence(highestProbability);
+          
+// //           // Store insights from the model for display
+// //           setModelInsights(prediction.insights);
+          
+// //           // Use detailed scores from the model response
+// //           setAnalysisResults({
+// //             inattention: {
+// //               score: prediction.scores.inattention.score,
+// //               level: prediction.scores.inattention.level,
+// //               insights: prediction.insights.inattention || []
+// //             },
+// //             impulsivity: {
+// //               score: prediction.scores.impulsivity.score,
+// //               level: prediction.scores.impulsivity.level,
+// //               insights: prediction.insights.impulsivity || []
+// //             },
+// //             combined: {
+// //               score: (prediction.scores.inattention.score + prediction.scores.impulsivity.score) / 2,
+// //               level: getScoreLevel((prediction.scores.inattention.score + prediction.scores.impulsivity.score) / 2),
+// //               insights: prediction.insights.combined || []
+// //             }
+// //           });
+          
+// //           // Store score levels for display
+// //           setScoreLevels({
+// //             inattention: prediction.scores.inattention.level,
+// //             impulsivity: prediction.scores.impulsivity.level
+// //           });
+// //         } else {
+// //           console.warn('ML model prediction failed or returned an error, falling back to rule-based analysis');
+// //           // Fall back to rule-based analysis if ML prediction fails
+// //           const results = analyzeGameData(processedData);
+// //           setAnalysisResults(results);
+          
+// //           // Clear model-specific data
+// //           setADHDType(null);
+// //           setModelConfidence(null);
+// //           setModelInsights(null);
+// //         }
+        
+// //         // Generate fake historical data for demonstration (if needed)
+// //         generateHistoricalData();
+// //       });
+// //   }
+// // }, [gameData]);
+
+
+// //   const generateHistoricalData = () => {
+// //     // Mock historical data for the visualization
+// //     const fakeHistory = [];
+// //     const today = new Date();
+// //     for (let i = 6; i >= 0; i--) {
+// //       const date = new Date();
+// //       date.setDate(today.getDate() - i);
+// //       fakeHistory.push({
+// //         date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+// //         attentionScore: Math.floor(Math.random() * 40) + 30,
+// //         impulsivityScore: Math.floor(Math.random() * 40) + 30,
+// //         score: Math.floor(Math.random() * 150) + 150
+// //       });
+// //     }
+// //     // Add current data point
+// //     fakeHistory.push({
+// //       date: 'Today',
+// //       attentionScore: analysisResults.inattention.score,
+// //       impulsivityScore: analysisResults.impulsivity.score,
+// //       score: gameData.score
+// //     });
+// //     setHistoricalData(fakeHistory);
+// //   };
+
+// //   // Analyze game data to calculate metrics
 // //   const analyzeGameData = (data) => {
+// //     // 1. Inattention Analysis
 // //     const inattentionScore = calculateInattentionScore(data);
 // //     const inattentionLevel = getScoreLevel(inattentionScore);
 // //     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
 
+// //     // 2. Impulsivity Analysis
 // //     const impulsivityScore = calculateImpulsivityScore(data);
 // //     const impulsivityLevel = getScoreLevel(impulsivityScore);
 // //     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
 
+// //     // 3. Combined Analysis
 // //     const combinedScore = (inattentionScore + impulsivityScore) / 2;
 // //     const combinedLevel = getScoreLevel(combinedScore);
 // //     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
+
+// //     // Enhanced Card UI with more comprehensive details from the ML model
 
 // //     return {
 // //       inattention: {
@@ -2013,33 +2687,53 @@
 // //     };
 // //   };
 
+// //   // Calculate inattention score from 0-100 (higher = more inattentive)
 // //   const calculateInattentionScore = (data) => {
+// //     // Factors indicating inattention:
+// //     // 1. Missed stars
 // //     const missedStarsFactor = Math.min(data.missedStars * 5, 40);
+    
+// //     // 2. Long reaction times
 // //     const avgReactionTime = data.averageReactionTime;
 // //     let reactionTimeFactor = 0;
 // //     if (avgReactionTime > 1000) reactionTimeFactor = 30;
 // //     else if (avgReactionTime > 800) reactionTimeFactor = 20;
 // //     else if (avgReactionTime > 600) reactionTimeFactor = 10;
+    
+// //     // 3. Missed star streaks (consecutive misses)
 // //     const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
 // //     const streakFactor = maxMissedStreak * 10;
+    
+// //     // Calculate final score (cap at 100)
 // //     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
 // //   };
 
+// //   // Calculate impulsivity score from 0-100 (higher = more impulsive)
 // //   const calculateImpulsivityScore = (data) => {
+// //     // Factors indicating impulsivity:
+// //     // 1. Premature clicks
 // //     const prematureClicksRatio = data.prematureClicks / 
 // //       (data.reactionTimes.length + data.prematureClicks) * 100;
 // //     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
+    
+// //     // 2. Very fast reaction times (potentially impulsive responses)
 // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
 // //     const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
 // //     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
+    
+// //     // 3. Variability in reaction times (inconsistent behavior)
+// //     // Calculate standard deviation if we have it
 // //     let variabilityFactor = 0;
 // //     if (data.reactionTimeVariability) {
 // //       if (data.reactionTimeVariability > 300) variabilityFactor = 20;
 // //       else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
 // //     }
+    
+// //     // Calculate final score (cap at 100)
 // //     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
 // //   };
 
+// //   // Generate score level based on numerical score
 // //   const getScoreLevel = (score) => {
 // //     if (score < 20) return 'Low';
 // //     if (score < 40) return 'Below Average';
@@ -2048,43 +2742,57 @@
 // //     return 'High';
 // //   };
 
+// //   // Generate insights for inattention
 // //   const generateInattentionInsights = (data, score) => {
 // //     const insights = [];
+    
 // //     if (data.missedStars > 5) {
 // //       insights.push("Missed several stars, suggesting potential attention lapses.");
 // //     }
+    
 // //     if (data.averageReactionTime > 1000) {
 // //       insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
 // //     }
+    
 // //     if (Math.max(...data.missedStarStreaks, 0) >= 2) {
 // //       insights.push("Consecutive missed stars suggest periods of significant inattention.");
 // //     }
+    
 // //     if (score < 30) {
 // //       insights.push("Overall attention levels appear strong.");
 // //     }
+    
 // //     return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
 // //   };
 
+// //   // Generate insights for impulsivity
 // //   const generateImpulsivityInsights = (data, score) => {
 // //     const insights = [];
+    
 // //     if (data.prematureClicks > data.reactionTimes.length * 0.3) {
 // //       insights.push("High number of premature clicks suggests impulsive responding.");
 // //     }
+    
 // //     const fastResponses = data.reactionTimes.filter(time => time < 400).length;
 // //     if (fastResponses > data.reactionTimes.length * 0.2) {
 // //       insights.push("Many unusually fast responses may indicate impulsive decision making.");
 // //     }
+    
 // //     if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
 // //       insights.push("High variability in response times suggests inconsistent attention control.");
 // //     }
+    
 // //     if (score < 30) {
 // //       insights.push("Shows good impulse control overall.");
 // //     }
+    
 // //     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
 // //   };
 
+// //   // Generate combined insights
 // //   const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
 // //     const insights = [];
+    
 // //     if (inattentionScore > 60 && impulsivityScore > 60) {
 // //       insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
 // //     } else if (inattentionScore > 60) {
@@ -2092,347 +2800,472 @@
 // //     } else if (impulsivityScore > 60) {
 // //       insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
 // //     }
+    
 // //     if (data.score > 200) {
 // //       insights.push("Despite challenges, achieved a good game score, showing persistence.");
 // //     }
+    
 // //     if (data.correctStreak > 15) {
 // //       insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
 // //     }
+    
 // //     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
 // //   };
 
+// //   // Get color based on level
 // //   const getLevelColor = (level) => {
 // //     switch (level) {
-// //       case 'Low': return 'text-emerald-500';
+// //       case 'Low': return 'text-green-500';
 // //       case 'Below Average': return 'text-blue-500';
-// //       case 'Average': return 'text-amber-500';
+// //       case 'Average': return 'text-yellow-500';
 // //       case 'Above Average': return 'text-orange-500';
 // //       case 'High': return 'text-red-500';
 // //       default: return 'text-gray-500';
 // //     }
 // //   };
 
-// //   const getLevelBgColor = (level) => {
-// //     switch (level) {
-// //       case 'Low': return 'bg-emerald-50 border-emerald-200';
-// //       case 'Below Average': return 'bg-blue-50 border-blue-200';
-// //       case 'Average': return 'bg-amber-50 border-amber-200';
-// //       case 'Above Average': return 'bg-orange-50 border-orange-200';
-// //       case 'High': return 'bg-red-50 border-red-200';
-// //       default: return 'bg-gray-50 border-gray-200';
-// //     }
-// //   };
-
+// //   // Get progress bar color based on score
 // //   const getProgressColor = (score) => {
-// //     if (score < 30) return 'bg-gradient-to-r from-emerald-400 to-emerald-500';
-// //     if (score < 50) return 'bg-gradient-to-r from-blue-400 to-blue-500';
-// //     if (score < 70) return 'bg-gradient-to-r from-amber-400 to-amber-500';
-// //     if (score < 85) return 'bg-gradient-to-r from-orange-400 to-orange-500';
-// //     return 'bg-gradient-to-r from-red-400 to-red-500';
+// //     if (score < 30) return 'bg-green-500';
+// //     if (score < 50) return 'bg-blue-500';
+// //     if (score < 70) return 'bg-yellow-500';
+// //     if (score < 85) return 'bg-orange-500';
+// //     return 'bg-red-500';
 // //   };
 
-// //   const getReactionTimeData = () => {
-// //     if (!gameData?.reactionTimes || gameData.reactionTimes.length === 0) return [];
-// //     return gameData.reactionTimes.map((time, index) => ({
-// //       name: `Star ${index + 1}`,
-// //       time: time
-// //     }));
+// //   // Get the color for the trending indicator
+// //   const getTrendColor = (current, previous) => {
+// //     if (current < previous) return 'text-green-500';
+// //     if (current > previous) return 'text-red-500';
+// //     return 'text-gray-500';
 // //   };
 
-// //   const renderRadialGauge = (score, label, color) => {
-// //     const rotation = (score / 100) * 180;
-// //     return (
-// //       <div className="relative h-32 flex flex-col items-center justify-center mb-2">
-// //         <div className="w-full flex justify-center">
-// //           <div className="relative h-16 w-32">
-// //             <div className="absolute h-16 w-32 rounded-t-full overflow-hidden bg-gray-200"></div>
-// //             <div 
-// //               className={`absolute h-16 w-32 rounded-t-full overflow-hidden ${color}`} 
-// //               style={{ 
-// //                 clipPath: `polygon(50% 100%, 0 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%)`,
-// //                 transform: `rotate(${rotation}deg)`,
-// //                 transformOrigin: 'bottom center'
-// //               }}>
-// //             </div>
-// //             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-gray-400 rounded-full"></div>
-// //             <div 
-// //               className="absolute bottom-0 left-1/2 h-16 w-1 bg-gray-800 rounded-t-full"
-// //               style={{ 
-// //                 transform: `translateX(-50%) rotate(${rotation}deg)`,
-// //                 transformOrigin: 'bottom center'  
-// //               }}
-// //             ></div>
-// //           </div>
-// //         </div>
-// //         <div className="mt-2 text-center">
-// //           <div className="text-xl font-bold">{score.toFixed(1)}</div>
-// //           <div className="text-sm text-gray-600">{label}</div>
-// //         </div>
-// //       </div>
-// //     );
+// //   // Generate reaction time distribution data for chart
+// //   const getReactionTimeDistribution = () => {
+// //     if (!gameData || !gameData.reactionTimes || gameData.reactionTimes.length === 0) {
+// //       return [];
+// //     }
+
+// //     // Create bins for reaction times
+// //     const bins = [
+// //       { name: '<400ms', count: 0 }, 
+// //       { name: '400-600ms', count: 0 },
+// //       { name: '600-800ms', count: 0 },
+// //       { name: '800-1000ms', count: 0 },
+// //       { name: '>1000ms', count: 0 }
+// //     ];
+
+// //     gameData.reactionTimes.forEach(time => {
+// //       if (time < 400) bins[0].count++;
+// //       else if (time < 600) bins[1].count++;
+// //       else if (time < 800) bins[2].count++;
+// //       else if (time < 1000) bins[3].count++;
+// //       else bins[4].count++;
+// //     });
+
+// //     return bins;
 // //   };
 
-// //   const InsightTooltip = ({ insight, visible, onClose }) => {
-// //     if (!visible) return null;
-// //     return (
-// //       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={onClose}>
-// //         <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg" onClick={e => e.stopPropagation()}>
-// //           <h3 className="text-xl font-bold mb-4">Understanding This Insight</h3>
-// //           <p className="mb-4">{insight}</p>
-// //           <div className="mb-4">
-// //             <h4 className="font-semibold mb-2">What This Means:</h4>
-// //             <p>This pattern may indicate specific cognitive processing tendencies related to attention and response control.</p>
-// //           </div>
-// //           <div className="mb-4">
-// //             <h4 className="font-semibold mb-2">Potential Actions:</h4>
-// //             <ul className="list-disc pl-5">
-// //               <li>Consider targeted exercises that strengthen this cognitive domain</li>
-// //               <li>Track this metric over time to see improvements</li>
-// //               <li>Discuss this pattern with a cognitive specialist if it persists</li>
-// //             </ul>
-// //           </div>
-// //           <button 
-// //             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-// //             onClick={onClose}
-// //           >
-// //             Close
-// //           </button>
-// //         </div>
-// //       </div>
-// //     );
+// //   // Prepare radar chart data
+// //   const getRadarData = () => {
+// //     return [
+// //       {
+// //         subject: 'Attention',
+// //         score: 100 - analysisResults.inattention.score,
+// //         fullMark: 100
+// //       },
+// //       {
+// //         subject: 'Response Control',
+// //         score: 100 - analysisResults.impulsivity.score,
+// //         fullMark: 100
+// //       },
+// //       {
+// //         subject: 'Reaction Time',
+// //         score: Math.max(0, 100 - (gameData.averageReactionTime / 10)),
+// //         fullMark: 100
+// //       },
+// //       {
+// //         subject: 'Consistency',
+// //         score: Math.max(0, 100 - (gameData.reactionTimeVariability / 4)),
+// //         fullMark: 100
+// //       },
+// //       {
+// //         subject: 'Streak',
+// //         score: Math.min(100, gameData.correctStreak * 5),
+// //         fullMark: 100
+// //       }
+// //     ];
 // //   };
 
-// //   const trendData = [
-// //     { date: 'Week 1', attention: 75, impulsivity: 62 },
-// //     { date: 'Week 2', attention: 70, impulsivity: 58 },
-// //     { date: 'Week 3', attention: 65, impulsivity: 55 },
-// //     { date: 'Week 4', attention: 60, impulsivity: 50 },
-// //     { date: 'Week 5', attention: 55, impulsivity: 48 },
-// //     { date: 'Current', attention: analysisResults.inattention.score, impulsivity: analysisResults.impulsivity.score },
-// //   ];
+// //   // Get metric descriptions for tooltips
+// //   const getMetricInfo = (metric) => {
+// //     const info = {
+// //       attention: "Measures ability to sustain focus and respond to targets. Lower scores indicate better attention control.",
+// //       impulsivity: "Measures ability to wait for appropriate cues. Lower scores indicate better impulse control.",
+// //       reactionTime: "Average time taken to respond to targets. Lower is faster.",
+// //       variability: "Consistency of response times. Lower values indicate more consistent responses.",
+// //       missedStars: "Number of targets not clicked when they should have been.",
+// //       prematureClicks: "Number of clicks made when no target was present.",
+// //       correctStreak: "Longest sequence of correctly captured targets."
+// //     };
+// //     return info[metric] || "No additional information available.";
+// //   };
+
+  
 
 // //   if (!gameData) {
-// //     return <div className="p-4">No game data available</div>;
+// //     return (
+// //       <div className="p-6 bg-gray-50 rounded-lg flex justify-center items-center h-64">
+// //         <div className="text-center">
+// //           <AlertCircle className="mx-auto text-gray-400 mb-4" size={48} />
+// //           <h2 className="text-xl font-semibold text-gray-600">No Game Data Available</h2>
+// //           <p className="text-gray-500 mt-2">Complete a game session to view your analytics</p>
+// //         </div>
+// //       </div>
+// //     );
 // //   }
 
 // //   return (
 // //     <div className="container mx-auto p-4">
-// //       <div className="flex justify-between items-center mb-6">
-// //         <h1 className="text-2xl font-bold">Game Performance Analytics</h1>
+// //       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 relative overflow-hidden">
+// //         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -mt-12 -mr-12 opacity-50"></div>
+// //         <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-200 rounded-full -mb-8 -ml-8 opacity-50"></div>
+// //         <h1 className="text-3xl font-bold mb-2 text-gray-800 relative z-10">Game Performance Analytics</h1>
+// //         <p className="text-gray-600 relative z-10">Detailed analysis of your cognitive performance patterns</p>
 // //         <button 
-// //           onClick={() => setShowTrends(!showTrends)}
-// //           className="flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-all"
+// //           onClick={() => setShowTips(!showTips)} 
+// //           className="absolute top-6 right-6 bg-white p-2 rounded-full shadow-md hover:bg-blue-50 transition-colors z-10"
 // //         >
-// //           <TrendingUp className="mr-2" size={18} />
-// //           {showTrends ? "Hide Trends" : "Show Trends"}
+// //           <Info size={20} className="text-blue-500" />
 // //         </button>
+        
+// //         {showTips && (
+// //           <div className="absolute top-16 right-6 bg-white p-4 rounded-lg shadow-lg z-20 w-64 text-sm">
+// //             <h3 className="font-bold mb-2">Understanding Scores</h3>
+// //             <p className="mb-3">Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
+// //             <p className="mb-2">Score ranges:</p>
+// //             <div className="space-y-1">
+// //               <div className="flex items-center"><div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div> 0-30: Low (Good)</div>
+// //               <div className="flex items-center"><div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div> 30-50: Below Average</div>
+// //               <div className="flex items-center"><div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div> 50-70: Average</div>
+// //               <div className="flex items-center"><div className="w-3 h-3 bg-orange-500 rounded-full mr-2"></div> 70-85: Above Average</div>
+// //               <div className="flex items-center"><div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div> 85-100: High (Challenge)</div>
+// //             </div>
+// //             <button 
+// //               onClick={() => setShowTips(false)}
+// //               className="mt-3 text-blue-500 hover:text-blue-700 text-xs font-semibold"
+// //             >
+// //               Close
+// //             </button>
+// //           </div>
+          
+// //         )}
+        
+// //       </div>
+
+      
+
+      
+// //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+// //         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+// //           <CardHeader className="pb-2 bg-gradient-to-r from-blue-50 to-blue-100">
+// //             <CardTitle className="flex items-center">
+// //               <Brain className="mr-2 text-blue-600" size={20} />
+// //               <span>Attention Score</span>
+// //               <button 
+// //                 className="ml-auto"
+// //                 onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
+// //               >
+// //                 <Info size={16} className="text-blue-400 hover:text-blue-600" />
+// //               </button>
+// //             </CardTitle>
+// //             {showMetricInfo === 'attention' && (
+// //               <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
+// //                 {getMetricInfo('attention')}
+// //               </div>
+// //             )}
+// //           </CardHeader>
+// //           <CardContent className="pt-4">
+// //             <div className="flex justify-between items-center mb-2">
+// //               <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
+// //               <div className="flex items-center">
+// //                 <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+// //                   {analysisResults.inattention.level}
+// //                 </span>
+// //                 <TrendingUp 
+// //                   size={16} 
+// //                   className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
+// //                 />
+// //               </div>
+// //             </div>
+// //             <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
+// //           </CardContent>
+// //         </Card>
+        
+// //         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+// //           <CardHeader className="pb-2 bg-gradient-to-r from-yellow-50 to-yellow-100">
+// //             <CardTitle className="flex items-center">
+// //               <Zap className="mr-2 text-yellow-600" size={20} />
+// //               <span>Impulsivity Score</span>
+// //               <button 
+// //                 className="ml-auto"
+// //                 onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
+// //               >
+// //                 <Info size={16} className="text-yellow-400 hover:text-yellow-600" />
+// //               </button>
+// //             </CardTitle>
+// //             {showMetricInfo === 'impulsivity' && (
+// //               <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
+// //                 {getMetricInfo('impulsivity')}
+// //               </div>
+// //             )}
+// //           </CardHeader>
+// //           <CardContent className="pt-4">
+// //             <div className="flex justify-between items-center mb-2">
+// //               <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
+// //               <div className="flex items-center">
+// //                 <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+// //                   {analysisResults.impulsivity.level}
+// //                 </span>
+// //                 <TrendingUp 
+// //                   size={16} 
+// //                   className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
+// //                 />
+// //               </div>
+// //             </div>
+// //             <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
+// //           </CardContent>
+// //         </Card>
+        
+// //         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
+// //           <CardHeader className="pb-2 bg-gradient-to-r from-purple-50 to-purple-100">
+// //             <CardTitle className="flex items-center">
+// //               <Activity className="mr-2 text-purple-600" size={20} />
+// //               <span>Combined Score</span>
+// //             </CardTitle>
+// //           </CardHeader>
+// //           <CardContent className="pt-4">
+// //             <div className="flex justify-between items-center mb-2">
+// //               <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
+// //               <div className="flex items-center">
+// //                 <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+// //                   {analysisResults.combined.level}
+// //                 </span>
+// //                 <TrendingUp 
+// //                   size={16} 
+// //                   className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
+// //                 />
+// //               </div>
+// //             </div>
+// //             <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
+// //           </CardContent>
+// //         </Card>
 // //       </div>
       
-// //       {showTrends && (
-// //         <Card className="mb-8 overflow-hidden">
+// //       <div className="mb-8">
+// //         <Card className="overflow-hidden shadow-md">
 // //           <CardHeader className="pb-2">
-// //             <CardTitle className="flex items-center">
-// //               <TrendingUp className="mr-2" size={20} />
-// //               <span>Performance Trends Over Time</span>
-// //             </CardTitle>
-// //             <CardDescription>
-// //               Track your progress across multiple gameplay sessions
-// //             </CardDescription>
+// //             <CardTitle>Performance Trend</CardTitle>
+// //             <CardDescription>Your cognitive metrics over time</CardDescription>
 // //           </CardHeader>
-// //           <CardContent>
-// //             <div className="h-64 w-full">
+// //           <CardContent className="pt-4">
+// //             <div className="h-64">
 // //               <ResponsiveContainer width="100%" height="100%">
-// //                 <LineChart
-// //                   data={trendData}
-// //                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-// //                 >
-// //                   <CartesianGrid strokeDasharray="3 3" />
+// //                 <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+// //                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
 // //                   <XAxis dataKey="date" />
-// //                   <YAxis />
+// //                   <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+// //                   <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
 // //                   <Tooltip />
-// //                   <Line 
-// //                     type="monotone" 
-// //                     name="Attention Score" 
-// //                     dataKey="attention" 
-// //                     stroke="#ef4444" 
-// //                     activeDot={{ r: 8 }}
-// //                     strokeWidth={2}
-// //                   />
-// //                   <Line 
-// //                     type="monotone" 
-// //                     name="Impulsivity Score" 
-// //                     dataKey="impulsivity" 
-// //                     stroke="#3b82f6" 
-// //                     strokeWidth={2}
-// //                   />
+// //                   <Legend />
+// //                   <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
+// //                   <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
+// //                   <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
 // //                 </LineChart>
 // //               </ResponsiveContainer>
 // //             </div>
 // //           </CardContent>
 // //         </Card>
-// //       )}
+// //       </div>
       
-// //       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-// //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.inattention.level)}`}>
+// //       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+// //         <Card className="overflow-hidden shadow-md">
 // //           <CardHeader className="pb-2">
-// //             <CardTitle className="flex items-center">
-// //               <Brain className="mr-2" size={20} />
-// //               <span>Attention Score</span>
-// //             </CardTitle>
+// //             <CardTitle>Reaction Time Distribution</CardTitle>
+// //             <CardDescription>Frequency of response times by category</CardDescription>
 // //           </CardHeader>
-// //           <CardContent>
-// //             {renderRadialGauge(
-// //               analysisResults.inattention.score, 
-// //               analysisResults.inattention.level,
-// //               getProgressColor(analysisResults.inattention.score)
-// //             )}
+// //           <CardContent className="pt-4">
+// //             <div className="h-64">
+// //               <ResponsiveContainer width="100%" height="100%">
+// //                 <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+// //                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+// //                   <XAxis dataKey="name" />
+// //                   <YAxis />
+// //                   <Tooltip />
+// //                   <Bar dataKey="count" name="Responses" fill="#8884d8" />
+// //                 </BarChart>
+// //               </ResponsiveContainer>
+// //             </div>
 // //           </CardContent>
 // //         </Card>
         
-// //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.impulsivity.level)}`}>
+// //         <Card className="overflow-hidden shadow-md">
 // //           <CardHeader className="pb-2">
-// //             <CardTitle className="flex items-center">
-// //               <Zap className="mr-2" size={20} />
-// //               <span>Impulsivity Score</span>
-// //             </CardTitle>
+// //             <CardTitle>Cognitive Profile</CardTitle>
+// //             <CardDescription>Performance across different cognitive domains</CardDescription>
 // //           </CardHeader>
-// //           <CardContent>
-// //             {renderRadialGauge(
-// //               analysisResults.impulsivity.score, 
-// //               analysisResults.impulsivity.level,
-// //               getProgressColor(analysisResults.impulsivity.score)
-// //             )}
-// //           </CardContent>
-// //         </Card>
-        
-// //         <Card className={`transition-all duration-300 hover:shadow-lg ${getLevelBgColor(analysisResults.combined.level)}`}>
-// //           <CardHeader className="pb-2">
-// //             <CardTitle className="flex items-center">
-// //               <Activity className="mr-2" size={20} />
-// //               <span>Combined Score</span>
-// //             </CardTitle>
-// //           </CardHeader>
-// //           <CardContent>
-// //             {renderRadialGauge(
-// //               analysisResults.combined.score, 
-// //               analysisResults.combined.level,
-// //               getProgressColor(analysisResults.combined.score)
-// //             )}
+// //           <CardContent className="pt-4">
+// //             <div className="h-64">
+// //               <ResponsiveContainer width="100%" height="100%">
+// //                 <RadarChart outerRadius={90} data={getRadarData()}>
+// //                   <PolarGrid />
+// //                   <PolarAngleAxis dataKey="subject" />
+// //                   <PolarRadiusAxis angle={30} domain={[0, 100]} />
+// //                   <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+// //                   <Legend />
+// //                 </RadarChart>
+// //               </ResponsiveContainer>
+// //             </div>
 // //           </CardContent>
 // //         </Card>
 // //       </div>
-      
-// //       {/* {gameData.correctStreak > 10 && (
-// //         <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
-// //           <CardContent className="p-4">
-// //             <div className="flex items-center">
-// //               <div className="mr-4 bg-amber-400 rounded-full p-3">
-// //                 <Award size={24} className="text-white" />
-// //               </div>
-// //               <div>
-// //                 <h3 className="font-bold text-amber-800">Achievement Unlocked!</h3>
-// //                 <p className="text-amber-700">You reached a streak of {gameData.correctStreak} correct responses!</p>
-// //               </div>
-// //               <h3 className="font-bold flex items-center mb-2">
-// //                       <Brain className="mr-2" size={18} />
-// //                       Attention Strengthening Activities
-// //                     </h3>
-// //                     <ul className="list-disc pl-5 space-y-1">
-// //                       <li>Practice mindfulness exercises for 5-10 minutes daily</li>
-// //                       <li>Try games that require sustained attention, like puzzles or memory games</li>
-// //                       <li>Break tasks into smaller, manageable chunks with clear completion criteria</li>
-// //                       <li>Create a distraction-free environment during focus-intensive activities</li>
-// //                     </ul>
+// //       <Card className="overflow-hidden shadow hover:shadow-lg transition-all duration-300 border-2 border-green-200">
+// //       <CardHeader className="pb-2 bg-gradient-to-r from-green-100 to-blue-100">
+// //         <CardTitle className="flex items-center">
+// //           <Award className="mr-2 text-green-600" size={20} />
+// //           <span>ADHD Brain Explorer 🧠</span>
+// //         </CardTitle>
+// //       </CardHeader>
+// //       <CardContent className="pt-4">
+// //         {adhdType ? (
+// //           <>
+// //             <div className="text-center mb-4 p-2 bg-green-50 rounded-lg">
+// //               <span className="text-2xl mr-2">
+// //                 {typeEmojis[adhdType] || defaultEmoji}
+// //               </span>
+// //               <span className="text-xl font-bold">
+// //                 {adhdType}
+// //               </span>
+// //             </div>
+            
+// //             <div className="bg-blue-50 p-3 rounded-lg mb-4">
+// //               <div className="flex justify-between items-center">
+// //                 <span className="text-sm">Brain-o-meter: 🔬</span>
+// //                 <div className="flex items-center">
+// //                   <div className="w-32 bg-gray-200 rounded-full h-4 mr-2">
+// //                     <div 
+// //                       className="bg-blue-500 h-4 rounded-full transition-all duration-500" 
+// //                       style={{ width: `${modelConfidence * 100}%` }}
+// //                     ></div>
 // //                   </div>
-// //                 )} */}
+// //                   <span className="text-sm font-bold">{(modelConfidence * 100).toFixed(1)}%</span>
+// //                 </div>
+// //               </div>
+// //             </div>
+            
+// //             {/* Assessment levels with interactive elements */}
+// //             <div className="mt-3 border-t border-dashed border-purple-200 pt-3">
+// //               <h4 className="font-medium text-sm mb-3 flex items-center">
+// //                 <span className="mr-2">🔎</span> 
+// //                 Your Brain Powers:
+// //               </h4>
+              
+// //               <div className="space-y-3">
+// //                 <div className="bg-purple-50 p-2 rounded-lg">
+// //                   <div className="flex justify-between items-center mb-1">
+// //                     <span className="text-sm">Focus Power: 👁️</span>
+// //                     <span className="text-sm font-medium flex items-center">
+// //                       {getLevelEmoji(scoreLevels?.inattention)}
+// //                       <span className="ml-1">{scoreLevels?.inattention || 'N/A'}</span>
+// //                     </span>
+// //                   </div>
+// //                   <div className="w-full bg-gray-200 rounded-full h-3">
+// //                     <div 
+// //                       className={`${getProgressColors(scoreLevels?.inattention)} ${getProgressWidth(scoreLevels?.inattention)} h-3 rounded-full transition-all duration-500`}
+// //                     ></div>
+// //                   </div>
+// //                 </div>
+                
+// //                 <div className="bg-yellow-50 p-2 rounded-lg">
+// //                   <div className="flex justify-between items-center mb-1">
+// //                     <span className="text-sm">Action Power: 🚀</span>
+// //                     <span className="text-sm font-medium flex items-center">
+// //                       {getLevelEmoji(scoreLevels?.impulsivity)}
+// //                       <span className="ml-1">{scoreLevels?.impulsivity || 'N/A'}</span>
+// //                     </span>
+// //                   </div>
+// //                   <div className="w-full bg-gray-200 rounded-full h-3">
+// //                     <div 
+// //                       className={`${getProgressColors(scoreLevels?.impulsivity)} ${getProgressWidth(scoreLevels?.impulsivity)} h-3 rounded-full transition-all duration-500`}
+// //                     ></div>
+// //                   </div>
+// //                 </div>
+// //               </div>
+// //             </div>
+            
+// //             {/* AI Insights with emojis */}
+// //             {modelInsights && (
+// //               <div className="mt-4 border-t border-dashed border-blue-200 pt-3">
+// //                 <h4 className="font-medium text-sm mb-2 flex items-center">
+// //                   <span className="mr-2">✨</span>
+// //                   Brain Discoveries:
+// //                 </h4>
+// //                 <div className="text-sm text-gray-700 bg-blue-50 p-3 rounded-lg">
+// //                   {modelInsights.combined && modelInsights.combined.length > 0 && (
+// //                     <p className="mb-2 flex">
+// //                       <span className="mr-2">🧠</span>
+// //                       <span>{modelInsights.combined[0]}</span>
+// //                     </p>
+// //                   )}
+// //                   {modelInsights.inattention && modelInsights.inattention.length > 0 && (
+// //                     <p className="mb-2 flex">
+// //                       <span className="mr-2">👁️</span>
+// //                       <span>{modelInsights.inattention[0]}</span>
+// //                     </p>
+// //                   )}
+// //                   {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
+// //                     <p className="flex">
+// //                       <span className="mr-2">🚀</span>
+// //                       <span>{modelInsights.impulsivity[0]}</span>
+// //                     </p>
+// //                   )}
+// //                 </div>
+// //               </div>
+// //             )}
+            
+// //             <div className="mt-4 p-2 bg-purple-50 rounded-lg text-xs text-center">
+// //               <p>✨ This is just a game-based brain map, not a doctor's diagnosis ✨</p>
+// //             </div>
+// //           </>
+// //         ) : (
+// //           <div className="text-center p-6">
+// //             <div className="text-4xl mb-3">🔮</div>
+// //             <p className="text-gray-500">Your brain map is still loading...</p>
+// //             <p className="text-gray-400 text-xs mt-2">Play more games to help us understand your superpowers!</p>
+// //           </div>
+// //         )}
+// //       </CardContent>
+// //     </Card>
 
-// // {gameData.correctStreak > 10 && (
-// //   <Card className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 border-amber-300">
-// //     <CardContent className="p-4">
-// //       <div className="flex items-center">
-// //         <div className="mr-4 bg-amber-400 rounded-full p-3">
-// //           <Award size={24} className="text-white" />
-// //         </div>
-// //         <div>
-// //           <h3 className="font-bold flex items-center mb-2">
-// //             <Brain className="mr-2" size={18} />
-// //             Attention Strengthening Activities
-// //           </h3>
-// //           <ul className="list-disc pl-5 space-y-1">
-// //             <li>Practice mindfulness exercises for 5-10 minutes daily</li>
-// //             <li>Try games that require sustained attention, like puzzles or memory games</li>
-// //             <li>Break tasks into smaller, manageable chunks with clear completion criteria</li>
-// //             <li>Create a distraction-free environment during focus-intensive activities</li>
-// //           </ul>
-// //         </div>
+      
+      
 // //       </div>
-// //     </CardContent>
-// //   </Card>
-// // )}
-                
-// //                 {analysisResults.impulsivity.score > 60 && (
-// //                   <div className="p-4 bg-yellow-50 rounded-lg">
-// //                     <h3 className="font-bold flex items-center mb-2">
-// //                       <Zap className="mr-2" size={18} />
-// //                       Impulse Control Activities
-// //                     </h3>
-// //                     <ul className="list-disc pl-5 space-y-1">
-// //                       <li>Practice the "stop and think" technique before responding</li>
-// //                       <li>Try games that reward patience and planning</li>
-// //                       <li>Use timers to practice waiting before responding</li>
-// //                       <li>Practice deep breathing when feeling the urge to respond immediately</li>
-// //                     </ul>
-// //                   </div>
-// //                 )}
-                
-// //                 {analysisResults.combined.score > 60 && (
-// //                   <div className="p-4 bg-green-50 rounded-lg">
-// //                     <h3 className="font-bold flex items-center mb-2">
-// //                       <Activity className="mr-2" size={18} />
-// //                       General Cognitive Strengthening
-// //                     </h3>
-// //                     <ul className="list-disc pl-5 space-y-1">
-// //                       <li>Ensure consistent sleep schedule of 8-10 hours per night</li>
-// //                       <li>Regular physical activity helps improve focus and cognitive control</li>
-// //                       <li>Limit screen time, particularly before bedtime</li>
-// //                       <li>Consider trying different games that target both attention and response control</li>
-// //                     </ul>
-// //                   </div>
-// //                 )}
-                
-// //                 {analysisResults.combined.score <= 60 && (
-// //                   <div className="p-4 bg-indigo-50 rounded-lg">
-// //                     <h3 className="font-bold flex items-center mb-2">
-// //                       <Target className="mr-2" size={18} />
-// //                       Maintenance Recommendations
-// //                     </h3>
-// //                     <p>Your performance shows good cognitive control patterns. Continue with:</p>
-// //                     <ul className="list-disc pl-5 space-y-1 mt-2">
-// //                       <li>Regular cognitive games to maintain skills</li>
-// //                       <li>Consistent sleep and physical activity</li>
-// //                       <li>Try increasing game difficulty to provide appropriate challenge</li>
-// //                     </ul>
-// //                   </div>
-// //                 )}
-// //               </div>
-// //             </CardContent>
-// //           </Card>
-// //         </TabsContent>
-// //       </Tabs>
-// //     </div>
     
 // //   );
 // // };
 
 // // export default GameAnalytics;
-           
+    
 // import React, { useState, useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
 // import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 // import { Progress } from './ui/progress';
 // import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, ChevronDown, ChevronUp, Info, Award, TrendingUp } from 'lucide-react';
 // import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
 // import axios from 'axios';
+// import { useLocation } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // //import { Award } from 'lucide-react';
 
 // const API_ENDPOINT = 'http://localhost:5000/predict';
@@ -2455,10 +3288,15 @@
 //   const [adhdType, setADHDType] = useState(null);
 //   const [modelConfidence, setModelConfidence] = useState(null);
 //   const [modelInsights, setModelInsights] = useState(null);
+//   const location = useLocation();
+//   const { childId, gameId } = useParams();
 //   const [scoreLevels, setScoreLevels] = useState({
 //     inattention: '',
 //     impulsivity: ''
 //   });
+//   const navigate = useNavigate();
+
+
 
 //   // Add these missing variable definitions - moved from ADHDAssessmentCard
 //   // Emoji mapping for various elements
@@ -2508,7 +3346,30 @@
 //     }
 //   };
 
+//   // useEffect(() => {
+//   //   const fetchProfile = async () => {
+//   //     try {
+//   //       const { data } = await axios.get("http://localhost:8800/api/child/profile", {
+//   //         withCredentials: true,
+//   //       });
+//   //       setChildId(data._id); // Store the child ID in state
+//   //     } catch (error) {
+//   //       console.error("Error fetching profile:", error);
+        
+//   //     }
+//   //   };
+    
+//   //   fetchProfile();
+//   // }, [navigate]);
 
+//   const navigateToQuestionnaire = () => {
+//     if (childId) {
+//       navigate('/questionnaire-form', { state: { childId: childId } });
+//     } else {
+//       console.error('No childId available for questionnaire');
+//       // You could show an error message to the user here
+//     }
+//   };
 //   // Rest of your component code...
 //   // Enhanced function to fetch predictions from the ML model
 // const fetchPredictionFromModel = async (gameData) => {
@@ -2552,7 +3413,16 @@
 //   //   }
 //   // }, [gameData]);
 //   // Enhanced useEffect for your GameAnalytics component
+//     // useEffect(() => {
+//     //   const id = location.state?.childId;
+//     //   if (!id) {
+//     //     alert("Child ID is missing. Please log in again.");
+//     //   } else {
+//     //     setChildId(id);
+//     //   }
+//     // }, [location.state]);
 // useEffect(() => {
+
 //   if (gameData) {
 //     // Calculate derived metrics that the ML model expects
 //     const processedData = { ...gameData };
@@ -2570,6 +3440,7 @@
     
 //     // Try to get prediction from ML model
 //     fetchPredictionFromModel(processedData)
+    
 //       .then(prediction => {
 //         if (prediction && !prediction.error) {
 //           // Set ADHD type and confidence from the model response
@@ -2925,76 +3796,281 @@
 //     );
 //   }
 
+
+// // Inline CSS styles for the Progress component
+// const Progress = ({ value, className }) => {
 //   return (
-//     <div className="container mx-auto p-4">
-//       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 relative overflow-hidden">
-//         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -mt-12 -mr-12 opacity-50"></div>
-//         <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-200 rounded-full -mb-8 -ml-8 opacity-50"></div>
-//         <h1 className="text-3xl font-bold mb-2 text-gray-800 relative z-10">Game Performance Analytics</h1>
-//         <p className="text-gray-600 relative z-10">Detailed analysis of your cognitive performance patterns</p>
-//         <button 
-//           onClick={() => setShowTips(!showTips)} 
-//           className="absolute top-6 right-6 bg-white p-2 rounded-full shadow-md hover:bg-blue-50 transition-colors z-10"
-//         >
-//           <Info size={20} className="text-blue-500" />
-//         </button>
-        
-//         {showTips && (
-//           <div className="absolute top-16 right-6 bg-white p-4 rounded-lg shadow-lg z-20 w-64 text-sm">
-//             <h3 className="font-bold mb-2">Understanding Scores</h3>
-//             <p className="mb-3">Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
-//             <p className="mb-2">Score ranges:</p>
-//             <div className="space-y-1">
-//               <div className="flex items-center"><div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div> 0-30: Low (Good)</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div> 30-50: Below Average</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div> 50-70: Average</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-orange-500 rounded-full mr-2"></div> 70-85: Above Average</div>
-//               <div className="flex items-center"><div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div> 85-100: High (Challenge)</div>
-//             </div>
-//             <button 
-//               onClick={() => setShowTips(false)}
-//               className="mt-3 text-blue-500 hover:text-blue-700 text-xs font-semibold"
-//             >
-//               Close
-//             </button>
-//           </div>
-          
-//         )}
-        
+//     <div style={{width: '100%', backgroundColor: '#e5e7eb', borderRadius: '9999px', height: '8px'}}>
+//       <div 
+//         style={{
+//           width: `${value}%`, 
+//           height: '8px', 
+//           borderRadius: '9999px',
+//           transition: 'width 0.3s ease',
+//           ...className && {[className.split(':')[0]]: className.split(':')[1]}
+//         }}
+//       ></div>
+//     </div>
+//   );
+// };
+
+// // Inline CSS styles for Card components
+// const Card = ({ children, className }) => {
+//   return (
+//     <div style={{
+//       backgroundColor: '#ffffff',
+//       borderRadius: '0.5rem',
+//       overflow: 'hidden',
+//       boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+//       transition: 'box-shadow 0.3s ease',
+//       ...className && {border: className.includes('border-green-200') ? '2px solid #bbf7d0' : 'none'}
+//     }}>
+//       {children}
+//     </div>
+//   );
+// };
+
+// const CardHeader = ({ children, className }) => {
+//   return (
+//     <div style={{
+//       padding: '1rem',
+//       paddingBottom: '0.5rem',
+//       ...className && {
+//         backgroundImage: className.includes('from-blue-50 to-blue-100') ? 'linear-gradient(to right, #eff6ff, #dbeafe)' : 
+//                         className.includes('from-yellow-50 to-yellow-100') ? 'linear-gradient(to right, #fefce8, #fef9c3)' :
+//                         className.includes('from-purple-50 to-purple-100') ? 'linear-gradient(to right, #faf5ff, #f3e8ff)' :
+//                         className.includes('from-green-100 to-blue-100') ? 'linear-gradient(to right, #dcfce7, #dbeafe)' : 'none'
+//       }
+//     }}>
+//       {children}
+//     </div>
+//   );
+// };
+
+// const CardTitle = ({ children, className }) => {
+//   return (
+//     <div style={{
+//       fontSize: '1.25rem',
+//       fontWeight: '600',
+//       ...className && {display: 'flex', alignItems: 'center'}
+//     }}>
+//       {children}
+//     </div>
+//   );
+// };
+
+// const CardContent = ({ children, className }) => {
+//   return (
+//     <div style={{
+//       padding: '1rem',
+//       paddingTop: className && className.includes('pt-4') ? '1rem' : '1rem'
+//     }}>
+//       {children}
+//     </div>
+//   );
+// };
+
+// const CardDescription = ({ children }) => {
+//   return (
+//     <div style={{
+//       color: '#6b7280',
+//       fontSize: '0.875rem'
+//     }}>
+//       {children}
+//     </div>
+//   );
+// };
+
+// if (!analysisResults || !historicalData) {
+//   return (
+//     <div style={{
+//       padding: '1.5rem',
+//       backgroundColor: '#f9fafb',
+//       borderRadius: '0.5rem',
+//       display: 'flex',
+//       justifyContent: 'center',
+//       alignItems: 'center',
+//       height: '16rem'
+//     }}>
+//       <div style={{textAlign: 'center'}}>
+//         <AlertCircle style={{
+//           margin: '0 auto',
+//           color: '#9ca3af',
+//           marginBottom: '1rem'
+//         }} size={48} />
+//         <h2 style={{
+//           fontSize: '1.25rem',
+//           fontWeight: '600',
+//           color: '#4b5563'
+//         }}>No Game Data Available</h2>
+//         <p style={{
+//           color: '#6b7280',
+//           marginTop: '0.5rem'
+//         }}>Complete a game session to view your analytics</p>
 //       </div>
+//     </div>
+//   );
+// }
 
+// return (
+//   <div style={{maxWidth: '1200px', margin: '0 auto', padding: '1rem'}}>
+//     <div style={{
+//       background: 'linear-gradient(to right, #eff6ff, #eef2ff)',
+//       padding: '1.5rem',
+//       borderRadius: '0.75rem',
+//       marginBottom: '2rem',
+//       position: 'relative',
+//       overflow: 'hidden'
+//     }}>
+//       <div style={{
+//         position: 'absolute',
+//         top: '0',
+//         right: '0',
+//         width: '8rem',
+//         height: '8rem',
+//         backgroundColor: '#bfdbfe',
+//         borderRadius: '9999px',
+//         marginTop: '-3rem',
+//         marginRight: '-3rem',
+//         opacity: '0.5'
+//       }}></div>
+//       <div style={{
+//         position: 'absolute',
+//         bottom: '0',
+//         left: '0',
+//         width: '6rem',
+//         height: '6rem',
+//         backgroundColor: '#c7d2fe',
+//         borderRadius: '9999px',
+//         marginBottom: '-2rem',
+//         marginLeft: '-2rem',
+//         opacity: '0.5'
+//       }}></div>
+//       <h1 style={{
+//         fontSize: '1.875rem',
+//         fontWeight: '700',
+//         marginBottom: '0.5rem',
+//         color: '#1f2937',
+//         position: 'relative',
+//         zIndex: '10'
+//       }}>Game Performance Analytics</h1>
+//       <p style={{
+//         color: '#4b5563',
+//         position: 'relative',
+//         zIndex: '10'
+//       }}>Detailed analysis of your cognitive performance patterns</p>
+//       <button 
+//         onClick={() => setShowTips(!showTips)} 
+//         style={{
+//           position: 'absolute',
+//           top: '1.5rem',
+//           right: '1.5rem',
+//           backgroundColor: '#ffffff',
+//           padding: '0.5rem',
+//           borderRadius: '9999px',
+//           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+//           transition: 'background-color 0.3s',
+//           zIndex: '10'
+//         }}
+//       >
+//         <Info size={20} style={{color: '#3b82f6'}} />
+//       </button>
       
+//       {showTips && (
+//         <div style={{
+//           position: 'absolute',
+//           top: '4rem',
+//           right: '1.5rem',
+//           backgroundColor: '#ffffff',
+//           padding: '1rem',
+//           borderRadius: '0.5rem',
+//           boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+//           zIndex: '20',
+//           width: '16rem',
+//           fontSize: '0.875rem'
+//         }}>
+//           <h3 style={{fontWeight: '700', marginBottom: '0.5rem'}}>Understanding Scores</h3>
+//           <p style={{marginBottom: '0.75rem'}}>Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
+//           <p style={{marginBottom: '0.5rem'}}>Score ranges:</p>
+//           <div style={{marginTop: '0.25rem'}}>
+//             <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+//               <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#22c55e', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+//               0-30: Low (Good)
+//             </div>
+//             <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+//               <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#3b82f6', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+//               30-50: Below Average
+//             </div>
+//             <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+//               <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#eab308', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+//               50-70: Average
+//             </div>
+//             <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+//               <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#f97316', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+//               70-85: Above Average
+//             </div>
+//             <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+//               <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#ef4444', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
+//               85-100: High (Challenge)
+//             </div>
+//           </div>
+//           <button 
+//             onClick={() => setShowTips(false)}
+//             style={{
+//               marginTop: '0.75rem',
+//               color: '#3b82f6',
+//               fontSize: '0.75rem',
+//               fontWeight: '600'
+//             }}
+//           >
+//             Close
+//           </button>
+//         </div>
+//       )}
+//     </div>
 
-      
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-//           <CardHeader className="pb-2 bg-gradient-to-r from-blue-50 to-blue-100">
-//             <CardTitle className="flex items-center">
-//               <Brain className="mr-2 text-blue-600" size={20} />
+//     <div style={{
+//       display: 'grid',
+//       gridTemplateColumns: 'repeat(1, 1fr)',
+//       gap: '1rem',
+//       marginBottom: '2rem'
+//     }}>
+//       <div style={{display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1rem', marginBottom: '2rem'}}>
+//         {/* <Card>
+//           <CardHeader style={{backgroundImage: 'linear-gradient(to right, #eff6ff, #dbeafe)'}}>
+//             <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+//               <Brain style={{marginRight: '0.5rem', color: '#2563eb'}} size={20} />
 //               <span>Attention Score</span>
-//               <button 
-//                 className="ml-auto"
+//               <button
+//                 style={{marginLeft: 'auto'}}
 //                 onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
 //               >
-//                 <Info size={16} className="text-blue-400 hover:text-blue-600" />
+//                 <Info size={16} style={{color: '#60a5fa'}} />
 //               </button>
 //             </CardTitle>
 //             {showMetricInfo === 'attention' && (
-//               <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
+//               <div style={{
+//                 marginTop: '0.5rem',
+//                 fontSize: '0.875rem',
+//                 color: '#4b5563',
+//                 backgroundColor: '#eff6ff',
+//                 padding: '0.5rem',
+//                 borderRadius: '0.25rem'
+//               }}>
 //                 {getMetricInfo('attention')}
 //               </div>
 //             )}
 //           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="flex justify-between items-center mb-2">
-//               <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
-//               <div className="flex items-center">
-//                 <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+//           <CardContent style={{paddingTop: '1rem'}}>
+//             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
+//               <span style={{fontWeight: '600'}}>{analysisResults.inattention.score.toFixed(1)}</span>
+//               <div style={{display: 'flex', alignItems: 'center'}}>
+//                 <span style={{fontWeight: '700', [getLevelColor(analysisResults.inattention.level).split(':')[0]]: getLevelColor(analysisResults.inattention.level).split(':')[1]}}>
 //                   {analysisResults.inattention.level}
 //                 </span>
 //                 <TrendingUp 
 //                   size={16} 
-//                   className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
+//                   style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.inattention.score, 50).split(':')[0]]: getTrendColor(analysisResults.inattention.score, 50).split(':')[1]}}
 //                 />
 //               </div>
 //             </div>
@@ -3002,34 +4078,41 @@
 //           </CardContent>
 //         </Card>
         
-//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-//           <CardHeader className="pb-2 bg-gradient-to-r from-yellow-50 to-yellow-100">
-//             <CardTitle className="flex items-center">
-//               <Zap className="mr-2 text-yellow-600" size={20} />
+//         <Card>
+//           <CardHeader style={{backgroundImage: 'linear-gradient(to right, #fefce8, #fef9c3)'}}>
+//             <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+//               <Zap style={{marginRight: '0.5rem', color: '#ca8a04'}} size={20} />
 //               <span>Impulsivity Score</span>
 //               <button 
-//                 className="ml-auto"
+//                 style={{marginLeft: 'auto'}}
 //                 onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
 //               >
-//                 <Info size={16} className="text-yellow-400 hover:text-yellow-600" />
+//                 <Info size={16} style={{color: '#facc15'}} />
 //               </button>
 //             </CardTitle>
 //             {showMetricInfo === 'impulsivity' && (
-//               <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
+//               <div style={{
+//                 marginTop: '0.5rem',
+//                 fontSize: '0.875rem',
+//                 color: '#4b5563',
+//                 backgroundColor: '#fefce8',
+//                 padding: '0.5rem',
+//                 borderRadius: '0.25rem'
+//               }}>
 //                 {getMetricInfo('impulsivity')}
 //               </div>
 //             )}
 //           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="flex justify-between items-center mb-2">
-//               <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
-//               <div className="flex items-center">
-//                 <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+//           <CardContent style={{paddingTop: '1rem'}}>
+//             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
+//               <span style={{fontWeight: '600'}}>{analysisResults.impulsivity.score.toFixed(1)}</span>
+//               <div style={{display: 'flex', alignItems: 'center'}}>
+//                 <span style={{fontWeight: '700', [getLevelColor(analysisResults.impulsivity.level).split(':')[0]]: getLevelColor(analysisResults.impulsivity.level).split(':')[1]}}>
 //                   {analysisResults.impulsivity.level}
 //                 </span>
 //                 <TrendingUp 
 //                   size={16} 
-//                   className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
+//                   style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.impulsivity.score, 45).split(':')[0]]: getTrendColor(analysisResults.impulsivity.score, 45).split(':')[1]}}
 //                 />
 //               </div>
 //             </div>
@@ -3037,280 +4120,1395 @@
 //           </CardContent>
 //         </Card>
         
-//         <Card className="overflow-hidden shadow hover:shadow-md transition-shadow">
-//           <CardHeader className="pb-2 bg-gradient-to-r from-purple-50 to-purple-100">
-//             <CardTitle className="flex items-center">
-//               <Activity className="mr-2 text-purple-600" size={20} />
+//         <Card>
+//           <CardHeader style={{backgroundImage: 'linear-gradient(to right, #faf5ff, #f3e8ff)'}}>
+//             <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+//               <Activity style={{marginRight: '0.5rem', color: '#9333ea'}} size={20} />
 //               <span>Combined Score</span>
 //             </CardTitle>
 //           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="flex justify-between items-center mb-2">
-//               <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
-//               <div className="flex items-center">
-//                 <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+//           <CardContent style={{paddingTop: '1rem'}}>
+//             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
+//               <span style={{fontWeight: '600'}}>{analysisResults.combined.score.toFixed(1)}</span>
+//               <div style={{display: 'flex', alignItems: 'center'}}>
+//                 <span style={{fontWeight: '700', [getLevelColor(analysisResults.combined.level).split(':')[0]]: getLevelColor(analysisResults.combined.level).split(':')[1]}}>
 //                   {analysisResults.combined.level}
 //                 </span>
 //                 <TrendingUp 
 //                   size={16} 
-//                   className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
+//                   style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.combined.score, 50).split(':')[0]]: getTrendColor(analysisResults.combined.score, 50).split(':')[1]}}
 //                 />
 //               </div>
 //             </div>
 //             <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
 //           </CardContent>
-//         </Card>
+//         </Card> */}
+//  {/* <div className="space-y-4 w-full max-w-3xl mx-auto"> */}
+//       <Card className="w-full">
+//         <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100">
+//           <CardTitle className="flex items-center">
+//             <Brain className="mr-2 text-blue-600" size={20} />
+//             <span>Attention Score</span>
+//             <button
+//               className="ml-auto"
+//               onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
+//             >
+//               <Info size={16} className="text-blue-400" />
+//             </button>
+//           </CardTitle>
+//           {showMetricInfo === 'attention' && (
+//             <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
+//               {getMetricInfo('attention')}
+//             </div>
+//           )}
+//         </CardHeader>
+//         <CardContent className="pt-4">
+//           <div className="flex justify-between items-center mb-2">
+//             <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
+//             <div className="flex items-center">
+//               <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
+//                 {analysisResults.inattention.level}
+//               </span>
+//               <TrendingUp 
+//                 size={16} 
+//                 className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
+//               />
+//             </div>
+//           </div>
+//           <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
+//         </CardContent>
+//       </Card>
+      
+//       <Card className="w-full">
+//         <CardHeader className="bg-gradient-to-r from-yellow-50 to-yellow-100">
+//           <CardTitle className="flex items-center">
+//             <Zap className="mr-2 text-yellow-600" size={20} />
+//             <span>Impulsivity Score</span>
+//             <button 
+//               className="ml-auto"
+//               onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
+//             >
+//               <Info size={16} className="text-yellow-400" />
+//             </button>
+//           </CardTitle>
+//           {showMetricInfo === 'impulsivity' && (
+//             <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
+//               {getMetricInfo('impulsivity')}
+//             </div>
+//           )}
+//         </CardHeader>
+//         <CardContent className="pt-4">
+//           <div className="flex justify-between items-center mb-2">
+//             <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
+//             <div className="flex items-center">
+//               <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
+//                 {analysisResults.impulsivity.level}
+//               </span>
+//               <TrendingUp 
+//                 size={16} 
+//                 className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
+//               />
+//             </div>
+//           </div>
+//           <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
+//         </CardContent>
+//       </Card>
+      
+//       <Card className="w-full">
+//         <CardHeader className="bg-gradient-to-r from-purple-50 to-purple-100">
+//           <CardTitle className="flex items-center">
+//             <Activity className="mr-2 text-purple-600" size={20} />
+//             <span>Combined Score</span>
+//           </CardTitle>
+//         </CardHeader>
+//         <CardContent className="pt-4">
+//           <div className="flex justify-between items-center mb-2">
+//             <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
+//             <div className="flex items-center">
+//               <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
+//                 {analysisResults.combined.level}
+//               </span>
+//               <TrendingUp 
+//                 size={16} 
+//                 className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
+//               />
+//             </div>
+//           </div>
+//           <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
+//         </CardContent>
+//       </Card>
+//       </div>
+//     </div>
+    
+//     {/* <div style={{marginBottom: '2rem'}}>
+//       <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
+//         <CardHeader>
+//           <CardTitle>Performance Trend</CardTitle>
+//           <CardDescription>Your cognitive metrics over time</CardDescription>
+//         </CardHeader>
+//         <CardContent style={{paddingTop: '1rem'}}>
+//           <div style={{height: '16rem'}}>
+//             <ResponsiveContainer width="100%" height="100%">
+//               <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+//                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+//                 <XAxis dataKey="date" />
+//                 <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+//                 <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+//                 <Tooltip />
+//                 <Legend />
+//                 <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
+//                 <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
+//                 <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
+//               </LineChart>
+//             </ResponsiveContainer>
+//           </div>
+//         </CardContent>
+//       </Card>
+//     </div> */}
+    
+//     <div style={{
+//       display: 'grid',
+//       gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+//       gap: '1.5rem',
+//       marginBottom: '2rem'
+//     }}>
+//       <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
+//         <CardHeader>
+//           <CardTitle>Reaction Time Distribution</CardTitle>
+//           <CardDescription>Frequency of response times by category</CardDescription>
+//         </CardHeader>
+//         <CardContent style={{paddingTop: '1rem'}}>
+//           <div style={{height: '16rem'}}>
+//             <ResponsiveContainer width="100%" height="100%">
+//               <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+//                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+//                 <XAxis dataKey="name" />
+//                 <YAxis />
+//                 <Tooltip />
+//                 <Bar dataKey="count" name="Responses" fill="#8884d8" />
+//               </BarChart>
+//             </ResponsiveContainer>
+//           </div>
+//         </CardContent>
+//       </Card>
+      
+//       {/* <Card style={{
+//   boxShadow: '0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1)',
+//   borderRadius: '0.75rem',
+//   overflow: 'hidden',
+//   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+//   border: '1px solid #e5e7eb',
+//   background: 'linear-gradient(to bottom, #ffffff, #f9fafb)'
+// }} 
+// onMouseOver={(e) => {
+//   e.currentTarget.style.transform = 'translateY(-5px)';
+//   e.currentTarget.style.boxShadow = '0 12px 24px -4px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1)';
+// }}
+// onMouseOut={(e) => {
+//   e.currentTarget.style.transform = 'translateY(0)';
+//   e.currentTarget.style.boxShadow = '0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1)';
+// }}>
+//   <CardHeader style={{
+//     backgroundImage: 'linear-gradient(to right, #f3f4f6, #eff6ff)',
+//     borderBottom: '1px solid #e5e7eb',
+//     position: 'relative',
+//     padding: '1.25rem 1.5rem'
+//   }}>
+//     <div style={{
+//       position: 'absolute',
+//       top: '1rem',
+//       right: '1rem',
+//       display: 'flex',
+//       gap: '0.5rem'
+//     }}>
+//       <button style={{
+//         backgroundColor: '#f9fafb',
+//         color: '#6b7280',
+//         border: '1px solid #e5e7eb',
+//         borderRadius: '0.5rem',
+//         width: '2rem',
+//         height: '2rem',
+//         display: 'flex',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         cursor: 'pointer',
+//         transition: 'all 0.2s ease'
+//       }}
+//       onClick={() => alert('View historical cognitive data')}
+//       onMouseOver={(e) => {
+//         e.currentTarget.style.backgroundColor = '#f3f4f6';
+//         e.currentTarget.style.color = '#4b5563';
+//       }}
+//       onMouseOut={(e) => {
+//         e.currentTarget.style.backgroundColor = '#f9fafb';
+//         e.currentTarget.style.color = '#6b7280';
+//       }}>
+//         📊
+//       </button>
+//       <button style={{
+//         backgroundColor: '#f9fafb',
+//         color: '#6b7280',
+//         border: '1px solid #e5e7eb',
+//         borderRadius: '0.5rem',
+//         width: '2rem',
+//         height: '2rem',
+//         display: 'flex',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         cursor: 'pointer',
+//         transition: 'all 0.2s ease'
+//       }}
+//       onClick={() => alert('Learn more about cognitive domains')}
+//       onMouseOver={(e) => {
+//         e.currentTarget.style.backgroundColor = '#f3f4f6';
+//         e.currentTarget.style.color = '#4b5563';
+//       }}
+//       onMouseOut={(e) => {
+//         e.currentTarget.style.backgroundColor = '#f9fafb';
+//         e.currentTarget.style.color = '#6b7280';
+//       }}>
+//         ℹ️
+//       </button>
+//     </div>
+    
+//     <CardTitle style={{
+//       fontSize: '1.5rem',
+//       fontWeight: '600',
+//       color: '#111827',
+//       display: 'flex',
+//       alignItems: 'center'
+//     }}>
+//       <span style={{
+//         marginRight: '0.5rem',
+//         fontSize: '1.25rem',
+//         animation: 'pulse 2s infinite'
+//       }}>🧠</span>
+//       Cognitive Profile
+//     </CardTitle>
+//     <CardDescription style={{
+//       fontSize: '0.95rem',
+//       color: '#6b7280',
+//       marginTop: '0.25rem'
+//     }}>Performance across different cognitive domains</CardDescription>
+//   </CardHeader>
+  
+//   <CardContent style={{
+//     paddingTop: '1.5rem',
+//     position: 'relative'
+//   }}>
+//     <div style={{
+//       position: 'absolute',
+//       top: '0.75rem',
+//       left: '1.5rem',
+//       right: '1.5rem',
+//       display: 'flex',
+//       justifyContent: 'space-between',
+//       zIndex: '10'
+//     }}>
+//       <div style={{
+//         display: 'flex',
+//         gap: '0.5rem'
+//       }}>
+//         <button style={{
+//           backgroundColor: '#f3f4f6',
+//           color: '#4b5563',
+//           border: '1px solid #e5e7eb',
+//           borderRadius: '0.5rem',
+//           padding: '0.35rem 0.75rem',
+//           fontSize: '0.75rem',
+//           fontWeight: '500',
+//           display: 'flex',
+//           alignItems: 'center',
+//           cursor: 'pointer',
+//           transition: 'all 0.2s ease'
+//         }}
+//         onClick={() => alert('Compare with average')}
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.backgroundColor = '#e5e7eb';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.backgroundColor = '#f3f4f6';
+//         }}>
+//           <span style={{marginRight: '0.25rem'}}>👥</span>
+//           Compare
+//         </button>
+//         <div style={{
+//           backgroundColor: '#f3f4f6',
+//           border: '1px solid #e5e7eb',
+//           borderRadius: '0.5rem',
+//           padding: '0.35rem 0.75rem',
+//           fontSize: '0.75rem',
+//           fontWeight: '500',
+//           display: 'flex',
+//           alignItems: 'center',
+//           cursor: 'pointer',
+//           transition: 'all 0.2s ease'
+//         }}
+//         onClick={() => alert('Filter domains')}
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.backgroundColor = '#e5e7eb';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.backgroundColor = '#f3f4f6';
+//         }}>
+//           <span style={{marginRight: '0.25rem'}}>🔍</span>
+//           Filter
+//         </div>
 //       </div>
       
-//       <div className="mb-8">
-//         <Card className="overflow-hidden shadow-md">
-//           <CardHeader className="pb-2">
-//             <CardTitle>Performance Trend</CardTitle>
-//             <CardDescription>Your cognitive metrics over time</CardDescription>
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="h-64">
-//               <ResponsiveContainer width="100%" height="100%">
-//                 <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-//                   <XAxis dataKey="date" />
-//                   <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
-//                   <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
-//                   <Tooltip />
-//                   <Legend />
-//                   <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
-//                   <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
-//                   <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
-//                 </LineChart>
-//               </ResponsiveContainer>
-//             </div>
-//           </CardContent>
-//         </Card>
+//       <div style={{
+//         display: 'flex',
+//         alignItems: 'center',
+//         gap: '0.5rem'
+//       }}>
+//         <span style={{
+//           fontSize: '0.75rem',
+//           color: '#6b7280',
+//           fontWeight: '500'
+//         }}>View:</span>
+//         <button style={{
+//           backgroundColor: '#eff6ff',
+//           color: '#3b82f6',
+//           border: '1px solid #bfdbfe',
+//           borderRadius: '0.5rem',
+//           padding: '0.35rem 0.75rem',
+//           fontSize: '0.75rem',
+//           fontWeight: '500',
+//           cursor: 'pointer',
+//           transition: 'all 0.2s ease'
+//         }}
+//         onClick={() => alert('Radar View Active')}
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.backgroundColor = '#dbeafe';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.backgroundColor = '#eff6ff';
+//         }}>
+//           Radar
+//         </button>
+//         <button style={{
+//           backgroundColor: '#f9fafb',
+//           color: '#6b7280',
+//           border: '1px solid #e5e7eb',
+//           borderRadius: '0.5rem',
+//           padding: '0.35rem 0.75rem',
+//           fontSize: '0.75rem',
+//           fontWeight: '500',
+//           cursor: 'pointer',
+//           transition: 'all 0.2s ease'
+//         }}
+//         onClick={() => alert('Switch to Bar Chart View')}
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.backgroundColor = '#f3f4f6';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.backgroundColor = '#f9fafb';
+//         }}>
+//           Bar
+//         </button>
+//       </div>
+//     </div>
+    
+//     <div style={{
+//       height: '16rem',
+//       marginTop: '2rem'
+//     }}>
+//       <ResponsiveContainer width="100%" height="100%">
+//         <RadarChart outerRadius={90} data={getRadarData()}>
+//           <PolarGrid strokeDasharray="3 3" stroke="#d1d5db" />
+//           <PolarAngleAxis 
+//             dataKey="subject" 
+//             tick={{ fill: '#4b5563', fontSize: 12, fontWeight: 500 }}
+//             stroke="#9ca3af"
+//             tickLine={false}
+//           />
+//           <PolarRadiusAxis 
+//             angle={30} 
+//             domain={[0, 100]} 
+//             tick={{ fill: '#6b7280' }}
+//             stroke="#d1d5db"
+//             axisLine={false}
+//           />
+//           <Tooltip 
+//             cursor={false}
+//             contentStyle={{
+//               backgroundColor: 'rgba(255, 255, 255, 0.95)',
+//               border: '1px solid #e5e7eb',
+//               borderRadius: '0.5rem',
+//               boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+//               padding: '0.5rem 0.75rem'
+//             }}
+//             labelStyle={{ fontWeight: 600, color: '#111827' }}
+//             itemStyle={{ color: '#8884d8' }}
+//           />
+//           <Radar 
+//             name="Performance" 
+//             dataKey="score" 
+//             stroke="#8884d8" 
+//             fill="#8884d8" 
+//             fillOpacity={0.6} 
+//             dot={{ 
+//               r: 4, 
+//               fill: '#8884d8', 
+//               stroke: '#fff', 
+//               strokeWidth: 2 
+//             }}
+//             activeDot={{ 
+//               r: 8, 
+//               fill: '#8884d8', 
+//               stroke: '#fff', 
+//               strokeWidth: 2,
+//               animation: 'pulse 2s infinite'
+//             }}
+//           />
+//           <Legend 
+//             iconSize={10}
+//             iconType="circle"
+//             wrapperStyle={{ bottom: -10 }}
+//           />
+//         </RadarChart>
+//       </ResponsiveContainer>
+//     </div>
+    
+//     <div style={{
+//       marginTop: '1rem',
+//       display: 'flex',
+//       justifyContent: 'space-between',
+//       borderTop: '1px solid #e5e7eb',
+//       paddingTop: '1rem'
+//     }}>
+//       <div style={{
+//         display: 'flex',
+//         alignItems: 'center',
+//         gap: '0.5rem'
+//       }}>
+//         <div style={{
+//           display: 'flex',
+//           alignItems: 'center',
+//           gap: '0.25rem',
+//           backgroundColor: '#f0f9ff',
+//           borderRadius: '0.5rem',
+//           padding: '0.35rem 0.75rem',
+//           cursor: 'pointer',
+//           transition: 'background-color 0.2s'
+//         }}
+//         onClick={() => alert('View strengths analysis')}
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.backgroundColor = '#e0f2fe';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.backgroundColor = '#f0f9ff';
+//         }}>
+//           <span style={{color: '#0284c7', fontSize: '0.75rem'}}>💪</span>
+//           <span style={{color: '#0284c7', fontSize: '0.75rem', fontWeight: '500'}}>
+//             Strengths
+//           </span>
+//         </div>
+//         <div style={{
+//           display: 'flex',
+//           alignItems: 'center',
+//           gap: '0.25rem',
+//           backgroundColor: '#fff1f2',
+//           borderRadius: '0.5rem',
+//           padding: '0.35rem 0.75rem',
+//           cursor: 'pointer',
+//           transition: 'background-color 0.2s'
+//         }}
+//         onClick={() => alert('View areas for improvement')}
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.backgroundColor = '#fee2e2';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.backgroundColor = '#fff1f2';
+//         }}>
+//           <span style={{color: '#e11d48', fontSize: '0.75rem'}}>⚡</span>
+//           <span style={{color: '#e11d48', fontSize: '0.75rem', fontWeight: '500'}}>
+//             Growth Areas
+//           </span>
+//         </div>
 //       </div>
       
-//       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-//         <Card className="overflow-hidden shadow-md">
-//           <CardHeader className="pb-2">
-//             <CardTitle>Reaction Time Distribution</CardTitle>
-//             <CardDescription>Frequency of response times by category</CardDescription>
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="h-64">
-//               <ResponsiveContainer width="100%" height="100%">
-//                 <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-//                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-//                   <XAxis dataKey="name" />
-//                   <YAxis />
-//                   <Tooltip />
-//                   <Bar dataKey="count" name="Responses" fill="#8884d8" />
-//                 </BarChart>
-//               </ResponsiveContainer>
-//             </div>
-//           </CardContent>
-//         </Card>
+//       <button style={{
+//         backgroundColor: '#8884d8',
+//         backgroundImage: 'linear-gradient(45deg, #8884d8, #a78bfa)',
+//         color: 'white',
+//         border: 'none',
+//         borderRadius: '0.5rem',
+//         padding: '0.5rem 1rem',
+//         fontSize: '0.75rem',
+//         fontWeight: '500',
+//         display: 'flex',
+//         alignItems: 'center',
+//         cursor: 'pointer',
+//         boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+//         transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)'
+//       }}
+//       onClick={() => alert('Get personalized training recommendations based on your cognitive profile')}
+//       onMouseOver={(e) => {
+//         e.currentTarget.style.transform = 'translateY(-2px)';
+//         e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12)';
+//       }}
+//       onMouseOut={(e) => {
+//         e.currentTarget.style.transform = 'translateY(0)';
+//         e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)';
+//       }}>
+//         <span style={{marginRight: '0.5rem'}}>🎯</span>
+//         Get Recommendations
+//       </button>
+//     </div>
+    
+//     <style>{`
+//       @keyframes pulse {
+//         0% { transform: scale(1); }
+//         50% { transform: scale(1.1); }
+//         100% { transform: scale(1); }
+//       }
+      
+//       @keyframes bounce {
+//         0% { transform: translateY(0); }
+//         100% { transform: translateY(-3px); }
+//       }
+      
+//       @keyframes spin {
+//         0% { transform: rotate(0deg); }
+//         100% { transform: rotate(360deg); }
+//       }
+//     `}</style>
+//   </CardContent>
+// </Card>*/}
+//     </div> 
+    
+//     <Card style={{
+//   boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+//   overflow: 'hidden',
+//   transition: 'all 0.3s ease',
+//   border: '2px solid #bbf7d0',
+//   borderRadius: '0.75rem'
+// }}>
+//   <CardHeader style={{
+//     backgroundImage: 'linear-gradient(to right, #dcfce7, #dbeafe)', 
+//     padding: '1rem',
+//     position: 'relative'
+//   }}>
+//     <div style={{
+//       position: 'absolute',
+//       top: '0.5rem',
+//       right: '0.5rem',
+//       backgroundColor: '#f0fdf4',
+//       borderRadius: '50%',
+//       width: '2rem',
+//       height: '2rem',
+//       display: 'flex',
+//       alignItems: 'center',
+//       justifyContent: 'center',
+//       cursor: 'pointer',
+//       boxShadow: '0 1px 3px rgba(0,0,0,0.12)',
+//       transition: 'transform 0.2s ease'
+//     }} 
+//     onClick={() => alert('Info about ADHD Brain Explorer')}
+//     onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+//     onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+//     >
+//       <span>ℹ️</span>
+//     </div>
+//     <CardTitle style={{display: 'flex', alignItems: 'center'}}>
+//       <Award style={{marginRight: '0.5rem', color: '#16a34a'}} size={20} />
+//       <span style={{
+//         background: 'linear-gradient(45deg, #16a34a, #3b82f6)',
+//         WebkitBackgroundClip: 'text',
+//         WebkitTextFillColor: 'transparent',
+//         fontWeight: '700'
+//       }}>ADHD Brain Explorer 🧠</span>
+//     </CardTitle>
+//   </CardHeader>
+//   <CardContent style={{paddingTop: '1rem'}}>
+//     {adhdType ? (
+//       <>
+//         <div style={{
+//           textAlign: 'center',
+//           marginBottom: '1rem',
+//           padding: '0.75rem',
+//           backgroundColor: '#f0fdf4',
+//           borderRadius: '0.75rem',
+//           boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+//           transform: 'translateY(0)',
+//           transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+//           cursor: 'pointer'
+//         }} 
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.transform = 'translateY(-3px)';
+//           e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.transform = 'translateY(0)';
+//           e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+//         }}
+//         onClick={() => alert(`Learn more about ${adhdType} type`)}>
+//           <span style={{fontSize: '2rem', marginRight: '0.5rem', display: 'inline-block', animation: 'pulse 2s infinite'}}>
+//             {typeEmojis[adhdType] || defaultEmoji}
+//           </span>
+//           <span style={{
+//             fontSize: '1.25rem', 
+//             fontWeight: '700',
+//             background: 'linear-gradient(45deg, #4338ca, #3b82f6)',
+//             WebkitBackgroundClip: 'text',
+//             WebkitTextFillColor: 'transparent'
+//           }}>
+//             {adhdType}
+//           </span>
+//         </div>
         
-//         <Card className="overflow-hidden shadow-md">
-//           <CardHeader className="pb-2">
-//             <CardTitle>Cognitive Profile</CardTitle>
-//             <CardDescription>Performance across different cognitive domains</CardDescription>
-//           </CardHeader>
-//           <CardContent className="pt-4">
-//             <div className="h-64">
-//               <ResponsiveContainer width="100%" height="100%">
-//                 <RadarChart outerRadius={90} data={getRadarData()}>
-//                   <PolarGrid />
-//                   <PolarAngleAxis dataKey="subject" />
-//                   <PolarRadiusAxis angle={30} domain={[0, 100]} />
-//                   <Radar name="Performance" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-//                   <Legend />
-//                 </RadarChart>
-//               </ResponsiveContainer>
+//         <div style={{
+//           backgroundColor: '#eff6ff',
+//           padding: '0.75rem',
+//           borderRadius: '0.75rem',
+//           marginBottom: '1rem',
+//           boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+//         }}>
+//           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+//             <span style={{
+//               fontSize: '0.875rem', 
+//               display: 'flex', 
+//               alignItems: 'center'
+//             }}>
+//               <span style={{
+//                 fontSize: '1rem', 
+//                 marginRight: '0.5rem',
+//                 animation: 'spin 3s linear infinite'
+//               }}>🔬</span>
+//               Brain-o-meter:
+//             </span>
+//             <div style={{display: 'flex', alignItems: 'center'}}>
+//               <div style={{
+//                 width: '8rem',
+//                 backgroundColor: '#e5e7eb',
+//                 borderRadius: '9999px',
+//                 height: '1rem',
+//                 marginRight: '0.5rem',
+//                 overflow: 'hidden'
+//               }}>
+//                 <div 
+//                   style={{
+//                     backgroundColor: '#3b82f6',
+//                     height: '1rem',
+//                     borderRadius: '9999px',
+//                     transition: 'all 0.5s ease',
+//                     width: `${modelConfidence * 100}%`,
+//                     backgroundImage: 'linear-gradient(45deg, rgba(59,130,246,1) 0%, rgba(37,99,235,1) 100%)',
+//                     animation: 'pulse 2s infinite'
+//                   }}
+//                 ></div>
+//               </div>
+//               <span style={{
+//                 fontSize: '0.875rem', 
+//                 fontWeight: '700',
+//                 color: '#3b82f6'
+//               }}>{(modelConfidence * 100).toFixed(1)}%</span>
 //             </div>
-//           </CardContent>
-//         </Card>
-//       </div>
-//       <Card className="overflow-hidden shadow hover:shadow-lg transition-all duration-300 border-2 border-green-200">
-//       <CardHeader className="pb-2 bg-gradient-to-r from-green-100 to-blue-100">
-//         <CardTitle className="flex items-center">
-//           <Award className="mr-2 text-green-600" size={20} />
-//           <span>ADHD Brain Explorer 🧠</span>
-//         </CardTitle>
-//       </CardHeader>
-//       <CardContent className="pt-4">
-//         {adhdType ? (
-//           <>
-//             <div className="text-center mb-4 p-2 bg-green-50 rounded-lg">
-//               <span className="text-2xl mr-2">
-//                 {typeEmojis[adhdType] || defaultEmoji}
-//               </span>
-//               <span className="text-xl font-bold">
-//                 {adhdType}
-//               </span>
-//             </div>
-            
-//             <div className="bg-blue-50 p-3 rounded-lg mb-4">
-//               <div className="flex justify-between items-center">
-//                 <span className="text-sm">Brain-o-meter: 🔬</span>
-//                 <div className="flex items-center">
-//                   <div className="w-32 bg-gray-200 rounded-full h-4 mr-2">
-//                     <div 
-//                       className="bg-blue-500 h-4 rounded-full transition-all duration-500" 
-//                       style={{ width: `${modelConfidence * 100}%` }}
-//                     ></div>
-//                   </div>
-//                   <span className="text-sm font-bold">{(modelConfidence * 100).toFixed(1)}%</span>
-//                 </div>
+//           </div>
+//         </div>
+        
+//         <div style={{
+//           marginTop: '0.75rem',
+//           borderTop: '1px dashed #e9d5ff',
+//           paddingTop: '0.75rem'
+//         }}>
+//           <h4 style={{
+//             fontWeight: '600',
+//             fontSize: '0.95rem',
+//             marginBottom: '0.75rem',
+//             display: 'flex',
+//             alignItems: 'center',
+//             color: '#4b5563'
+//           }}>
+//             <span style={{
+//               marginRight: '0.5rem',
+//               animation: 'bounce 1s ease infinite alternate'
+//             }}>🔎</span> 
+//             Your Brain Powers:
+//           </h4>
+          
+//           <div style={{marginTop: '0.75rem'}}>
+//             <div style={{
+//               backgroundColor: '#faf5ff',
+//               padding: '0.75rem',
+//               borderRadius: '0.75rem',
+//               marginBottom: '0.75rem',
+//               cursor: 'pointer',
+//               transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+//               boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+//             }}
+//             onClick={() => alert('Tips for improving focus!')}
+//             onMouseOver={(e) => {
+//               e.currentTarget.style.transform = 'translateX(3px)';
+//               e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+//             }}
+//             onMouseOut={(e) => {
+//               e.currentTarget.style.transform = 'translateX(0)';
+//               e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
+//             }}>
+//               <div style={{
+//                 display: 'flex',
+//                 justifyContent: 'space-between',
+//                 alignItems: 'center',
+//                 marginBottom: '0.25rem'
+//               }}>
+//                 <span style={{
+//                   fontSize: '0.875rem',
+//                   display: 'flex',
+//                   alignItems: 'center'
+//                 }}>
+//                   <span style={{
+//                     marginRight: '0.5rem',
+//                     fontSize: '1.1rem',
+//                     animation: 'pulse 2s infinite'
+//                   }}>👁️</span>
+//                   Focus Power:
+//                 </span>
+//                 <span style={{
+//                   fontSize: '0.875rem',
+//                   fontWeight: '600',
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   color: '#6366f1',
+//                   background: 'rgba(224, 231, 255, 0.6)',
+//                   padding: '0.15rem 0.5rem',
+//                   borderRadius: '0.5rem'
+//                 }}>
+//                   {getLevelEmoji(scoreLevels?.inattention)}
+//                   <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.inattention || 'N/A'}</span>
+//                 </span>
+//               </div>
+//               <div style={{
+//                 width: '100%',
+//                 backgroundColor: '#e5e7eb',
+//                 borderRadius: '9999px',
+//                 height: '0.75rem',
+//                 overflow: 'hidden'
+//               }}>
+//                 <div 
+//                   style={{
+//                     [getProgressColors(scoreLevels?.inattention).split(':')[0]]: getProgressColors(scoreLevels?.inattention).split(':')[1],
+//                     [getProgressWidth(scoreLevels?.inattention).split(':')[0]]: getProgressWidth(scoreLevels?.inattention).split(':')[1],
+//                     height: '0.75rem',
+//                     borderRadius: '9999px',
+//                     transition: 'all 0.5s ease',
+//                     backgroundImage: 'linear-gradient(45deg, rgba(147,197,253,1) 0%, rgba(59,130,246,1) 100%)'
+//                   }}
+//                 ></div>
 //               </div>
 //             </div>
             
-//             {/* Assessment levels with interactive elements */}
-//             <div className="mt-3 border-t border-dashed border-purple-200 pt-3">
-//               <h4 className="font-medium text-sm mb-3 flex items-center">
-//                 <span className="mr-2">🔎</span> 
-//                 Your Brain Powers:
-//               </h4>
-              
-//               <div className="space-y-3">
-//                 <div className="bg-purple-50 p-2 rounded-lg">
-//                   <div className="flex justify-between items-center mb-1">
-//                     <span className="text-sm">Focus Power: 👁️</span>
-//                     <span className="text-sm font-medium flex items-center">
-//                       {getLevelEmoji(scoreLevels?.inattention)}
-//                       <span className="ml-1">{scoreLevels?.inattention || 'N/A'}</span>
-//                     </span>
-//                   </div>
-//                   <div className="w-full bg-gray-200 rounded-full h-3">
-//                     <div 
-//                       className={`${getProgressColors(scoreLevels?.inattention)} ${getProgressWidth(scoreLevels?.inattention)} h-3 rounded-full transition-all duration-500`}
-//                     ></div>
-//                   </div>
-//                 </div>
-                
-//                 <div className="bg-yellow-50 p-2 rounded-lg">
-//                   <div className="flex justify-between items-center mb-1">
-//                     <span className="text-sm">Action Power: 🚀</span>
-//                     <span className="text-sm font-medium flex items-center">
-//                       {getLevelEmoji(scoreLevels?.impulsivity)}
-//                       <span className="ml-1">{scoreLevels?.impulsivity || 'N/A'}</span>
-//                     </span>
-//                   </div>
-//                   <div className="w-full bg-gray-200 rounded-full h-3">
-//                     <div 
-//                       className={`${getProgressColors(scoreLevels?.impulsivity)} ${getProgressWidth(scoreLevels?.impulsivity)} h-3 rounded-full transition-all duration-500`}
-//                     ></div>
-//                   </div>
-//                 </div>
+//             <div style={{
+//               backgroundColor: '#fefce8',
+//               padding: '0.75rem',
+//               borderRadius: '0.75rem',
+//               marginBottom: '0.75rem',
+//               cursor: 'pointer',
+//               transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+//               boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+//             }}
+//             onClick={() => alert('Tips for managing impulsivity!')}
+//             onMouseOver={(e) => {
+//               e.currentTarget.style.transform = 'translateX(3px)';
+//               e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+//             }}
+//             onMouseOut={(e) => {
+//               e.currentTarget.style.transform = 'translateX(0)';
+//               e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
+//             }}>
+//               <div style={{
+//                 display: 'flex',
+//                 justifyContent: 'space-between',
+//                 alignItems: 'center',
+//                 marginBottom: '0.25rem'
+//               }}>
+//                 <span style={{
+//                   fontSize: '0.875rem',
+//                   display: 'flex',
+//                   alignItems: 'center'
+//                 }}>
+//                   <span style={{
+//                     marginRight: '0.5rem',
+//                     fontSize: '1.1rem',
+//                     animation: 'pulse 2s infinite'
+//                   }}>🚀</span>
+//                   Action Power:
+//                 </span>
+//                 <span style={{
+//                   fontSize: '0.875rem',
+//                   fontWeight: '600',
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   color: '#d97706',
+//                   background: 'rgba(254, 243, 199, 0.6)',
+//                   padding: '0.15rem 0.5rem',
+//                   borderRadius: '0.5rem'
+//                 }}>
+//                   {getLevelEmoji(scoreLevels?.impulsivity)}
+//                   <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.impulsivity || 'N/A'}</span>
+//                 </span>
+//               </div>
+//               <div style={{
+//                 width: '100%',
+//                 backgroundColor: '#e5e7eb',
+//                 borderRadius: '9999px',
+//                 height: '0.75rem',
+//                 overflow: 'hidden'
+//               }}>
+//                 <div 
+//                   style={{
+//                     [getProgressColors(scoreLevels?.impulsivity).split(':')[0]]: getProgressColors(scoreLevels?.impulsivity).split(':')[1],
+//                     [getProgressWidth(scoreLevels?.impulsivity).split(':')[0]]: getProgressWidth(scoreLevels?.impulsivity).split(':')[1],
+//                     height: '0.75rem',
+//                     borderRadius: '9999px',
+//                     transition: 'all 0.5s ease',
+//                     backgroundImage: 'linear-gradient(45deg, rgba(252,211,77,1) 0%, rgba(245,158,11,1) 100%)'
+//                   }}
+//                 ></div>
 //               </div>
 //             </div>
-            
-//             {/* AI Insights with emojis */}
-//             {modelInsights && (
-//               <div className="mt-4 border-t border-dashed border-blue-200 pt-3">
-//                 <h4 className="font-medium text-sm mb-2 flex items-center">
-//                   <span className="mr-2">✨</span>
-//                   Brain Discoveries:
-//                 </h4>
-//                 <div className="text-sm text-gray-700 bg-blue-50 p-3 rounded-lg">
-//                   {modelInsights.combined && modelInsights.combined.length > 0 && (
-//                     <p className="mb-2 flex">
-//                       <span className="mr-2">🧠</span>
-//                       <span>{modelInsights.combined[0]}</span>
-//                     </p>
-//                   )}
-//                   {modelInsights.inattention && modelInsights.inattention.length > 0 && (
-//                     <p className="mb-2 flex">
-//                       <span className="mr-2">👁️</span>
-//                       <span>{modelInsights.inattention[0]}</span>
-//                     </p>
-//                   )}
-//                   {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
-//                     <p className="flex">
-//                       <span className="mr-2">🚀</span>
-//                       <span>{modelInsights.impulsivity[0]}</span>
-//                     </p>
-//                   )}
-//                 </div>
-//               </div>
-//             )}
-            
-//             <div className="mt-4 p-2 bg-purple-50 rounded-lg text-xs text-center">
-//               <p>✨ This is just a game-based brain map, not a doctor's diagnosis ✨</p>
+//           </div>
+//         </div>
+        
+//         {/* AI Insights with emojis */}
+//         {modelInsights && (
+//           <div style={{
+//             marginTop: '1rem',
+//             borderTop: '1px dashed #bfdbfe',
+//             paddingTop: '0.75rem'
+//           }}>
+//             <h4 style={{
+//               fontWeight: '600',
+//               fontSize: '0.95rem',
+//               marginBottom: '0.75rem',
+//               display: 'flex',
+//               alignItems: 'center',
+//               color: '#4b5563'
+//             }}>
+//               <span style={{
+//                 marginRight: '0.5rem',
+//                 animation: 'spin 3s linear infinite'
+//               }}>✨</span>
+//               Brain Discoveries:
+//             </h4>
+//             <div style={{
+//               fontSize: '0.875rem',
+//               color: '#374151',
+//               backgroundColor: '#eff6ff',
+//               padding: '0.75rem',
+//               borderRadius: '0.75rem',
+//               boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+//               transition: 'all 0.3s ease'
+//             }}
+//             onMouseOver={(e) => {
+//               e.currentTarget.style.backgroundColor = '#dbeafe';
+//             }}
+//             onMouseOut={(e) => {
+//               e.currentTarget.style.backgroundColor = '#eff6ff';
+//             }}>
+//               {modelInsights.combined && modelInsights.combined.length > 0 && (
+//                 <p style={{
+//                   marginBottom: '0.75rem',
+//                   display: 'flex',
+//                   alignItems: 'flex-start',
+//                   padding: '0.5rem',
+//                   borderRadius: '0.5rem',
+//                   backgroundColor: 'rgba(219, 234, 254, 0.5)',
+//                   transition: 'transform 0.2s ease',
+//                   cursor: 'pointer'
+//                 }}
+//                 onClick={() => alert('More about your brain patterns')}
+//                 onMouseOver={(e) => {
+//                   e.currentTarget.style.transform = 'translateX(3px)';
+//                 }}
+//                 onMouseOut={(e) => {
+//                   e.currentTarget.style.transform = 'translateX(0)';
+//                 }}>
+//                   <span style={{
+//                     marginRight: '0.5rem',
+//                     fontSize: '1.1rem',
+//                     animation: 'pulse 2s infinite'
+// }}>🧠</span>
+//                   <span>{modelInsights.combined[0]}</span>
+//                 </p>
+//               )}
+//               {modelInsights.inattention && modelInsights.inattention.length > 0 && (
+//                 <p style={{
+//                   marginBottom: '0.75rem',
+//                   display: 'flex',
+//                   alignItems: 'flex-start',
+//                   padding: '0.5rem',
+//                   borderRadius: '0.5rem',
+//                   backgroundColor: 'rgba(237, 233, 254, 0.5)',
+//                   transition: 'transform 0.2s ease',
+//                   cursor: 'pointer'
+//                 }}
+//                 onClick={() => alert('Focus improvement tips')}
+//                 onMouseOver={(e) => {
+//                   e.currentTarget.style.transform = 'translateX(3px)';
+//                 }}
+//                 onMouseOut={(e) => {
+//                   e.currentTarget.style.transform = 'translateX(0)';
+//                 }}>
+//                   <span style={{
+//                     marginRight: '0.5rem',
+//                     fontSize: '1.1rem'
+//                   }}>👁️</span>
+//                   <span>{modelInsights.inattention[0]}</span>
+//                 </p>
+//               )}
+//               {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
+//                 <p style={{
+//                   display: 'flex',
+//                   alignItems: 'flex-start',
+//                   padding: '0.5rem',
+//                   borderRadius: '0.5rem',
+//                   backgroundColor: 'rgba(254, 240, 138, 0.5)',
+//                   transition: 'transform 0.2s ease',
+//                   cursor: 'pointer'
+//                 }}
+//                 onClick={() => alert('Impulsivity management strategies')}
+//                 onMouseOver={(e) => {
+//                   e.currentTarget.style.transform = 'translateX(3px)';
+//                 }}
+//                 onMouseOut={(e) => {
+//                   e.currentTarget.style.transform = 'translateX(0)';
+//                 }}>
+//                   <span style={{
+//                     marginRight: '0.5rem',
+//                     fontSize: '1.1rem'
+//                   }}>🚀</span>
+//                   <span>{modelInsights.impulsivity[0]}</span>
+//                 </p>
+//               )}
 //             </div>
-//           </>
-//         ) : (
-//           <div className="text-center p-6">
-//             <div className="text-4xl mb-3">🔮</div>
-//             <p className="text-gray-500">Your brain map is still loading...</p>
-//             <p className="text-gray-400 text-xs mt-2">Play more games to help us understand your superpowers!</p>
+            
+//             {/* Questionnaire Navigation Button with animation */}
+//             <div style={{
+//               marginTop: '1.25rem',
+//               display: 'flex',
+//               justifyContent: 'center'
+//             }}>
+//               <button 
+//                 onClick={navigateToQuestionnaire}
+//                 style={{
+//                   backgroundColor: '#4083A8',
+//                   backgroundImage: 'linear-gradient(45deg, #4083A8 0%, #3b82f6 100%)',
+//                   color: 'white',
+//                   border: 'none',
+//                   borderRadius: '0.75rem',
+//                   padding: '0.75rem 1.25rem',
+//                   fontSize: '0.875rem',
+//                   fontWeight: '600',
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   cursor: 'pointer',
+//                   boxShadow: '0 2px 5px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.2)',
+//                   transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+//                   position: 'relative',
+//                   overflow: 'hidden'
+//                 }}
+//                 onMouseOver={(e) => {
+//                   e.currentTarget.style.transform = 'translateY(-2px)';
+//                   e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)';
+//                 }}
+//                 onMouseOut={(e) => {
+//                   e.currentTarget.style.transform = 'translateY(0)';
+//                   e.currentTarget.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.2)';
+//                 }}
+//               >
+//                 <span style={{
+//                   marginRight: '0.5rem',
+//                   fontSize: '1.1rem',
+//                   animation: 'bounce 1s infinite alternate'
+//                 }}>📋</span>
+//                 Take ADHD Questionnaire
+//                 <span style={{
+//                   position: 'absolute',
+//                   right: '0.5rem',
+//                   opacity: '0.7',
+//                   transition: 'transform 0.3s ease',
+//                   transform: 'translateX(0)'
+//                 }}>→</span>
+//               </button>
+//             </div>
 //           </div>
 //         )}
-//       </CardContent>
-//     </Card>
-
-      
-      
+        
+//         {/* Tips & Resources Section (new) */}
+//         <div style={{
+//           marginTop: '1.25rem',
+//           borderTop: '1px dashed #bfdbfe',
+//           paddingTop: '0.75rem',
+//           display: 'flex',
+//           justifyContent: 'center',
+//           gap: '0.5rem'
+//         }}>
+//           <button style={{
+//             backgroundColor: '#f0fdf4',
+//             color: '#16a34a',
+//             border: '1px solid #dcfce7',
+//             borderRadius: '0.5rem',
+//             padding: '0.4rem 0.8rem',
+//             fontSize: '0.75rem',
+//             fontWeight: '500',
+//             display: 'flex',
+//             alignItems: 'center',
+//             cursor: 'pointer',
+//             transition: 'all 0.2s ease'
+//           }}
+//           onClick={() => alert('ADHD Tips & Tricks')}
+//           onMouseOver={(e) => {
+//             e.currentTarget.style.backgroundColor = '#dcfce7';
+//           }}
+//           onMouseOut={(e) => {
+//             e.currentTarget.style.backgroundColor = '#f0fdf4';
+//           }}>
+//             <span style={{marginRight: '0.25rem'}}>💡</span>
+//             Tips
+//           </button>
+          
+//           <button style={{
+//             backgroundColor: '#eff6ff',
+//             color: '#3b82f6',
+//             border: '1px solid #dbeafe',
+//             borderRadius: '0.5rem',
+//             padding: '0.4rem 0.8rem',
+//             fontSize: '0.75rem',
+//             fontWeight: '500',
+//             display: 'flex',
+//             alignItems: 'center',
+//             cursor: 'pointer',
+//             transition: 'all 0.2s ease'
+//           }}
+//           onClick={() => alert('ADHD Support Resources')}
+//           onMouseOver={(e) => {
+//             e.currentTarget.style.backgroundColor = '#dbeafe';
+//           }}
+//           onMouseOut={(e) => {
+//             e.currentTarget.style.backgroundColor = '#eff6ff';
+//           }}>
+//             <span style={{marginRight: '0.25rem'}}>🔍</span>
+//             Resources
+//           </button>
+          
+//           <button style={{
+//             backgroundColor: '#faf5ff',
+//             color: '#8b5cf6',
+//             border: '1px solid #f3e8ff',
+//             borderRadius: '0.5rem',
+//             padding: '0.4rem 0.8rem',
+//             fontSize: '0.75rem',
+//             fontWeight: '500',
+//             display: 'flex',
+//             alignItems: 'center',
+//             cursor: 'pointer',
+//             transition: 'all 0.2s ease'
+//           }}
+//           onClick={() => alert('Track your progress over time')}
+//           onMouseOver={(e) => {
+//             e.currentTarget.style.backgroundColor = '#f3e8ff';
+//           }}
+//           onMouseOut={(e) => {
+//             e.currentTarget.style.backgroundColor = '#faf5ff';
+//           }}>
+//             <span style={{marginRight: '0.25rem'}}>📊</span>
+//             Progress
+//           </button>
+//         </div>
+        
+//         {/* Interactive disclaimer with tooltip */}
+//         <div style={{
+//           marginTop: '1rem',
+//           padding: '0.75rem',
+//           backgroundColor: '#faf5ff',
+//           borderRadius: '0.75rem',
+//           fontSize: '0.75rem',
+//           textAlign: 'center',
+//           position: 'relative',
+//           cursor: 'pointer'
+//         }}
+//         onClick={() => alert('Important: This tool is for educational purposes only and should not replace professional medical advice.')}
+//         onMouseOver={(e) => {
+//           e.currentTarget.style.backgroundColor = '#f3e8ff';
+//           e.currentTarget.querySelector('.tooltip').style.opacity = '1';
+//         }}
+//         onMouseOut={(e) => {
+//           e.currentTarget.style.backgroundColor = '#faf5ff';
+//           e.currentTarget.querySelector('.tooltip').style.opacity = '0';
+//         }}>
+//           <div className="tooltip" style={{
+//             position: 'absolute',
+//             bottom: '100%',
+//             left: '50%',
+//             transform: 'translateX(-50%)',
+//             backgroundColor: 'rgba(79, 70, 229, 0.9)',
+//             color: 'white',
+//             padding: '0.5rem',
+//             borderRadius: '0.5rem',
+//             fontSize: '0.75rem',
+//             width: 'max-content',
+//             maxWidth: '90%',
+//             boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+//             opacity: '0',
+//             transition: 'opacity 0.3s ease',
+//             pointerEvents: 'none',
+//             marginBottom: '0.5rem'
+//           }}>
+//             Click for important information about this tool
+//           </div>
+//           <p style={{
+//             fontWeight: '500',
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center'
+//           }}>
+//             <span style={{
+//               marginRight: '0.5rem',
+//               animation: 'pulse 2s infinite'
+//             }}>✨</span>
+//             This is just a game-based brain map, not a doctor's diagnosis
+//             <span style={{
+//               marginLeft: '0.5rem',
+//               animation: 'pulse 2s infinite'
+//             }}>✨</span>
+//           </p>
+//         </div>
+//       </>
+//     ) : (
+//       <div style={{
+//         textAlign: 'center',
+//         padding: '1.5rem',
+//         animation: 'fadeIn 1s ease'
+//       }}>
+//         <div style={{
+//           fontSize: '3rem', 
+//           marginBottom: '1rem',
+//           animation: 'float 3s ease-in-out infinite'
+//         }}>🔮</div>
+//         <p style={{
+//           color: '#6b7280',
+//           fontSize: '1.1rem',
+//           fontWeight: '500'
+//         }}>Your brain map is still loading...</p>
+//         <div style={{
+//           marginTop: '1rem',
+//           backgroundColor: '#f5f3ff',
+//           borderRadius: '0.75rem',
+//           padding: '1rem',
+//           boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+//         }}>
+//           <p style={{
+//             color: '#9ca3af', 
+//             fontSize: '0.875rem', 
+//             marginBottom: '1rem'
+//           }}>Play more games to help us understand your superpowers!</p>
+//           <button style={{
+//             backgroundColor: '#8b5cf6',
+//             color: 'white',
+//             border: 'none',
+//             borderRadius: '0.5rem',
+//             padding: '0.5rem 1rem',
+//             fontSize: '0.875rem',
+//             fontWeight: '500',
+//             display: 'flex',
+//             alignItems: 'center',
+//             margin: '0 auto',
+//             cursor: 'pointer',
+//             boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+//             transition: 'all 0.2s ease'
+//           }}
+//           onClick={() => alert('Let\'s play some brain games!')}
+//           onMouseOver={(e) => {
+//             e.currentTarget.style.transform = 'translateY(-2px)';
+//             e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+//           }}
+//           onMouseOut={(e) => {
+//             e.currentTarget.style.transform = 'translateY(0)';
+//             e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+//           }}>
+//             <span style={{marginRight: '0.5rem'}}>🎮</span>
+//             Play Brain Games
+//           </button>
+//         </div>
+        
+//         <div style={{
+//           marginTop: '1.5rem',
+//           display: 'flex',
+//           justifyContent: 'center',
+//           gap: '0.75rem'
+//         }}>
+//           <div style={{
+//             backgroundColor: '#f0fdf4',
+//             borderRadius: '50%',
+//             width: '2.5rem',
+//             height: '2.5rem',
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//             boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+//             cursor: 'pointer',
+//             animation: 'pulse 2s infinite'
+//           }}
+//           onClick={() => alert('About ADHD Brain Explorer')}>
+//             <span style={{fontSize: '1.25rem'}}>ℹ️</span>
+//           </div>
+//           <div style={{
+//             backgroundColor: '#eff6ff',
+//             borderRadius: '50%',
+//             width: '2.5rem',
+//             height: '2.5rem',
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//             boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+//             cursor: 'pointer',
+//             animation: 'pulse 3s infinite'
+//           }}
+//           onClick={() => alert('Learn about ADHD')}>
+//             <span style={{fontSize: '1.25rem'}}>📚</span>
+//           </div>
+//           <div style={{
+//             backgroundColor: '#faf5ff',
+//             borderRadius: '50%',
+//             width: '2.5rem',
+//             height: '2.5rem',
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//             boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+//             cursor: 'pointer',
+//             animation: 'pulse 4s infinite'
+//           }}
+//           onClick={() => alert('Need help? Contact us')}>
+//             <span style={{fontSize: '1.25rem'}}>💬</span>
+//           </div>
+//         </div>
 //       </div>
+//     )}
     
-//   );
+//     {/* Animation keyframes - add to your CSS */}
+//     <style>{`
+//       @keyframes pulse {
+//         0% { transform: scale(1); }
+//         50% { transform: scale(1.1); }
+//         100% { transform: scale(1); }
+//       }
+      
+//       @keyframes bounce {
+//         0% { transform: translateY(0); }
+//         100% { transform: translateY(-3px); }
+//       }
+      
+//       @keyframes spin {
+//         0% { transform: rotate(0deg); }
+//         100% { transform: rotate(360deg); }
+//       }
+      
+//       @keyframes float {
+//         0% { transform: translateY(0px); }
+//         50% { transform: translateY(-10px); }
+//         100% { transform: translateY(0px); }
+//       }
+      
+//       @keyframes fadeIn {
+//         0% { opacity: 0; }
+//         100% { opacity: 1; }
+//       }
+//     `}</style>
+//   </CardContent>
+// </Card>
+//   </div>
+// );
 // };
 
 // export default GameAnalytics;
-    
+
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Progress } from './ui/progress';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+// Assuming these are correctly imported from your UI library
+// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+// import { Progress } from './ui/progress';
 import { AlertCircle, Activity, Brain, Clock, BarChart2, Zap, Target, XCircle, ChevronDown, ChevronUp, Info, Award, TrendingUp } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-//import { Award } from 'lucide-react';
 
 const API_ENDPOINT = 'http://localhost:5000/predict';
 
+// --- START OF INLINED UI COMPONENT STUBS (for testing if actual imports are problematic) ---
+// Replace these with your actual imports from './ui/card' etc. if they are more complex.
+const SimpleCard = ({ children, className = '', style = {} }) => (
+  <div className={`bg-white shadow-lg rounded-lg overflow-hidden ${className}`} style={{transition: 'box-shadow 0.3s ease', ...style}}>
+    {children}
+  </div>
+);
+const SimpleCardHeader = ({ children, className = '', style = {} }) => (
+  <div className={`p-4 border-b border-gray-200 ${className}`} style={style}>
+    {children}
+  </div>
+);
+const SimpleCardTitle = ({ children, className = '', style = {} }) => (
+  <h3 className={`text-lg font-semibold text-gray-800 flex items-center ${className}`} style={style}>
+    {children}
+  </h3>
+);
+const SimpleCardContent = ({ children, className = '', style = {} }) => (
+  <div className={`p-4 ${className}`} style={style}>
+    {children}
+  </div>
+);
+const SimpleCardDescription = ({ children, className = '', style = {} }) => (
+    <p className={`text-sm text-gray-500 ${className}`} style={style}>
+        {children}
+    </p>
+);
+const SimpleProgress = ({ value, colorClass = 'bg-blue-500' }) => (
+  <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 my-1"> {/* Added my-1 for a bit of space */}
+    <div 
+      className={`${colorClass} h-2.5 rounded-full transition-all duration-500 ease-out`} 
+      style={{ width: `${Math.max(0, Math.min(100, value || 0))}%` }} // Added fallback for value
+    ></div>
+  </div>
+);
+// --- END OF INLINED UI COMPONENT STUBS ---
 
 
-
-// Move these variable definitions from ADHDAssessmentCard to the GameAnalytics component
-// Add these at the beginning of the GameAnalytics component function
-const GameAnalytics = ({ gameData }) => {
+const GameAnalytics = ({ gameData: gameDataFromProp }) => { // Renamed prop for clarity
   const [analysisResults, setAnalysisResults] = useState({
-    inattention: { score: 0, level: '', insights: [] },
-    impulsivity: { score: 0, level: '', insights: [] },
-    combined: { score: 0, level: '', insights: [] }
+    inattention: { score: 0, level: 'Average', insights: [] }, // Default level
+    impulsivity: { score: 0, level: 'Average', insights: [] },
+    combined: { score: 0, level: 'Average', insights: [] }
   });
-  const [expandedInsight, setExpandedInsight] = useState(null);
   const [showTips, setShowTips] = useState(false);
   const [showMetricInfo, setShowMetricInfo] = useState(null);
   const [historicalData, setHistoricalData] = useState([]);
   const [adhdType, setADHDType] = useState(null);
-  const [modelConfidence, setModelConfidence] = useState(null);
+  const [modelConfidence, setModelConfidence] = useState(0); // Default to 0
   const [modelInsights, setModelInsights] = useState(null);
+  
   const location = useLocation();
-  const { childId, gameId } = useParams();
-  const [scoreLevels, setScoreLevels] = useState({
-    inattention: '',
-    impulsivity: ''
-  });
+  const { childId: childIdFromParams, gameId } = useParams();
   const navigate = useNavigate();
 
-
-
-  // Add these missing variable definitions - moved from ADHDAssessmentCard
-  // Emoji mapping for various elements
-  const typeEmojis = {
-    'Primarily Inattentive': '🔍',
-    'Primarily Hyperactive-Impulsive': '⚡',
-    'Combined Type': '🔄',
-    'Minimal Symptoms': '✅'
-  };
-
-  // Default emoji if type not found
-  const defaultEmoji = '🧩';
+  const [scoreLevels, setScoreLevels] = useState({
+    inattention: 'Average', // Default level
+    impulsivity: 'Average'
+  });
   
-  // Level indicators with emojis
+  const [effectiveChildId, setEffectiveChildId] = useState(null);
+  const [processedGameData, setProcessedGameData] = useState(null); // Store processed game data
+
+  const typeEmojis = {
+    'No ADHD': '✅',
+    'None': '⚪',
+    'Inattentive': '🔍',
+    'Hyperactive-Impulsive': '⚡',
+    'Combined': '🔄',
+    'Unknown': '❓', // Added Unknown
+  };
+  const defaultEmoji = '🧩';
+
   const getLevelEmoji = (level) => {
     switch(level) {
       case 'High': return '🔴';
@@ -3322,8 +5520,8 @@ const GameAnalytics = ({ gameData }) => {
     }
   };
   
-  // Progress bar colors
   const getProgressColors = (level) => {
+    // Ensure these Tailwind classes are available or use inline styles
     switch(level) {
       case 'High': return 'bg-red-500';
       case 'Above Average': return 'bg-orange-400';
@@ -3334,170 +5532,139 @@ const GameAnalytics = ({ gameData }) => {
     }
   };
 
-  // Get progress width based on level
   const getProgressWidth = (level) => {
-    switch(level) {
-      case 'High': return 'w-full';
-      case 'Above Average': return 'w-4/5';
-      case 'Average': return 'w-3/5';
-      case 'Below Average': return 'w-2/5';
-      case 'Low': return 'w-1/5';
-      default: return 'w-0';
-    }
-  };
-
-  // useEffect(() => {
-  //   const fetchProfile = async () => {
-  //     try {
-  //       const { data } = await axios.get("http://localhost:8800/api/child/profile", {
-  //         withCredentials: true,
-  //       });
-  //       setChildId(data._id); // Store the child ID in state
-  //     } catch (error) {
-  //       console.error("Error fetching profile:", error);
-        
-  //     }
-  //   };
-    
-  //   fetchProfile();
-  // }, [navigate]);
-
-  const navigateToQuestionnaire = () => {
-    if (childId) {
-      navigate('/questionnaire-form', { state: { childId: childId } });
-    } else {
-      console.error('No childId available for questionnaire');
-      // You could show an error message to the user here
-    }
-  };
-  // Rest of your component code...
-  // Enhanced function to fetch predictions from the ML model
-const fetchPredictionFromModel = async (gameData) => {
-  try {
-    // Format the data according to what your backend expects
-    const modelInput = {
-      reactionTimes: gameData.reactionTimes || [],
-      correctStreak: gameData.correctStreak || 0,
-      prematureClicks: gameData.prematureClicks || 0,
-      missedStars: gameData.missedStars || 0,
-      score: gameData.score || 0,
-      // Include maxMissedStreak if available
-      maxMissedStreak: gameData.maxMissedStreak || 0,
-      // Include missedStarStreaks if available for more accurate predictions
-      missedStarStreaks: gameData.missedStarStreaks || []
+    // For inline styles if Tailwind classes are not fully working for dynamic parts
+    const widths = {
+      'High': '100%', 'Above Average': '80%', 'Average': '60%',
+      'Below Average': '40%', 'Low': '20%', 'default': '0%'
     };
-    
-    console.log('Sending data to ML model:', modelInput);
-    const response = await axios.post(API_ENDPOINT, modelInput);
-    console.log('Received prediction from ML model:', response.data);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching prediction from ML model:', error);
-    return null;
-  }
-};
-
-  // useEffect(() => {
-  //   if (gameData) {
-  //     if (gameData.reactionTimes && gameData.reactionTimes.length > 0) {
-  //       const mean = gameData.averageReactionTime;
-  //       const variance = gameData.reactionTimes.reduce((sum, time) => 
-  //         sum + Math.pow(time - mean, 2), 0) / gameData.reactionTimes.length;
-  //       gameData.reactionTimeVariability = Math.sqrt(variance);
-  //     }
-  //     const results = analyzeGameData(gameData);
-  //     setAnalysisResults(results);
-      
-  //     // Generate fake historical data for demonstration
-  //     generateHistoricalData();
-  //   }
-  // }, [gameData]);
-  // Enhanced useEffect for your GameAnalytics component
-    // useEffect(() => {
-    //   const id = location.state?.childId;
-    //   if (!id) {
-    //     alert("Child ID is missing. Please log in again.");
-    //   } else {
-    //     setChildId(id);
-    //   }
-    // }, [location.state]);
-useEffect(() => {
-
-  if (gameData) {
-    // Calculate derived metrics that the ML model expects
-    const processedData = { ...gameData };
-    
-    // Calculate variability if not already calculated
-    if (processedData.reactionTimes && processedData.reactionTimes.length > 0) {
-      const mean = processedData.averageReactionTime || 
-        processedData.reactionTimes.reduce((sum, time) => sum + time, 0) / processedData.reactionTimes.length;
-      processedData.averageReactionTime = mean;
-      
-      const variance = processedData.reactionTimes.reduce((sum, time) => 
-        sum + Math.pow(time - mean, 2), 0) / processedData.reactionTimes.length;
-      processedData.reactionTimeVariability = Math.sqrt(variance);
+    return widths[level] || widths['default'];
+  };
+  
+  useEffect(() => {
+    let idToSet = null;
+    if (childIdFromParams) {
+      idToSet = childIdFromParams;
+      console.log("GameAnalytics: childId set from URL params:", childIdFromParams);
+    } else if (location.state && location.state.childId) { // Check location.state first if gameDataProp is also from there
+      idToSet = location.state.childId;
+      console.log("GameAnalytics: childId set from location.state:", location.state.childId);
+    } else if (gameDataFromProp && gameDataFromProp.childId) {
+      idToSet = gameDataFromProp.childId;
+      console.log("GameAnalytics: childId set from gameData prop:", gameDataFromProp.childId);
     }
     
-    // Try to get prediction from ML model
-    fetchPredictionFromModel(processedData)
-    
-      .then(prediction => {
-        if (prediction && !prediction.error) {
-          // Set ADHD type and confidence from the model response
-          setADHDType(prediction.adhd_type);
-          
-          // Find the highest probability for confidence
-          const highestProbability = Math.max(...Object.values(prediction.probabilities));
-          setModelConfidence(highestProbability);
-          
-          // Store insights from the model for display
-          setModelInsights(prediction.insights);
-          
-          // Use detailed scores from the model response
-          setAnalysisResults({
-            inattention: {
-              score: prediction.scores.inattention.score,
-              level: prediction.scores.inattention.level,
-              insights: prediction.insights.inattention || []
-            },
-            impulsivity: {
-              score: prediction.scores.impulsivity.score,
-              level: prediction.scores.impulsivity.level,
-              insights: prediction.insights.impulsivity || []
-            },
-            combined: {
-              score: (prediction.scores.inattention.score + prediction.scores.impulsivity.score) / 2,
-              level: getScoreLevel((prediction.scores.inattention.score + prediction.scores.impulsivity.score) / 2),
-              insights: prediction.insights.combined || []
-            }
-          });
-          
-          // Store score levels for display
-          setScoreLevels({
-            inattention: prediction.scores.inattention.level,
-            impulsivity: prediction.scores.impulsivity.level
-          });
-        } else {
-          console.warn('ML model prediction failed or returned an error, falling back to rule-based analysis');
-          // Fall back to rule-based analysis if ML prediction fails
-          const results = analyzeGameData(processedData);
-          setAnalysisResults(results);
-          
-          // Clear model-specific data
-          setADHDType(null);
-          setModelConfidence(null);
-          setModelInsights(null);
-        }
-        
-        // Generate fake historical data for demonstration (if needed)
-        generateHistoricalData();
-      });
-  }
-}, [gameData]);
+    if (idToSet) {
+      setEffectiveChildId(idToSet);
+    } else {
+      console.warn("GameAnalytics: No childId could be determined. This might affect questionnaire navigation.");
+      // alert("Child information is missing. Some features might be unavailable.");
+    }
+  }, [childIdFromParams, gameDataFromProp, location.state]);
+
+  // Effect to process game data once it's available (either from prop or fetched)
+  useEffect(() => {
+    // Use gameData from location.state if available, otherwise from prop
+    const currentWorkingGameData = location.state?.gameDataForAnalytics || gameDataFromProp;
+
+    if (currentWorkingGameData && Object.keys(currentWorkingGameData).length > 0) {
+      console.log("GameAnalytics: Processing gameData:", currentWorkingGameData);
+      const dataCopy = { ...currentWorkingGameData };
+      
+      if (!dataCopy.averageReactionTime && dataCopy.reactionTimes && dataCopy.reactionTimes.length > 0) {
+        dataCopy.averageReactionTime = dataCopy.reactionTimes.reduce((sum, time) => sum + time, 0) / dataCopy.reactionTimes.length;
+      }
+      
+      if (!dataCopy.reactionTimeVariability && dataCopy.reactionTimes && dataCopy.reactionTimes.length > 0 && dataCopy.averageReactionTime) {
+        const mean = dataCopy.averageReactionTime;
+        const variance = dataCopy.reactionTimes.reduce((sum, time) => 
+          sum + Math.pow(time - mean, 2), 0) / dataCopy.reactionTimes.length;
+        dataCopy.reactionTimeVariability = Math.sqrt(variance);
+      } else if (typeof dataCopy.reactionTimeVariability === 'undefined') {
+          dataCopy.reactionTimeVariability = 0; 
+      }
+      setProcessedGameData(dataCopy); // Store the processed data
+    } else {
+      console.log("GameAnalytics: gameData (from prop or location.state) is null or empty. Waiting for data.");
+      setProcessedGameData(null); // Reset if no data
+    }
+  }, [gameDataFromProp, location.state]);
 
 
-  const generateHistoricalData = () => {
-    // Mock historical data for the visualization
+  // Effect to fetch prediction when processedGameData is ready
+  useEffect(() => {
+    if (processedGameData) {
+      fetchPredictionFromModel(processedGameData)
+        .then(prediction => {
+          if (prediction && !prediction.error) {
+            setADHDType(prediction.adhd_type || 'Unknown');
+            const probs = prediction.probabilities || {};
+            const highestProbability = Object.keys(probs).length > 0 ? Math.max(...Object.values(probs)) : 0;
+            setModelConfidence(highestProbability);
+            setModelInsights(prediction.insights || { inattention: [], impulsivity: [], combined: [] });
+            
+            const inattentionScore = prediction.scores?.inattention?.score || 0;
+            const inattentionLevel = prediction.scores?.inattention?.level || getScoreLevel(inattentionScore);
+            const impulsivityScore = prediction.scores?.impulsivity?.score || 0;
+            const impulsivityLevel = prediction.scores?.impulsivity?.level || getScoreLevel(impulsivityScore);
+
+            setAnalysisResults({
+              inattention: { score: inattentionScore, level: inattentionLevel, insights: prediction.insights?.inattention || [] },
+              impulsivity: { score: impulsivityScore, level: impulsivityLevel, insights: prediction.insights?.impulsivity || [] },
+              combined: {
+                score: (inattentionScore + impulsivityScore) / 2,
+                level: getScoreLevel((inattentionScore + impulsivityScore) / 2),
+                insights: prediction.insights?.combined || []
+              }
+            });
+            setScoreLevels({ inattention: inattentionLevel, impulsivity: impulsivityLevel });
+          } else {
+            console.warn('ML model prediction failed or returned an error. Using local analysis or defaults.', prediction?.message);
+            const localResults = analyzeGameData(processedGameData); // Fallback
+            setAnalysisResults(localResults);
+            setScoreLevels({inattention: localResults.inattention.level, impulsivity: localResults.impulsivity.level})
+            setADHDType('Analysis Unavailable');
+            setModelConfidence(0);
+            setModelInsights({ inattention: ["Could not retrieve AI insights."], impulsivity: [], combined: [] });
+          }
+          generateHistoricalData(processedGameData, prediction);
+        });
+    } else {
+      // Reset states if there's no processed game data
+      setAnalysisResults({ inattention: { score: 0, level: 'Average', insights: [] }, impulsivity: { score: 0, level: 'Average', insights: [] }, combined: { score: 0, level: 'Average', insights: [] } });
+      setScoreLevels({ inattention: 'Average', impulsivity: 'Average' });
+      setADHDType(null);
+      setModelConfidence(0);
+      setModelInsights(null);
+      setHistoricalData([]);
+    }
+  }, [processedGameData]); // Depend on processedGameData
+
+
+  const fetchPredictionFromModel = async (dataForModel) => {
+    try {
+      const modelInput = {
+        reactionTimes: dataForModel.reactionTimes || [],
+        correctStreak: dataForModel.correctStreak || 0,
+        prematureClicks: dataForModel.prematureClicks || 0,
+        missedStars: dataForModel.missedStars || 0,
+        score: dataForModel.score || 0,
+        // Ensure these are calculated if not present in dataForModel; ML model needs them.
+        // maxMissedStreak is not directly used by your current Python model
+        // missedStarStreaks is also not directly used by your Python model features
+      };
+      
+      console.log('Sending data to ML model:', modelInput);
+      const response = await axios.post(API_ENDPOINT, modelInput);
+      console.log('Received prediction from ML model:', response.data);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching prediction from ML model:', error.response ? error.response.data : error.message);
+      return { error: true, message: error.message || "Failed to fetch prediction." };
+    }
+  };
+
+  const generateHistoricalData = (currentData, currentPrediction) => {
     const fakeHistory = [];
     const today = new Date();
     for (let i = 6; i >= 0; i--) {
@@ -3510,101 +5677,94 @@ useEffect(() => {
         score: Math.floor(Math.random() * 150) + 150
       });
     }
-    // Add current data point
-    fakeHistory.push({
-      date: 'Today',
-      attentionScore: analysisResults.inattention.score,
-      impulsivityScore: analysisResults.impulsivity.score,
-      score: gameData.score
-    });
+    
+    if (currentData) {
+      let todayAttentionScore = analysisResults.inattention.score; // Default to current rule-based/state
+      let todayImpulsivityScore = analysisResults.impulsivity.score;
+
+      if (currentPrediction && currentPrediction.scores?.inattention) {
+        todayAttentionScore = currentPrediction.scores.inattention.score;
+      }
+      if (currentPrediction && currentPrediction.scores?.impulsivity) {
+        todayImpulsivityScore = currentPrediction.scores.impulsivity.score;
+      }
+
+      fakeHistory.push({
+        date: 'Today',
+        attentionScore: todayAttentionScore,
+        impulsivityScore: todayImpulsivityScore,
+        score: currentData.score || 0
+      });
+    }
     setHistoricalData(fakeHistory);
   };
+  
+  const navigateToQuestionnaire = () => {
+    if (effectiveChildId) { // **FIXED: Use effectiveChildId**
+      console.log("Navigating to questionnaire with childId:", effectiveChildId);
+      navigate('/questionnaire-form', { 
+        state: { 
+          childId: effectiveChildId, 
+        } 
+      });
+    } else {
+      console.error('GameAnalytics: No effectiveChildId available for navigating to questionnaire.');
+      alert('Child information is missing. Cannot proceed to the questionnaire.');
+    }
+  };
 
-  // Analyze game data to calculate metrics
   const analyzeGameData = (data) => {
-    // 1. Inattention Analysis
     const inattentionScore = calculateInattentionScore(data);
     const inattentionLevel = getScoreLevel(inattentionScore);
     const inattentionInsights = generateInattentionInsights(data, inattentionScore);
 
-    // 2. Impulsivity Analysis
     const impulsivityScore = calculateImpulsivityScore(data);
     const impulsivityLevel = getScoreLevel(impulsivityScore);
     const impulsivityInsights = generateImpulsivityInsights(data, impulsivityScore);
 
-    // 3. Combined Analysis
     const combinedScore = (inattentionScore + impulsivityScore) / 2;
     const combinedLevel = getScoreLevel(combinedScore);
     const combinedInsights = generateCombinedInsights(inattentionScore, impulsivityScore, data);
 
-    // Enhanced Card UI with more comprehensive details from the ML model
-
     return {
-      inattention: {
-        score: inattentionScore,
-        level: inattentionLevel,
-        insights: inattentionInsights
-      },
-      impulsivity: {
-        score: impulsivityScore,
-        level: impulsivityLevel,
-        insights: impulsivityInsights
-      },
-      combined: {
-        score: combinedScore,
-        level: combinedLevel,
-        insights: combinedInsights
-      }
+      inattention: { score: inattentionScore, level: inattentionLevel, insights: inattentionInsights },
+      impulsivity: { score: impulsivityScore, level: impulsivityLevel, insights: impulsivityInsights },
+      combined: { score: combinedScore, level: combinedLevel, insights: combinedInsights }
     };
   };
 
-  // Calculate inattention score from 0-100 (higher = more inattentive)
-  const calculateInattentionScore = (data) => {
-    // Factors indicating inattention:
-    // 1. Missed stars
-    const missedStarsFactor = Math.min(data.missedStars * 5, 40);
-    
-    // 2. Long reaction times
-    const avgReactionTime = data.averageReactionTime;
+  const calculateInattentionScore = (data = {}) => {
+    const missedStarsFactor = Math.min((data.missedStars || 0) * 5, 40);
+    const avgReactionTime = data.averageReactionTime || 0;
     let reactionTimeFactor = 0;
     if (avgReactionTime > 1000) reactionTimeFactor = 30;
     else if (avgReactionTime > 800) reactionTimeFactor = 20;
     else if (avgReactionTime > 600) reactionTimeFactor = 10;
-    
-    // 3. Missed star streaks (consecutive misses)
-    const maxMissedStreak = Math.max(...data.missedStarStreaks, 0);
+    const missedStarStreaks = data.missedStarStreaks || [0];
+    const maxMissedStreak = Math.max(...missedStarStreaks, 0);
     const streakFactor = maxMissedStreak * 10;
-    
-    // Calculate final score (cap at 100)
     return Math.min(missedStarsFactor + reactionTimeFactor + streakFactor, 100);
   };
 
-  // Calculate impulsivity score from 0-100 (higher = more impulsive)
-  const calculateImpulsivityScore = (data) => {
-    // Factors indicating impulsivity:
-    // 1. Premature clicks
-    const prematureClicksRatio = data.prematureClicks / 
-      (data.reactionTimes.length + data.prematureClicks) * 100;
+  const calculateImpulsivityScore = (data = {}) => {
+    const prematureClicks = data.prematureClicks || 0;
+    const reactionTimes = data.reactionTimes || [];
+    const reactionTimesLength = reactionTimes.length;
+    const totalActions = reactionTimesLength + prematureClicks;
+    const prematureClicksRatio = totalActions > 0 ? (prematureClicks / totalActions) * 100 : 0;
     const prematureClicksFactor = Math.min(prematureClicksRatio, 50);
     
-    // 2. Very fast reaction times (potentially impulsive responses)
-    const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-    const fastResponseRatio = (fastResponses / data.reactionTimes.length) * 100;
+    const fastResponses = reactionTimes.filter(time => time < 400).length;
+    const fastResponseRatio = reactionTimesLength > 0 ? (fastResponses / reactionTimesLength) * 100 : 0;
     const fastResponseFactor = Math.min(fastResponseRatio * 0.5, 30);
     
-    // 3. Variability in reaction times (inconsistent behavior)
-    // Calculate standard deviation if we have it
     let variabilityFactor = 0;
-    if (data.reactionTimeVariability) {
-      if (data.reactionTimeVariability > 300) variabilityFactor = 20;
-      else if (data.reactionTimeVariability > 200) variabilityFactor = 10;
-    }
-    
-    // Calculate final score (cap at 100)
+    const reactionTimeVariability = data.reactionTimeVariability || 0;
+    if (reactionTimeVariability > 300) variabilityFactor = 20;
+    else if (reactionTimeVariability > 200) variabilityFactor = 10;
     return Math.min(prematureClicksFactor + fastResponseFactor + variabilityFactor, 100);
   };
 
-  // Generate score level based on numerical score
   const getScoreLevel = (score) => {
     if (score < 20) return 'Low';
     if (score < 40) return 'Below Average';
@@ -3613,1812 +5773,342 @@ useEffect(() => {
     return 'High';
   };
 
-  // Generate insights for inattention
-  const generateInattentionInsights = (data, score) => {
+  const generateInattentionInsights = (data = {}, score) => {
     const insights = [];
-    
-    if (data.missedStars > 5) {
-      insights.push("Missed several stars, suggesting potential attention lapses.");
-    }
-    
-    if (data.averageReactionTime > 1000) {
-      insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
-    }
-    
-    if (Math.max(...data.missedStarStreaks, 0) >= 2) {
-      insights.push("Consecutive missed stars suggest periods of significant inattention.");
-    }
-    
-    if (score < 30) {
-      insights.push("Overall attention levels appear strong.");
-    }
-    
-    return insights.length > 0 ? insights : ["Attention metrics are within normal ranges."];
+    if ((data.missedStars || 0) > 5) insights.push("Missed several stars, suggesting potential attention lapses.");
+    if ((data.averageReactionTime || 0) > 1000) insights.push("Slower reaction times indicate possible difficulty maintaining focus.");
+    const missedStarStreaks = data.missedStarStreaks || [0];
+    if (Math.max(...missedStarStreaks, 0) >= 2) insights.push("Consecutive missed stars suggest periods of significant inattention.");
+    if (score < 30) insights.push("Overall attention levels appear strong.");
+    return insights.length > 0 ? insights : ["Attention metrics are within typical ranges."];
   };
 
-  // Generate insights for impulsivity
-  const generateImpulsivityInsights = (data, score) => {
+  const generateImpulsivityInsights = (data = {}, score) => {
     const insights = [];
-    
-    if (data.prematureClicks > data.reactionTimes.length * 0.3) {
-      insights.push("High number of premature clicks suggests impulsive responding.");
+    const prematureClicks = data.prematureClicks || 0;
+    const reactionTimes = data.reactionTimes || [];
+    const reactionTimesLength = reactionTimes.length;
+    if (reactionTimesLength > 0 && prematureClicks > reactionTimesLength * 0.3) {
+        insights.push("High number of premature clicks suggests impulsive responding.");
+    } else if (reactionTimesLength === 0 && prematureClicks > 2) { // Handle case with no valid clicks but many premature
+        insights.push("High number of premature clicks suggests impulsive responding.");
+    }
+
+    const fastResponses = reactionTimes.filter(time => time < 400).length;
+    if (reactionTimesLength > 0 && fastResponses > reactionTimesLength * 0.2) {
+        insights.push("Many unusually fast responses may indicate impulsive decision making.");
     }
     
-    const fastResponses = data.reactionTimes.filter(time => time < 400).length;
-    if (fastResponses > data.reactionTimes.length * 0.2) {
-      insights.push("Many unusually fast responses may indicate impulsive decision making.");
-    }
-    
-    if (data.reactionTimeVariability && data.reactionTimeVariability > 300) {
-      insights.push("High variability in response times suggests inconsistent attention control.");
-    }
-    
-    if (score < 30) {
-      insights.push("Shows good impulse control overall.");
-    }
-    
+    const reactionTimeVariability = data.reactionTimeVariability || 0;
+    if (reactionTimeVariability > 300) insights.push("High variability in response times suggests inconsistent attention control.");
+    if (score < 30) insights.push("Shows good impulse control overall.");
     return insights.length > 0 ? insights : ["Impulsivity metrics are within normal ranges."];
   };
 
-  // Generate combined insights
-  const generateCombinedInsights = (inattentionScore, impulsivityScore, data) => {
+  const generateCombinedInsights = (inattentionScore, impulsivityScore, data = {}) => {
     const insights = [];
-    
-    if (inattentionScore > 60 && impulsivityScore > 60) {
-      insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
-    } else if (inattentionScore > 60) {
-      insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
-    } else if (impulsivityScore > 60) {
-      insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
-    }
-    
-    if (data.score > 200) {
-      insights.push("Despite challenges, achieved a good game score, showing persistence.");
-    }
-    
-    if (data.correctStreak > 15) {
-      insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
-    }
-    
+    if (inattentionScore > 60 && impulsivityScore > 60) insights.push("Shows both inattentive and impulsive patterns, consider activities to strengthen focus and response control.");
+    else if (inattentionScore > 60) insights.push("Primarily shows inattentive patterns. Consider focus-building activities.");
+    else if (impulsivityScore > 60) insights.push("Primarily shows impulsive patterns. Consider impulse-control activities.");
+    if ((data.score || 0) > 200) insights.push("Despite challenges, achieved a good game score, showing persistence.");
+    if ((data.correctStreak || 0) > 15) insights.push("Achieved significant correct streak, demonstrating capacity for sustained attention.");
     return insights.length > 0 ? insights : ["Overall performance is within typical ranges."];
   };
 
-  // Get color based on level
   const getLevelColor = (level) => {
-    switch (level) {
-      case 'Low': return 'text-green-500';
-      case 'Below Average': return 'text-blue-500';
-      case 'Average': return 'text-yellow-500';
-      case 'Above Average': return 'text-orange-500';
-      case 'High': return 'text-red-500';
-      default: return 'text-gray-500';
-    }
+    const colors = {
+        'Low': 'text-green-500', 'Below Average': 'text-blue-500', 'Average': 'text-yellow-500',
+        'Above Average': 'text-orange-500', 'High': 'text-red-500', 'default': 'text-gray-500'
+    };
+    return colors[level] || colors['default'];
   };
 
-  // Get progress bar color based on score
-  const getProgressColor = (score) => {
-    if (score < 30) return 'bg-green-500';
-    if (score < 50) return 'bg-blue-500';
-    if (score < 70) return 'bg-yellow-500';
-    if (score < 85) return 'bg-orange-500';
-    return 'bg-red-500';
-  };
-
-  // Get the color for the trending indicator
   const getTrendColor = (current, previous) => {
     if (current < previous) return 'text-green-500';
     if (current > previous) return 'text-red-500';
     return 'text-gray-500';
   };
 
-  // Generate reaction time distribution data for chart
   const getReactionTimeDistribution = () => {
-    if (!gameData || !gameData.reactionTimes || gameData.reactionTimes.length === 0) {
-      return [];
-    }
-
-    // Create bins for reaction times
+    if (!processedGameData || !processedGameData.reactionTimes || processedGameData.reactionTimes.length === 0) return [];
     const bins = [
-      { name: '<400ms', count: 0 }, 
-      { name: '400-600ms', count: 0 },
-      { name: '600-800ms', count: 0 },
-      { name: '800-1000ms', count: 0 },
+      { name: '<400ms', count: 0 }, { name: '400-600ms', count: 0 },
+      { name: '600-800ms', count: 0 }, { name: '800-1000ms', count: 0 },
       { name: '>1000ms', count: 0 }
     ];
-
-    gameData.reactionTimes.forEach(time => {
+    processedGameData.reactionTimes.forEach(time => {
       if (time < 400) bins[0].count++;
       else if (time < 600) bins[1].count++;
       else if (time < 800) bins[2].count++;
       else if (time < 1000) bins[3].count++;
       else bins[4].count++;
     });
-
     return bins;
   };
 
-  // Prepare radar chart data
   const getRadarData = () => {
+    const avgReactionTime = processedGameData?.averageReactionTime || 1000; // Default to a high RT if not available
+    const rtVariability = processedGameData?.reactionTimeVariability || 400; // Default to a high variability
+    const correctStreak = processedGameData?.correctStreak || 0;
+
     return [
-      {
-        subject: 'Attention',
-        score: 100 - analysisResults.inattention.score,
-        fullMark: 100
-      },
-      {
-        subject: 'Response Control',
-        score: 100 - analysisResults.impulsivity.score,
-        fullMark: 100
-      },
-      {
-        subject: 'Reaction Time',
-        score: Math.max(0, 100 - (gameData.averageReactionTime / 10)),
-        fullMark: 100
-      },
-      {
-        subject: 'Consistency',
-        score: Math.max(0, 100 - (gameData.reactionTimeVariability / 4)),
-        fullMark: 100
-      },
-      {
-        subject: 'Streak',
-        score: Math.min(100, gameData.correctStreak * 5),
-        fullMark: 100
-      }
+      { subject: 'Attention Focus', score: 100 - (analysisResults.inattention.score || 0), fullMark: 100 },
+      { subject: 'Impulse Control', score: 100 - (analysisResults.impulsivity.score || 0), fullMark: 100 },
+      { subject: 'Response Speed', score: Math.max(0, 100 - (avgReactionTime / 12)), fullMark: 100 }, // Scaled differently
+      { subject: 'Response Stability', score: Math.max(0, 100 - (rtVariability / 5)), fullMark: 100 }, // Scaled differently
+      { subject: 'Sustained Focus', score: Math.min(100, correctStreak * 6.67), fullMark: 100 } // Max 15 streak = 100
     ];
   };
-
-  // Get metric descriptions for tooltips
+  
   const getMetricInfo = (metric) => {
     const info = {
-      attention: "Measures ability to sustain focus and respond to targets. Lower scores indicate better attention control.",
-      impulsivity: "Measures ability to wait for appropriate cues. Lower scores indicate better impulse control.",
+      attention: "Measures ability to sustain focus. Higher scores indicate more challenges with attention.",
+      impulsivity: "Measures ability to control responses. Higher scores suggest more impulsive behavior.",
       reactionTime: "Average time taken to respond to targets. Lower is faster.",
       variability: "Consistency of response times. Lower values indicate more consistent responses.",
-      missedStars: "Number of targets not clicked when they should have been.",
-      prematureClicks: "Number of clicks made when no target was present.",
-      correctStreak: "Longest sequence of correctly captured targets."
     };
     return info[metric] || "No additional information available.";
   };
 
-  
-
-  if (!gameData) {
+  // Conditional rendering if processedGameData is not yet available
+  if (!processedGameData) {
     return (
-      <div className="p-6 bg-gray-50 rounded-lg flex justify-center items-center h-64">
-        <div className="text-center">
-          <AlertCircle className="mx-auto text-gray-400 mb-4" size={48} />
-          <h2 className="text-xl font-semibold text-gray-600">No Game Data Available</h2>
-          <p className="text-gray-500 mt-2">Complete a game session to view your analytics</p>
+      <div style={{ padding: '1.5rem', backgroundColor: '#f9fafb', borderRadius: '0.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 'calc(100vh - 100px)' }}>
+        <div style={{ textAlign: 'center' }}>
+          <AlertCircle style={{ margin: '0 auto', color: '#9ca3af', marginBottom: '1rem' }} size={48} />
+          <h2 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#4b5563' }}>Loading Analytics...</h2>
+          <p style={{ color: '#6b7280', marginTop: '0.5rem' }}>
+            Preparing your game performance insights. This might take a moment.
+          </p>
+          { !(location.state?.gameDataForAnalytics || gameDataFromProp) &&
+            <button 
+                onClick={() => navigate('/')} // Or to your game page
+                style={{ marginTop: '1.5rem', padding: '0.5rem 1rem', backgroundColor: '#3b82f6', color: 'white', borderRadius: '0.375rem', border: 'none', cursor: 'pointer'}}
+            >
+                Play Game to See Analytics
+            </button>
+          }
         </div>
       </div>
     );
   }
 
-
-// Inline CSS styles for the Progress component
-const Progress = ({ value, className }) => {
-  return (
-    <div style={{width: '100%', backgroundColor: '#e5e7eb', borderRadius: '9999px', height: '8px'}}>
-      <div 
-        style={{
-          width: `${value}%`, 
-          height: '8px', 
-          borderRadius: '9999px',
-          transition: 'width 0.3s ease',
-          ...className && {[className.split(':')[0]]: className.split(':')[1]}
-        }}
-      ></div>
-    </div>
-  );
-};
-
-// Inline CSS styles for Card components
-const Card = ({ children, className }) => {
-  return (
-    <div style={{
-      backgroundColor: '#ffffff',
-      borderRadius: '0.5rem',
-      overflow: 'hidden',
-      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      transition: 'box-shadow 0.3s ease',
-      ...className && {border: className.includes('border-green-200') ? '2px solid #bbf7d0' : 'none'}
-    }}>
-      {children}
-    </div>
-  );
-};
-
-const CardHeader = ({ children, className }) => {
-  return (
-    <div style={{
-      padding: '1rem',
-      paddingBottom: '0.5rem',
-      ...className && {
-        backgroundImage: className.includes('from-blue-50 to-blue-100') ? 'linear-gradient(to right, #eff6ff, #dbeafe)' : 
-                        className.includes('from-yellow-50 to-yellow-100') ? 'linear-gradient(to right, #fefce8, #fef9c3)' :
-                        className.includes('from-purple-50 to-purple-100') ? 'linear-gradient(to right, #faf5ff, #f3e8ff)' :
-                        className.includes('from-green-100 to-blue-100') ? 'linear-gradient(to right, #dcfce7, #dbeafe)' : 'none'
-      }
-    }}>
-      {children}
-    </div>
-  );
-};
-
-const CardTitle = ({ children, className }) => {
-  return (
-    <div style={{
-      fontSize: '1.25rem',
-      fontWeight: '600',
-      ...className && {display: 'flex', alignItems: 'center'}
-    }}>
-      {children}
-    </div>
-  );
-};
-
-const CardContent = ({ children, className }) => {
-  return (
-    <div style={{
-      padding: '1rem',
-      paddingTop: className && className.includes('pt-4') ? '1rem' : '1rem'
-    }}>
-      {children}
-    </div>
-  );
-};
-
-const CardDescription = ({ children }) => {
-  return (
-    <div style={{
-      color: '#6b7280',
-      fontSize: '0.875rem'
-    }}>
-      {children}
-    </div>
-  );
-};
-
-if (!analysisResults || !historicalData) {
-  return (
-    <div style={{
-      padding: '1.5rem',
-      backgroundColor: '#f9fafb',
-      borderRadius: '0.5rem',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '16rem'
-    }}>
-      <div style={{textAlign: 'center'}}>
-        <AlertCircle style={{
-          margin: '0 auto',
-          color: '#9ca3af',
-          marginBottom: '1rem'
-        }} size={48} />
-        <h2 style={{
-          fontSize: '1.25rem',
-          fontWeight: '600',
-          color: '#4b5563'
-        }}>No Game Data Available</h2>
-        <p style={{
-          color: '#6b7280',
-          marginTop: '0.5rem'
-        }}>Complete a game session to view your analytics</p>
-      </div>
-    </div>
-  );
-}
-
 return (
-  <div style={{maxWidth: '1200px', margin: '0 auto', padding: '1rem'}}>
+  <div style={{maxWidth: '1200px', margin: '0 auto', padding: '1rem', fontFamily: 'sans-serif'}}>
+    {/* Header Section */}
     <div style={{
-      background: 'linear-gradient(to right, #eff6ff, #eef2ff)',
-      padding: '1.5rem',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      color: 'white',
+      padding: '2rem 1.5rem',
       borderRadius: '0.75rem',
       marginBottom: '2rem',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      boxShadow: '0 10px 20px rgba(0,0,0,0.1)'
     }}>
-      <div style={{
-        position: 'absolute',
-        top: '0',
-        right: '0',
-        width: '8rem',
-        height: '8rem',
-        backgroundColor: '#bfdbfe',
-        borderRadius: '9999px',
-        marginTop: '-3rem',
-        marginRight: '-3rem',
-        opacity: '0.5'
-      }}></div>
-      <div style={{
-        position: 'absolute',
-        bottom: '0',
-        left: '0',
-        width: '6rem',
-        height: '6rem',
-        backgroundColor: '#c7d2fe',
-        borderRadius: '9999px',
-        marginBottom: '-2rem',
-        marginLeft: '-2rem',
-        opacity: '0.5'
-      }}></div>
-      <h1 style={{
-        fontSize: '1.875rem',
-        fontWeight: '700',
-        marginBottom: '0.5rem',
-        color: '#1f2937',
-        position: 'relative',
-        zIndex: '10'
-      }}>Game Performance Analytics</h1>
-      <p style={{
-        color: '#4b5563',
-        position: 'relative',
-        zIndex: '10'
-      }}>Detailed analysis of your cognitive performance patterns</p>
+      <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '100px', height: '100px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '50%', filter: 'blur(10px)'}}></div>
+      <div style={{ position: 'absolute', bottom: '-30px', right: '-10px', width: '150px', height: '150px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '50%', transform: 'rotate(45deg)'}}></div>
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', position: 'relative' }}>
+        🧠 Game Performance Analytics
+      </h1>
+      <p style={{ fontSize: '1rem', opacity: 0.9, position: 'relative' }}>
+        Detailed insights into your cognitive performance patterns.
+      </p>
       <button 
         onClick={() => setShowTips(!showTips)} 
-        style={{
-          position: 'absolute',
-          top: '1.5rem',
-          right: '1.5rem',
-          backgroundColor: '#ffffff',
-          padding: '0.5rem',
-          borderRadius: '9999px',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-          transition: 'background-color 0.3s',
-          zIndex: '10'
-        }}
+        style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'rgba(255,255,255,0.2)', padding: '0.5rem', borderRadius: '50%', border: 'none', cursor: 'pointer' }}
+        title="Understanding Scores"
       >
-        <Info size={20} style={{color: '#3b82f6'}} />
+        <Info size={20} style={{color: 'white'}} />
       </button>
-      
       {showTips && (
-        <div style={{
-          position: 'absolute',
-          top: '4rem',
-          right: '1.5rem',
-          backgroundColor: '#ffffff',
-          padding: '1rem',
-          borderRadius: '0.5rem',
-          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-          zIndex: '20',
-          width: '16rem',
-          fontSize: '0.875rem'
-        }}>
-          <h3 style={{fontWeight: '700', marginBottom: '0.5rem'}}>Understanding Scores</h3>
-          <p style={{marginBottom: '0.75rem'}}>Higher scores for Attention and Impulsivity metrics indicate more challenges in these areas.</p>
-          <p style={{marginBottom: '0.5rem'}}>Score ranges:</p>
-          <div style={{marginTop: '0.25rem'}}>
-            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
-              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#22c55e', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
-              0-30: Low (Good)
-            </div>
-            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
-              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#3b82f6', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
-              30-50: Below Average
-            </div>
-            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
-              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#eab308', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
-              50-70: Average
-            </div>
-            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
-              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#f97316', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
-              70-85: Above Average
-            </div>
-            <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
-              <div style={{width: '0.75rem', height: '0.75rem', backgroundColor: '#ef4444', borderRadius: '9999px', marginRight: '0.5rem'}}></div>
-              85-100: High (Challenge)
-            </div>
-          </div>
-          <button 
-            onClick={() => setShowTips(false)}
-            style={{
-              marginTop: '0.75rem',
-              color: '#3b82f6',
-              fontSize: '0.75rem',
-              fontWeight: '600'
-            }}
-          >
-            Close
-          </button>
+        <div style={{ position: 'absolute', top: 'calc(1.5rem + 40px)', right: '1.5rem', backgroundColor: 'white', color: '#333', padding: '1rem', borderRadius: '0.5rem', boxShadow: '0 5px 15px rgba(0,0,0,0.2)', zIndex: 20, width: '280px', fontSize: '0.875rem' }}>
+          <h3 style={{fontWeight: 'bold', marginBottom: '0.5rem'}}>Score Interpretation Guide</h3>
+          <p style={{marginBottom: '0.5rem'}}>Scores for Attention & Impulsivity range from 0-100. <strong>Higher scores indicate more challenges.</strong></p>
+          <ul style={{listStyle: 'none', padding: 0}}>
+            {[
+              { level: 'Low (0-19)', color: '#22c55e', desc: 'Strong performance' },
+              { level: 'Below Average (20-39)', color: '#3b82f6', desc: 'Good skills' },
+              { level: 'Average (40-59)', color: '#eab308', desc: 'Typical range' },
+              { level: 'Above Average (60-79)', color: '#f97316', desc: 'Some challenges noted' },
+              { level: 'High (80-100)', color: '#ef4444', desc: 'Significant challenges noted' },
+            ].map(item => (
+              <li key={item.level} style={{display: 'flex', alignItems: 'center', marginBottom: '0.25rem'}}>
+                <span style={{display: 'inline-block', width: '12px', height: '12px', backgroundColor: item.color, borderRadius: '50%', marginRight: '0.5rem'}}></span>
+                <strong>{item.level}:</strong> <span style={{marginLeft: '0.25rem'}}>{item.desc}</span>
+              </li>
+            ))}
+          </ul>
+          <button onClick={() => setShowTips(false)} style={{ marginTop: '0.75rem', color: '#667eea', fontSize: '0.8rem', fontWeight: '600', background: 'none', border: 'none', cursor: 'pointer' }}>Close</button>
         </div>
       )}
     </div>
 
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(1, 1fr)',
-      gap: '1rem',
-      marginBottom: '2rem'
-    }}>
-      <div style={{display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1rem', marginBottom: '2rem'}}>
-        {/* <Card>
-          <CardHeader style={{backgroundImage: 'linear-gradient(to right, #eff6ff, #dbeafe)'}}>
-            <CardTitle style={{display: 'flex', alignItems: 'center'}}>
-              <Brain style={{marginRight: '0.5rem', color: '#2563eb'}} size={20} />
-              <span>Attention Score</span>
-              <button
-                style={{marginLeft: 'auto'}}
-                onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
-              >
-                <Info size={16} style={{color: '#60a5fa'}} />
-              </button>
-            </CardTitle>
-            {showMetricInfo === 'attention' && (
-              <div style={{
-                marginTop: '0.5rem',
-                fontSize: '0.875rem',
-                color: '#4b5563',
-                backgroundColor: '#eff6ff',
-                padding: '0.5rem',
-                borderRadius: '0.25rem'
-              }}>
-                {getMetricInfo('attention')}
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+      {[
+        { title: 'Attention Score', icon: Brain, value: analysisResults.inattention.score, level: analysisResults.inattention.level, metricKey: 'attention', colorTheme: {icon: '#3b82f6', gradientFrom: '#eff6ff', gradientTo: '#dbeafe', progress: getProgressColors(analysisResults.inattention.level)} },
+        { title: 'Impulsivity Score', icon: Zap, value: analysisResults.impulsivity.score, level: analysisResults.impulsivity.level, metricKey: 'impulsivity', colorTheme: {icon: '#f59e0b', gradientFrom: '#fffbeb', gradientTo: '#fef3c7', progress: getProgressColors(analysisResults.impulsivity.level)} },
+        { title: 'Combined Score', icon: Activity, value: analysisResults.combined.score, level: analysisResults.combined.level, metricKey: 'combined', colorTheme: {icon: '#8b5cf6', gradientFrom: '#f5f3ff', gradientTo: '#ede9fe', progress: getProgressColors(analysisResults.combined.level)} },
+      ].map(card => (
+        <SimpleCard key={card.title} className="hover:shadow-xl transition-shadow duration-300">
+          <SimpleCardHeader style={{ background: `linear-gradient(to right, ${card.colorTheme.gradientFrom}, ${card.colorTheme.gradientTo})` }}>
+            <SimpleCardTitle>
+              <card.icon className="mr-2" style={{color: card.colorTheme.icon}} size={22} />
+              <span>{card.title}</span>
+              {card.metricKey !== 'combined' && (
+                <button className="ml-auto bg-transparent border-none p-1 rounded-full hover:bg-gray-200/50" onClick={() => setShowMetricInfo(showMetricInfo === card.metricKey ? null : card.metricKey)} title={`Info about ${card.title}`}>
+                  <Info size={16} style={{color: card.colorTheme.icon, opacity: 0.7}} />
+                </button>
+              )}
+            </SimpleCardTitle>
+            {showMetricInfo === card.metricKey && (
+              <div className="mt-2 text-xs text-gray-700 bg-white/60 p-2 rounded-md shadow-sm"> {/* Slightly transparent background */}
+                {getMetricInfo(card.metricKey)}
               </div>
             )}
-          </CardHeader>
-          <CardContent style={{paddingTop: '1rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
-              <span style={{fontWeight: '600'}}>{analysisResults.inattention.score.toFixed(1)}</span>
-              <div style={{display: 'flex', alignItems: 'center'}}>
-                <span style={{fontWeight: '700', [getLevelColor(analysisResults.inattention.level).split(':')[0]]: getLevelColor(analysisResults.inattention.level).split(':')[1]}}>
-                  {analysisResults.inattention.level}
-                </span>
-                <TrendingUp 
-                  size={16} 
-                  style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.inattention.score, 50).split(':')[0]]: getTrendColor(analysisResults.inattention.score, 50).split(':')[1]}}
-                />
+          </SimpleCardHeader>
+          <SimpleCardContent>
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-3xl font-bold text-gray-800">{(card.value || 0).toFixed(1)}</span>
+              <div className="flex items-center text-sm">
+                <span className={`font-semibold ${getLevelColor(card.level)}`}>{card.level}</span>
+                <TrendingUp size={16} className={`ml-2 ${getTrendColor(card.value || 0, 50)}`} />
               </div>
             </div>
-            <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader style={{backgroundImage: 'linear-gradient(to right, #fefce8, #fef9c3)'}}>
-            <CardTitle style={{display: 'flex', alignItems: 'center'}}>
-              <Zap style={{marginRight: '0.5rem', color: '#ca8a04'}} size={20} />
-              <span>Impulsivity Score</span>
-              <button 
-                style={{marginLeft: 'auto'}}
-                onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
-              >
-                <Info size={16} style={{color: '#facc15'}} />
-              </button>
-            </CardTitle>
-            {showMetricInfo === 'impulsivity' && (
-              <div style={{
-                marginTop: '0.5rem',
-                fontSize: '0.875rem',
-                color: '#4b5563',
-                backgroundColor: '#fefce8',
-                padding: '0.5rem',
-                borderRadius: '0.25rem'
-              }}>
-                {getMetricInfo('impulsivity')}
-              </div>
-            )}
-          </CardHeader>
-          <CardContent style={{paddingTop: '1rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
-              <span style={{fontWeight: '600'}}>{analysisResults.impulsivity.score.toFixed(1)}</span>
-              <div style={{display: 'flex', alignItems: 'center'}}>
-                <span style={{fontWeight: '700', [getLevelColor(analysisResults.impulsivity.level).split(':')[0]]: getLevelColor(analysisResults.impulsivity.level).split(':')[1]}}>
-                  {analysisResults.impulsivity.level}
-                </span>
-                <TrendingUp 
-                  size={16} 
-                  style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.impulsivity.score, 45).split(':')[0]]: getTrendColor(analysisResults.impulsivity.score, 45).split(':')[1]}}
-                />
-              </div>
-            </div>
-            <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader style={{backgroundImage: 'linear-gradient(to right, #faf5ff, #f3e8ff)'}}>
-            <CardTitle style={{display: 'flex', alignItems: 'center'}}>
-              <Activity style={{marginRight: '0.5rem', color: '#9333ea'}} size={20} />
-              <span>Combined Score</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent style={{paddingTop: '1rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem'}}>
-              <span style={{fontWeight: '600'}}>{analysisResults.combined.score.toFixed(1)}</span>
-              <div style={{display: 'flex', alignItems: 'center'}}>
-                <span style={{fontWeight: '700', [getLevelColor(analysisResults.combined.level).split(':')[0]]: getLevelColor(analysisResults.combined.level).split(':')[1]}}>
-                  {analysisResults.combined.level}
-                </span>
-                <TrendingUp 
-                  size={16} 
-                  style={{marginLeft: '0.5rem', [getTrendColor(analysisResults.combined.score, 50).split(':')[0]]: getTrendColor(analysisResults.combined.score, 50).split(':')[1]}}
-                />
-              </div>
-            </div>
-            <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
-          </CardContent>
-        </Card> */}
- {/* <div className="space-y-4 w-full max-w-3xl mx-auto"> */}
-      <Card className="w-full">
-        <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100">
-          <CardTitle className="flex items-center">
-            <Brain className="mr-2 text-blue-600" size={20} />
-            <span>Attention Score</span>
-            <button
-              className="ml-auto"
-              onClick={() => setShowMetricInfo(showMetricInfo === 'attention' ? null : 'attention')}
-            >
-              <Info size={16} className="text-blue-400" />
-            </button>
-          </CardTitle>
-          {showMetricInfo === 'attention' && (
-            <div className="mt-2 text-sm text-gray-600 bg-blue-50 p-2 rounded">
-              {getMetricInfo('attention')}
-            </div>
-          )}
-        </CardHeader>
-        <CardContent className="pt-4">
-          <div className="flex justify-between items-center mb-2">
-            <span className="font-semibold">{analysisResults.inattention.score.toFixed(1)}</span>
-            <div className="flex items-center">
-              <span className={`font-bold ${getLevelColor(analysisResults.inattention.level)}`}>
-                {analysisResults.inattention.level}
-              </span>
-              <TrendingUp 
-                size={16} 
-                className={`ml-2 ${getTrendColor(analysisResults.inattention.score, 50)}`}
-              />
-            </div>
-          </div>
-          <Progress value={analysisResults.inattention.score} className={getProgressColor(analysisResults.inattention.score)} />
-        </CardContent>
-      </Card>
-      
-      <Card className="w-full">
-        <CardHeader className="bg-gradient-to-r from-yellow-50 to-yellow-100">
-          <CardTitle className="flex items-center">
-            <Zap className="mr-2 text-yellow-600" size={20} />
-            <span>Impulsivity Score</span>
-            <button 
-              className="ml-auto"
-              onClick={() => setShowMetricInfo(showMetricInfo === 'impulsivity' ? null : 'impulsivity')}
-            >
-              <Info size={16} className="text-yellow-400" />
-            </button>
-          </CardTitle>
-          {showMetricInfo === 'impulsivity' && (
-            <div className="mt-2 text-sm text-gray-600 bg-yellow-50 p-2 rounded">
-              {getMetricInfo('impulsivity')}
-            </div>
-          )}
-        </CardHeader>
-        <CardContent className="pt-4">
-          <div className="flex justify-between items-center mb-2">
-            <span className="font-semibold">{analysisResults.impulsivity.score.toFixed(1)}</span>
-            <div className="flex items-center">
-              <span className={`font-bold ${getLevelColor(analysisResults.impulsivity.level)}`}>
-                {analysisResults.impulsivity.level}
-              </span>
-              <TrendingUp 
-                size={16} 
-                className={`ml-2 ${getTrendColor(analysisResults.impulsivity.score, 45)}`}
-              />
-            </div>
-          </div>
-          <Progress value={analysisResults.impulsivity.score} className={getProgressColor(analysisResults.impulsivity.score)} />
-        </CardContent>
-      </Card>
-      
-      <Card className="w-full">
-        <CardHeader className="bg-gradient-to-r from-purple-50 to-purple-100">
-          <CardTitle className="flex items-center">
-            <Activity className="mr-2 text-purple-600" size={20} />
-            <span>Combined Score</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="pt-4">
-          <div className="flex justify-between items-center mb-2">
-            <span className="font-semibold">{analysisResults.combined.score.toFixed(1)}</span>
-            <div className="flex items-center">
-              <span className={`font-bold ${getLevelColor(analysisResults.combined.level)}`}>
-                {analysisResults.combined.level}
-              </span>
-              <TrendingUp 
-                size={16} 
-                className={`ml-2 ${getTrendColor(analysisResults.combined.score, 50)}`}
-              />
-            </div>
-          </div>
-          <Progress value={analysisResults.combined.score} className={getProgressColor(analysisResults.combined.score)} />
-        </CardContent>
-      </Card>
-      </div>
+            <SimpleProgress value={card.value || 0} colorClass={card.colorTheme.progress} />
+          </SimpleCardContent>
+        </SimpleCard>
+      ))}
     </div>
-    
-    {/* <div style={{marginBottom: '2rem'}}>
-      <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
-        <CardHeader>
-          <CardTitle>Performance Trend</CardTitle>
-          <CardDescription>Your cognitive metrics over time</CardDescription>
-        </CardHeader>
-        <CardContent style={{paddingTop: '1rem'}}>
-          <div style={{height: '16rem'}}>
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={historicalData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="date" />
-                <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
-                <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
-                <Tooltip />
-                <Legend />
-                <Line yAxisId="left" type="monotone" dataKey="attentionScore" name="Attention Score" stroke="#8884d8" activeDot={{ r: 8 }} />
-                <Line yAxisId="left" type="monotone" dataKey="impulsivityScore" name="Impulsivity Score" stroke="#82ca9d" />
-                <Line yAxisId="right" type="monotone" dataKey="score" name="Game Score" stroke="#ff7300" />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
-    </div> */}
-    
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
-      gap: '1.5rem',
-      marginBottom: '2rem'
-    }}>
-      <Card style={{boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'}}>
-        <CardHeader>
-          <CardTitle>Reaction Time Distribution</CardTitle>
-          <CardDescription>Frequency of response times by category</CardDescription>
-        </CardHeader>
-        <CardContent style={{paddingTop: '1rem'}}>
-          <div style={{height: '16rem'}}>
+
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+      <SimpleCard className="hover:shadow-xl transition-shadow duration-300">
+        <SimpleCardHeader>
+          <SimpleCardTitle>Reaction Time Distribution</SimpleCardTitle>
+          <SimpleCardDescription>How your response times are spread.</SimpleCardDescription>
+        </SimpleCardHeader>
+        <SimpleCardContent>
+          <div style={{ height: '250px' }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={getReactionTimeDistribution()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="count" name="Responses" fill="#8884d8" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+                <YAxis allowDecimals={false} tick={{ fontSize: 10 }} />
+                <Tooltip contentStyle={{ backgroundColor: 'white', border: '1px solid #ddd', borderRadius: '4px' }} />
+                <Bar dataKey="count" name="Responses" fill="#8884d8" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </CardContent>
-      </Card>
-      
-      {/* <Card style={{
-  boxShadow: '0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1)',
-  borderRadius: '0.75rem',
-  overflow: 'hidden',
-  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  border: '1px solid #e5e7eb',
-  background: 'linear-gradient(to bottom, #ffffff, #f9fafb)'
-}} 
-onMouseOver={(e) => {
-  e.currentTarget.style.transform = 'translateY(-5px)';
-  e.currentTarget.style.boxShadow = '0 12px 24px -4px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1)';
-}}
-onMouseOut={(e) => {
-  e.currentTarget.style.transform = 'translateY(0)';
-  e.currentTarget.style.boxShadow = '0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1)';
-}}>
-  <CardHeader style={{
-    backgroundImage: 'linear-gradient(to right, #f3f4f6, #eff6ff)',
-    borderBottom: '1px solid #e5e7eb',
-    position: 'relative',
-    padding: '1.25rem 1.5rem'
-  }}>
-    <div style={{
-      position: 'absolute',
-      top: '1rem',
-      right: '1rem',
-      display: 'flex',
-      gap: '0.5rem'
-    }}>
-      <button style={{
-        backgroundColor: '#f9fafb',
-        color: '#6b7280',
-        border: '1px solid #e5e7eb',
-        borderRadius: '0.5rem',
-        width: '2rem',
-        height: '2rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-        transition: 'all 0.2s ease'
-      }}
-      onClick={() => alert('View historical cognitive data')}
-      onMouseOver={(e) => {
-        e.currentTarget.style.backgroundColor = '#f3f4f6';
-        e.currentTarget.style.color = '#4b5563';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.backgroundColor = '#f9fafb';
-        e.currentTarget.style.color = '#6b7280';
-      }}>
-        📊
-      </button>
-      <button style={{
-        backgroundColor: '#f9fafb',
-        color: '#6b7280',
-        border: '1px solid #e5e7eb',
-        borderRadius: '0.5rem',
-        width: '2rem',
-        height: '2rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-        transition: 'all 0.2s ease'
-      }}
-      onClick={() => alert('Learn more about cognitive domains')}
-      onMouseOver={(e) => {
-        e.currentTarget.style.backgroundColor = '#f3f4f6';
-        e.currentTarget.style.color = '#4b5563';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.backgroundColor = '#f9fafb';
-        e.currentTarget.style.color = '#6b7280';
-      }}>
-        ℹ️
-      </button>
-    </div>
-    
-    <CardTitle style={{
-      fontSize: '1.5rem',
-      fontWeight: '600',
-      color: '#111827',
-      display: 'flex',
-      alignItems: 'center'
-    }}>
-      <span style={{
-        marginRight: '0.5rem',
-        fontSize: '1.25rem',
-        animation: 'pulse 2s infinite'
-      }}>🧠</span>
-      Cognitive Profile
-    </CardTitle>
-    <CardDescription style={{
-      fontSize: '0.95rem',
-      color: '#6b7280',
-      marginTop: '0.25rem'
-    }}>Performance across different cognitive domains</CardDescription>
-  </CardHeader>
-  
-  <CardContent style={{
-    paddingTop: '1.5rem',
-    position: 'relative'
-  }}>
-    <div style={{
-      position: 'absolute',
-      top: '0.75rem',
-      left: '1.5rem',
-      right: '1.5rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      zIndex: '10'
-    }}>
-      <div style={{
-        display: 'flex',
-        gap: '0.5rem'
-      }}>
-        <button style={{
-          backgroundColor: '#f3f4f6',
-          color: '#4b5563',
-          border: '1px solid #e5e7eb',
-          borderRadius: '0.5rem',
-          padding: '0.35rem 0.75rem',
-          fontSize: '0.75rem',
-          fontWeight: '500',
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-          transition: 'all 0.2s ease'
-        }}
-        onClick={() => alert('Compare with average')}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#e5e7eb';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#f3f4f6';
-        }}>
-          <span style={{marginRight: '0.25rem'}}>👥</span>
-          Compare
-        </button>
-        <div style={{
-          backgroundColor: '#f3f4f6',
-          border: '1px solid #e5e7eb',
-          borderRadius: '0.5rem',
-          padding: '0.35rem 0.75rem',
-          fontSize: '0.75rem',
-          fontWeight: '500',
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-          transition: 'all 0.2s ease'
-        }}
-        onClick={() => alert('Filter domains')}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#e5e7eb';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#f3f4f6';
-        }}>
-          <span style={{marginRight: '0.25rem'}}>🔍</span>
-          Filter
-        </div>
-      </div>
-      
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem'
-      }}>
-        <span style={{
-          fontSize: '0.75rem',
-          color: '#6b7280',
-          fontWeight: '500'
-        }}>View:</span>
-        <button style={{
-          backgroundColor: '#eff6ff',
-          color: '#3b82f6',
-          border: '1px solid #bfdbfe',
-          borderRadius: '0.5rem',
-          padding: '0.35rem 0.75rem',
-          fontSize: '0.75rem',
-          fontWeight: '500',
-          cursor: 'pointer',
-          transition: 'all 0.2s ease'
-        }}
-        onClick={() => alert('Radar View Active')}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#dbeafe';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#eff6ff';
-        }}>
-          Radar
-        </button>
-        <button style={{
-          backgroundColor: '#f9fafb',
-          color: '#6b7280',
-          border: '1px solid #e5e7eb',
-          borderRadius: '0.5rem',
-          padding: '0.35rem 0.75rem',
-          fontSize: '0.75rem',
-          fontWeight: '500',
-          cursor: 'pointer',
-          transition: 'all 0.2s ease'
-        }}
-        onClick={() => alert('Switch to Bar Chart View')}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#f3f4f6';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#f9fafb';
-        }}>
-          Bar
-        </button>
-      </div>
-    </div>
-    
-    <div style={{
-      height: '16rem',
-      marginTop: '2rem'
-    }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={90} data={getRadarData()}>
-          <PolarGrid strokeDasharray="3 3" stroke="#d1d5db" />
-          <PolarAngleAxis 
-            dataKey="subject" 
-            tick={{ fill: '#4b5563', fontSize: 12, fontWeight: 500 }}
-            stroke="#9ca3af"
-            tickLine={false}
-          />
-          <PolarRadiusAxis 
-            angle={30} 
-            domain={[0, 100]} 
-            tick={{ fill: '#6b7280' }}
-            stroke="#d1d5db"
-            axisLine={false}
-          />
-          <Tooltip 
-            cursor={false}
-            contentStyle={{
-              backgroundColor: 'rgba(255, 255, 255, 0.95)',
-              border: '1px solid #e5e7eb',
-              borderRadius: '0.5rem',
-              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-              padding: '0.5rem 0.75rem'
-            }}
-            labelStyle={{ fontWeight: 600, color: '#111827' }}
-            itemStyle={{ color: '#8884d8' }}
-          />
-          <Radar 
-            name="Performance" 
-            dataKey="score" 
-            stroke="#8884d8" 
-            fill="#8884d8" 
-            fillOpacity={0.6} 
-            dot={{ 
-              r: 4, 
-              fill: '#8884d8', 
-              stroke: '#fff', 
-              strokeWidth: 2 
-            }}
-            activeDot={{ 
-              r: 8, 
-              fill: '#8884d8', 
-              stroke: '#fff', 
-              strokeWidth: 2,
-              animation: 'pulse 2s infinite'
-            }}
-          />
-          <Legend 
-            iconSize={10}
-            iconType="circle"
-            wrapperStyle={{ bottom: -10 }}
-          />
-        </RadarChart>
-      </ResponsiveContainer>
-    </div>
-    
-    <div style={{
-      marginTop: '1rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      borderTop: '1px solid #e5e7eb',
-      paddingTop: '1rem'
-    }}>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem'
-      }}>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.25rem',
-          backgroundColor: '#f0f9ff',
-          borderRadius: '0.5rem',
-          padding: '0.35rem 0.75rem',
-          cursor: 'pointer',
-          transition: 'background-color 0.2s'
-        }}
-        onClick={() => alert('View strengths analysis')}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#e0f2fe';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#f0f9ff';
-        }}>
-          <span style={{color: '#0284c7', fontSize: '0.75rem'}}>💪</span>
-          <span style={{color: '#0284c7', fontSize: '0.75rem', fontWeight: '500'}}>
-            Strengths
-          </span>
-        </div>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.25rem',
-          backgroundColor: '#fff1f2',
-          borderRadius: '0.5rem',
-          padding: '0.35rem 0.75rem',
-          cursor: 'pointer',
-          transition: 'background-color 0.2s'
-        }}
-        onClick={() => alert('View areas for improvement')}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#fee2e2';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#fff1f2';
-        }}>
-          <span style={{color: '#e11d48', fontSize: '0.75rem'}}>⚡</span>
-          <span style={{color: '#e11d48', fontSize: '0.75rem', fontWeight: '500'}}>
-            Growth Areas
-          </span>
-        </div>
-      </div>
-      
-      <button style={{
-        backgroundColor: '#8884d8',
-        backgroundImage: 'linear-gradient(45deg, #8884d8, #a78bfa)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '0.5rem',
-        padding: '0.5rem 1rem',
-        fontSize: '0.75rem',
-        fontWeight: '500',
-        display: 'flex',
-        alignItems: 'center',
-        cursor: 'pointer',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-        transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)'
-      }}
-      onClick={() => alert('Get personalized training recommendations based on your cognitive profile')}
-      onMouseOver={(e) => {
-        e.currentTarget.style.transform = 'translateY(-2px)';
-        e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12)';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)';
-      }}>
-        <span style={{marginRight: '0.5rem'}}>🎯</span>
-        Get Recommendations
-      </button>
-    </div>
-    
-    <style>{`
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-      }
-      
-      @keyframes bounce {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-3px); }
-      }
-      
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    `}</style>
-  </CardContent>
-</Card>*/}
-    </div> 
-    
-    <Card style={{
-  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-  overflow: 'hidden',
-  transition: 'all 0.3s ease',
-  border: '2px solid #bbf7d0',
-  borderRadius: '0.75rem'
-}}>
-  <CardHeader style={{
-    backgroundImage: 'linear-gradient(to right, #dcfce7, #dbeafe)', 
-    padding: '1rem',
-    position: 'relative'
-  }}>
-    <div style={{
-      position: 'absolute',
-      top: '0.5rem',
-      right: '0.5rem',
-      backgroundColor: '#f0fdf4',
-      borderRadius: '50%',
-      width: '2rem',
-      height: '2rem',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      cursor: 'pointer',
-      boxShadow: '0 1px 3px rgba(0,0,0,0.12)',
-      transition: 'transform 0.2s ease'
-    }} 
-    onClick={() => alert('Info about ADHD Brain Explorer')}
-    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-    >
-      <span>ℹ️</span>
-    </div>
-    <CardTitle style={{display: 'flex', alignItems: 'center'}}>
-      <Award style={{marginRight: '0.5rem', color: '#16a34a'}} size={20} />
-      <span style={{
-        background: 'linear-gradient(45deg, #16a34a, #3b82f6)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        fontWeight: '700'
-      }}>ADHD Brain Explorer 🧠</span>
-    </CardTitle>
-  </CardHeader>
-  <CardContent style={{paddingTop: '1rem'}}>
-    {adhdType ? (
-      <>
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '1rem',
-          padding: '0.75rem',
-          backgroundColor: '#f0fdf4',
-          borderRadius: '0.75rem',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-          transform: 'translateY(0)',
-          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-          cursor: 'pointer'
-        }} 
-        onMouseOver={(e) => {
-          e.currentTarget.style.transform = 'translateY(-3px)';
-          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.transform = 'translateY(0)';
-          e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
-        }}
-        onClick={() => alert(`Learn more about ${adhdType} type`)}>
-          <span style={{fontSize: '2rem', marginRight: '0.5rem', display: 'inline-block', animation: 'pulse 2s infinite'}}>
-            {typeEmojis[adhdType] || defaultEmoji}
-          </span>
-          <span style={{
-            fontSize: '1.25rem', 
-            fontWeight: '700',
-            background: 'linear-gradient(45deg, #4338ca, #3b82f6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}>
-            {adhdType}
-          </span>
-        </div>
-        
-        <div style={{
-          backgroundColor: '#eff6ff',
-          padding: '0.75rem',
-          borderRadius: '0.75rem',
-          marginBottom: '1rem',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
-        }}>
-          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-            <span style={{
-              fontSize: '0.875rem', 
-              display: 'flex', 
-              alignItems: 'center'
-            }}>
-              <span style={{
-                fontSize: '1rem', 
-                marginRight: '0.5rem',
-                animation: 'spin 3s linear infinite'
-              }}>🔬</span>
-              Brain-o-meter:
-            </span>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-              <div style={{
-                width: '8rem',
-                backgroundColor: '#e5e7eb',
-                borderRadius: '9999px',
-                height: '1rem',
-                marginRight: '0.5rem',
-                overflow: 'hidden'
-              }}>
-                <div 
-                  style={{
-                    backgroundColor: '#3b82f6',
-                    height: '1rem',
-                    borderRadius: '9999px',
-                    transition: 'all 0.5s ease',
-                    width: `${modelConfidence * 100}%`,
-                    backgroundImage: 'linear-gradient(45deg, rgba(59,130,246,1) 0%, rgba(37,99,235,1) 100%)',
-                    animation: 'pulse 2s infinite'
-                  }}
-                ></div>
-              </div>
-              <span style={{
-                fontSize: '0.875rem', 
-                fontWeight: '700',
-                color: '#3b82f6'
-              }}>{(modelConfidence * 100).toFixed(1)}%</span>
-            </div>
+        </SimpleCardContent>
+      </SimpleCard>
+
+      <SimpleCard className="hover:shadow-xl transition-shadow duration-300">
+        <SimpleCardHeader>
+          <SimpleCardTitle>Cognitive Profile Radar</SimpleCardTitle>
+          <SimpleCardDescription>Your performance across key cognitive areas.</SimpleCardDescription>
+        </SimpleCardHeader>
+        <SimpleCardContent>
+          <div style={{ height: '250px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <RadarChart cx="50%" cy="50%" outerRadius="80%" data={getRadarData()}>
+                <PolarGrid stroke="#e5e7eb"/>
+                <PolarAngleAxis dataKey="subject" tick={{ fontSize: 11, fill: '#4b5563' }} />
+                <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fontSize: 9 }}/>
+                <Radar name="Performance" dataKey="score" stroke="#7c3aed" fill="#8b5cf6" fillOpacity={0.6} />
+                <Tooltip contentStyle={{ backgroundColor: 'white', border: '1px solid #ddd', borderRadius: '4px' }}/>
+              </RadarChart>
+            </ResponsiveContainer>
           </div>
-        </div>
-        
-        <div style={{
-          marginTop: '0.75rem',
-          borderTop: '1px dashed #e9d5ff',
-          paddingTop: '0.75rem'
-        }}>
-          <h4 style={{
-            fontWeight: '600',
-            fontSize: '0.95rem',
-            marginBottom: '0.75rem',
-            display: 'flex',
-            alignItems: 'center',
-            color: '#4b5563'
-          }}>
-            <span style={{
-              marginRight: '0.5rem',
-              animation: 'bounce 1s ease infinite alternate'
-            }}>🔎</span> 
-            Your Brain Powers:
-          </h4>
-          
-          <div style={{marginTop: '0.75rem'}}>
-            <div style={{
-              backgroundColor: '#faf5ff',
-              padding: '0.75rem',
-              borderRadius: '0.75rem',
-              marginBottom: '0.75rem',
-              cursor: 'pointer',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-              boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
-            }}
-            onClick={() => alert('Tips for improving focus!')}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateX(3px)';
-              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateX(0)';
-              e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
-            }}>
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: '0.25rem'
-              }}>
-                <span style={{
-                  fontSize: '0.875rem',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}>
-                  <span style={{
-                    marginRight: '0.5rem',
-                    fontSize: '1.1rem',
-                    animation: 'pulse 2s infinite'
-                  }}>👁️</span>
-                  Focus Power:
-                </span>
-                <span style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '600',
-                  display: 'flex',
-                  alignItems: 'center',
-                  color: '#6366f1',
-                  background: 'rgba(224, 231, 255, 0.6)',
-                  padding: '0.15rem 0.5rem',
-                  borderRadius: '0.5rem'
-                }}>
-                  {getLevelEmoji(scoreLevels?.inattention)}
-                  <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.inattention || 'N/A'}</span>
-                </span>
-              </div>
-              <div style={{
-                width: '100%',
-                backgroundColor: '#e5e7eb',
-                borderRadius: '9999px',
-                height: '0.75rem',
-                overflow: 'hidden'
-              }}>
-                <div 
-                  style={{
-                    [getProgressColors(scoreLevels?.inattention).split(':')[0]]: getProgressColors(scoreLevels?.inattention).split(':')[1],
-                    [getProgressWidth(scoreLevels?.inattention).split(':')[0]]: getProgressWidth(scoreLevels?.inattention).split(':')[1],
-                    height: '0.75rem',
-                    borderRadius: '9999px',
-                    transition: 'all 0.5s ease',
-                    backgroundImage: 'linear-gradient(45deg, rgba(147,197,253,1) 0%, rgba(59,130,246,1) 100%)'
-                  }}
-                ></div>
-              </div>
-            </div>
-            
-            <div style={{
-              backgroundColor: '#fefce8',
-              padding: '0.75rem',
-              borderRadius: '0.75rem',
-              marginBottom: '0.75rem',
-              cursor: 'pointer',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-              boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
-            }}
-            onClick={() => alert('Tips for managing impulsivity!')}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateX(3px)';
-              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateX(0)';
-              e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
-            }}>
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: '0.25rem'
-              }}>
-                <span style={{
-                  fontSize: '0.875rem',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}>
-                  <span style={{
-                    marginRight: '0.5rem',
-                    fontSize: '1.1rem',
-                    animation: 'pulse 2s infinite'
-                  }}>🚀</span>
-                  Action Power:
-                </span>
-                <span style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '600',
-                  display: 'flex',
-                  alignItems: 'center',
-                  color: '#d97706',
-                  background: 'rgba(254, 243, 199, 0.6)',
-                  padding: '0.15rem 0.5rem',
-                  borderRadius: '0.5rem'
-                }}>
-                  {getLevelEmoji(scoreLevels?.impulsivity)}
-                  <span style={{marginLeft: '0.25rem'}}>{scoreLevels?.impulsivity || 'N/A'}</span>
-                </span>
-              </div>
-              <div style={{
-                width: '100%',
-                backgroundColor: '#e5e7eb',
-                borderRadius: '9999px',
-                height: '0.75rem',
-                overflow: 'hidden'
-              }}>
-                <div 
-                  style={{
-                    [getProgressColors(scoreLevels?.impulsivity).split(':')[0]]: getProgressColors(scoreLevels?.impulsivity).split(':')[1],
-                    [getProgressWidth(scoreLevels?.impulsivity).split(':')[0]]: getProgressWidth(scoreLevels?.impulsivity).split(':')[1],
-                    height: '0.75rem',
-                    borderRadius: '9999px',
-                    transition: 'all 0.5s ease',
-                    backgroundImage: 'linear-gradient(45deg, rgba(252,211,77,1) 0%, rgba(245,158,11,1) 100%)'
-                  }}
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* AI Insights with emojis */}
-        {modelInsights && (
-          <div style={{
-            marginTop: '1rem',
-            borderTop: '1px dashed #bfdbfe',
-            paddingTop: '0.75rem'
-          }}>
-            <h4 style={{
-              fontWeight: '600',
-              fontSize: '0.95rem',
-              marginBottom: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              color: '#4b5563'
-            }}>
-              <span style={{
-                marginRight: '0.5rem',
-                animation: 'spin 3s linear infinite'
-              }}>✨</span>
-              Brain Discoveries:
-            </h4>
-            <div style={{
-              fontSize: '0.875rem',
-              color: '#374151',
-              backgroundColor: '#eff6ff',
-              padding: '0.75rem',
-              borderRadius: '0.75rem',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = '#dbeafe';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.backgroundColor = '#eff6ff';
-            }}>
-              {modelInsights.combined && modelInsights.combined.length > 0 && (
-                <p style={{
-                  marginBottom: '0.75rem',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  padding: '0.5rem',
-                  borderRadius: '0.5rem',
-                  backgroundColor: 'rgba(219, 234, 254, 0.5)',
-                  transition: 'transform 0.2s ease',
-                  cursor: 'pointer'
-                }}
-                onClick={() => alert('More about your brain patterns')}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateX(3px)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = 'translateX(0)';
-                }}>
-                  <span style={{
-                    marginRight: '0.5rem',
-                    fontSize: '1.1rem',
-                    animation: 'pulse 2s infinite'
-}}>🧠</span>
-                  <span>{modelInsights.combined[0]}</span>
-                </p>
-              )}
-              {modelInsights.inattention && modelInsights.inattention.length > 0 && (
-                <p style={{
-                  marginBottom: '0.75rem',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  padding: '0.5rem',
-                  borderRadius: '0.5rem',
-                  backgroundColor: 'rgba(237, 233, 254, 0.5)',
-                  transition: 'transform 0.2s ease',
-                  cursor: 'pointer'
-                }}
-                onClick={() => alert('Focus improvement tips')}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateX(3px)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = 'translateX(0)';
-                }}>
-                  <span style={{
-                    marginRight: '0.5rem',
-                    fontSize: '1.1rem'
-                  }}>👁️</span>
-                  <span>{modelInsights.inattention[0]}</span>
-                </p>
-              )}
-              {modelInsights.impulsivity && modelInsights.impulsivity.length > 0 && (
-                <p style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  padding: '0.5rem',
-                  borderRadius: '0.5rem',
-                  backgroundColor: 'rgba(254, 240, 138, 0.5)',
-                  transition: 'transform 0.2s ease',
-                  cursor: 'pointer'
-                }}
-                onClick={() => alert('Impulsivity management strategies')}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateX(3px)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = 'translateX(0)';
-                }}>
-                  <span style={{
-                    marginRight: '0.5rem',
-                    fontSize: '1.1rem'
-                  }}>🚀</span>
-                  <span>{modelInsights.impulsivity[0]}</span>
-                </p>
+        </SimpleCardContent>
+      </SimpleCard>
+    </div>
+
+    <SimpleCard className="mb-8 hover:shadow-xl transition-shadow duration-300 border-2 border-purple-200">
+      <SimpleCardHeader style={{background: 'linear-gradient(to right, #f5f3ff, #ede9fe)'}}>
+        <SimpleCardTitle>
+          <Award className="mr-2 text-purple-600" size={22} />
+          ADHD Insights Engine <span className="text-xs ml-2 px-2 py-0.5 bg-purple-200 text-purple-700 rounded-full">AI Powered</span>
+        </SimpleCardTitle>
+      </SimpleCardHeader>
+      <SimpleCardContent>
+        {adhdType && modelInsights ? (
+          <>
+            <div className="text-center mb-4 p-3 bg-purple-50 rounded-lg shadow-inner">
+              <span className="text-5xl mr-2" style={{ animation: 'pulse_kf 2s infinite ease-in-out' }}>{typeEmojis[adhdType] || defaultEmoji}</span>
+              <span className="text-2xl font-bold" style={{color: '#7c3aed'}}>{adhdType}</span>
+              {modelConfidence !== null && (
+                <div className="mt-2">
+                  <span className="text-sm text-gray-600">Model Certainty: </span>
+                   <SimpleProgress value={(modelConfidence || 0) * 100} colorClass="bg-purple-500" />
+                  <span className="text-sm font-semibold" style={{color: '#7c3aed'}}>{((modelConfidence || 0) * 100).toFixed(1)}%</span>
+                </div>
               )}
             </div>
             
-            {/* Questionnaire Navigation Button with animation */}
-            <div style={{
-              marginTop: '1.25rem',
-              display: 'flex',
-              justifyContent: 'center'
-            }}>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              {[
+                { title: "Focus Patterns", insights: modelInsights.inattention, icon: '👁️' },
+                { title: "Action Styles", insights: modelInsights.impulsivity, icon: '🚀' },
+                { title: "Overall Observations", insights: modelInsights.combined, icon: '🧠' }
+              ].map(section => (
+                <div key={section.title} className="bg-white p-3 rounded-md border border-gray-200 hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-purple-700 mb-2 flex items-center">
+                    <span className="text-xl mr-2">{section.icon}</span> {section.title}
+                  </h4>
+                  {section.insights && section.insights.length > 0 ? (
+                    <ul className="list-disc list-inside pl-1 space-y-1 text-gray-700">
+                      {section.insights.map((insight, i) => <li key={i}>{insight}</li>)}
+                    </ul>
+                  ) : <p className="text-gray-500 italic">No specific observations in this area.</p>}
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-6 text-center">
               <button 
                 onClick={navigateToQuestionnaire}
+                disabled={!effectiveChildId} // Disable if no childId
                 style={{
-                  backgroundColor: '#4083A8',
-                  backgroundImage: 'linear-gradient(45deg, #4083A8 0%, #3b82f6 100%)',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '0.75rem',
-                  padding: '0.75rem 1.25rem',
-                  fontSize: '0.875rem',
-                  fontWeight: '600',
-                  display: 'flex',
-                  alignItems: 'center',
-                  cursor: 'pointer',
-                  boxShadow: '0 2px 5px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.2)',
-                  transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
-                  position: 'relative',
-                  overflow: 'hidden'
+                  background: 'linear-gradient(to right, #7c3aed, #a78bfa)',
+                  color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.5rem',
+                  border: 'none', fontWeight: '600', cursor: effectiveChildId ? 'pointer' : 'not-allowed',
+                  opacity: effectiveChildId ? 1 : 0.5,
+                  boxShadow: '0 4px 10px rgba(124,58,237,0.3)',
+                  transition: 'all 0.3s ease'
                 }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.2)';
-                }}
+                onMouseOver={e => { if(effectiveChildId) e.currentTarget.style.transform = 'translateY(-2px)'}}
+                onMouseOut={e => e.currentTarget.style.transform = 'translateY(0px)'}
               >
-                <span style={{
-                  marginRight: '0.5rem',
-                  fontSize: '1.1rem',
-                  animation: 'bounce 1s infinite alternate'
-                }}>📋</span>
-                Take ADHD Questionnaire
-                <span style={{
-                  position: 'absolute',
-                  right: '0.5rem',
-                  opacity: '0.7',
-                  transition: 'transform 0.3s ease',
-                  transform: 'translateX(0)'
-                }}>→</span>
+                📋 Take Parental Questionnaire for Deeper Insights
               </button>
             </div>
+          </>
+        ) : (
+          <div className="text-center py-6">
+            <div className="animate-ping inline-block w-8 h-8 bg-purple-300 rounded-full mb-3"></div>
+            <p className="text-gray-600">Loading AI insights... this may take a moment.</p>
+             { !processedGameData && /* Only show if no game data at all */
+                <p className="text-sm text-gray-500 mt-2">If this persists, please ensure game data was passed correctly.</p>
+             }
           </div>
         )}
-        
-        {/* Tips & Resources Section (new) */}
-        <div style={{
-          marginTop: '1.25rem',
-          borderTop: '1px dashed #bfdbfe',
-          paddingTop: '0.75rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '0.5rem'
-        }}>
-          <button style={{
-            backgroundColor: '#f0fdf4',
-            color: '#16a34a',
-            border: '1px solid #dcfce7',
-            borderRadius: '0.5rem',
-            padding: '0.4rem 0.8rem',
-            fontSize: '0.75rem',
-            fontWeight: '500',
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}
-          onClick={() => alert('ADHD Tips & Tricks')}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = '#dcfce7';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = '#f0fdf4';
-          }}>
-            <span style={{marginRight: '0.25rem'}}>💡</span>
-            Tips
-          </button>
-          
-          <button style={{
-            backgroundColor: '#eff6ff',
-            color: '#3b82f6',
-            border: '1px solid #dbeafe',
-            borderRadius: '0.5rem',
-            padding: '0.4rem 0.8rem',
-            fontSize: '0.75rem',
-            fontWeight: '500',
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}
-          onClick={() => alert('ADHD Support Resources')}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = '#dbeafe';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = '#eff6ff';
-          }}>
-            <span style={{marginRight: '0.25rem'}}>🔍</span>
-            Resources
-          </button>
-          
-          <button style={{
-            backgroundColor: '#faf5ff',
-            color: '#8b5cf6',
-            border: '1px solid #f3e8ff',
-            borderRadius: '0.5rem',
-            padding: '0.4rem 0.8rem',
-            fontSize: '0.75rem',
-            fontWeight: '500',
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}
-          onClick={() => alert('Track your progress over time')}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = '#f3e8ff';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = '#faf5ff';
-          }}>
-            <span style={{marginRight: '0.25rem'}}>📊</span>
-            Progress
-          </button>
-        </div>
-        
-        {/* Interactive disclaimer with tooltip */}
-        <div style={{
-          marginTop: '1rem',
-          padding: '0.75rem',
-          backgroundColor: '#faf5ff',
-          borderRadius: '0.75rem',
-          fontSize: '0.75rem',
-          textAlign: 'center',
-          position: 'relative',
-          cursor: 'pointer'
-        }}
-        onClick={() => alert('Important: This tool is for educational purposes only and should not replace professional medical advice.')}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#f3e8ff';
-          e.currentTarget.querySelector('.tooltip').style.opacity = '1';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#faf5ff';
-          e.currentTarget.querySelector('.tooltip').style.opacity = '0';
-        }}>
-          <div className="tooltip" style={{
-            position: 'absolute',
-            bottom: '100%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            backgroundColor: 'rgba(79, 70, 229, 0.9)',
-            color: 'white',
-            padding: '0.5rem',
-            borderRadius: '0.5rem',
-            fontSize: '0.75rem',
-            width: 'max-content',
-            maxWidth: '90%',
-            boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-            opacity: '0',
-            transition: 'opacity 0.3s ease',
-            pointerEvents: 'none',
-            marginBottom: '0.5rem'
-          }}>
-            Click for important information about this tool
-          </div>
-          <p style={{
-            fontWeight: '500',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <span style={{
-              marginRight: '0.5rem',
-              animation: 'pulse 2s infinite'
-            }}>✨</span>
-            This is just a game-based brain map, not a doctor's diagnosis
-            <span style={{
-              marginLeft: '0.5rem',
-              animation: 'pulse 2s infinite'
-            }}>✨</span>
-          </p>
-        </div>
-      </>
-    ) : (
-      <div style={{
-        textAlign: 'center',
-        padding: '1.5rem',
-        animation: 'fadeIn 1s ease'
-      }}>
-        <div style={{
-          fontSize: '3rem', 
-          marginBottom: '1rem',
-          animation: 'float 3s ease-in-out infinite'
-        }}>🔮</div>
-        <p style={{
-          color: '#6b7280',
-          fontSize: '1.1rem',
-          fontWeight: '500'
-        }}>Your brain map is still loading...</p>
-        <div style={{
-          marginTop: '1rem',
-          backgroundColor: '#f5f3ff',
-          borderRadius: '0.75rem',
-          padding: '1rem',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
-        }}>
-          <p style={{
-            color: '#9ca3af', 
-            fontSize: '0.875rem', 
-            marginBottom: '1rem'
-          }}>Play more games to help us understand your superpowers!</p>
-          <button style={{
-            backgroundColor: '#8b5cf6',
-            color: 'white',
-            border: 'none',
-            borderRadius: '0.5rem',
-            padding: '0.5rem 1rem',
-            fontSize: '0.875rem',
-            fontWeight: '500',
-            display: 'flex',
-            alignItems: 'center',
-            margin: '0 auto',
-            cursor: 'pointer',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-            transition: 'all 0.2s ease'
-          }}
-          onClick={() => alert('Let\'s play some brain games!')}
-          onMouseOver={(e) => {
-            e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
-          }}>
-            <span style={{marginRight: '0.5rem'}}>🎮</span>
-            Play Brain Games
-          </button>
-        </div>
-        
-        <div style={{
-          marginTop: '1.5rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '0.75rem'
-        }}>
-          <div style={{
-            backgroundColor: '#f0fdf4',
-            borderRadius: '50%',
-            width: '2.5rem',
-            height: '2.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
-            cursor: 'pointer',
-            animation: 'pulse 2s infinite'
-          }}
-          onClick={() => alert('About ADHD Brain Explorer')}>
-            <span style={{fontSize: '1.25rem'}}>ℹ️</span>
-          </div>
-          <div style={{
-            backgroundColor: '#eff6ff',
-            borderRadius: '50%',
-            width: '2.5rem',
-            height: '2.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
-            cursor: 'pointer',
-            animation: 'pulse 3s infinite'
-          }}
-          onClick={() => alert('Learn about ADHD')}>
-            <span style={{fontSize: '1.25rem'}}>📚</span>
-          </div>
-          <div style={{
-            backgroundColor: '#faf5ff',
-            borderRadius: '50%',
-            width: '2.5rem',
-            height: '2.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
-            cursor: 'pointer',
-            animation: 'pulse 4s infinite'
-          }}
-          onClick={() => alert('Need help? Contact us')}>
-            <span style={{fontSize: '1.25rem'}}>💬</span>
-          </div>
-        </div>
-      </div>
-    )}
+        <p className="mt-6 text-xs text-gray-500 text-center italic">
+          Disclaimer: The AI insights are for informational purposes and should not be considered a medical diagnosis. Consult with a healthcare professional for any health concerns.
+        </p>
+      </SimpleCardContent>
+    </SimpleCard>
     
-    {/* Animation keyframes - add to your CSS */}
     <style>{`
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
+      .animate-pulse { animation: pulse_kf 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+      @keyframes pulse_kf {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .5; }
       }
-      
-      @keyframes bounce {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-3px); }
-      }
-      
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-      }
-      
-      @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
+      .animate-ping { animation: ping_kf 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+      @keyframes ping_kf {
+        75%, 100% { transform: scale(2); opacity: 0;}
       }
     `}</style>
-  </CardContent>
-</Card>
   </div>
 );
 };
