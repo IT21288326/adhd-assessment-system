@@ -23,10 +23,10 @@ const NavigationBar = ({ child }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:8800/api/auth/logout", {}, {
+      await axios.post("http://localhost:8800/api/child/signout", {}, {
         withCredentials: true
       });
-      navigate("/signin");
+      navigate("/");
     } catch (error) {
       console.error("Error logging out:", error);
     }

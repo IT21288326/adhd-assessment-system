@@ -1,340 +1,403 @@
+/* ReportPage.css */
+
+/* General Styles for the page wrapper (content below navbar) */
+.report-page-wrapper {
+  padding-top: 20px; /* Adjust if navbar height changes, to prevent overlap */
+  padding-bottom: 20px;
+  background-color: #f4f7f6; /* A light background for the overall page content area */
+}
+
 .report-container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
+  max-width: 900px;
+  margin: 2rem auto; /* Existing margin */
+  padding: 2rem; /* Existing padding */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Added a default text color for consistency */
+}
+
+.report-container.loading,
+.report-container.error { /* Added .error class for consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; /* Existing min-height */
+  text-align: center; /* Ensure text is centered */
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db; /* Existing border-top color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem; /* Existing margin-bottom */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.report-header {
+  text-align: center; /* Centering the header content */
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #eaeaea;
+  margin-bottom: 2rem;
+}
+
+.report-header h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.report-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  font-size: 0.9em; /* Slightly smaller for meta data */
+  color: #555;     /* Slightly muted color for meta data */
+}
+
+.report-meta p {
+  margin: 0.25rem 0;
+}
+
+.report-section {
+  margin-bottom: 2rem;
+}
+
+.report-section h2 {
+  color: #3498db;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #eaeaea;
+  font-size: 0.9em; /* Consistent font size for table content */
+}
+
+.results-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #444; /* Darker text for header */
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* For centering specific columns if needed, like in the previous example */
+.results-table td:nth-child(3), /* Example: Clinical Cutoff */
+.results-table td:nth-child(4)  /* Example: Percentile */
+{
+  text-align: center;
+}
+
+.percentile-chart {
+  margin-top: 1.5rem;
+}
+
+.chart-bars {
+  display: flex; /* Added for consistency if you want to use flexbox layout for bars */
+  flex-direction: column; /* Stack bars vertically */
+  gap: 10px; /* Space between bar containers */
+  margin-bottom: 1.5rem;
+}
+
+.chart-bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem; /* Kept existing margin */
+}
+
+.chart-bar-label {
+  width: 150px; /* Existing width */
+  font-weight: 500;
+  margin-right: 1rem; /* Existing margin */
+  font-size: 0.9em; /* Consistent font size */
+  text-align: right; /* Align label text to the right */
+}
+
+.chart-bar-outer {
+  flex-grow: 1;
+  height: 25px; /* Existing height */
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-bar-inner {
+  height: 100%;
+  background-color: #94d2bd; /* Existing normal color */
+  border-radius: 4px 0 0 4px; /* Ensure left corners are rounded if not full */
+  transition: width 0.5s ease;
+  display: flex; /* For aligning text inside if needed */
+  align-items: center; /* For aligning text inside if needed */
+  justify-content: flex-end; /* For aligning text inside if needed */
+  padding-right: 5px; /* Space for text if inside the bar */
+  color: white; /* Text color if shown inside bar */
+  font-size: 0.8em; /* Text size if shown inside bar */
+}
+
+.chart-bar-inner.above-cutoff {
+  background-color: #ef6351; /* Existing clinical color */
+}
+
+.chart-bar-value {
+  width: 50px; /* Existing width */
+  text-align: right;
+  margin-left: 1rem; /* Existing margin */
+  font-weight: 500;
+  font-size: 0.9em; /* Consistent font size */
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center; /* Centered legend as per previous example */
+  gap: 1.5rem; /* Existing gap */
+  margin-top: 1rem; /* Added some top margin */
+}
+
+.chart-legend p {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.legend-normal,
+.legend-clinical {
+  display: inline-block;
+  width: 15px; /* Adjusted for better visual balance */
+  height: 15px; /* Made it square */
+  margin-right: 0.5rem;
+  border-radius: 3px; /* Slightly more rounded */
+}
+
+.legend-normal {
+  background-color: #94d2bd; /* Existing normal color */
+}
+
+.legend-clinical {
+  background-color: #ef6351; /* Existing clinical color */
+}
+
+.diagnosis-box {
+  background-color: #f0f8ff; /* AliceBlue - a very light, professional blue */
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #3498db; /* Theme color accent */
+}
+
+.diagnosis-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem; /* Adjusted margin */
+  color: #2c3e50;
+  font-size: 1.2em; /* Slightly larger */
+}
+
+.diagnosis {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.subtype-details {
+  margin-top: 0.75rem; /* Adjusted margin */
+  font-style: italic;
+  color: #5a6268;
+  font-size: 0.95em; /* Slightly larger */
+}
+
+.comorbidities {
+  padding: 1.5rem;
+  border: 1px solid #f0e68c; /* Khaki border for a softer warning */
+  background-color: #fffacd; /* LemonChiffon - light yellow */
+  border-radius: 6px;
+  margin-top: 1.5rem; /* Added margin for separation */
+}
+
+.comorbidities h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #8B4513; /* SaddleBrown - for a distinct warning header color */
+  font-size: 1.15em; /* Slightly larger */
+}
+
+.comorbidities ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.comorbidities li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95em; /* Consistent font size */
+}
+
+.comorbid-note {
+  font-size: 0.875rem;
+  color: #5a6268;
+  margin: 0;
+  font-style: italic; /* Italicize for emphasis */
+}
+
+.recommendations-list {
+  padding-left: 1.5rem;
+  list-style-type: decimal; /* Ensure numbered list */
+}
+
+.recommendations-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5; /* Improved readability */
+  font-size: 0.95em; /* Consistent font size */
+}
+
+.disclaimer {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  border: 1px solid #dee2e6; /* Added a subtle border */
+}
+
+.disclaimer h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.disclaimer p {
+  margin: 0;
+  color: #5a6268;
+  line-height: 1.4; /* Improved readability */
+}
+
+.report-actions {
+  display: flex;
+  justify-content: flex-end; /* Align print button to the right */
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #eaeaea;
+}
+
+.report-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1em;
+}
+
+.primary-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.primary-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+/* --- PRINT STYLES --- */
+@media print {
+  /* Hide elements not meant for printing using a common class */
+  .no-print {
+    display: none !important;
   }
-  
-  .report-container.loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
+
+  /* Hide NavigationBar */
+  body > div#root > nav {
+    display: none !important;
   }
-  
-  .loading-spinner {
-    width: 60px;
-    height: 60px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
+
+  .report-page-wrapper {
+    padding-top: 0;
+    background-color: #fff !important;
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .report-header {
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid #eaeaea;
-    margin-bottom: 2rem;
-  }
-  
-  .report-header h1 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-  
-  .report-meta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5rem;
-  }
-  
-  .report-meta p {
-    margin: 0.25rem 0;
-  }
-  
-  .report-section {
-    margin-bottom: 2rem;
-  }
-  
-  .report-section h2 {
-    color: #3498db;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eaeaea;
-  }
-  
-  .results-table {
+
+  .report-container {
+    position: static;
+    left: auto;
+    top: auto;
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1.5rem;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0.5in !important; /* Standard A4/Letter margin */
+    font-size: 10pt;
+    color: #000 !important;
   }
+
+  .report-header h1 { font-size: 18pt; color: #000 !important; } /* Will be hidden by .no-print on its parent */
+  .report-section h2 { font-size: 14pt; color: #000 !important; border-bottom: 1px solid #ccc !important; }
   
-  .results-table th,
-  .results-table td {
-    padding: 0.75rem;
-    text-align: left;
-    border: 1px solid #eaeaea;
+  .report-meta, .results-table th, .results-table td,
+  .chart-bar-label, .chart-bar-value, .chart-legend p,
+  .diagnosis-box, .subtype-details, .comorbidities li, .comorbid-note,
+  .recommendations-list li, .disclaimer p {
+    font-size: 9pt;
+    color: #000 !important;
   }
-  
-  .results-table th {
-    background-color: #f8f9fa;
-    font-weight: bold;
+  .results-table td, .results-table th { padding: 4px; border: 1px solid #ccc !important; }
+  .results-table th { background-color: #eee !important; }
+  .results-table tr:nth-child(even) { background-color: #f9f9f9 !important; }
+
+  .chart-bar-outer { background-color: #ddd !important; height: 18px; }
+  .chart-bar-inner { color: #fff !important; }
+  .chart-bar-inner.above-cutoff { background-color: #b22222 !important; } /* Darker Red */
+  .chart-bar-inner:not(.above-cutoff) { background-color: #228B22 !important; } /* Forest Green */
+  .legend-normal { background-color: #228B22 !important; }
+  .legend-clinical { background-color: #b22222 !important; }
+
+  .diagnosis-box, .comorbidities, .disclaimer { background-color: #f9f9f9 !important; border-left-width: 3px !important; }
+
+  .report-actions { display: none !important; } /* Already covered by .no-print on its div */
+
+  .report-section, .percentile-chart, .diagnosis-box, .comorbidities, .recommendations-list, .disclaimer {
+    page-break-inside: avoid;
   }
-  
-  .results-table tr:nth-child(even) {
-    background-color: #f8f9fa;
+
+  a { color: inherit !important; text-decoration: none !important; }
+}
+
+/* Responsive styles from your existing CSS */
+@media screen and (max-width: 768px) {
+  .report-page-wrapper {
+    padding: 10px;
   }
-  
-  .percentile-chart {
-    margin-top: 1.5rem;
+  .report-container {
+    padding: 1rem;
+    margin: 1rem auto;
   }
-  
-  .chart-bars {
-    margin-bottom: 1.5rem;
-  }
-  
-  .chart-bar-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
-  }
-  
-  .chart-bar-label {
-    width: 150px;
-    font-weight: 500;
-    margin-right: 1rem;
-  }
-  
-  .chart-bar-outer {
-    flex-grow: 1;
-    height: 25px;
-    background-color: #f3f3f3;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .chart-bar-inner {
-    height: 100%;
-    background-color: #94d2bd;
-    transition: width 0.5s ease;
-  }
-  
-  .chart-bar-inner.above-cutoff {
-    background-color: #ef6351;
-  }
-  
-  .chart-bar-value {
-    width: 50px;
-    text-align: right;
-    margin-left: 1rem;
-    font-weight: 500;
-  }
-  
-  .chart-legend {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
-  }
-  
-  .chart-legend p {
-    display: flex;
-    align-items: center;
-    font-size: 0.875rem;
-    margin: 0;
-  }
-  
-  .legend-normal,
-  .legend-clinical {
-    display: inline-block;
-    width: 20px;
-    height: 10px;
-    margin-right: 0.5rem;
-    border-radius: 2px;
-  }
-  
-  .legend-normal {
-    background-color: #94d2bd;
-  }
-  
-  .legend-clinical {
-    background-color: #ef6351;
-  }
-  
-  .diagnosis-box {
-    background-color: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 6px;
-    margin-bottom: 1.5rem;
-  }
-  
-  .diagnosis-box h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-  }
-  
-  .diagnosis {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin: 0;
-  }
-  
-  .subtype-details {
-    margin-top: 0.5rem;
-    font-style: italic;
-    color: #5a6268;
-  }
-  
-  .comorbidities {
-    padding: 1.5rem;
-    border: 1px solid #eaeaea;
-    border-radius: 6px;
-  }
-  
-  .comorbidities h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-  }
-  
-  .comorbidities ul {
-    margin: 0 0 1rem 0;
-    padding-left: 1.5rem;
-  }
-  
-  .comorbidities li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .comorbid-note {
-    font-size: 0.875rem;
-    color: #5a6268;
-    margin: 0;
-  }
-  
-  .recommendations-list {
-    padding-left: 1.5rem;
-  }
-  
-  .recommendations-list li {
-    margin-bottom: 0.75rem;
-  }
-  
-  .disclaimer {
-    background-color: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-  }
-  
-  .disclaimer h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-  }
-  
-  .disclaimer p {
-    margin: 0;
-    color: #5a6268;
-  }
-  
-  .report-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid #eaeaea;
-  }
-  
-  .report-actions button {
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .primary-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-  }
-  
-  .primary-button:hover {
-    background-color: #2980b9;
-  }
-  
-  .secondary-button {
-    background-color: white;
-    color: #3498db;
-    border: 1px solid #3498db;
-  }
-  
-  .secondary-button:hover {
-    background-color: #f8f9fa;
-  }
-  
-  @media print {
-    body * {
-      visibility: hidden;
-    }
-    
-    .report-container,
-    .report-container * {
-      visibility: visible;
-    }
-    
-    .report-container {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      box-shadow: none;
-      margin: 0;
-      padding: 15mm;
-    }
-    
-    .report-actions {
-      display: none;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .report-container {
-      padding: 1rem;
-      margin: 1rem;
-    }
-    
-    .report-meta {
-      grid-template-columns: 1fr;
-    }
-    
-    .chart-bar-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .chart-bar-label {
-      width: 100%;
-      margin-bottom: 0.25rem;
-    }
-    
-    .chart-bar-value {
-      width: 100%;
-      text-align: left;
-      margin: 0.25rem 0 0 0;
-    }
-    
-    .report-actions {
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .report-actions button {
-      width: 100%;
-    }
-  }
+  .report-header h1 { font-size: 1.8rem; }
+  .report-section h2 { font-size: 1.3rem; }
+  .report-meta { grid-template-columns: 1fr; }
+  .chart-bar-container { flex-direction: column; align-items: flex-start; }
+  .chart-bar-label { width: 100%; margin-bottom: 0.25rem; text-align: left; }
+  .chart-bar-value { width: 100%; text-align: left; margin: 0.25rem 0 0 0; }
+  .report-actions { flex-direction: column; gap: 1rem; }
+  .report-actions button { width: 100%; }
+}
