@@ -2654,3 +2654,644 @@ Name: count, dtype: int64
 2025-05-25 11:06:44,810 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
 2025-05-25 11:06:49,827 - __main__ - INFO - Auto-retrain: Checking for new data...
 2025-05-25 11:06:49,854 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:33:30,028 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 11:33:30,035 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 11:33:30,225 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:33:30,225 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 11:33:30,225 - __main__ - INFO - Auto-retrain job started.
+2025-05-25 11:33:30,225 - __main__ - INFO - Automatic retraining thread initiated.
+2025-05-25 11:33:30,225 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:33:30,253 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 11:33:30,253 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 11:33:42,551 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:33:42] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:33:43,242 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:33:43,780 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:33:43] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:37:11,087 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:37:11] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:37:11,608 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:37:12,153 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:37:12] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:43:46,125 - __main__ - ERROR - MongoDB connection error: No replica set members match selector "Primary()", Timeout: 5.0s, Topology Description: <TopologyDescription id: 6832b513cce40b5ce83c11cd, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster0-shard-00-00.a1s53.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.6089999999967404>, <ServerDescription ('cluster0-shard-00-01.a1s53.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('cluster0-shard-00-02.a1s53.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2025-05-25 11:43:46,127 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 11:43:46,544 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:43:46,545 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 11:43:46,547 - __main__ - INFO - Auto-retrain job started.
+2025-05-25 11:43:46,547 - __main__ - INFO - Automatic retraining thread initiated.
+2025-05-25 11:43:46,552 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:43:46,594 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 11:43:46,594 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 11:47:11,566 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:11] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:47:11,842 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:47:11,890 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:11] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:47:20,662 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:20] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:47:20,996 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:47:21,004 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:21] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:47:38,354 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:38] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:47:38,616 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:38] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:47:38,665 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:47:38,671 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:38] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:47:38,680 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:47:38,688 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:47:38] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:51:11,334 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:51:11] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 11:51:11,504 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:51:11] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 11:51:12,370 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:51:12] "POST /predict HTTP/1.1" 200 -
+2025-05-25 11:51:12,371 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:51:12] "POST /predict HTTP/1.1" 200 -
+2025-05-25 11:52:38,536 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:52:38] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:52:38,802 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:52:38,808 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:52:38] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:52:53,682 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:52:53] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:52:53,999 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:52:53] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:52:54,025 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:52:54,037 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:52:54] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:52:54,265 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:52:54,274 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:52:54] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:58:46,472 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 11:58:46,472 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 11:58:47,022 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:58:47,023 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 11:58:47,025 - __main__ - INFO - Auto-retrain job started.
+2025-05-25 11:58:47,025 - __main__ - INFO - Automatic retraining thread initiated.
+2025-05-25 11:58:47,033 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 11:58:47,198 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 11:58:47,200 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 11:58:48,250 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:58:48] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:58:48,484 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:58:48] "GET /health HTTP/1.1" 200 -
+2025-05-25 11:58:48,686 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:58:48,835 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:58:48] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 11:58:48,972 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 11:58:49,097 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 11:58:49] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:02:08,958 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:02:08] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 12:02:09,223 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:02:09] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 12:02:09,891 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:02:09] "POST /predict HTTP/1.1" 200 -
+2025-05-25 12:02:09,892 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:02:09] "POST /predict HTTP/1.1" 200 -
+2025-05-25 12:02:51,914 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:02:51] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:02:52,577 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:02:53,191 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:02:53] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:03:48,833 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:03:48] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:03:48,989 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:03:49,274 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:03:49] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:04:16,524 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:04:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:04:17,040 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:04:17,521 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:04:17] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:04:44,916 - __main__ - INFO - MongoDB connection established successfully
+2025-05-25 12:04:44,917 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 12:04:45,025 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 12:04:45,025 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 12:04:45,026 - __main__ - INFO - Auto-retrain job started.
+2025-05-25 12:04:45,026 - __main__ - INFO - Automatic retraining thread initiated.
+2025-05-25 12:04:45,028 - __main__ - INFO - Starting Flask API service on http://0.0.0.0:5000. Model artifacts expected in: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 12:04:45,040 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.237:5000
+2025-05-25 12:04:45,041 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 12:04:48,039 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:04:48,046 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:04:50,791 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:04:50] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:04:51,095 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:04:51] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:04:51,618 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:04:51,908 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:04:51] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:04:52,603 - __main__ - INFO - Loaded 212 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:04:52,725 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:04:52,737 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 12:04:52,753 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:04:52] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:04:52,775 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:04:52,775 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:04:52,796 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 212
+2025-05-25 12:04:52,797 - __main__ - INFO - Auto-retrain: Conditions met. Attempting to acquire lock for retraining.
+2025-05-25 12:04:52,798 - __main__ - INFO - Auto-retrain: Lock acquired. Starting retraining process.
+2025-05-25 12:04:52,801 - __main__ - INFO - train_model received data with 213 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 12:04:52,802 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 213
+2025-05-25 12:04:52,806 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 12:04:52,806 - __main__ - INFO - Final data size for splitting (data_train_final): 213
+2025-05-25 12:04:52,884 - __main__ - INFO - Starting model training with 170 training samples and 43 validation samples.
+2025-05-25 12:05:06,091 - __main__ - INFO - Model training completed. Test accuracy: 0.9302. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 12:05:06,118 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 12:05:06,120 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 12:05:06,120 - __main__ - INFO - Auto-retrain: Model retrained successfully. Reloading global model.
+2025-05-25 12:05:06,121 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 12:05:06,270 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 12:05:06,274 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 12:05:06,274 - __main__ - INFO - Auto-retrain: Lock released.
+2025-05-25 12:05:09,290 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:05:09,356 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:14,975 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:05:14] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:05:15,098 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:05:15,105 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:05:15,114 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:15,114 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:05:15,118 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:05:15,118 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:05:15,419 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:05:15] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:05:15,442 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:15,587 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:05:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:05:15,734 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:15,870 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:05:15] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:05:18,136 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:05:18,142 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:26,196 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:05:26,196 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:05:26,219 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:26,220 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:05:26,236 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:05:26,237 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:05:29,244 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:05:29,269 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:32,115 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:05:32,120 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:05:32,122 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:32,122 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:05:32,134 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:05:32,150 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:05:35,157 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:05:35,189 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:38,575 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:05:38,579 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:05:38,588 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:38,588 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:05:38,591 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:05:38,606 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:05:41,619 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:05:41,650 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:47,705 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:05:47,710 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:05:47,725 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:47,726 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:05:47,732 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:05:47,732 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:05:50,753 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:05:50,779 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:54,724 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:05:54,733 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:05:54,741 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:05:54,741 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:05:54,756 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:05:54,756 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:05:57,761 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:05:57,793 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:11,581 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:06:11,581 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:06:11,593 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:11,593 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:06:11,615 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:06:11,625 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:06:14,627 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:06:14,666 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:18,916 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:06:18,916 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:06:18,928 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:18,928 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:06:18,944 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:06:18,944 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:06:21,966 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:06:22,008 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:26,773 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:06:26,779 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:06:26,792 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:26,792 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:06:26,792 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:06:26,810 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:06:29,814 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:06:29,853 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:34,161 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:06:34,165 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:06:34,179 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:34,180 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:06:34,193 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:06:34,195 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:06:37,208 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:06:37,240 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:40,921 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:06:40,930 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:06:40,942 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:40,944 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:06:40,955 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:06:40,957 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:06:43,971 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:06:44,009 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:47,198 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:06:47,209 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:06:47,229 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:47,229 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:06:47,255 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:06:47,255 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:06:50,273 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:06:50,319 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:53,064 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:06:53,069 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:06:53,099 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:06:53,099 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:06:53,119 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:06:53,119 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:06:56,127 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:06:56,169 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:01,079 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:01,089 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:01,104 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:01,109 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:01,129 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:01,129 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:04,136 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:04,184 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:07,129 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:07,139 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:07,159 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:07,159 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:07,179 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:07,179 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:10,184 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:10,229 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:15,199 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:15,199 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:15,226 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:15,226 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:15,243 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:15,243 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:18,247 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:18,301 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:24,302 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:24,309 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:24,330 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:24,331 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:24,347 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:24,349 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:27,365 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:27,409 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:32,146 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:32,154 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:32,171 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:32,171 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:32,189 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:32,189 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:35,207 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:35,249 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:41,279 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:41,286 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:41,299 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:41,299 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:41,319 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:41,319 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:44,323 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:44,364 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:48,199 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:48,207 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:48,223 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:48,223 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:48,239 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:48,239 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:51,257 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:51,304 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:56,047 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:07:56,049 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:07:56,086 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:07:56,086 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:07:56,109 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:07:56,113 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:07:59,116 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:07:59,159 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:03,828 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:03,829 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:03,848 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:03,848 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:03,869 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:03,869 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:08:06,875 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:08:06,929 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:12,212 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:12,219 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:12,229 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:12,237 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:12,249 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:12,249 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:08:15,266 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:08:15,309 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:20,173 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:20,179 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:20,199 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:20,199 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:20,219 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:20,219 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:08:23,225 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:08:23,279 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:28,439 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:28,449 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:28,469 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:28,469 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:28,489 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:28,489 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:08:31,499 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:08:31,549 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:35,959 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:35,969 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:35,988 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:35,988 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:36,004 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:36,004 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:08:39,008 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:08:39,049 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:43,932 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:43,939 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:43,959 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:43,959 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:43,978 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:43,980 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:08:46,983 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:08:47,024 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:51,642 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:51,649 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:51,671 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:51,671 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:51,689 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:51,693 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:08:54,709 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:08:54,754 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:57,913 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:08:57,926 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:08:57,939 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:08:57,943 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:08:57,949 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:08:57,959 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:00,961 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:00,999 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:04,176 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:09:04,185 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:09:04,204 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:04,204 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:09:04,221 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:09:04,221 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:07,229 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:07,269 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:12,486 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:09:12,489 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:09:12,508 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:12,508 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:09:12,536 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:09:12,536 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:15,553 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:15,589 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:20,377 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:09:20,379 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:09:20,399 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:20,399 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:09:20,419 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:09:20,419 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:23,428 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:23,479 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:29,119 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:09:29,129 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:09:29,149 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:29,149 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:09:29,167 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:09:29,169 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:32,182 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:32,219 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:38,359 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:09:38,375 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:09:38,389 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:38,389 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:09:38,410 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:09:38,410 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:41,417 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:41,459 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:44,523 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:09:44] "OPTIONS /predict HTTP/1.1" 200 -
+2025-05-25 12:09:45,083 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:09:45] "POST /predict HTTP/1.1" 200 -
+2025-05-25 12:09:45,104 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:09:45] "POST /predict HTTP/1.1" 200 -
+2025-05-25 12:09:46,394 - __main__ - INFO - Fetched 236 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:09:46,408 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:09:46,410 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:46,410 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:09:46,424 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:09:46,424 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:49,445 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:49,480 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:55,118 - __main__ - INFO - Fetched 240 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:09:55,118 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:09:55,133 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:09:55,133 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:09:55,150 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:09:55,150 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:09:58,166 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:09:58,200 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:04,884 - __main__ - INFO - Fetched 240 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:10:04,898 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:10:04,916 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:04,916 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:10:04,933 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:10:04,933 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:10:07,948 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:10:07,984 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:10,618 - __main__ - INFO - Fetched 240 game metrics and 57 questionnaires from MongoDB.
+2025-05-25 12:10:10,625 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:10:10,638 - __main__ - INFO - Saved updated combined dataset (213 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:10,638 - __main__ - INFO - Final dataset for retraining has 213 records.
+2025-05-25 12:10:10,652 - __main__ - INFO - Auto-retrain: Current dataset size: 213, Last trained size: 213
+2025-05-25 12:10:10,653 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:10:13,655 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:10:13,686 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:16,605 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:10:16] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:10:17,056 - __main__ - INFO - Loaded 213 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:17,167 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:10:17] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:10:23,703 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:10:23,710 - __main__ - INFO - Found 1 new records in MongoDB not present in CSV.
+2025-05-25 12:10:23,722 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:23,723 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:10:23,734 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 213
+2025-05-25 12:10:23,734 - __main__ - INFO - Auto-retrain: Conditions met. Attempting to acquire lock for retraining.
+2025-05-25 12:10:23,735 - __main__ - INFO - Auto-retrain: Lock acquired. Starting retraining process.
+2025-05-25 12:10:23,736 - __main__ - INFO - train_model received data with 214 records. Unique ADHD_Types: ['Hyperactive-Impulsive' 'Inattentive' 'No ADHD' 'Combined']
+2025-05-25 12:10:23,738 - __main__ - INFO - Size after filtering by ADHD_SUBTYPES ('['No ADHD', 'Inattentive', 'Hyperactive-Impulsive', 'Combined']'): 214
+2025-05-25 12:10:23,744 - __main__ - INFO - Label encoder fitted with classes: [np.str_('Combined'), np.str_('Hyperactive-Impulsive'), np.str_('Inattentive'), np.str_('No ADHD')]
+2025-05-25 12:10:23,746 - __main__ - INFO - Final data size for splitting (data_train_final): 214
+2025-05-25 12:10:23,820 - __main__ - INFO - Starting model training with 171 training samples and 43 validation samples.
+2025-05-25 12:10:28,459 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:10:28] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:10:29,303 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:29,901 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:10:29] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:10:36,355 - tensorflow - WARNING - 5 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001C1E8DFCB80> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-25 12:10:36,436 - __main__ - INFO - Model training completed. Test accuracy: 0.9535. Performance metrics saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_performance.json
+2025-05-25 12:10:36,499 - __main__ - INFO - Model saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\adhd_model.keras
+2025-05-25 12:10:36,504 - __main__ - INFO - Model info saved to C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets\model_info.json
+2025-05-25 12:10:36,505 - __main__ - INFO - Auto-retrain: Model retrained successfully. Reloading global model.
+2025-05-25 12:10:36,507 - __main__ - INFO - Attempting to reload global model artifacts...
+2025-05-25 12:10:36,811 - __main__ - INFO - Model and preprocessing objects loaded successfully from C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_model_assets
+2025-05-25 12:10:36,812 - __main__ - INFO - Global model artifacts reloaded successfully.
+2025-05-25 12:10:36,812 - __main__ - INFO - Auto-retrain: Lock released.
+2025-05-25 12:10:39,820 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:10:39,825 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:51,895 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:10:51,899 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:10:51,907 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:10:51,907 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:10:51,924 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:10:51,936 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:10:54,950 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:10:54,989 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:01,027 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:11:01,039 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:11:01,047 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:01,047 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:11:01,057 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:11:01,058 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:11:04,064 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:11:04,092 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:08,981 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:11:08,987 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:11:08,997 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:08,998 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:11:09,006 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:11:09,007 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:11:12,009 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:11:12,037 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:18,291 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:11:18,299 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:11:18,306 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:18,307 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:11:18,308 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:11:18,308 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:11:21,317 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:11:21,356 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:26,523 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:11:26,527 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:11:26,537 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:26,540 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:11:26,548 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:11:26,548 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:11:29,562 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:11:29,602 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:33,904 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:11:33,908 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:11:33,924 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:33,924 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:11:33,932 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:11:33,932 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:11:36,949 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:11:36,993 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:53,233 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:11:53,240 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:11:53,250 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:11:53,250 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:11:53,260 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:11:53,260 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:11:56,273 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:11:56,303 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:03,951 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:12:03,967 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:12:03,979 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:03,980 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:12:03,987 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:12:03,987 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:12:06,994 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:12:07,017 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:12,796 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:12:12,796 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:12:12,805 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:12,805 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:12:12,813 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:12:12,813 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:12:15,818 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:12:15,851 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:21,787 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:12:21,787 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:12:21,802 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:21,803 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:12:21,810 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:12:21,811 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:12:24,820 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:12:24,857 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:28,026 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:12:28,037 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:12:28,043 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:28,043 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:12:28,051 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:12:28,051 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:12:31,060 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:12:31,090 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:35,848 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:12:35,848 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:12:35,869 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:35,869 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:12:35,875 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:12:35,875 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:12:38,876 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:12:38,906 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:44,869 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:12:44,872 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:12:44,883 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:44,883 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:12:44,890 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:12:44,891 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:12:47,894 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:12:47,925 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:54,709 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:12:54,714 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:12:54,725 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:12:54,725 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:12:54,733 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:12:54,733 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:12:57,736 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:12:57,767 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:03,489 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:13:03,494 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:13:03,507 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:03,507 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:13:03,513 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:13:03,513 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:13:06,528 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:13:06,557 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:10,839 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:13:10,854 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:13:10,864 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:10,865 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:13:10,871 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:13:10,871 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:13:13,891 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:13:13,915 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:17,669 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:13:17,675 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:13:17,683 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:17,686 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:13:17,692 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:13:17,692 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:13:20,725 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:13:20,760 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:32,109 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:13:32,117 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:13:32,127 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:32,128 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:13:32,137 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:13:32,138 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:13:35,146 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:13:35,173 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:43,342 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:13:43,348 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:13:43,357 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:43,357 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:13:43,363 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:13:43,364 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:13:46,368 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:13:46,399 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:58,318 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:13:58,324 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:13:58,331 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:58,331 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:13:58,343 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:13:58,343 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:13:59,385 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:13:59] "GET /health HTTP/1.1" 200 -
+2025-05-25 12:13:59,666 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:13:59,812 - werkzeug - INFO - 127.0.0.1 - - [25/May/2025 12:13:59] "GET /dashboard-data HTTP/1.1" 200 -
+2025-05-25 12:14:01,346 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:14:01,355 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:14:08,696 - __main__ - INFO - Fetched 240 game metrics and 58 questionnaires from MongoDB.
+2025-05-25 12:14:08,699 - __main__ - INFO - Found 0 new records in MongoDB not present in CSV.
+2025-05-25 12:14:08,712 - __main__ - INFO - Saved updated combined dataset (214 records) to CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
+2025-05-25 12:14:08,714 - __main__ - INFO - Final dataset for retraining has 214 records.
+2025-05-25 12:14:08,731 - __main__ - INFO - Auto-retrain: Current dataset size: 214, Last trained size: 214
+2025-05-25 12:14:08,731 - __main__ - INFO - Auto-retrain: Conditions not met for retraining.
+2025-05-25 12:14:11,743 - __main__ - INFO - Auto-retrain: Checking for new data...
+2025-05-25 12:14:11,782 - __main__ - INFO - Loaded 214 records from CSV: C:\Users\shash\Documents\GitHub\adhd-assessment-system\backend\mlmodels\it21288326\adhd_dataset.csv
