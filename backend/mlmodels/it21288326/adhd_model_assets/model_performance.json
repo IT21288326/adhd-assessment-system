@@ -1,0 +1,141 @@
+{
+    "accuracy": 0.9069767441860465,
+    "precision": 0.9122923588039867,
+    "recall": 0.9069767441860465,
+    "f1_score": 0.903581883233046,
+    "auc": 0.962162901615706,
+    "timestamp": "2025-05-25T05:27:41.772770+00:00",
+    "dataset_size_trained_on": 212,
+    "num_features": 7,
+    "model_architecture": [
+        {
+            "name": "dense",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "units": 32,
+            "activation": "relu",
+            "use_bias": true,
+            "kernel_initializer": {
+                "module": "keras.initializers",
+                "class_name": "GlorotUniform",
+                "config": {
+                    "seed": null
+                },
+                "registered_name": null
+            },
+            "bias_initializer": {
+                "module": "keras.initializers",
+                "class_name": "Zeros",
+                "config": {},
+                "registered_name": null
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null
+        },
+        {
+            "name": "dropout",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "rate": 0.2,
+            "seed": null,
+            "noise_shape": null
+        },
+        {
+            "name": "dense_1",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "units": 16,
+            "activation": "relu",
+            "use_bias": true,
+            "kernel_initializer": {
+                "module": "keras.initializers",
+                "class_name": "GlorotUniform",
+                "config": {
+                    "seed": null
+                },
+                "registered_name": null
+            },
+            "bias_initializer": {
+                "module": "keras.initializers",
+                "class_name": "Zeros",
+                "config": {},
+                "registered_name": null
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null
+        },
+        {
+            "name": "dropout_1",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "rate": 0.1,
+            "seed": null,
+            "noise_shape": null
+        },
+        {
+            "name": "dense_2",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "units": 4,
+            "activation": "softmax",
+            "use_bias": true,
+            "kernel_initializer": {
+                "module": "keras.initializers",
+                "class_name": "GlorotUniform",
+                "config": {
+                    "seed": null
+                },
+                "registered_name": null
+            },
+            "bias_initializer": {
+                "module": "keras.initializers",
+                "class_name": "Zeros",
+                "config": {},
+                "registered_name": null
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null
+        }
+    ]
+}
